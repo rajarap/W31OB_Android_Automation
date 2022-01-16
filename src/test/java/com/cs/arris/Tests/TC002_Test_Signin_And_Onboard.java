@@ -94,16 +94,11 @@ public class TC002_Test_Signin_And_Onboard extends ParentClass
 				  codeVerified.getCodeVerifiedText();
 				  codeVerified.clickNextButton();
 				  super.pause(3);
-				  try
-				  {
-					  if(codeVerified.continueOnBoardingButton.isDisplayed())
-					  {
-						  codeVerified.clickContinueOnboardingButton();
-					  }
-				  }catch(Exception e)
-				  {
-					  e.getMessage();
-				  }
+				  try{
+					  if(codeVerified.continueOnBoardingButton.isDisplayed()){
+						  codeVerified.clickContinueOnboardingButton();}
+				  }catch(Exception e){
+					  e.getMessage();}
 		  }).optimizeYourNetworkPage(optimize -> {
 			  optimize.clickSkipOptimizeButton();
 		  }).setUpHomeNetworkPage(homeNetwork -> {
@@ -112,22 +107,23 @@ public class TC002_Test_Signin_And_Onboard extends ParentClass
 			  unpackBox.clickNextButton();
 		  }).plugInYourMaxRouterPage(pluginRouter -> {
 			  pluginRouter.clickNextButton();
-			  super.pause(20);
-		  }).maxRouterConnectedToMobilePage(connectedRouterToMobile -> {
+			  super.pause(40);
+		  }).maxRouterConnectedToMobilePage(connectedRouterToMobile -> { //successfully connected (max router connected to your mobile)
 			  connectedRouterToMobile.clickNextButton();
 			  super.pause(15);
 			//add 0002-1304 - Internet Connection Not available on Router
-		  }).maxRouterConnectedToInternetPage(connecedRouterToInternet -> {
+		  }).maxRouterConnectedToInternetPage(connecedRouterToInternet -> {  //successfully connected to internet
 			  connecedRouterToInternet.clickNextButton();
 			  super.pause(40);
-		  }).systemFirmwareUpdatePage(firmwareUpdate -> {
-			  firmwareUpdate.clickNextButton();
+		  }).systemFirmwareUpdatePage(firmwareUpdate -> { //system is already up to date
+			  firmwareUpdate.clickNextButton();  //registering the device
 			  super.pause(30);
-		  }).warrantyAndSupportPage(warrantyAndSupport -> {
+		  }).warrantyAndSupportPage(warrantyAndSupport -> { //something went wrong.. warranty and registration failed as the server is not reachable
 			  warrantyAndSupport.clickContinueButton();
 		  }).nameYourNetworkPage(nameYourNetwork -> {
 			  nameYourNetwork.enterSSIDName(this.ssidName);
 			  nameYourNetwork.enterSSIDPassword(this.ssidpass);
+			  super.getDriver().hideKeyboard();
 			  nameYourNetwork.clickNextButton();
 			  super.pause(25);
 		  }).connectNeeded(connectionRequired -> { //connect SSID network to wifi

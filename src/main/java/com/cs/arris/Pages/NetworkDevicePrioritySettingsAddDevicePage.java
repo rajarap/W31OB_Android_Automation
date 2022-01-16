@@ -126,7 +126,7 @@ public class NetworkDevicePrioritySettingsAddDevicePage extends ParentClass impl
 		"//androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView")).size();
 		
 		//int size = super.getDriver().findElements(By.xpath("//androidx.recyclerview.widget.RecyclerView[@resource-id='com.arris.sbcBeta:id/add_device_rv']")).size();
-		utils.log().info("Count of device : " + size);
+		//utils.log().info("Count of device : " + size);
 		
 		try {
 			for (int i = 1; i <= 2 ; i++) 

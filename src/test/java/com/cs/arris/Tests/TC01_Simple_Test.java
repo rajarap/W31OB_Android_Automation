@@ -27,6 +27,11 @@ import com.cs.arris.Pages.AddDeviceSelectDevice1Page;
 import com.cs.arris.Pages.AddDeviceSelectDevice2Page;
 import com.cs.arris.Pages.AddDeviceStepsForActivationPage;
 import com.cs.arris.Pages.AddDeviceSuccessPage;
+import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage1;
+import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage2;
+import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage3;
+import com.cs.arris.Pages.AddSatelliteInstallAdditionalSatelliteDialog;
+import com.cs.arris.Pages.AppRatingDialog;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
 import com.cs.arris.Pages.SiginPage;
@@ -146,8 +151,8 @@ public class TC01_Simple_Test extends ParentClass
 				  try {
 					  if(codeVerified.continueOnBoardingButton.isDisplayed())
 						  codeVerified.clickContinueOnboardingButton();
-				  }catch(Exception e) {
-					  e.getMessage(); }
+					  super.pause(5);
+				  }catch(Exception e) {e.getMessage(); }
 			  }).setupWifi(setupwifi ->{
 				  setupwifi.clickskipTutorialButton();
 				  super.pause(3);
@@ -159,6 +164,7 @@ public class TC01_Simple_Test extends ParentClass
 				  e.getMessage(); }
 		  });
 	  }
+	  
 		@Test(priority = 2 , dependsOnMethods = { "Login_And_Onboard" })
 		public void Verify_Home_UI_Page() {
 			SoftAssert softhome2 = new SoftAssert();
@@ -473,39 +479,49 @@ public class TC01_Simple_Test extends ParentClass
 			
 			if(new AddDeviceStepsForActivationPage().isAt())
 				softhome2.assertTrue(new AddDeviceStepsForActivationPage().clickStartButton());
+			super.pause(5);
 			
 			if(new AddDeviceLetsStartWithDeviceConnectionPage().isAt())
 				softhome2.assertTrue(new AddDeviceLetsStartWithDeviceConnectionPage().clickNextButton());
+			super.pause(5);
 			
 			if(new AddDeviceChooseInternetServiceProviderPage().isAt())
 				softhome2.assertTrue(new AddDeviceChooseInternetServiceProviderPage().clickNextButton());
+			super.pause(5);
 			
 			if(new AddDeviceActivateYourDeviceWithServiceProviderPage().isAt())
 				softhome2.assertTrue(new AddDeviceActivateYourDeviceWithServiceProviderPage().clickSkipButton());
+			super.pause(5);
 			
 			if(new AddDeviceEstablishingConnectionPage().isAt())
 				softhome2.assertTrue(new AddDeviceEstablishingConnectionPage().clickOnlineButton());
+			super.pause(5);
 			
 			if(new AddDeviceSuccessPage().isAt())
 				softhome2.assertTrue(new AddDeviceSuccessPage().clickNextButton());
+			super.pause(5);
 			
 			if(new AddDeviceScanBarCodePage().isAt())
 				softhome2.assertTrue(new AddDeviceScanBarCodePage().clickScanButton());
+			super.pause(5);
 			
 			if(new AddDeviceAccessCameraDialog().isAt())
 				softhome2.assertTrue(new AddDeviceAccessCameraDialog().clickEnterManuallyButton());
+			super.pause(5);
 			
 			if(new AddDeviceEnterMACAddressManuallyPage().isAt()) {
 				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterSerialNumber());
 				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
-				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());}
+				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
+				super.pause(15);}
 			
 			if(new AddDeviceRegistrationFailedPage().isAt())
 				softhome2.assertTrue(new AddDeviceRegistrationFailedPage().clickContinueButton());
+			super.pause(10);
 			
 			if(new AddDeviceCongratulationsPage().isAt())
 				softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
-			
+			super.pause(5);
 			softhome2.assertAll();
 		}
 			
@@ -622,18 +638,371 @@ public class TC01_Simple_Test extends ParentClass
 				
 			softhome10.assertAll();
 		}
+		
+		@Test(priority = 41, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Install_Additional_Satellite_Menu() {
+			utils.log().info("                                                    ");
+			utils.log().info("****************************************************");
+			utils.log().info("Test: Hamburger Menu - Install Additional Satellite ");
+			utils.log().info("****************************************************");
+			
+			SoftAssert softsatellite1 = new SoftAssert();
+			
+			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			
+			if(new HomePage().isAt())
+				softsatellite1.assertTrue(new HomePage().clickNavigationButton());
+			
+			if(new HomePage().getHamburgerMenuPageObject().isAt())
+				softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
+			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+			try {
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
+			}catch(Exception e) {}
+			
+			try {
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+			}catch(Exception e) {}
+			
+			try {
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+			}catch(Exception e) {}
+			
+			
+			
+			
+//			SoftAssert softsatellite1 = new SoftAssert();
+//			new HomePage().getFooterIconsPageObject().clickHomeButton();
+//			softsatellite1.assertTrue(new HomePage().clickNavigationButton());
+//			softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
+//			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
+//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+//			super.pause(20);
+//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+//
+//			softsatellite1.assertTrue(new AddSatelliteUnPackYourSatellitePage().clickNextButton());
+//			softsatellite1.assertTrue(new AddSatelliteHelpPlaceYourSatellitePage().clickSkipButton());
+//			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+//			super.pause(20);
+//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+//			super.pause(90);
+//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+//			super.pause(15);
+//			softsatellite1.assertTrue(new AddSatelliteSystemUpToDatePage().clickNextButton());
+//			super.pause(40);
+//			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+			
+		}
+		
+		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature
+		@Test(priority = 42, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Network_Health_Page() {
+		utils.log().info("                             ");
+		utils.log().info("*****************************");
+		utils.log().info("Test: Network Health Feature ");
+		utils.log().info("*****************************");
+			SoftAssert softnetwork1 = new SoftAssert();
+			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			super.pause(10);
+			softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
+			
+			try
+			{
+				if(new HomePage().getSkipTutorialPageObject().isAt())
+					softnetwork1.assertTrue(new HomePage().getSkipTutorialPageObject().clickSkipText());
+			}catch(Exception e) { utils.log().info("Skip Tutorial Page did not appear");}
+			
+			if(new HomePage().getNetworkOtptimizationPageObject().isAt()) {
+				softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().verifyNetworkOptimizationPageUI());
+				softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon());
+			}
+			
+			softnetwork1.assertAll();
+		}
+		
+		@Test(priority = 43, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Network_Optimization_Settings_Page() {
+			SoftAssert softnetwork2 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) {
+				softnetwork2.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().verifyNetworkOptimizationSettingsPageUI());
+				softnetwork2.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().enableHealthOptimization());
+				softnetwork2.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().verifyNetworkOptimizationSettingsEnabledPageUI());
+			}
+				
+			softnetwork2.assertAll();
+		}
+		
+		@Test(priority = 44, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Connected_Device_Signal_Strength_Sensitivity_Medium() {
+			SoftAssert softnetwork3 = new SoftAssert();
+			super.swipeDown();
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork3.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickConnectedDeviceSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().isAt()) 
+					softnetwork3.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().verifyConnectedDevicesPageUI());
+				softnetwork3.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().clickBackButton());
+				
+			softnetwork3.assertAll();
+		}
+		
+		@Test(priority = 45, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Signal_Strength_Sensitivity_Medium() {
+			SoftAssert softnetwork4 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork4.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().isAt()) 
+					softnetwork4.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().verifySatelliteSignalStrengthsPageUI());
+				softnetwork4.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().clickBackButton());
+				
+				softnetwork4.assertAll();
+		}
+		
+		@Test(priority = 46, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Link_Rate_Sensitivity_Medium() {
+			SoftAssert softnetwork5 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork5.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteLinkRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().isAt()) 
+					softnetwork5.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().verifySatelliteLinkRatePageUI());
+				softnetwork5.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().clickBackButton());
+				
+				softnetwork5.assertAll();
+		}
+		
+		@Test(priority = 47, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_ISP_Speed_Link_Rate_Sensitivity_Medium() {
+			SoftAssert softnetwork6 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork6.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickISPSpeedRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().isAt()) 
+					softnetwork6.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().verifyISPSpeedRatePageUI());
+				softnetwork6.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().clickBackButton());
+				
+				softnetwork6.assertAll();
+		}
+		
+		@Test(priority = 48, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Connected_Device_Signal_Strength_Sensitivity_High() {
+			SoftAssert softnetwork7 = new SoftAssert();
+			super.swipeDown();
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().tapHigh();
+			softnetwork7.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickConnectedDeviceSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().isAt()) 
+				softnetwork7.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().verifyConnectedDevicesPageUI());
+			softnetwork7.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().clickBackButton());
+				
+			softnetwork7.assertAll();
+		}
+		
+		@Test(priority = 49, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Signal_Strength_Sensitivity_High() {
+			SoftAssert softnetwork8 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork8.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().isAt()) 
+				softnetwork8.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().verifySatelliteSignalStrengthsPageUI());
+			softnetwork8.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().clickBackButton());
+				
+			softnetwork8.assertAll();
+		}
+		
+		@Test(priority = 50, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Link_Rate_Sensitivity_High() {
+			SoftAssert softnetwork9 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork9.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteLinkRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().isAt()) 
+					softnetwork9.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().verifySatelliteLinkRatePageUI());
+				softnetwork9.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().clickBackButton());
+				
+				softnetwork9.assertAll();
+		}
+		
+		@Test(priority = 51, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_ISP_Speed_Link_Rate_Sensitivity_High() {
+			SoftAssert softnetwork10 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork10.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickISPSpeedRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().isAt()) 
+					softnetwork10.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().verifyISPSpeedRatePageUI());
+				softnetwork10.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().clickBackButton());
+				
+				softnetwork10.assertAll();
+		}
+		
+		@Test(priority = 52, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Connected_Device_Signal_Strength_Sensitivity_Low() {
+			SoftAssert softnetwork11 = new SoftAssert();
+			super.swipeDown();
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().tapLow();
+			softnetwork11.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickConnectedDeviceSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().isAt()) 
+					softnetwork11.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().verifyConnectedDevicesPageUI());
+				softnetwork11.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getConnectedDevicesPageObject().clickBackButton());
+				
+				softnetwork11.assertAll();
+		}
+		
+		@Test(priority = 53, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Signal_Strength_Sensitivity_Low() {
+			SoftAssert softnetwork12 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork12.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteSignalButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().isAt()) 
+					softnetwork12.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().verifySatelliteSignalStrengthsPageUI());
+				softnetwork12.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteSignalPageObject().clickBackButton());
+				
+				softnetwork12.assertAll();
+		}
+		
+		@Test(priority = 54, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Satellite_Link_Rate__Sensitivity_Low() {
+			SoftAssert softnetwork13 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork13.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickSatelliteLinkRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().isAt()) 
+					softnetwork13.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().verifySatelliteLinkRatePageUI());
+				softnetwork13.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getSatelliteLinkRatePageObject().clickBackButton());
+				
+				softnetwork13.assertAll();
+		}
+		
+		@Test(priority = 55, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_ISP_Speed_Link_Rate_Sensitivity_Low() {
+			SoftAssert softnetwork14 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork14.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickISPSpeedRateButton());
+			
+			try {
+				if(new AppRatingDialog().isAt())
+					new AppRatingDialog().clickRemindMeLaterLink();
+			}catch(Exception e){utils.log().info("App Rating Dialog did not appear");}
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().isAt()) 
+					softnetwork14.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().verifyISPSpeedRatePageUI());
+				softnetwork14.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().getISPSpeedRatePageObject().clickBackButton());
+				
+				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+					new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().tapMedium();
+				
+				new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton();
+				
+				softnetwork14.assertAll();
+		}
+		
+		@Test(priority = 56, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Network_Optimization_Recommendations() {
+			SoftAssert softnetwork15 = new SoftAssert();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().isAt()) 
+				softnetwork15.assertTrue(new HomePage().getNetworkOtptimizationPageObject().verifyNetworkAfterOptimization());		
+			softnetwork15.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickSatelliteImage());
+			
+			softnetwork15.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickDevicesImage());
+			if(new HomePage().getNetworkOtptimizationPageObject().getWifiClientConnectionPageObject().isAt())
+				new HomePage().getNetworkOtptimizationPageObject().getWifiClientConnectionPageObject().clickBackButton();
+			
+			softnetwork15.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickISPImage());
+			if(new HomePage().getNetworkOtptimizationPageObject().getISPClientConnectionPageObject().isAt())
+				new HomePage().getNetworkOtptimizationPageObject().getISPClientConnectionPageObject().clickBackButton();
+
+			softnetwork15.assertAll();
+		}
+		
+		@Test(priority = 57, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Disabled_Network_Optimization_Settings() {
+			SoftAssert softnetwork16 = new SoftAssert();
+			
+			new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon();
+				
+			if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
+				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().disableHealthOptimization());
+			softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton());
+			softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickBackButton());
+
+			softnetwork16.assertAll();
+		}
+
 }
 
 
 
-//new HomePage().getFooterIconsPageObject().clickNetworkButton();
-//if(new NetworkPage().isAt())
-//{
-//	new NetworkPage().clickNetworkSettingsExpandButton();
-//	new NetworkPage().clickGeneralSettings();
-//	if(new SpeedTestPage().getAppRatingDialogObject().remindMeLaterText.isDisplayed()) {
-//		new SpeedTestPage().getAppRatingDialogObject().clickThreeStar();
-//		new SpeedTestPage().getAppRatingDialogObject().enterFeedback();
-//		new SpeedTestPage().getAppRatingDialogObject().clickSendFeebackButton();
-//	}
-//}

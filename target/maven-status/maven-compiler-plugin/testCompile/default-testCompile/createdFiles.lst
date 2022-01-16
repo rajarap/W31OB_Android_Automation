@@ -1,3 +1,4 @@
+com/cs/arris/Workflows/TC63_Install_Additional_Satellite_Workflow.class
 com/cs/arris/Workflows/TC02_EC_0002_1002_Disconnect_Wifi_On_Mobile_Workflow.class
 com/cs/arris/Tests/AccessResourcesOnDevicePageTest.class
 com/cs/arris/Tests/TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature.class

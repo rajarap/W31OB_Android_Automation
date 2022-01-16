@@ -209,12 +209,15 @@ public class ParentClass
 				.withLogFile(new File("ServerLogs/server.log")));
 	}
 	
-	@Parameters({"platform", "device"})
+//	@Parameters({"platform", "device"})
 	@BeforeSuite
-	public void beforeSuite(String platform, String device)
+	public void beforeSuite()
 	{
-		this.pltName = platform;
-		this.dvcName = device;
+//		this.pltName = platform;
+//		this.dvcName = device;
+		
+		this.pltName = "Android";
+		this.dvcName = "Android";
 		
 		try
 		{

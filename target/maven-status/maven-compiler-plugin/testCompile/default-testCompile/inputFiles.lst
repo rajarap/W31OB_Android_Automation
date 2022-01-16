@@ -5,6 +5,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Tests/AccessResourcesOnDevicePageTest.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/COR/COR_EC_0005_1200_Disconnect_Bluetooth_On_Mobile_Device.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Tests/SignUpTest.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Workflows/TC63_Install_Additional_Satellite_Workflow.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Tests/TC05_EC_0000_1303_Router_Failed_To_Connect_To_Internet_Test.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Tests/TC007_Login_And_Test_Main_Device_Page.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/test/java/com/cs/arris/Workflows/TC02_EC_0002_1002_Disconnect_Wifi_On_Mobile_Workflow.java

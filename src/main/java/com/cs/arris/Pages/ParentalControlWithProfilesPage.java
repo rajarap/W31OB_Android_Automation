@@ -414,14 +414,13 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 
 	public boolean verifyUserProfile() {
 
-		counter = 1;
 		utils.log().info("**********************************************************");
 		utils.log().info("Details of User Profiles created in Parental Control Page");
 		utils.log().info("**********************************************************");
 
 		try {
 			for (int i = 1; i <= 3; i++) {
-				utils.log().info("User Profile : " + counter);
+				utils.log().info("User Profile : " + i);
 				utils.log().info("------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
 						"//android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[" + i
@@ -492,7 +491,6 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 
 					utils.log().info("****************************************************");
 					utils.log().info("                                                    ");
-					counter++;
 				}
 				if (i >= 3)
 					super.swipeUp();
@@ -563,26 +561,24 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 	}
 
 	public boolean clickOnUserProfile() {
-		//utils.log().info("****************************************");
+		utils.log().info("****************************************");
 		utils.log().info("Selecting a User Profile from the list  ");
-		//utils.log().info("****************************************");
-		super.generateRandomNumber13();
+		utils.log().info("****************************************");
+		//super.generateRandomNumber13();
 
 		try {
 			for (int i = 1; i <= 1; i++) {
 //				utils.log().info("User Profile : " + i);
 //				utils.log().info("------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
-						"//android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[" + i
-								+ "]");
+						"//androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
 
 				for (MobileElement e : entity) {
 					try {
-						if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").isDisplayed()) {
-							utils.log().info("Clicking on User profile Name : " + e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']")
-									.getText());
-							click(e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']"));
-						}
+						//if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").isDisplayed()) {
+							utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]").getText());
+							click(super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]"));
+						//}
 					} catch (Exception exp) {
 						utils.log().info("User Profile Name is not displayed ");
 					}
@@ -596,10 +592,10 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 	}
 	
 	public boolean deleteUserProfile() {
-		//utils.log().info("****************************************");
+		utils.log().info("****************************************");
 		utils.log().info("Deleting a User Profile from the list  ");
-		//utils.log().info("****************************************");
-		super.generateRandomNumber13();
+		utils.log().info("****************************************");
+		//super.generateRandomNumber13();
 
 		try {
 			for (int i = 3; i <= 3; i++) {
@@ -609,14 +605,14 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 						"//android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[" + i
 								+ "]");
 
-				for (MobileElement e : entity) {
-					
+				for (MobileElement e : entity) 
+				{
 					try {
 						if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").isDisplayed())
 							utils.log().info("Deleting on User profile Name : " + e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']")
 							.getText());
-							elementX = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getLocation().getX();
-							elementY = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getLocation().getY();
+							elementX = e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getLocation().getX();
+							elementY = e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getLocation().getY();
 							new SwipeOnElement().swipeAction(elementX, elementY, "Left");
 							if(deleteProfileIcon.isDisplayed())
 								click(deleteProfileIcon);
@@ -638,7 +634,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 		utils.log().info("Internet Is Paused For The Following User Profiles ");
 		utils.log().info("***************************************************");
 		try {
-			for (int i = 1; i < 3 ; i++) {
+			for (int i = 1; i <= 3 ; i++) {
 				utils.log().info("User Profile : " + counter);
 				utils.log().info("----------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
@@ -712,7 +708,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 		utils.log().info("****************************************************");
 		
 		try {
-			for (int i = 1; i < 3 ; i++) {
+			for (int i = 1; i <= 3 ; i++) {
 				utils.log().info("User Profile : " + counter);
 				utils.log().info("----------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(

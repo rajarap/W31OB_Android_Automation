@@ -1,0 +1,828 @@
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:10:35.399 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:10:35.408 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 FATAL] 2022-01-16 16:10:35.982 ParentClass:278 - Unable to initialize Android driver...... ABORTING !!!
+org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: The application at '/Users/prabhu/.jenkins/workspace/Arris_Android_Manually_Build_Any_Branch/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-signed.apk' does not exist or is not accessible
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The application at '/Users/prabhu/.jenkins/workspace/Arris_Android_Manually_Build_Any_Branch/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-signed.apk' does not exist or is not accessible
+    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
+    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:16:48.693 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:16:48.702 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 FATAL] 2022-01-16 16:16:49.273 ParentClass:278 - Unable to initialize Android driver...... ABORTING !!!
+org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: The application at '/Users/prabhu/.jenkins/workspace/Arris_Android_Manually_Build_Any_Branch/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-debug-2.apk' does not exist or is not accessible
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The application at '/Users/prabhu/.jenkins/workspace/Arris_Android_Manually_Build_Any_Branch/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-debug-2.apk' does not exist or is not accessible
+    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
+    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:14.132 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:14.143 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:23.904 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:23.905 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.524 TC01_Simple_Test:89 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.530 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.537 TC01_Simple_Test:93 - First Name : arris
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.538 TC01_Simple_Test:96 - Last Name : user 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.540 TC01_Simple_Test:99 - Email address : arrisuser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.541 TC01_Simple_Test:102 - UDID : null
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:27.542 TC01_Simple_Test:104 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:28.222 TC01_Simple_Test:113 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:28.354 TC01_Simple_Test:119 -                         
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:28.354 TC01_Simple_Test:120 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:28.355 TC01_Simple_Test:121 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:28.355 TC01_Simple_Test:122 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:29.012 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:30.024 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:46.605 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:49.974 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:51.444 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:20:52.384 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:03.230 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:04.117 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:07.406 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:08.219 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:20.255 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:24.413 EnterValidOTPPage:61 - Entering valid OTP...100718
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:26.040 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 ERROR] 2022-01-16 16:21:52.217 TestListener:39 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})}) (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.cs.arris.Base.ParentClass.waitForVisibility(ParentClass.java:442)
+	at com.cs.arris.Base.ParentClass.click(ParentClass.java:465)
+	at com.cs.arris.Pages.SetUpYourWiFiManagementPage.clickskipTutorialButton(SetUpYourWiFiManagementPage.java:48)
+	at com.cs.arris.Tests.TC01_Simple_Test.lambda$Login_And_Onboard$10(TC01_Simple_Test.java:157)
+	at com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow.setupWifi(TC52_Login_And_Verify_HomePage_Workflow.java:134)
+	at com.cs.arris.Tests.TC01_Simple_Test.Login_And_Onboard(TC01_Simple_Test.java:156)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@30893e08 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 45 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 47 more
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:21:56.302 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-20-14/TC01_Simple_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:22:02.457 ParentClass:185 - Closing App
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:22:02.664 ParentClass:187 - Quitting Driver
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:13.784 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:13.793 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:23.836 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:23.837 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.445 TC01_Simple_Test:89 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.451 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.460 TC01_Simple_Test:93 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.462 TC01_Simple_Test:96 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.463 TC01_Simple_Test:99 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.465 TC01_Simple_Test:102 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:27.466 TC01_Simple_Test:104 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.177 TC01_Simple_Test:113 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.308 TC01_Simple_Test:119 -                         
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.308 TC01_Simple_Test:120 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.309 TC01_Simple_Test:121 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.309 TC01_Simple_Test:122 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:28.750 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:29.586 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:46.079 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:49.450 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:50.864 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:28:51.724 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:02.595 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:03.494 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:06.782 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:07.564 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:19.599 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:23.847 EnterValidOTPPage:61 - Entering valid OTP...568194
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:25.418 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:29:50.176 SetUpYourWiFiManagementPage:49 - Setup Wifi Management Page - Clicked on Skip Tutorial Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:13.675 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-28-13/TC01_Simple_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:14.591 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Health_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:14.596 TC01_Simple_Test:701 -                              
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:14.598 TC01_Simple_Test:702 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:14.598 TC01_Simple_Test:703 - Test: Network Health Feature 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:14.598 TC01_Simple_Test:704 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:16.573 FooterIconsPage:145 - Footer Icons Page - Clicked on Home Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:21.743 TC01_Simple_Test:711 - Skip Tutorial Page did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 ERROR] 2022-01-16 16:30:22.388 TestListener:39 - org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalArgumentException: Namespace with prefix 'com.arris.sbcBeta' has not been declared.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/prabhu/Documents/apk..., appPackage: com.arris.sbcBeta, automationName: UiAutomator2, databaseEnabled: false, desired: {app: /Users/prabhu/Documents/apk..., automationName: UiAutomator2, deviceName: Android, newCommandTimeout: 105, noReset: false, platformName: android, udid: RZ8M3002DGL, version: 11}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G973F, deviceName: RZ8M3002DGL, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: RZ8M3002DGL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 105, noReset: false, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 112, takesScreenshot: true, udid: RZ8M3002DGL, version: 11, viewportRect: {height: 1930, left: 0, top: 112, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 09146ee9-1f07-4ee4-b883-5ca30cd8b486
+*** Element info: {Using=xpath, value=com.arris.sbcBeta:id/nwRecommendationText}
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:192)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at com.cs.arris.Pages.HomePage.clickTapHereToTurnON(HomePage.java:636)
+	at com.cs.arris.Tests.TC01_Simple_Test.Verify_Network_Health_Page(TC01_Simple_Test.java:713)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalArgumentException: Namespace with prefix 'com.arris.sbcBeta' has not been declared.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/prabhu/Documents/apk..., appPackage: com.arris.sbcBeta, automationName: UiAutomator2, databaseEnabled: false, desired: {app: /Users/prabhu/Documents/apk..., automationName: UiAutomator2, deviceName: Android, newCommandTimeout: 105, noReset: false, platformName: android, udid: RZ8M3002DGL, version: 11}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G973F, deviceName: RZ8M3002DGL, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: RZ8M3002DGL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 105, noReset: false, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 112, takesScreenshot: true, udid: RZ8M3002DGL, version: 11, viewportRect: {height: 1930, left: 0, top: 112, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 09146ee9-1f07-4ee4-b883-5ca30cd8b486
+*** Element info: {Using=xpath, value=com.arris.sbcBeta:id/nwRecommendationText}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$0(ByChained.java:38)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:72)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	... 40 more
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:23.502 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-28-13/TC01_Simple_Test/Verify_Network_Health_Page.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.190 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Optimization_Settings_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.287 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.298 HomeNetworkHealthOptimizationSettingsPage:290 -                                                                    
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.298 HomeNetworkHealthOptimizationSettingsPage:291 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.299 HomeNetworkHealthOptimizationSettingsPage:292 - Details of UI Elements on Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.299 HomeNetworkHealthOptimizationSettingsPage:293 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.417 HomeNetworkHealthOptimizationSettingsPage:297 - Home title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:24.538 HomeNetworkHealthOptimizationSettingsPage:304 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:30.134 HomeNetworkHealthOptimizationSettingsPage:313 - Optimization Toggle button is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:35.371 HomeNetworkHealthOptimizationSettingsPage:320 - Optimization label is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:40.979 HomeNetworkHealthOptimizationSettingsPage:327 - Turn on optimization to access network health & view recommendations message is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:46.615 HomeNetworkHealthOptimizationSettingsPage:236 - Network Optimization is already enabled
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:46.646 HomeNetworkHealthOptimizationSettingsPage:338 -                                                                            
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:46.651 HomeNetworkHealthOptimizationSettingsPage:339 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:46.652 HomeNetworkHealthOptimizationSettingsPage:340 - Details of UI Elements on Network Health Optimization Settings Enabled Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:46.653 HomeNetworkHealthOptimizationSettingsPage:341 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:52.106 HomeNetworkHealthOptimizationSettingsPage:347 - Recommendation sensitivity text is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:30:57.232 HomeNetworkHealthOptimizationSettingsPage:354 - Control the recommendation frequency by adjusting the sensitivity is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:44.436 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:44.447 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:55.639 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:55.641 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.234 TC01_Simple_Test:89 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.235 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.240 TC01_Simple_Test:93 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.242 TC01_Simple_Test:96 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.243 TC01_Simple_Test:99 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.246 TC01_Simple_Test:102 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.247 TC01_Simple_Test:104 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:35:59.949 TC01_Simple_Test:113 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:00.080 TC01_Simple_Test:119 -                         
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:00.081 TC01_Simple_Test:120 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:00.081 TC01_Simple_Test:121 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:00.082 TC01_Simple_Test:122 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:00.776 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:01.756 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:18.137 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:21.502 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:22.999 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:23.885 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:35.363 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:36.249 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:39.580 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:40.379 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:52.405 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:56.552 EnterValidOTPPage:61 - Entering valid OTP...916730
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:36:58.217 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:22.588 SetUpYourWiFiManagementPage:49 - Setup Wifi Management Page - Clicked on Skip Tutorial Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:45.434 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-35-44/TC01_Simple_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.413 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Health_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.415 TC01_Simple_Test:701 -                              
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.416 TC01_Simple_Test:702 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.416 TC01_Simple_Test:703 - Test: Network Health Feature 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.416 TC01_Simple_Test:704 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:46.843 FooterIconsPage:145 - Footer Icons Page - Clicked on Home Button
+[logs/Android_RZ8M3002DGL/2022-01-16 ERROR] 2022-01-16 16:37:47.815 TestListener:39 - org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalArgumentException: Namespace with prefix 'com.arris.sbcBeta' has not been declared.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/prabhu/Documents/apk..., appPackage: com.arris.sbcBeta, automationName: UiAutomator2, databaseEnabled: false, desired: {app: /Users/prabhu/Documents/apk..., automationName: UiAutomator2, deviceName: Android, newCommandTimeout: 105, noReset: false, platformName: android, udid: RZ8M3002DGL, version: 11}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G973F, deviceName: RZ8M3002DGL, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: RZ8M3002DGL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 105, noReset: false, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 112, takesScreenshot: true, udid: RZ8M3002DGL, version: 11, viewportRect: {height: 1930, left: 0, top: 112, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 31a84c00-93f0-48dd-bac9-cde7d870a54e
+*** Element info: {Using=xpath, value=com.arris.sbcBeta:id/nwRecommendationText}
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:192)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at com.cs.arris.Pages.HomePage.clickTapHereToTurnON(HomePage.java:636)
+	at com.cs.arris.Tests.TC01_Simple_Test.Verify_Network_Health_Page(TC01_Simple_Test.java:707)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalArgumentException: Namespace with prefix 'com.arris.sbcBeta' has not been declared.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/prabhu/Documents/apk..., appPackage: com.arris.sbcBeta, automationName: UiAutomator2, databaseEnabled: false, desired: {app: /Users/prabhu/Documents/apk..., automationName: UiAutomator2, deviceName: Android, newCommandTimeout: 105, noReset: false, platformName: android, udid: RZ8M3002DGL, version: 11}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-G973F, deviceName: RZ8M3002DGL, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: RZ8M3002DGL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 105, noReset: false, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 112, takesScreenshot: true, udid: RZ8M3002DGL, version: 11, viewportRect: {height: 1930, left: 0, top: 112, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 31a84c00-93f0-48dd-bac9-cde7d870a54e
+*** Element info: {Using=xpath, value=com.arris.sbcBeta:id/nwRecommendationText}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$0(ByChained.java:38)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:72)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	... 40 more
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:48.901 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-35-44/TC01_Simple_Test/Verify_Network_Health_Page.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.621 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Optimization_Settings_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.724 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.739 HomeNetworkHealthOptimizationSettingsPage:290 -                                                                    
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.739 HomeNetworkHealthOptimizationSettingsPage:291 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.739 HomeNetworkHealthOptimizationSettingsPage:292 - Details of UI Elements on Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.740 HomeNetworkHealthOptimizationSettingsPage:293 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.856 HomeNetworkHealthOptimizationSettingsPage:297 - Home title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:49.960 HomeNetworkHealthOptimizationSettingsPage:304 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:37:55.401 HomeNetworkHealthOptimizationSettingsPage:313 - Optimization Toggle button is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:00.580 HomeNetworkHealthOptimizationSettingsPage:320 - Optimization label is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:05.776 HomeNetworkHealthOptimizationSettingsPage:327 - Turn on optimization to access network health & view recommendations message is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:11.048 HomeNetworkHealthOptimizationSettingsPage:236 - Network Optimization is already enabled
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:11.080 HomeNetworkHealthOptimizationSettingsPage:338 -                                                                            
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:11.081 HomeNetworkHealthOptimizationSettingsPage:339 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:11.081 HomeNetworkHealthOptimizationSettingsPage:340 - Details of UI Elements on Network Health Optimization Settings Enabled Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:11.081 HomeNetworkHealthOptimizationSettingsPage:341 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:38:16.277 HomeNetworkHealthOptimizationSettingsPage:347 - Recommendation sensitivity text is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:50:48.708 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2022-01-16
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:50:48.719 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:00.150 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:00.152 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.848 TC01_Simple_Test:89 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.853 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.864 TC01_Simple_Test:93 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.866 TC01_Simple_Test:96 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.868 TC01_Simple_Test:99 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.870 TC01_Simple_Test:102 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:03.870 TC01_Simple_Test:104 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:04.630 TC01_Simple_Test:113 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:04.743 TC01_Simple_Test:119 -                         
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:04.744 TC01_Simple_Test:120 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:04.744 TC01_Simple_Test:121 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:04.745 TC01_Simple_Test:122 - ************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:05.212 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:06.234 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:22.756 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:26.081 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:27.531 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:28.452 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:39.409 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:40.278 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:43.519 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:44.343 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:51:56.360 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:00.345 EnterValidOTPPage:61 - Entering valid OTP...513501
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:02.149 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:27.112 SetUpYourWiFiManagementPage:49 - Setup Wifi Management Page - Clicked on Skip Tutorial Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:50.378 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:51.201 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Health_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:51.205 TC01_Simple_Test:701 -                              
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:51.206 TC01_Simple_Test:702 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:51.207 TC01_Simple_Test:703 - Test: Network Health Feature 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:51.207 TC01_Simple_Test:704 - *****************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:52:52.242 FooterIconsPage:145 - Footer Icons Page - Clicked on Home Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:02.640 HomePage:638 - Home Page - Clicked on Tap Here To Turn ON Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:03.840 HomeNetworkHealthOptimizationSkipPage:59 - On You can find the control to turn on/off network health optimization here Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.714 HomeNetworkHealthOptimizationSkipPage:45 - Clicked on Skip Tutorial Text
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.809 HomeNetworkHealthOptimizationPage:263 - On Network Health Optimization Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.826 HomeNetworkHealthOptimizationPage:164 -                                                           
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.826 HomeNetworkHealthOptimizationPage:165 - **********************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.826 HomeNetworkHealthOptimizationPage:166 - Details of UI Elements on Network Health Optimization Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.827 HomeNetworkHealthOptimizationPage:167 - **********************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:04.935 HomeNetworkHealthOptimizationPage:171 - Network Health Optimization title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:05.039 HomeNetworkHealthOptimizationPage:178 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:05.101 HomeNetworkHealthOptimizationPage:185 - Optimization button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:10.688 HomeNetworkHealthOptimizationPage:194 - Optimization is turned off message is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:16.010 HomeNetworkHealthOptimizationPage:201 - Turn on optimization from settings to access network health & view recommendations message is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:16.309 HomeNetworkHealthOptimizationPage:154 - Clicked on Optimization Icon
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:17.671 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Network_Health_Page.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.437 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Optimization_Settings_Page ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.554 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.563 HomeNetworkHealthOptimizationSettingsPage:290 -                                                                    
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.564 HomeNetworkHealthOptimizationSettingsPage:291 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.564 HomeNetworkHealthOptimizationSettingsPage:292 - Details of UI Elements on Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.564 HomeNetworkHealthOptimizationSettingsPage:293 - *******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.702 HomeNetworkHealthOptimizationSettingsPage:297 - Network Optimization Settings title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.797 HomeNetworkHealthOptimizationSettingsPage:304 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:18.890 HomeNetworkHealthOptimizationSettingsPage:311 - Optimization Toggle button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:19.005 HomeNetworkHealthOptimizationSettingsPage:318 - Optimization label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:19.109 HomeNetworkHealthOptimizationSettingsPage:325 - Turning off the optimization settings will stop the recommendations to improve network health message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.574 HomeNetworkHealthOptimizationSettingsPage:236 - Network Optimization is already enabled
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.583 HomeNetworkHealthOptimizationSettingsPage:338 -                                                                            
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.584 HomeNetworkHealthOptimizationSettingsPage:339 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.584 HomeNetworkHealthOptimizationSettingsPage:340 - Details of UI Elements on Network Health Optimization Settings Enabled Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.585 HomeNetworkHealthOptimizationSettingsPage:341 - ***************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.718 HomeNetworkHealthOptimizationSettingsPage:345 - Recommendation sensitivity text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.826 HomeNetworkHealthOptimizationSettingsPage:352 - Control the recommendation frequency by adjusting the sensitivity. text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:24.935 HomeNetworkHealthOptimizationSettingsPage:359 - Low text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.044 HomeNetworkHealthOptimizationSettingsPage:366 - Medium(default) text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.154 HomeNetworkHealthOptimizationSettingsPage:373 - High text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.212 HomeNetworkHealthOptimizationSettingsPage:380 - Slider Image is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.321 HomeNetworkHealthOptimizationSettingsPage:387 - You will be notified as soon as your : text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.497 HomeNetworkHealthOptimizationSettingsPage:394 - Connected Device(s) signal strength is very low label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:25.748 HomeNetworkHealthOptimizationSettingsPage:401 - Satellite(s) signal strength is very low message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:31.354 HomeNetworkHealthOptimizationSettingsPage:410 - Satellite Link Rate notification is not displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:32.815 HomeNetworkHealthOptimizationSettingsPage:417 - ISP Speed drop is very high message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:33.987 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Network_Optimization_Settings_Page.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:34.685 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Connected_Device_Signal_Strength_Sensitivity_Medium ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:35.861 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:36.139 HomeNetworkHealthOptimizationSettingsPage:186 - Clicked on Connected Device Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.262 TC01_Simple_Test:747 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.378 HomeNetworkHealthOptimizationConnectedDevicesPage:132 - On Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.392 HomeNetworkHealthOptimizationConnectedDevicesPage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.393 HomeNetworkHealthOptimizationConnectedDevicesPage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.394 HomeNetworkHealthOptimizationConnectedDevicesPage:77 - Details of UI Elements on Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.395 HomeNetworkHealthOptimizationConnectedDevicesPage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.503 HomeNetworkHealthOptimizationConnectedDevicesPage:82 - Connected Devices title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.564 HomeNetworkHealthOptimizationConnectedDevicesPage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.661 HomeNetworkHealthOptimizationConnectedDevicesPage:96 - Sensitivity : Medium is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.754 HomeNetworkHealthOptimizationConnectedDevicesPage:103 - Recommendation : Wi-Fi signal < -75 dbm text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.853 HomeNetworkHealthOptimizationConnectedDevicesPage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:41.952 HomeNetworkHealthOptimizationConnectedDevicesPage:117 - You will be provided with a recommendation when your connected device is connected at less than -75 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:42.131 HomeNetworkHealthOptimizationConnectedDevicesPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:43.343 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Connected_Device_Signal_Strength_Sensitivity_Medium.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:44.024 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Signal_Strength_Sensitivity_Medium ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:44.089 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:44.386 HomeNetworkHealthOptimizationSettingsPage:197 - Clicked on Satellite Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.574 TC01_Simple_Test:766 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.651 HomeNetworkHealthOptimizationSatelliteSignalPage:133 - On Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.655 HomeNetworkHealthOptimizationSatelliteSignalPage:75 -                                                                                                
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.655 HomeNetworkHealthOptimizationSatelliteSignalPage:76 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.656 HomeNetworkHealthOptimizationSatelliteSignalPage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.656 HomeNetworkHealthOptimizationSatelliteSignalPage:78 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.759 HomeNetworkHealthOptimizationSatelliteSignalPage:83 - Satellite Signal Strength title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.819 HomeNetworkHealthOptimizationSatelliteSignalPage:90 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.904 HomeNetworkHealthOptimizationSatelliteSignalPage:97 - Sensitivity : Medium is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:49.988 HomeNetworkHealthOptimizationSatelliteSignalPage:104 - Recommendation : Signal < -75 dbm label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:50.093 HomeNetworkHealthOptimizationSatelliteSignalPage:111 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:50.232 HomeNetworkHealthOptimizationSatelliteSignalPage:118 - You will be provided with a recommendation when your connected satellite is connected at less than -75 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:50.456 HomeNetworkHealthOptimizationSatelliteSignalPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:51.584 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Signal_Strength_Sensitivity_Medium.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:52.290 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Link_Rate_Sensitivity_Medium ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:52.362 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:53.886 HomeNetworkHealthOptimizationSettingsPage:209 - Clicked on Satellite Link Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.230 TC01_Simple_Test:785 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.294 HomeNetworkHealthOptimizationSatelliteLinkRatePage:132 - On Network Health Optimization Settings - Satellite Link Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.299 HomeNetworkHealthOptimizationSatelliteLinkRatePage:75 -                                                                                           
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.299 HomeNetworkHealthOptimizationSatelliteLinkRatePage:76 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.299 HomeNetworkHealthOptimizationSatelliteLinkRatePage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Link Rate Page 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.300 HomeNetworkHealthOptimizationSatelliteLinkRatePage:78 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.403 HomeNetworkHealthOptimizationSatelliteLinkRatePage:82 - Satellite Link Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.459 HomeNetworkHealthOptimizationSatelliteLinkRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.566 HomeNetworkHealthOptimizationSatelliteLinkRatePage:96 - Sensitivity : Medium is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.665 HomeNetworkHealthOptimizationSatelliteLinkRatePage:103 - Recommendation : Link rate < 1 Gbps is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.757 HomeNetworkHealthOptimizationSatelliteLinkRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:53:59.839 HomeNetworkHealthOptimizationSatelliteLinkRatePage:117 - You will be provided with a recommendation when your connected satellite is connected at less than 1.0 Gbps message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:00.700 HomeNetworkHealthOptimizationSatelliteLinkRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:02.027 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Link_Rate_Sensitivity_Medium.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:02.713 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_ISP_Speed_Link_Rate_Sensitivity_Medium ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:02.788 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:04.307 HomeNetworkHealthOptimizationSettingsPage:221 - Clicked on ISP Speed Rate button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.406 TC01_Simple_Test:804 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.483 HomeNetworkHealthOptimizationISPSpeedRatePage:132 - On Network Health Optimization Settings - ISP Speed Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.486 HomeNetworkHealthOptimizationISPSpeedRatePage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.487 HomeNetworkHealthOptimizationISPSpeedRatePage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.487 HomeNetworkHealthOptimizationISPSpeedRatePage:77 - Details of UI Elements on Network Health Optimization Settings - ISP Speed Rate Page   
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.489 HomeNetworkHealthOptimizationISPSpeedRatePage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.586 HomeNetworkHealthOptimizationISPSpeedRatePage:82 - ISP Speed Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.630 HomeNetworkHealthOptimizationISPSpeedRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.718 HomeNetworkHealthOptimizationISPSpeedRatePage:96 - Sensitivity : Medium is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.806 HomeNetworkHealthOptimizationISPSpeedRatePage:103 - Recommendation : ISP rate % drop < 25 % is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:09.897 HomeNetworkHealthOptimizationISPSpeedRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:10.004 HomeNetworkHealthOptimizationISPSpeedRatePage:117 - You will be provided with a recommendation when ISP speed drops by 25 % message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:10.232 HomeNetworkHealthOptimizationISPSpeedRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:10.868 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_ISP_Speed_Link_Rate_Sensitivity_Medium.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:11.559 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Connected_Device_Signal_Strength_Sensitivity_High ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:12.757 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:13.886 HomeNetworkHealthOptimizationSettingsPage:186 - Clicked on Connected Device Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.042 TC01_Simple_Test:824 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.101 HomeNetworkHealthOptimizationConnectedDevicesPage:132 - On Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.104 HomeNetworkHealthOptimizationConnectedDevicesPage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.104 HomeNetworkHealthOptimizationConnectedDevicesPage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.104 HomeNetworkHealthOptimizationConnectedDevicesPage:77 - Details of UI Elements on Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.105 HomeNetworkHealthOptimizationConnectedDevicesPage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.203 HomeNetworkHealthOptimizationConnectedDevicesPage:82 - Connected Devices title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.260 HomeNetworkHealthOptimizationConnectedDevicesPage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.348 HomeNetworkHealthOptimizationConnectedDevicesPage:96 - Sensitivity : High is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.433 HomeNetworkHealthOptimizationConnectedDevicesPage:103 - Recommendation : Wi-Fi signal < -70 dbm text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.523 HomeNetworkHealthOptimizationConnectedDevicesPage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.624 HomeNetworkHealthOptimizationConnectedDevicesPage:117 - You will be provided with a recommendation when your connected device is connected at less than -70 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:19.844 HomeNetworkHealthOptimizationConnectedDevicesPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:21.047 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Connected_Device_Signal_Strength_Sensitivity_High.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:21.757 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Signal_Strength_Sensitivity_High ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:21.853 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:22.132 HomeNetworkHealthOptimizationSettingsPage:197 - Clicked on Satellite Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.584 TC01_Simple_Test:843 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.664 HomeNetworkHealthOptimizationSatelliteSignalPage:133 - On Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.667 HomeNetworkHealthOptimizationSatelliteSignalPage:75 -                                                                                                
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.668 HomeNetworkHealthOptimizationSatelliteSignalPage:76 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.668 HomeNetworkHealthOptimizationSatelliteSignalPage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.668 HomeNetworkHealthOptimizationSatelliteSignalPage:78 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.777 HomeNetworkHealthOptimizationSatelliteSignalPage:83 - Satellite Signal Strength title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.822 HomeNetworkHealthOptimizationSatelliteSignalPage:90 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:27.929 HomeNetworkHealthOptimizationSatelliteSignalPage:97 - Sensitivity : High is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:28.032 HomeNetworkHealthOptimizationSatelliteSignalPage:104 - Recommendation : Signal < -70 dbm label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:28.120 HomeNetworkHealthOptimizationSatelliteSignalPage:111 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:28.732 HomeNetworkHealthOptimizationSatelliteSignalPage:118 - You will be provided with a recommendation when your connected satellite is connected at less than -70 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:28.933 HomeNetworkHealthOptimizationSatelliteSignalPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:29.485 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Signal_Strength_Sensitivity_High.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:30.172 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Link_Rate_Sensitivity_High ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:30.226 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:31.666 HomeNetworkHealthOptimizationSettingsPage:209 - Clicked on Satellite Link Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.150 TC01_Simple_Test:862 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.210 HomeNetworkHealthOptimizationSatelliteLinkRatePage:132 - On Network Health Optimization Settings - Satellite Link Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.213 HomeNetworkHealthOptimizationSatelliteLinkRatePage:75 -                                                                                           
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.214 HomeNetworkHealthOptimizationSatelliteLinkRatePage:76 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.217 HomeNetworkHealthOptimizationSatelliteLinkRatePage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Link Rate Page 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.218 HomeNetworkHealthOptimizationSatelliteLinkRatePage:78 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.327 HomeNetworkHealthOptimizationSatelliteLinkRatePage:82 - Satellite Link Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.378 HomeNetworkHealthOptimizationSatelliteLinkRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.464 HomeNetworkHealthOptimizationSatelliteLinkRatePage:96 - Sensitivity : High is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.558 HomeNetworkHealthOptimizationSatelliteLinkRatePage:103 - Recommendation : Link rate < 1.5 Gbps is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.654 HomeNetworkHealthOptimizationSatelliteLinkRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:37.749 HomeNetworkHealthOptimizationSatelliteLinkRatePage:117 - You will be provided with a recommendation when your connected satellite is connected at less than 1.5 Gbps message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:38.045 HomeNetworkHealthOptimizationSatelliteLinkRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:38.988 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Link_Rate_Sensitivity_High.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:39.706 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_ISP_Speed_Link_Rate_Sensitivity_High ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:39.796 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:41.217 HomeNetworkHealthOptimizationSettingsPage:221 - Clicked on ISP Speed Rate button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.708 TC01_Simple_Test:881 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.810 HomeNetworkHealthOptimizationISPSpeedRatePage:132 - On Network Health Optimization Settings - ISP Speed Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.816 HomeNetworkHealthOptimizationISPSpeedRatePage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.816 HomeNetworkHealthOptimizationISPSpeedRatePage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.817 HomeNetworkHealthOptimizationISPSpeedRatePage:77 - Details of UI Elements on Network Health Optimization Settings - ISP Speed Rate Page   
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.817 HomeNetworkHealthOptimizationISPSpeedRatePage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.938 HomeNetworkHealthOptimizationISPSpeedRatePage:82 - ISP Speed Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:46.989 HomeNetworkHealthOptimizationISPSpeedRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:47.096 HomeNetworkHealthOptimizationISPSpeedRatePage:96 - Sensitivity : High is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:47.202 HomeNetworkHealthOptimizationISPSpeedRatePage:103 - Recommendation : ISP rate % drop < 10 % is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:47.328 HomeNetworkHealthOptimizationISPSpeedRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:47.457 HomeNetworkHealthOptimizationISPSpeedRatePage:117 - You will be provided with a recommendation when ISP speed drops by 10 % message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:47.676 HomeNetworkHealthOptimizationISPSpeedRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:48.931 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_ISP_Speed_Link_Rate_Sensitivity_High.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:49.632 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Connected_Device_Signal_Strength_Sensitivity_Low ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:50.850 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:51.992 HomeNetworkHealthOptimizationSettingsPage:186 - Clicked on Connected Device Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.486 TC01_Simple_Test:901 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.553 HomeNetworkHealthOptimizationConnectedDevicesPage:132 - On Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.556 HomeNetworkHealthOptimizationConnectedDevicesPage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.557 HomeNetworkHealthOptimizationConnectedDevicesPage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.557 HomeNetworkHealthOptimizationConnectedDevicesPage:77 - Details of UI Elements on Network Health Optimization Settings - Connected Devices Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.557 HomeNetworkHealthOptimizationConnectedDevicesPage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.663 HomeNetworkHealthOptimizationConnectedDevicesPage:82 - Connected Devices title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.714 HomeNetworkHealthOptimizationConnectedDevicesPage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.820 HomeNetworkHealthOptimizationConnectedDevicesPage:96 - Sensitivity : Low is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:57.922 HomeNetworkHealthOptimizationConnectedDevicesPage:103 - Recommendation : Wi-Fi signal < -80 dbm text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:58.027 HomeNetworkHealthOptimizationConnectedDevicesPage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:58.140 HomeNetworkHealthOptimizationConnectedDevicesPage:117 - You will be provided with a recommendation when your connected device is connected at less than -80 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:58.370 HomeNetworkHealthOptimizationConnectedDevicesPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:54:59.600 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Connected_Device_Signal_Strength_Sensitivity_Low.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:00.327 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Signal_Strength_Sensitivity_Low ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:00.567 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:00.853 HomeNetworkHealthOptimizationSettingsPage:197 - Clicked on Satellite Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.321 TC01_Simple_Test:920 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.451 HomeNetworkHealthOptimizationSatelliteSignalPage:133 - On Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.455 HomeNetworkHealthOptimizationSatelliteSignalPage:75 -                                                                                                
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.456 HomeNetworkHealthOptimizationSatelliteSignalPage:76 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.456 HomeNetworkHealthOptimizationSatelliteSignalPage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Signal Strength Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.457 HomeNetworkHealthOptimizationSatelliteSignalPage:78 - ***********************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.577 HomeNetworkHealthOptimizationSatelliteSignalPage:83 - Satellite Signal Strength title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.626 HomeNetworkHealthOptimizationSatelliteSignalPage:90 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.709 HomeNetworkHealthOptimizationSatelliteSignalPage:97 - Sensitivity : Low is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.800 HomeNetworkHealthOptimizationSatelliteSignalPage:104 - Recommendation : Signal < -80 dbm label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.884 HomeNetworkHealthOptimizationSatelliteSignalPage:111 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:06.967 HomeNetworkHealthOptimizationSatelliteSignalPage:118 - You will be provided with a recommendation when your connected satellite is connected at less than -80 dbm message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:07.162 HomeNetworkHealthOptimizationSatelliteSignalPage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:08.306 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Signal_Strength_Sensitivity_Low.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:09.021 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Satellite_Link_Rate__Sensitivity_Low ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:09.487 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:10.973 HomeNetworkHealthOptimizationSettingsPage:209 - Clicked on Satellite Link Signal button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.464 TC01_Simple_Test:939 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.522 HomeNetworkHealthOptimizationSatelliteLinkRatePage:132 - On Network Health Optimization Settings - Satellite Link Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.529 HomeNetworkHealthOptimizationSatelliteLinkRatePage:75 -                                                                                           
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.529 HomeNetworkHealthOptimizationSatelliteLinkRatePage:76 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.530 HomeNetworkHealthOptimizationSatelliteLinkRatePage:77 - Details of UI Elements on Network Health Optimization Settings - Satellite Link Rate Page 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.530 HomeNetworkHealthOptimizationSatelliteLinkRatePage:78 - ******************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.629 HomeNetworkHealthOptimizationSatelliteLinkRatePage:82 - Satellite Link Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.676 HomeNetworkHealthOptimizationSatelliteLinkRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.759 HomeNetworkHealthOptimizationSatelliteLinkRatePage:96 - Sensitivity : Low is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.847 HomeNetworkHealthOptimizationSatelliteLinkRatePage:103 - Recommendation : Link rate < 0.5 Gbps is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:16.931 HomeNetworkHealthOptimizationSatelliteLinkRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:17.022 HomeNetworkHealthOptimizationSatelliteLinkRatePage:117 - You will be provided with a recommendation when your connected satellite is connected at less than 0.5 Gbps message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:17.216 HomeNetworkHealthOptimizationSatelliteLinkRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:18.444 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Satellite_Link_Rate__Sensitivity_Low.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:19.157 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_ISP_Speed_Link_Rate_Sensitivity_Low ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:19.705 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:21.177 HomeNetworkHealthOptimizationSettingsPage:221 - Clicked on ISP Speed Rate button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.668 TC01_Simple_Test:958 - App Rating Dialog did not appear
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.733 HomeNetworkHealthOptimizationISPSpeedRatePage:132 - On Network Health Optimization Settings - ISP Speed Rate Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.737 HomeNetworkHealthOptimizationISPSpeedRatePage:75 -                                                                                        
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.738 HomeNetworkHealthOptimizationISPSpeedRatePage:76 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.738 HomeNetworkHealthOptimizationISPSpeedRatePage:77 - Details of UI Elements on Network Health Optimization Settings - ISP Speed Rate Page   
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.738 HomeNetworkHealthOptimizationISPSpeedRatePage:78 - ***************************************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.853 HomeNetworkHealthOptimizationISPSpeedRatePage:82 - ISP Speed Rate title text is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.900 HomeNetworkHealthOptimizationISPSpeedRatePage:89 - Back button is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:26.993 HomeNetworkHealthOptimizationISPSpeedRatePage:96 - Sensitivity : Low is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:27.086 HomeNetworkHealthOptimizationISPSpeedRatePage:103 - Recommendation : ISP rate % drop < 50 % is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:27.192 HomeNetworkHealthOptimizationISPSpeedRatePage:110 - When do you get this recommendation ? label is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:27.276 HomeNetworkHealthOptimizationISPSpeedRatePage:117 - You will be provided with a recommendation when ISP speed drops by 50 % message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:27.469 HomeNetworkHealthOptimizationISPSpeedRatePage:64 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:28.155 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:29.307 HomeNetworkHealthOptimizationSettingsPage:175 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:30.603 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_ISP_Speed_Link_Rate_Sensitivity_Low.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.360 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Network_Optimization_Recommendations ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.460 HomeNetworkHealthOptimizationPage:263 - On Network Health Optimization Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.464 HomeNetworkHealthOptimizationPage:212 -                                                                   
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.464 HomeNetworkHealthOptimizationPage:213 - ******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.465 HomeNetworkHealthOptimizationPage:214 - Details of UI Elements with Network Optimization Recommendations 
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.465 HomeNetworkHealthOptimizationPage:215 - ******************************************************************
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:31.792 HomeNetworkHealthOptimizationPage:219 - Satellite : Not connected
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:32.094 HomeNetworkHealthOptimizationPage:226 - Devices : Good signal
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:32.417 HomeNetworkHealthOptimizationPage:233 - ISP : Stable speed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:32.518 HomeNetworkHealthOptimizationPage:240 - No recommendations message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:32.619 HomeNetworkHealthOptimizationPage:247 - We don’t have any recommendation as your network health is optimum. message is displayed
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:33.482 HomeNetworkHealthOptimizationPage:121 - Clicked on Satellite Image
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:33.956 HomeNetworkHealthOptimizationPage:132 - Clicked on Devices Image
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:34.938 HomeNetowrkDevicesWifiClientConnectionHealthPage:50 - On WiFi Clients Connection Health Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:36.227 HomeNetowrkDevicesWifiClientConnectionHealthPage:39 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:37.300 HomeNetworkHealthOptimizationPage:143 - Clicked on ISP Image
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:38.076 HomeNetowrkISPServicePerformanceAndConnectionHealthPage:50 - On ISP Service Performance and Connection Health Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:39.407 HomeNetowrkISPServicePerformanceAndConnectionHealthPage:39 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:40.977 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Network_Optimization_Recommendations.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:41.723 TC01_Simple_Test:113 - 
+
+****** starting test : Verify_Disabled_Network_Optimization_Settings ******
+
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:41.964 HomeNetworkHealthOptimizationPage:154 - Clicked on Optimization Icon
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:42.642 HomeNetworkHealthOptimizationSettingsPage:433 - On Network Health Optimization Settings Page
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:43.806 HomeNetworkHealthOptimizationSettingsPage:251 - Network Optimization is disabled
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:44.575 HomeNetworkHealthOptimizationSettingsPage:175 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:45.377 HomeNetworkHealthOptimizationPage:110 - Clicked on Back Button
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:46.077 ParentClass:430 - video path: videos/Android_RZ8M3002DGL/2022-01-16-16-50-48/TC01_Simple_Test/Verify_Disabled_Network_Optimization_Settings.mp4
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:51.884 ParentClass:185 - Closing App
+[logs/Android_RZ8M3002DGL/2022-01-16 INFO ] 2022-01-16 16:55:52.081 ParentClass:187 - Quitting Driver

@@ -147,7 +147,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 	
 	public boolean verifyUIOnDeviceSignalStrengthPage() {
 		try {
-			
+			utils.log().info("                                                              ");
 			utils.log().info("**************************************************************");
 			utils.log().info("Verifying UI Elements on Device Signal Strength Leader Board  ");
 			utils.log().info("**************************************************************");
@@ -166,10 +166,10 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			else
 				utils.log().info("Sorting based on device signal strength option is not displayed");
 			
-			if (countOfDevices.isDisplayed())
-				utils.log().info(countOfDevices.getText() + " are displayed");
-			else
-				utils.log().info("Number of Devices is not displayed");
+//			if (countOfDevices.isDisplayed())
+//				utils.log().info(countOfDevices.getText() + " are displayed");
+//			else
+//				utils.log().info("Number of Devices is not displayed");
 			
 			return true;
 		} catch (Exception e) {
@@ -180,14 +180,15 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 
 	public boolean verifySignalStrengthForDevices() {
 		try {
-			utils.log().info("*********************************************");
-			utils.log().info("List of Devices Signal Strength Leader Board ");
-			utils.log().info("*********************************************");
+			utils.log().info("************************************************************");
+			utils.log().info("List of Devices on the Devices Signal Strength Leader Board ");
+			utils.log().info("************************************************************");
 
 			int size = new HomePage().getBitRateDevicesCount();
 			utils.log().info("Bit Rate Device count is : " + size);
 
 			for (int i = 1; i <= size; i++) {
+				utils.log().info("                     ");
 				utils.log().info("Devices  : " + i);
 				utils.log().info("---------------------");
 
@@ -255,7 +256,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			return false;
 		}
 	}
-
+	
 	public boolean sortStrongToWeak() {
 		try {
 			click(signalStrengthOptions);
@@ -344,7 +345,8 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			click(strongToWeak);
 
 			for (int i = 1; i <= size ; i++) {
-				utils.log().info("Devices  : " + counter);
+				utils.log().info("                     ");
+				utils.log().info("Devices  : " + i);
 				utils.log().info("---------------------");
 
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
@@ -401,7 +403,6 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 					} catch (Exception exp) {
 						utils.log().info("RSSI data is not available/displayed");
 					}
-					counter++;
 				}
 				if (i >= 5)
 					super.swipeUp();
@@ -426,7 +427,8 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			click(weakToStrong);
 
 			for (int i = 1; i <= size; i++) {
-				utils.log().info("Devices  : " + counter);
+				utils.log().info("                     ");
+				utils.log().info("Devices  : " + i);
 				utils.log().info("---------------------");
 
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
@@ -483,7 +485,6 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 					} catch (Exception exp) {
 						utils.log().info("RSSI data is not available/displayed");
 					}
-					counter++;
 				}
 				if (i >= 5)
 					super.swipeUp();
@@ -497,6 +498,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 	
 	public boolean clickDeviceName(int i) {
 		try {
+				utils.log().info("                             ");
 				utils.log().info("Editing Device Name  : " + i);
 				utils.log().info("-----------------------------");
 

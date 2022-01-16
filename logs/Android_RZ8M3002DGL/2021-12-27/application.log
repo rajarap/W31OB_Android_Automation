@@ -1,0 +1,81 @@
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:31.828 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2021-12-27
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:31.839 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:42.365 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:42.367 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:47.401 DeviceLocationPageTest:24 - 
+****** starting test:clickWhileUsingThisAppDeviceLocation******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:57.846 DeviceLocationPage:102 - Device Location - While Using The App Link is not displayed
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.037 ParentClass:430 - video path: videos/null_RZ8M3002DGL/2021-12-27-12-28-31/DeviceLocationPageTest/clickWhileUsingThisAppDeviceLocation.mp4
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.044 TC03_Verify_Invalid_OTP_Test:36 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.045 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.048 TC03_Verify_Invalid_OTP_Test:40 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.049 TC03_Verify_Invalid_OTP_Test:42 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:28:59.676 TC03_Verify_Invalid_OTP_Test:51 - 
+****** starting test:Verify_Invalid_PassCode******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:00.582 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:00.906 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:12.369 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:12.638 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:14.094 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:14.981 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:16.029 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:16.899 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:18.986 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:19.794 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:29.810 InValidOTP:119 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:33.883 EnterValidOTPPage:67 - Entering invalid OTP...expired.</i><br>.
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:35.362 EnterValidOTPPage:75 - Invalid passcode message is displayed
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:35.578 EnterValidOTPPage:88 - Clicked Resend OTP Link
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:47.157 InValidOTP:119 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:51.129 EnterValidOTPPage:61 - Entering valid OTP...expire
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:29:53.111 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:41:56.238 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2021-12-27
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:41:56.254 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:07.381 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:07.382 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:12.313 DeviceLocationPageTest:24 - 
+****** starting test:clickWhileUsingThisAppDeviceLocation******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:22.509 DeviceLocationPage:102 - Device Location - While Using The App Link is not displayed
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:24.393 ParentClass:430 - video path: videos/null_RZ8M3002DGL/2021-12-27-12-41-56/DeviceLocationPageTest/clickWhileUsingThisAppDeviceLocation.mp4
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:24.400 TC03_Verify_Invalid_OTP_Test:36 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:24.401 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:24.404 TC03_Verify_Invalid_OTP_Test:40 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:24.405 TC03_Verify_Invalid_OTP_Test:42 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:25.118 TC03_Verify_Invalid_OTP_Test:51 - 
+****** starting test:Verify_Invalid_PassCode******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:25.429 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:26.241 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:37.830 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:38.074 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:39.482 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:40.689 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:41.757 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:42.655 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:44.066 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:44.920 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:54.940 InValidOTP:119 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:42:59.305 EnterValidOTPPage:67 - Entering invalid OTP...expired.</i><br>.
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:43:00.776 EnterValidOTPPage:75 - Invalid passcode message is displayed
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:43:01.057 EnterValidOTPPage:88 - Clicked Resend OTP Link
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:03.337 ParentClass:303 - log path: logs/Android_RZ8M3002DGL/2021-12-27
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:03.357 ParentClass:244 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:13.364 ParentClass:254 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:13.365 ParentClass:255 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:18.409 DeviceLocationPageTest:24 - 
+****** starting test:clickWhileUsingThisAppDeviceLocation******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:28.731 DeviceLocationPage:102 - Device Location - While Using The App Link is not displayed
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:29.958 ParentClass:430 - video path: videos/null_RZ8M3002DGL/2021-12-27-12-46-03/DeviceLocationPageTest/clickWhileUsingThisAppDeviceLocation.mp4
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:29.966 TC03_Verify_Invalid_OTP_Test:36 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:29.967 ParentClass:327 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:29.976 TC03_Verify_Invalid_OTP_Test:40 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:29.977 TC03_Verify_Invalid_OTP_Test:42 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:30.666 TC03_Verify_Invalid_OTP_Test:51 - 
+****** starting test:Verify_Invalid_PassCode******
+
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:30.942 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-27 INFO ] 2021-12-27 12:46:31.755 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button

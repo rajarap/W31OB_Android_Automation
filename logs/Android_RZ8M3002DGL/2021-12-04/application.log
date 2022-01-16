@@ -1,0 +1,393 @@
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:00.599 ParentClass:300 - log path: logs/Android_RZ8M3002DGL/2021-12-04
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:00.611 ParentClass:241 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:13.334 ParentClass:251 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:13.337 ParentClass:252 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.782 TC01_Simple_Test:84 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.788 ParentClass:324 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.797 TC01_Simple_Test:88 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.799 TC01_Simple_Test:91 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.801 TC01_Simple_Test:94 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.803 TC01_Simple_Test:97 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:16.804 TC01_Simple_Test:99 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:17.476 TC01_Simple_Test:108 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:17.629 TC01_Simple_Test:114 -                         
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:17.629 TC01_Simple_Test:115 - ************************
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:17.630 TC01_Simple_Test:116 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:17.630 TC01_Simple_Test:117 - ************************
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:18.057 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:18.833 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:35.473 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:39.065 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:40.496 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:41.470 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:42.726 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:43.677 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:51.340 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:46:52.212 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:04.379 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:08.554 EnterValidOTPPage:61 - Entering valid OTP...937190
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:10.217 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 ERROR] 2021-12-04 19:47:29.102 TestListener:39 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})}) (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.cs.arris.Base.ParentClass.waitForVisibility(ParentClass.java:439)
+	at com.cs.arris.Base.ParentClass.click(ParentClass.java:462)
+	at com.cs.arris.Pages.SetUpYourWiFiManagementPage.clickskipTutorialButton(SetUpYourWiFiManagementPage.java:48)
+	at com.cs.arris.Tests.TC01_Simple_Test.lambda$Login_And_Onboard$10(TC01_Simple_Test.java:152)
+	at com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow.setupWifi(TC52_Login_And_Verify_HomePage_Workflow.java:134)
+	at com.cs.arris.Tests.TC01_Simple_Test.Login_And_Onboard(TC01_Simple_Test.java:151)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@72b43104 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 45 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 47 more
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:34.095 ParentClass:427 - video path: videos/Android_RZ8M3002DGL/2021-12-04-19-46-00/TC01_Simple_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:35.066 TC01_Simple_Test:108 - 
+
+****** starting test : Verify_Hamburger_Surfboard_Help_UI_Page ******
+
+[logs/Android_RZ8M3002DGL/2021-12-04 ERROR] 2021-12-04 19:47:46.423 TestListener:39 - org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.all({By.xpath: //android.widget.ImageButton[@content-desc='Navigate up'],By.xpath: //android.widget.ImageButton[@bounds='[0,112][147,259]']})})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at com.cs.arris.Pages.HomePage.clickNavigationButton(HomePage.java:521)
+	at com.cs.arris.Tests.TC01_Simple_Test.Verify_Hamburger_Surfboard_Help_UI_Page(TC01_Simple_Test.java:335)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@769bd849 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 36 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.all({By.xpath: //android.widget.ImageButton[@content-desc='Navigate up'],By.xpath: //android.widget.ImageButton[@bounds='[0,112][147,259]']})})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:47.598 ParentClass:427 - video path: videos/Android_RZ8M3002DGL/2021-12-04-19-46-00/TC01_Simple_Test/Verify_Hamburger_Surfboard_Help_UI_Page.mp4
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.293 TC02_Medium_Test:60 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.295 ParentClass:324 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.300 TC02_Medium_Test:64 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.301 TC02_Medium_Test:67 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.301 TC02_Medium_Test:70 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.302 TC02_Medium_Test:73 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:57.302 TC02_Medium_Test:75 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.040 TC02_Medium_Test:84 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.047 TC02_Medium_Test:90 -                         
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.047 TC02_Medium_Test:91 - ************************
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.048 TC02_Medium_Test:92 - Test: Login And Onboard 
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.048 TC02_Medium_Test:93 - ************************
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:58.305 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:47:59.071 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:10.349 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:13.820 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:15.076 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:15.925 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:16.959 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:17.836 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:21.140 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:22.022 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:34.145 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:38.022 EnterValidOTPPage:61 - Entering valid OTP...530121
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:48:39.690 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 ERROR] 2021-12-04 19:48:59.408 TestListener:39 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})}) (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.cs.arris.Base.ParentClass.waitForVisibility(ParentClass.java:439)
+	at com.cs.arris.Base.ParentClass.click(ParentClass.java:462)
+	at com.cs.arris.Pages.SetUpYourWiFiManagementPage.clickskipTutorialButton(SetUpYourWiFiManagementPage.java:48)
+	at com.cs.arris.Tests.TC02_Medium_Test.lambda$Login_And_Onboard$10(TC02_Medium_Test.java:134)
+	at com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow.setupWifi(TC52_Login_And_Verify_HomePage_Workflow.java:134)
+	at com.cs.arris.Tests.TC02_Medium_Test.Login_And_Onboard(TC02_Medium_Test.java:133)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6a09484c (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 45 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 47 more
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:04.591 ParentClass:427 - video path: videos/Android_RZ8M3002DGL/2021-12-04-19-46-00/TC02_Medium_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.064 TC03_Complex_Test:61 - Loading...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.066 ParentClass:324 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.087 TC03_Complex_Test:65 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.087 TC03_Complex_Test:68 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.088 TC03_Complex_Test:71 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.089 TC03_Complex_Test:74 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.089 TC03_Complex_Test:76 - Retrieved...Sign Up Test Data
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:14.816 TC03_Complex_Test:85 - 
+
+****** starting test : Login_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:15.085 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:15.872 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:26.917 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:30.305 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:31.737 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:32.691 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:33.884 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:34.736 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:38.136 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:38.920 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:51.070 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:55.080 EnterValidOTPPage:61 - Entering valid OTP...715745
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:49:56.545 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-04 ERROR] 2021-12-04 19:50:15.146 TestListener:39 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})}) (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.cs.arris.Base.ParentClass.waitForVisibility(ParentClass.java:439)
+	at com.cs.arris.Base.ParentClass.click(ParentClass.java:462)
+	at com.cs.arris.Pages.SetUpYourWiFiManagementPage.clickskipTutorialButton(SetUpYourWiFiManagementPage.java:48)
+	at com.cs.arris.Tests.TC03_Complex_Test.lambda$Login_And_Onboard$10(TC03_Complex_Test.java:130)
+	at com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow.setupWifi(TC52_Login_And_Verify_HomePage_Workflow.java:134)
+	at com.cs.arris.Tests.TC03_Complex_Test.Login_And_Onboard(TC03_Complex_Test.java:129)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4bcdd11 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 45 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.all({By.xpath: //android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip],By.xpath: //android.widget.TextView[@bounds='[61,1829][1019,1966]'],By.id: com.arris.sbcBeta:id/btnskip})})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'techleads-Mac-mini.local', ip: '192.168.0.131', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.2'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 47 more
+
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:50:19.590 ParentClass:427 - video path: videos/Android_RZ8M3002DGL/2021-12-04-19-46-00/TC03_Complex_Test/Login_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:50:25.402 ParentClass:185 - Closing App
+[logs/Android_RZ8M3002DGL/2021-12-04 INFO ] 2021-12-04 19:50:25.583 ParentClass:187 - Quitting Driver

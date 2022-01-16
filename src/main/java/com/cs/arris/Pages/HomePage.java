@@ -13,6 +13,7 @@ import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class HomePage extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
@@ -290,6 +291,29 @@ public class HomePage extends ParentClass implements Page {
 
 	@AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']")
 	private MobileElement hamburgerMenuPage;
+	
+	//Network Health
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/txtNetworkHealth")
+	public MobileElement networkHealthHeader;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/nwStatusText")
+	public MobileElement networkHealthOptimizatonTurnedOffText;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/nwRecommendationText")
+	public MobileElement tapToTurnOnNetworkHealth;
+	
+	//RAT
+	
+	@AndroidFindBy (xpath = "//XCUIElementTypeStaticText[@name=\"Mesh_Home_Screen_Label_Error\"]")
+	public MobileElement remoteAccessNotAvailableLink; 
+		
+	@AndroidFindBy (xpath = "//XCUIElementTypeButton[@name=\"Mesh_Home_Screen_Button_More\"]")
+	public MobileElement moreLink; 
+		
+	@AndroidFindBy (xpath = "//XCUIElementTypeCell[@name=\"Wi-Fi\"]")
+	public MobileElement wifiLink;
+
 
 	public MainDeviceAllTabPage getMainDeviceAllTabPageObject() {
 		MainDeviceAllTabPage mainDevicePage = new MainDeviceAllTabPage();
@@ -350,6 +374,18 @@ public class HomePage extends ParentClass implements Page {
 		NotificationPage notificationPage = new NotificationPage();
 		return notificationPage;
 	}
+	
+	public HomeNetworkHealthOptimizationPage getNetworkOtptimizationPageObject() {
+		HomeNetworkHealthOptimizationPage netOptimize = new HomeNetworkHealthOptimizationPage();
+		return netOptimize;
+	}
+	
+	public HomeNetworkHealthOptimizationSkipPage getSkipTutorialPageObject() {
+		HomeNetworkHealthOptimizationSkipPage skipTutorial = new HomeNetworkHealthOptimizationSkipPage();
+		return skipTutorial;
+	}
+	
+	
 	public HomePage() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
@@ -593,6 +629,41 @@ public class HomePage extends ParentClass implements Page {
 		} else {
 			utils.log().info("Home Page - Left Satellite Image is either not visible or is not present on the DOM");
 			return false;
+		}
+	}
+	
+	public boolean clickTapHereToTurnON() {
+		if (tapToTurnOnNetworkHealth.isDisplayed()) {
+			click(tapToTurnOnNetworkHealth);
+			utils.log().info("Home Page - Clicked on Tap Here To Turn ON Button");
+			return true;
+		} else {
+			utils.log().info("Home Page -  Tap Here To Turn ON Button is either not visible or is not present on the DOM");
+			return false;
+		}
+	}
+	
+	public boolean clickNetworkHealth() {
+		if (networkHealthHeader.isDisplayed()) {
+			click(networkHealthHeader);
+			utils.log().info("Home Page - Clicked on Network Health Title");
+			return true;
+		} else {
+			utils.log().info("Home Page -  Network Health Title is either not visible or is not present on the DOM");
+			return false;
+		}
+	}
+	
+	public boolean ratExists() {
+		if(cloudIcon.isDisplayed()) {
+			utils.log().info("Home Page - Cloud Icon is displayed");
+			if(remoteAccessNotAvailableLink.isDisplayed()) 
+				utils.log().info("Home Page - Remote access to your Network is currently unavailable Link is displayed");
+			utils.log().info("Home Page - Clicked in More... Link");
+			return true;
+		}else {
+			utils.log().info("Home Page - Cloud icon is not displayed");
+			return true;
 		}
 	}
 

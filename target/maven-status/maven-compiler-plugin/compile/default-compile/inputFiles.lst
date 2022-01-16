@@ -22,6 +22,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/MainDeviceEthernetTabPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Utilities/InValidOTP.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/BlankSpeedTestHistoryPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetowrkDevicesWifiClientConnectionHealthPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlAddRuleHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/BlueToothPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkLANIPReservationPage.java
@@ -41,6 +42,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceActivateYourDeviceWithServiceProviderPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlAlertDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ConnectToWifiUsingRouterSSID.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSettingsPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AFFSHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkWANSettingsPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/DisableBlueToothPage.java
@@ -50,6 +52,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceEnterMACAddressManuallyPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkWANDNSConfigurationIPv6Page.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlHelpPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage1.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AppRatingDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlUserProfilePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HamburgerMenuPage.java
@@ -66,6 +69,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkTimeZoneSettingsPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlAddRuleAddInternetBlockingScheduleDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkEditPortForwardingRulePage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSatelliteLinkRatePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1506_Warranty_Support_Page.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/DeviceLocationPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkEditReserveLANIPDialog.java
@@ -82,6 +86,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseTimeHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/CodeVerifiedPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/JsonMappers/SignUp_TestData.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ConnectMaxRouterToInternetPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/Error_0000_1401_Downloading_Firmware_File_Failed_Page.java
@@ -113,6 +118,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/OptimizeYourNetworkPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ErrorCode_0002_1002_Internet_Connection_Not_Available_On_Mobile_Device.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/UnPackYourBoxPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage3.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlProfilesPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingAddRulePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/EnterValidOTPPage.java
@@ -121,6 +127,7 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/EnableBlueToothPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/TurnOnBluetoothDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Utilities/TestingDeviceCount.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage4.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/SystemFirmwareUpdatePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/SelectYourDevicePage2.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/MainDeviceRestartRouterDialog.java
@@ -163,8 +170,10 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceUserGuidePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkWANSettingsHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkLANDHCPIPRangeBetween1And255AlertDialog.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSatelliteSignalPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlAddDeviceHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileAddRuleDatePickerDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/RebootYouRouterDialog.java
@@ -184,11 +193,16 @@
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkLACConfigurationAlertDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceEstablishingConnectionPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Interface/W31_Onboarding_TestData.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationISPSpeedRatePage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlWithProfilesPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceFAQPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkLANSubnetDHCPConfigurationHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/ParentalControlPauseInternetforAllProfilesDialog.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage2.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceFooterIconsPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddSatelliteInstallAdditionalSatelliteDialog.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingHelpPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/SpeedTestHelpPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSkipPage.java
 /Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/AddDeviceNotificationsPage.java
+/Users/prabhu/eclipse-workspace/W31-Onboarding-BOBA/src/main/java/com/cs/arris/Pages/HomeNetowrkISPServicePerformanceAndConnectionHealthPage.java

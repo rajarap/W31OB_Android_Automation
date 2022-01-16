@@ -1,0 +1,51 @@
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:21.617 ParentClass:300 - log path: logs/Android_RZ8M3002DGL/2021-12-09
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:21.628 ParentClass:241 - Setting Android driver capabilities
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:33.642 ParentClass:251 - Android Driver is set to the Thread Local context android
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:33.644 ParentClass:252 - Android driver initialized: 
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.610 ParentClass:324 - loading...testdata/signup
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.622 TC002_Test_Signin_And_Onboard:39 - First Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.624 TC002_Test_Signin_And_Onboard:42 - Last Name : demouser
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.624 TC002_Test_Signin_And_Onboard:45 - Email address : demouser2652@gmail.com
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.626 ParentClass:688 - Name generated : arrisW31-758
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.626 TC002_Test_Signin_And_Onboard:48 - SSID Name : arrisW31-758
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.626 TC002_Test_Signin_And_Onboard:51 - SSID Password : 1234567890
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:37.627 TC002_Test_Signin_And_Onboard:54 - UDID : RZ8M3002DGL
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:38.374 TC002_Test_Signin_And_Onboard:64 - 
+
+****** starting test : Verify_Signin_And_Onboard ******
+
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:38.981 GetStartedPage:44 - Get Started - Clicked on Get Started Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:39.807 GrantPermissionsPage:183 - Grant Permissions - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:56.475 DeviceLocationPage:110 - Device Location - Clicked Allow
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:56.759 AccessResourcesOnDevicePage:49 - Access Resources On Device - Clicked on Allow Link
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:58.176 SelectYourDevicePage:64 - Select your Device 1 - Selected SURFboard mAX option
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:54:59.145 SelectYourDevicePage:72 - Select your Device 1 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:00.214 SelectYourDevicePage2:73 - Select your Device 2 - Selected mAX Pro AX11000 option
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:01.220 SelectYourDevicePage2:82 - Select your Device 2 - Clicked Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:04.551 SiginPage:52 - Sigin Page - Entered user email address
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:05.419 SiginPage:61 - Sigin Page - Clicked on Signin Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:17.459 ValidOTP:128 - loading...emailDetails
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:21.586 EnterValidOTPPage:61 - Entering valid OTP...459045
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:23.163 CodeVerifiedPage:74 - OTP Code Verified Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:31.957 SetupHomeNetworkPage:41 - Setup Home Network Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:32.914 UnPackYourBoxPage:42 - UnPack your Box Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:33.809 PlugInMaxRouterPage:41 - Plugin Max Router Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:55:56.298 ConnectMaxRouterToMobileDevicePage:42 - Connecting mAX Router to Mobile Device Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:56:11.315 ConnectMaxRouterToInternetPage:41 - Successfully Connected to Internet Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:56:51.596 SystemFirmwareUpdatePage:41 - System Firmware Update Page - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:57:21.917 ErrorCode_0000_1506_Warranty_Support_Page:46 - Warranty and Support Page - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:57:23.692 NameYourNetwokSSIDPage:56 - Name Your Network Page - Entered SSID Name
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:57:25.174 NameYourNetwokSSIDPage:62 - Name Your Network Page - Entered SSID Password
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:57:25.892 NameYourNetwokSSIDPage:68 - Name Your Network Page  - Clicked on Next Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:58:08.927 ConnectionToWifiNeededPage:56 - Running App in the Background
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:58:20.523 ConnectionToWifiNeededPage:60 - Running adb shell to login to mAX arrisW31-758 network
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:58:23.563 ConnectionToWifiNeededPage:70 - Activating App running in Background
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:58:43.127 ConnectionToWifiNeededPage:83 - Connection Needed Page - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:58:58.612 CongratulationsPage:42 - Congratulations Page - Clicked on Continue Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:59:14.645 SetUpYourWiFiManagementPage:49 - Setup Wifi Management Page - Clicked on Skip Tutorial Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:59:40.296 InstallAdditionalSatellitePage:70 - Install Additonal Satellite Dialog - Clicked on Install Later Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 00:59:45.615 NetworkOptimizationDialog:42 - Network Optimization Dialog - Clicked on OK Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 01:00:10.957 HomePage:364 - Network Optimization Dialog2 - Clicked on OK Button
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 01:00:18.685 ParentClass:427 - video path: videos/Android_RZ8M3002DGL/2021-12-09-00-54-21/TC002_Test_Signin_And_Onboard/Verify_Signin_And_Onboard.mp4
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 01:00:24.783 ParentClass:185 - Closing App
+[logs/Android_RZ8M3002DGL/2021-12-09 INFO ] 2021-12-09 01:00:24.958 ParentClass:187 - Quitting Driver
