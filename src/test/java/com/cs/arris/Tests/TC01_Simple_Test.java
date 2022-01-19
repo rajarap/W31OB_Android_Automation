@@ -656,6 +656,7 @@ public class TC01_Simple_Test extends ParentClass
 			if(new HomePage().getHamburgerMenuPageObject().isAt())
 				softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
 			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+			
 			try {
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
 			}catch(Exception e) {}
@@ -667,20 +668,36 @@ public class TC01_Simple_Test extends ParentClass
 			try {
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
 			}catch(Exception e) {}
+		}
+		
+		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature
+		@Test(priority = 41, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Install_Additional_Satellite_Page() {
+		utils.log().info("                                                    ");
+		utils.log().info("****************************************************");
+		utils.log().info("Test: Hamburger Menu - Install Additional Satellite ");
+		utils.log().info("****************************************************");
+			SoftAssert softsatellite1 = new SoftAssert();
+			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			softsatellite1.assertTrue(new HomePage().clickNavigationButton());
+			softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
+			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+			//1
+			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
 			
+			//2
+			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+			super.pause(20);
 			
-			
-			
-//			SoftAssert softsatellite1 = new SoftAssert();
-//			new HomePage().getFooterIconsPageObject().clickHomeButton();
-//			softsatellite1.assertTrue(new HomePage().clickNavigationButton());
-//			softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
-//			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
-//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-//			super.pause(20);
-//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
-//
+			//3
+//			try {
+//				if(new AddSatelliteAddNewSatellitePage3().isAt()) {
+//					new HomePage().connectToSSID();
+//					softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+//				}
+//			}catch(Exception e) {}
+//			super.pause(25);
+
 //			softsatellite1.assertTrue(new AddSatelliteUnPackYourSatellitePage().clickNextButton());
 //			softsatellite1.assertTrue(new AddSatelliteHelpPlaceYourSatellitePage().clickSkipButton());
 //			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
@@ -691,8 +708,27 @@ public class TC01_Simple_Test extends ParentClass
 //			super.pause(15);
 //			softsatellite1.assertTrue(new AddSatelliteSystemUpToDatePage().clickNextButton());
 //			super.pause(40);
+//			
+//			try {
+//				 if(new AddSatelliteRegisteringDeviceFailedPage().isAt())
+//				 	new AddSatelliteRegisteringDeviceFailedPage().checkError();
+//				 	try {
+//				 		if(new MailErrorLogsPage().isAt()) {
+//				 			new MailErrorLogsPage().enterEmailAddress();
+//				 			new MailErrorLogsPage().clickSendButton();
+//				 			super.pause(5);
+//				 		}
+//				 	}catch(Exception e) {}
+//				 	
+//				 	softsatellite1.assertTrue(new AddSatelliteRegisteringDeviceFailedPage().clickContinueButton());
+//				 	super.pause(120);
+//				 }catch(Exception e) {}
+//			
 //			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+//			softsatellite1.assertTrue(new AddSatelliteHomePage().clickContinueButton());
 			
+			softsatellite1.assertAll();
+
 		}
 		
 		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature

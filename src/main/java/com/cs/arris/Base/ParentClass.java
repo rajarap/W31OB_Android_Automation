@@ -67,6 +67,7 @@ import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.screenrecording.CanRecordScreen;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
@@ -123,42 +124,13 @@ public class ParentClass
 	
 	private static final String ESCAPE_PROPERTY = "org.uncommons.reportng.escape-output";
 	
-//	@BeforeSuite
-//	public void beforeSuite() throws Exception
-//	{
-//		setConfigProperties();
-//		ThreadContext.put("ROUTINGKEY", "ServerLogs");
-//		server = getAppiumService();
-//		if(!checkIfAppiumServerIsRunnning(4723)) {
-//			server.start();
-//			server.clearOutPutStreams();
-//			System.out.println("***************   Appium server started   **************");
-//			utils.log().info("Appium server started");
-//		} else {
-//			utils.log().info("Appium server already running");
-//		}	
-//	}
-	
+
 	public ParentClass() 
 	{ 
 		
 	}
 	
-//	public boolean checkIfAppiumServerIsRunnning(int port) throws Exception {
-//	    boolean isAppiumServerRunning = false;
-//	    ServerSocket socket;
-//	    try {
-//	        socket = new ServerSocket(port);
-//	        socket.close();
-//	    } catch (IOException e) {
-//	    	System.out.println("1");
-//	        isAppiumServerRunning = true;
-//	    } finally {
-//	        socket = null;
-//	    }
-//	    return isAppiumServerRunning;
-//	}
-	
+
 	@AfterSuite
 	public void afterSuite() 
 	{
@@ -187,13 +159,28 @@ public class ParentClass
 		utils.log().info("Quitting Driver");
 		getDriver().quit();
 		
-//		server.stop();
-//		utils.log().info("Appium server stopped");
+		server.stop();
+		utils.log().info("Appium server stopped");
 		
 	}
 	
 	public AppiumDriverLocalService getAppiumServerDefault() {
 		return AppiumDriverLocalService.buildDefaultService();
+	}
+	
+	public boolean checkIfAppiumServerIsRunnning(int port) throws Exception {
+	    boolean isAppiumServerRunning = false;
+	    ServerSocket socket;
+	    try {
+	        socket = new ServerSocket(port);
+	        socket.close();
+	    } catch (IOException e) {
+	    	System.out.println("1");
+	        isAppiumServerRunning = true;
+	    } finally {
+	        socket = null;
+	    }
+	    return isAppiumServerRunning;
 	}
 	
 	public AppiumDriverLocalService getAppiumService() {
@@ -209,15 +196,29 @@ public class ParentClass
 				.withLogFile(new File("ServerLogs/server.log")));
 	}
 	
-//	@Parameters({"platform", "device"})
+	@Parameters({"platform", "device"})
 	@BeforeSuite
-	public void beforeSuite()
+	public void beforeSuite(String platform, String device) throws Exception
 	{
-//		this.pltName = platform;
-//		this.dvcName = device;
 		
-		this.pltName = "Android";
-		this.dvcName = "Android";
+		setConfigProperties();
+		ThreadContext.put("ROUTINGKEY", "ServerLogs");
+		server = getAppiumService();
+		if(!checkIfAppiumServerIsRunnning(4723)) {
+			server.start();
+			server.clearOutPutStreams();
+			System.out.println("***************   Appium server started   **************");
+			utils.log().info("Appium server started");
+		} else {
+			utils.log().info("Appium server already running");
+		}
+		
+		
+		this.pltName = platform;
+		this.dvcName = device;
+		
+//		this.pltName = "Android";
+//		this.dvcName = "Android";
 		
 		try
 		{
@@ -278,6 +279,8 @@ public class ParentClass
 		  utils.log().fatal("Unable to initialize " + getPlatformName() + " driver...... ABORTING !!!\n" + e.toString());
 		} 
 	}
+	
+	
 	
 		@BeforeTest
 		public void beforeTest()
