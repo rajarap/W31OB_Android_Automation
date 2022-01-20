@@ -30,8 +30,16 @@ import com.cs.arris.Pages.AddDeviceSuccessPage;
 import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage1;
 import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage2;
 import com.cs.arris.Pages.AddSatelliteAddNewSatellitePage3;
+import com.cs.arris.Pages.AddSatelliteCongratulationsPage;
 import com.cs.arris.Pages.AddSatelliteInstallAdditionalSatelliteDialog;
+import com.cs.arris.Pages.AddSatellitePlaceYourSatellitePage;
+import com.cs.arris.Pages.AddSatellitePlugInYourSatellitePage;
+import com.cs.arris.Pages.AddSatelliteSuccessfullyConnectedPage;
+import com.cs.arris.Pages.AddSatelliteSuccessfullyConnectedToInternetPage;
+import com.cs.arris.Pages.AddSatelliteUnpackYourSatellitePage;
+import com.cs.arris.Pages.AddSatelliteUpToDatePage;
 import com.cs.arris.Pages.AppRatingDialog;
+import com.cs.arris.Pages.ConnectionToWifiNeededPage;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
 import com.cs.arris.Pages.SiginPage;
@@ -640,96 +648,98 @@ public class TC01_Simple_Test extends ParentClass
 		}
 		
 		@Test(priority = 41, dependsOnMethods = { "Login_And_Onboard" })
-		public void Verify_Install_Additional_Satellite_Menu() {
-			utils.log().info("                                                    ");
-			utils.log().info("****************************************************");
-			utils.log().info("Test: Hamburger Menu - Install Additional Satellite ");
-			utils.log().info("****************************************************");
+		public void Verify_Install_Left_Satellite() {
+			utils.log().info("                                              ");
+			utils.log().info("**********************************************");
+			utils.log().info("Test: Hamburger Menu - Install Left Satellite ");
+			utils.log().info("**********************************************");
 			
 			SoftAssert softsatellite1 = new SoftAssert();
 			
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
 			
 			if(new HomePage().isAt())
-				softsatellite1.assertTrue(new HomePage().clickNavigationButton());
+				softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
 			
-			if(new HomePage().getHamburgerMenuPageObject().isAt())
-				softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
 			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-			
-			try {
-				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
-			}catch(Exception e) {}
-			
-			try {
-				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-			}catch(Exception e) {}
-			
-			try {
-				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
-			}catch(Exception e) {}
-		}
-		
-		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature
-		@Test(priority = 41, dependsOnMethods = { "Login_And_Onboard" })
-		public void Verify_Install_Additional_Satellite_Page() {
-		utils.log().info("                                                    ");
-		utils.log().info("****************************************************");
-		utils.log().info("Test: Hamburger Menu - Install Additional Satellite ");
-		utils.log().info("****************************************************");
-			SoftAssert softsatellite1 = new SoftAssert();
-			new HomePage().getFooterIconsPageObject().clickHomeButton();
-			softsatellite1.assertTrue(new HomePage().clickNavigationButton());
-			softsatellite1.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());
-			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-			//1
 			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
+			super.pause(10);
 			
 			//2
-			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-			super.pause(20);
+			if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+				new ConnectionToWifiNeededPage().turnOnRouterWifi(new HomePage().ssidName.getText(), this.ssidpass, this.udid);
+				super.pause(3);
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+			}
+			super.pause(10);
 			
 			//3
-//			try {
-//				if(new AddSatelliteAddNewSatellitePage3().isAt()) {
-//					new HomePage().connectToSSID();
-//					softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
-//				}
-//			}catch(Exception e) {}
-//			super.pause(25);
-
-//			softsatellite1.assertTrue(new AddSatelliteUnPackYourSatellitePage().clickNextButton());
-//			softsatellite1.assertTrue(new AddSatelliteHelpPlaceYourSatellitePage().clickSkipButton());
-//			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//			super.pause(20);
-//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-//			super.pause(90);
-//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-//			super.pause(15);
-//			softsatellite1.assertTrue(new AddSatelliteSystemUpToDatePage().clickNextButton());
-//			super.pause(40);
-//			
-//			try {
-//				 if(new AddSatelliteRegisteringDeviceFailedPage().isAt())
-//				 	new AddSatelliteRegisteringDeviceFailedPage().checkError();
-//				 	try {
-//				 		if(new MailErrorLogsPage().isAt()) {
-//				 			new MailErrorLogsPage().enterEmailAddress();
-//				 			new MailErrorLogsPage().clickSendButton();
-//				 			super.pause(5);
-//				 		}
-//				 	}catch(Exception e) {}
-//				 	
-//				 	softsatellite1.assertTrue(new AddSatelliteRegisteringDeviceFailedPage().clickContinueButton());
-//				 	super.pause(120);
-//				 }catch(Exception e) {}
-//			
-//			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-//			softsatellite1.assertTrue(new AddSatelliteHomePage().clickContinueButton());
+			try {
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+			}catch(Exception e) {utils.log().info("Add Satellite Page 3 is not displayed");}
+			
+			softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+			softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+			super.pause(20);
+			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+			super.pause(75);
+			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+			super.pause(10);
+			softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+			super.pause(15);
+			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+			softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
 			
 			softsatellite1.assertAll();
+		}
+		
+		@Test(priority = 42, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Install_Right_Satellite() {
+			utils.log().info("                                               ");
+			utils.log().info("***********************************************");
+			utils.log().info("Test: Hamburger Menu - Install Right Satellite ");
+			utils.log().info("***********************************************");
+			
+			SoftAssert softsatellite2 = new SoftAssert();
+			
+			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			
+			if(new HomePage().isAt())
+				softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
+			
+			softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+			
+			softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton());
+			super.pause(10);
+
+			try {
+				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+			}catch(Exception e) {}
+
+			try {
+				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+			}catch(Exception e) {}
+			
+			softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+			softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+			softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+			
+			super.pause(20);
+			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+			super.pause(75);
+			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+			super.pause(10);
+			softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+			super.pause(15);
+			softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+			softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+			
+			softsatellite2.assertAll();
 
 		}
+		
+
 		
 		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature
 		@Test(priority = 42, dependsOnMethods = { "Login_And_Onboard" })

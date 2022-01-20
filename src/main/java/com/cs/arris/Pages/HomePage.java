@@ -313,7 +313,27 @@ public class HomePage extends ParentClass implements Page {
 		
 	@AndroidFindBy (xpath = "//XCUIElementTypeCell[@name=\"Wi-Fi\"]")
 	public MobileElement wifiLink;
-
+	
+	//After adding additional satellites
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/imgLeftRouter")
+	public MobileElement leftRouter;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/leftRouterName")
+	public MobileElement leftRouterName;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/txtDeviceLeftCount")
+	public MobileElement leftRouterDeviceCount;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/imgLeftRouter")
+	public MobileElement rightRouter;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/leftRouterName")
+	public MobileElement rightRouterName;
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/txtDeviceLeftCount")
+	public MobileElement rightRouterDeviceCount;
+	
+	
 
 	public MainDeviceAllTabPage getMainDeviceAllTabPageObject() {
 		MainDeviceAllTabPage mainDevicePage = new MainDeviceAllTabPage();
@@ -399,7 +419,6 @@ public class HomePage extends ParentClass implements Page {
 		click(okButton);
 		utils.log().info("Network Optimization Dialog2 - Clicked on OK Button");
 	}
-	
 	
 
 	// Verify if all the required UI elements are displayed on the Home Page
@@ -541,6 +560,50 @@ public class HomePage extends ParentClass implements Page {
 			return false;
 		}
 	}
+	
+	public boolean verifyLeftRouterDetails() {
+			utils.log().info("***************************");
+			utils.log().info("Details of Left Satellite  ");
+			utils.log().info("***************************");
+			try {
+				if (leftRouter.isDisplayed()) 
+					utils.log().info("Left Router Image is displayed");
+			}catch(Exception e) {utils.log().info("Left Router Image is not displayed");} 
+			
+			try {
+				if (leftRouterName.isDisplayed()) 
+					utils.log().info("Left Router Name : " + leftRouterName.getText() + " is displayed");
+			}catch(Exception e) {utils.log().info("Left Router Name is not displayed");} 
+			
+			try {
+				if (leftRouterDeviceCount.isDisplayed()) 
+					utils.log().info("Left Router Device Count : " + leftRouterDeviceCount.getText() + " is displayed");
+			}catch(Exception e) {utils.log().info("Left Router Device Count is not displayed");} 
+
+				return true;
+	}
+	
+	public boolean verifyRightRouterDetails() {
+		utils.log().info("***************************");
+		utils.log().info("Details of Right Satellite  ");
+		utils.log().info("***************************");
+		try {
+			if (rightRouter.isDisplayed()) 
+				utils.log().info("Right Router Image is displayed");
+		}catch(Exception e) {utils.log().info("Right Router Image is not displayed");} 
+		
+		try {
+			if (rightRouterName.isDisplayed()) 
+				utils.log().info("Right Router Name : " + rightRouterName.getText() + " is displayed");
+		}catch(Exception e) {utils.log().info("Left Router Name is not displayed");} 
+		
+		try {
+			if (rightRouterDeviceCount.isDisplayed()) 
+				utils.log().info("Right Router Device Count : " + rightRouterDeviceCount.getText() + " is displayed");
+		}catch(Exception e) {utils.log().info("Right Router Device Count is not displayed");} 
+
+			return true;
+}
 
 	public boolean clickNotificationsIcon() {
 		if (notificationsIcon.isDisplayed()) {
