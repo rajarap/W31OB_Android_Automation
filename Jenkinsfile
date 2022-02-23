@@ -48,8 +48,8 @@ pipeline
             {
                 echo '===== Automated Test Started ====='
                 sh """
-                   /Users/prabhu/Library/Android/sdk/platform-tools/adb devices
-                   /Users/prabhu/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-release-signed.apk
+                   /Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                   /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-release-signed.apk
                    mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 """   
                 echo '=====Automated Test Completed====='
@@ -71,8 +71,8 @@ pipeline
             {
                 echo '===== Automated Test Started ====='
                 sh """
-                    /Users/prabhu/Library/Android/sdk/platform-tools/adb devices
-                    /Users/prabhu/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-signed.apk
+                    /Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                    /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/app-staging-signed.apk
                     mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 """       
                 echo '=====Automated Test Completed====='
