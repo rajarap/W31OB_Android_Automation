@@ -77,7 +77,7 @@ public class CodeVerifiedPage  extends ParentClass implements Page
 	
 	public void getCodeVerifiedText()
 	{
-		System.out.println(codeVerifiedText.getText());
+		utils.log().info(codeVerifiedText.getText());
 	}
 	
 	public void clickContinueOnboardingButton()
