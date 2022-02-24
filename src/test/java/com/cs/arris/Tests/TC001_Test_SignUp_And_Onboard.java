@@ -145,7 +145,7 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  super.pause(10);
 		  }).maxRouterConnectedToInternetPage(connecedRouterToInternet -> {
 			  connecedRouterToInternet.clickNextButton();
-			  super.pause(10);
+			  super.pause(5);
 		  }).systemFirmwareUpdatePage(firmwareUpdate -> {
 			  firmwareUpdate.clickNextButton();
 			  super.pause(10);
@@ -156,7 +156,7 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  nameYourNetwork.enterSSIDPassword(this.ssidpass);
 			  nameYourNetwork.clickNextButton();
 			  super.pause(25);
-		  }).connectNeeded(connectionRequired -> { //connect SSID network to wifi
+		  }).connectNeeded(connectionRequired -> { 
 			  super.pause(15);
 			  connectionRequired.turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 			  super.pause(15);

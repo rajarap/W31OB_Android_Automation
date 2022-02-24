@@ -253,7 +253,7 @@ public class ParentClass
 //				desiredCapabilities.setCapability("appWaitforLaunch", false);
 				driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
 				setDriver(driver);
-				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+				getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 				utils.log().info("Android Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
