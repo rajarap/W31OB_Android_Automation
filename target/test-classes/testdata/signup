@@ -6,12 +6,12 @@
 //udid=RZ8M3002DGL
 
 
-email=demouser2652@gmail.com
-firstname=demo
-lastname=user 
-ssidname=arrisw3136
-ssidpwd=1234567890
-udid=RZ8M3002DGL
+//email=demouser2652@gmail.com
+//firstname=demo
+//lastname=user 
+//ssidname=arrisw3136
+//ssidpwd=1234567890
+//udid=RZ8M3002DGL
 
 
 //email=arrisuser2652@gmail.com
@@ -20,3 +20,9 @@ udid=RZ8M3002DGL
 //ssidname=arrisw31
 //ssidpwd=1234567890
 //udid=RZ8M3002DGL
+
+email=csuser2652@gmail.com
+firstname=cs
+lastname=user
+ssidpwd=1234567890
+udid=ce071717bb59293c057e

@@ -54,10 +54,11 @@ public class GrantPermissionsPage extends ParentClass implements Page
 	public MobileElement phoneText;
 
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_fragment_permission_continue']"),
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[112,1966][968,2042]']")
-	})
+//	@AndroidFindAll({
+//		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_fragment_permission_continue']"),
+//		@AndroidBy (xpath = "//android.widget.Button[@bounds='[112,1966][968,2042]']")
+//	})
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/btn_fragment_permission_continue") 
 	public MobileElement continueButton;
 	
 

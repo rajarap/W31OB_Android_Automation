@@ -146,7 +146,7 @@ public class TC51_Signin_And_Onboard_Test extends ParentClass
 			  setupwifi.clickskipTutorialButton();
 			  super.pause(5);
 		  }).installSatellite(insatellite -> {
-			  insatellite.clickinstallLaterButton();
+			  insatellite.clickInstallLaterButton();
 			  super.pause(5);
 		  }).networkOptimization(optimization -> {
 			  optimization.clickOkButton();

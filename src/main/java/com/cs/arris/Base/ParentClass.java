@@ -7,9 +7,13 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.codec.binary.Base64;
@@ -17,6 +21,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.ThreadContext;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -44,19 +50,24 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.Status;
 import com.cs.arris.JsonMappers.Signin_TestData;
 import com.cs.arris.Reports.ExtentReport;
+import com.cs.arris.Utilities.Direction;
+import com.cs.arris.Utilities.SwipeActions;
 import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.InteractsWithApps;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.SupportsNetworkStateManagement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.screenrecording.CanRecordScreen;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
@@ -85,49 +96,41 @@ public class ParentClass
 	public InputStream stringsis = null;
 	public InputStream errorCode = null;
 	public InputStream testData = null;
+	
 	public String pltName;
 	public String dvcName;
 	public File ssFile;
 	public String OTP;
+	public String mainDevice;
+	public String device1;
+	public String device2;
+	public String deviceStatus;
+	public String ssidNumber;
+//	public String ssidName;
+//	public String ssidpwd;
+	public String randNum;
+	public String profileName;
+	public String ruleName;
+	public String editedDeviceName;
+	public String editedMainDeviceName;
+	public int noOfDevices;
+	public int randNumber;
+	public int ipNumber;
+	public int devicesConnectedToRouter;
+	public List<String> profileNames = new ArrayList<String>();
+	public List<String> selectedProfileNames = new ArrayList<String>();
+	public List<String> deviceNames = new ArrayList<String>();
+	public List<String> lanIPRuleName = new ArrayList<String>();
 	
 	private static final String ESCAPE_PROPERTY = "org.uncommons.reportng.escape-output";
 	
-//	@BeforeSuite
-//	public void beforeSuite() throws Exception
-//	{
-//		setConfigProperties();
-//		ThreadContext.put("ROUTINGKEY", "ServerLogs");
-//		server = getAppiumService();
-//		if(!checkIfAppiumServerIsRunnning(4723)) {
-//			server.start();
-//			server.clearOutPutStreams();
-//			System.out.println("***************   Appium server started   **************");
-//			utils.log().info("Appium server started");
-//		} else {
-//			utils.log().info("Appium server already running");
-//		}	
-//	}
-	
+
 	public ParentClass() 
 	{ 
 		
 	}
 	
-//	public boolean checkIfAppiumServerIsRunnning(int port) throws Exception {
-//	    boolean isAppiumServerRunning = false;
-//	    ServerSocket socket;
-//	    try {
-//	        socket = new ServerSocket(port);
-//	        socket.close();
-//	    } catch (IOException e) {
-//	    	System.out.println("1");
-//	        isAppiumServerRunning = true;
-//	    } finally {
-//	        socket = null;
-//	    }
-//	    return isAppiumServerRunning;
-//	}
-	
+
 	@AfterSuite
 	public void afterSuite() 
 	{
@@ -156,8 +159,8 @@ public class ParentClass
 		utils.log().info("Quitting Driver");
 		getDriver().quit();
 		
-//		server.stop();
-//		utils.log().info("Appium server stopped");
+		server.stop();
+		utils.log().info("Appium server stopped");
 		
 	}
 	
@@ -165,10 +168,25 @@ public class ParentClass
 		return AppiumDriverLocalService.buildDefaultService();
 	}
 	
+	public boolean checkIfAppiumServerIsRunnning(int port) throws Exception {
+	    boolean isAppiumServerRunning = false;
+	    ServerSocket socket;
+	    try {
+	        socket = new ServerSocket(port);
+	        socket.close();
+	    } catch (IOException e) {
+	    	System.out.println("1");
+	        isAppiumServerRunning = true;
+	    } finally {
+	        socket = null;
+	    }
+	    return isAppiumServerRunning;
+	}
+	
 	public AppiumDriverLocalService getAppiumService() {
 		HashMap<String, String> environment = new HashMap<String, String>();
-		environment.put("PATH",  "/Users/prabhu/.fastlane/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/Cellar/openjdk@11/11.0.10/libexec/openjdk.jdk/Contents/Home/bin:/Users/prabhu/Library/Android/sdk:/Applications/sonar-scanner/bin:/Applications/sonarqube/bin:/usr/bin/ruby:/usr/local/bin/pod");
-		environment.put("ANDROID_HOME", "/Users/prabhu/Library/Android/sdk");
+		environment.put("PATH",  "/Users/rm2652/Library/Android/sdk:/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home:/Applications/sonar-scanner/bin:/Applications/sonarqube/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/bin/node:/usr/local/bin/npm:/usr/local/lib/ruby/gems/3.0.0/bin/pod:/usr/bin/ruby:/usr/local/lib/ruby/gems/3.0.0/bin:/Users/rm2652/Library/Android/sdk/platform-tools:/Users/rm2652/Library/Android/sdk/platform-tools/adb:/Users/rm2652/Library/Android/sdk/tools:/Users/rm2652/Library/Android/sdk/tools/bin:/Users/rm2652/Library/Android/sdk/emulator:/usr/bin/git");
+		environment.put("ANDROID_HOME", "/Users/rm2652/Library/Android/sdk");
 		return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
 				.usingDriverExecutable(new File("/usr/local/bin/node"))
 				.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
@@ -180,10 +198,27 @@ public class ParentClass
 	
 	@Parameters({"platform", "device"})
 	@BeforeSuite
-	public void beforeSuite(String platform, String device)
+	public void beforeSuite(String platform, String device) throws Exception
 	{
+		
+		setConfigProperties();
+		ThreadContext.put("ROUTINGKEY", "ServerLogs");
+		server = getAppiumService();
+		if(!checkIfAppiumServerIsRunnning(4723)) {
+			server.start();
+			server.clearOutPutStreams();
+			System.out.println("***************   Appium server started   **************");
+			utils.log().info("Appium server started");
+		} else {
+			utils.log().info("Appium server already running");
+		}
+		
+		
 		this.pltName = platform;
 		this.dvcName = device;
+		
+//		this.pltName = "Android";
+//		this.dvcName = "Android";
 		
 		try
 		{
@@ -213,6 +248,9 @@ public class ParentClass
 				desiredCapabilities.setCapability(MobileCapabilityType.VERSION, getProps().getProperty("androidVersion"));
 				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("androidAppLocation"));
 				desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
+				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, getProps().getProperty("timeout"));
+//				desiredCapabilities.setCapability("adbExecTimeout", 50000);
+//				desiredCapabilities.setCapability("appWaitforLaunch", false);
 				driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
 				setDriver(driver);
 				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -222,12 +260,19 @@ public class ParentClass
 			if(getPlatformName().equalsIgnoreCase("iOS"))
 			{
 				utils.log().info("Setting " + getPlatformName() + " driver capabilities");
-				desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, getProps().getProperty("iOSAutomationName"));
-				desiredCapabilities.setCapability(MobileCapabilityType.UDID, getProps().getProperty("androidUDID"));
-				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("iOSAppLocation"));
 				desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-				desiredCapabilities.setCapability(MobileCapabilityType.SUPPORTS_ALERTS, true);
+				desiredCapabilities.setCapability(MobileCapabilityType.SUPPORTS_ALERTS, true);				
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.PLATFORM_NAME, getProps().getProperty("iOSPlatformName"));
+				desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, getProps().getProperty("iOSPlatformVersion"));
+				desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, getProps().getProperty("iOSAutomationName"));
+				desiredCapabilities.setCapability(MobileCapabilityType.UDID, getProps().getProperty("iOSUDID"));
+				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("iOSAppLocation"));
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, getProps().getProperty("iOSBundleId"));
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID, getProps().getProperty("xcodeOrgId"));
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.UPDATE_WDA_BUNDLEID, getProps().getProperty("updatedWDABundleId"));
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
 				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
+				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
@@ -236,6 +281,8 @@ public class ParentClass
 		  utils.log().fatal("Unable to initialize " + getPlatformName() + " driver...... ABORTING !!!\n" + e.toString());
 		} 
 	}
+	
+	
 	
 		@BeforeTest
 		public void beforeTest()
@@ -463,11 +510,24 @@ public class ParentClass
 //		  return txt;
 //	  }
 	  
-	  public MobileElement scrollToElement() 
-	  {	  
-			return (MobileElement) ((FindsByAndroidUIAutomator<?>) getDriver()).findElementByAndroidUIAutomator(
-					"new UiScrollable(new UiSelector()" + ".scrollable(true)).scrollIntoView("
-							+ "new UiSelector().description(\"test-Price\"));");
+//	  public MobileElement scrollToElement() 
+//	  {	  
+//			return (MobileElement) ((FindsByAndroidUIAutomator<?>) getDriver()).findElementByAndroidUIAutomator(
+//					"new UiScrollable(new UiSelector()" + ".scrollable(true)).scrollIntoView("
+//							+ "new UiSelector().description(\"test-Price\"));");
+//	  }
+	  public void scrollToElementById(MobileElement id) 
+	  {
+		   MobileElement obj = (MobileElement) getDriver().findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()"+
+				  						".scrollable(true)).scrollIntoView(new UiSelector().resourceIdMatches(\" + id + \"));"));
+		   waitForVisibility(obj); 
+	  }
+	  
+	  public void scrollToElementByXpath(MobileElement id) 
+	  {
+		   MobileElement obj = (MobileElement) getDriver().findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()"+
+				  						".scrollable(true)).scrollIntoView(new UiSelector().resourceIdMatches(\" + id + \"));"));
+		   waitForVisibility(obj); 
 	  }
 	  
 	  public void iOSScrollToElement() {
@@ -532,68 +592,242 @@ public class ParentClass
 				e.printStackTrace();
 			}
 		 }
+		 
+		 public void swipeUp()
+		 {
+			 new SwipeActions().swipeScreen(Direction.UP);
+		 }
+		 
+		 public void swipeDown()
+		 {
+			 new SwipeActions().swipeScreen(Direction.DOWN);
+		 }
+		 
+		 public Integer getCountOfRulesWithSpace(String noOfRulessText) 
+			{
+				//Rules (2)
+				String rules = noOfRulessText.trim(); 
+				int length = rules.length();
+				if (length == 9)//Rules (12)
+				{
+					return Integer.valueOf(rules.substring(7, 8));
+				} else
+				{
+					return Integer.valueOf(rules.substring(7, 9));
+				}
+			}
+
+		public Integer getCountOfDevicesWithSpace(String noOfDevicesText) 
+		{
+			//From Home page Devices (2)
+			String text = noOfDevicesText.replaceAll("\\p{P}", "");
+			String[] devices = text.trim().split("");  //3
+			return Integer.valueOf(devices[1]);
+		}
+		
+		public Integer getCountOfDevices(String noOfDevicesText) 
+		{
+			String devices = noOfDevicesText.trim(); 
+			int length = devices.length();
+			if (length == 10)//Devices(2)
+			{
+				return Integer.valueOf(devices.substring(8, 9));
+			}
+			else
+			{
+				//Device (12)
+				return Integer.valueOf(devices.substring(8, 10));
+			}
+		}
+		
+		public Integer getTotalDevicesAdded(String noOfDevicesText) 
+		{
+			String devices = noOfDevicesText.trim(); 
+			int length = devices.length();
+			if (length == 21)//1 Total Devices Added - 21
+			{
+				return Integer.valueOf(devices.substring(0, 1));
+			}
+			else
+			{
+				//12 Total Devices Added - 22
+				return Integer.valueOf(devices.substring(0, 2));
+			}
+		}
+		
+		public Integer getDeviceSignalStrengthCount(String numberOfDevicesText1) {
+			// 02 Devices
+			String devices = numberOfDevicesText1;
+			if (devices.startsWith("0")) {
+				return Integer.valueOf(devices.substring(1, 2));
+			} else {
+				return Integer.valueOf(devices.substring(0, 2));
+			}
+		}
+		
+//		public void generateSSIDNameAndPassword()
+//		{
+//			 Integer randomNumber = (int)(Math.random()*900)+100;
+//			 ssidNumber = String.valueOf(randomNumber);
+//			 ssidName = "arrisw31-"+ssidNumber;
+//			 ssidpwd = "1234567890";
+//		}
+		
+		public void generateProfileName()
+		{
+			//Integer randomNumber = (int)(Math.random()*9000)+1000;
+			Random r = new Random();
+			int low = 10;
+			int high = 100;
+			int result = r.nextInt(high-low) + low;
+			randNum = String.valueOf(result);
+			profileName = "profile"+ randNum;
+			profileNames.add(profileName);
+		}
+		
+		public String generateRouterSSID()
+		{
+			Random r = new Random();
+			int low = 100;
+			int high = 999;
+			int result = r.nextInt(high-low) + low;
+			randNum = String.valueOf(result);
+			String routerName = "arrisW31-"+ randNum;
+			utils.log().info("Name generated : " + routerName);
+			return routerName;
+		}
+		
+		public String generatePortRuleName()
+		{
+			Random r = new Random();
+			int low = 10;
+			int high = 3000;
+			int result = r.nextInt(high-low) + low;
+			randNum = String.valueOf(result);
+			String portRuleName = "PR"+ randNum;
+			return portRuleName;
+		}
+		
+		public String generateGuestNetworkeName()
+		{
+			Random r = new Random();
+			int low = 10;
+			int high = 999;
+			int result = r.nextInt(high-low) + low;
+			randNum = String.valueOf(result);
+			String guestNet = "guestNet"+ randNum;
+			return guestNet;
+		}
+		
+		public String generateInternalPortStart()
+		{
+			Random r = new Random();
+			int low = 1001;
+			int high = 15000;
+			int result = r.nextInt(high-low) + low;
+			return String.valueOf(result);
+		}
+		
+		public String generateInternalPortEnd()
+		{
+			Random r = new Random();
+			int low = 15001;
+			int high = 30000;
+			int result = r.nextInt(high-low) + low;
+			return String.valueOf(result);
+		}
+		
+		public String generateExternalPortStart()
+		{
+			Random r = new Random();
+			int low = 30001;
+			int high = 45000;
+			int result = r.nextInt(high-low) + low;
+			return String.valueOf(result);
+		}
+		
+		public String generateExternalPortEnd()
+		{
+			Random r = new Random();
+			int low = 46000;
+			int high = 64000;
+			int result = r.nextInt(high-low) + low;
+			return String.valueOf(result);
+		}
+		
+		public String generateIPAdress()
+		{
+			Random r = new Random();
+			int low = 101;
+			int high = 253;
+			int result = r.nextInt(high-low) + low;
+			randNum = String.valueOf(result);
+			String ipAdd = "192.168.7."+ randNum;
+			 return ipAdd;
+		}
+			
+		public void generateRandomNumber13()
+		{
+			int min = 1;
+			int max = 2;
+			Random rand = new Random();
+			randNumber = rand.nextInt(max - min + 1) + min;
+		}
+		
+		//For Network - LAN IP Reservation
+		public void generateRuleName()
+		{
+			Random r = new Random();
+			int low = 10;
+			int high = 999;
+			int result = r.nextInt(high-low) + low;
+			 randNum = String.valueOf(result);
+			 ruleName = "rule"+ randNum;
+			 lanIPRuleName.add(ruleName);
+		}
+		
+//		//For Network - LAN IP Reservation
+//		public String generateGuestNetworkName()
+//		{
+//			Random r = new Random();
+//			int low = 1;
+//			int high = 10;
+//			int result = r.nextInt(high-low) + low;
+//			 randNum = String.valueOf(result);
+//			 String guestName = "GuestNet"+ randNum;
+//			 return guestName;
+//		}
+		
+		//generate IP between device id between 2 and 254.
+		public void generateRandomIPNumber()
+		{
+			int min = 2;
+			int max = 200;
+			Random rand = new Random();
+			ipNumber = rand.nextInt(max - min + 1) + min;
+		}
+
+		public Integer getAllCountOfDevices(String totalDevices) {
+			//Connected Devices (3)  Connected Devices (13)
+			String text = totalDevices.replaceAll("\\p{P}", "");
+			String[] allDevices = text.trim().split(" ");  //3
+			return Integer.valueOf(allDevices[2]);
+		}
+		
+		public Integer get5GHzCountOfDevices(String totalDevices) {
+			//2 Devices ( 5 GHz)
+			String[] allDevices = totalDevices.trim().split(" ");  //2
+			return Integer.valueOf(allDevices[0]);
+		}
+		
+		public Integer get24GHzCountOfDevices(String totalDevices) {
+			//2 Devices ( 2.4 GHz)
+			String[] allDevices = totalDevices.trim().split(" ");  //2
+			return Integer.valueOf(allDevices[0]);
+		}
 }
 	
 	
 	
 	
 	
-
-
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	//Switch based on platform name
-//	switch (getPlatformName())
-//	{
-//		case "Android":
-//			System.out.println("Inside Android DesiredCapabilities...Platform Name ---> : " + getPlatformName());
-//			desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, getProps().getProperty("androidAutomationName"));
-//			desiredCapabilities.setCapability(MobileCapabilityType.UDID, getProps().getProperty("androidUDID"));
-//			desiredCapabilities.setCapability(MobileCapabilityType.VERSION, getProps().getProperty("androidVersion"));
-//			desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("androidAppLocation"));
-//			driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
-//			System.out.println("=======> "+ driver.getPlatformName());
-//			break;
-//		default:
-//			throw new Exception("Invalid platform! - " + getPlatformName());
-//	}
-//	setDriver(driver);
-//	utils.log().info("driver initialized: " + getDriver()); 
-//	PageFactory.initElements(new AppiumFieldDecorator(getDriver()), this);
-//}catch (Exception e) {
-//	  utils.log().fatal("driver initialization failure. ABORT!!!\n" + e.toString());
-//  } finally {
-//	  if(inputStream != null) {
-//		  try {
-//			inputStream.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	  }
-//	  if(stringsis != null) {
-//		  try {
-//			stringsis.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	  }
-//  }

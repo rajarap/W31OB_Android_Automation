@@ -58,10 +58,10 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        try 
        {
     	   utils.log().info("Running adb shell to login to mAX " + this.ssid + " network");
-    	   ProcessBuilder pb1 = new ProcessBuilder("/opt/homebrew/bin/adb", "-s", this.udid, "shell", "am", "start", "-n", "com.steinwurf.adbjoinwifi/.MainActivity", "-e", "ssid", this.ssid, "-e", "password_type", "WPA", "-e", "password", this.pwd);
+    	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "am", "start", "-n", "com.steinwurf.adbjoinwifi/.MainActivity", "-e", "ssid", this.ssid, "-e", "password_type", "WPA", "-e", "password", this.pwd);
            Process pc1 = pb1.start();
            super.pause(3);
-           ProcessBuilder pb2 = new ProcessBuilder("/opt/homebrew/bin/adb", "-s", this.udid, "shell", "input", "keyevent", "3");
+           ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "input", "keyevent", "3");
            Process pc2 = pb2.start();
        } catch (Exception e) 
        {

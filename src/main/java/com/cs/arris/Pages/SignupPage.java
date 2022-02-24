@@ -53,20 +53,10 @@ public class SignupPage  extends ParentClass implements Page
 	}) 
 	public MobileElement lastName;
 	
-	@AndroidFindAll({
-		@AndroidBy (id = "com.arris.sbcBeta:id/tv_terms"),
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[143,988][637,1034]"),
-		@AndroidBy (xpath = "//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/tv_terms']"),
-		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[3]") 
-	}) 
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/cbtermsandcondition")
 	public MobileElement agreeCheckBox;
 	
-	@AndroidFindAll({
-		@AndroidBy (id = "com.arris.sbcBeta:id/cbupdatesagreement"),
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[51,1077][1029,1161]"),
-		@AndroidBy (xpath = "//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/cbupdatesagreement']"), 
-		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.CheckBox[2]")
-	}) 
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/cbupdatesagreement")
 	public MobileElement recieveUpdateCheckBox;
 	
 	@AndroidFindAll({
@@ -118,19 +108,30 @@ public class SignupPage  extends ParentClass implements Page
 	{
 		this.emailID = email;
 		sendKeys(emailAddress, email);
-		utils.log().info("SigUp Page - Entered users valid email address");
+		utils.log().info("SignUp Page - Entered users valid email address");
 	}
 	
 	public void enterFirstName(String fname)
 	{
 		sendKeys(firstName, fname);
-		utils.log().info("SigUp Page - Entered users first name");
+		utils.log().info("SignUp Page - Entered users first name");
 	}
 	
 	public void enterLastName(String lname)
 	{
 		sendKeys(lastName, lname);
-		utils.log().info("SigUp Page - Entered users last name");
+		utils.log().info("SignUp Page - Entered users last name");
+	}
+	
+	public void clickAgreeTermsAndConditionsCheckBox()
+	{
+		if(agreeCheckBox.isSelected()){
+			utils.log().info("SignUp Page - Checkbox is already selected");
+		}else {
+			click(agreeCheckBox);
+			utils.log().info("SignUp Page - Clicked on I Agree to Terms and Conditions check box");
+		}
+		
 	}
 	
 	public void clickSignupButton()

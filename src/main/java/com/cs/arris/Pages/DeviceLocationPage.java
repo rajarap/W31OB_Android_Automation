@@ -48,6 +48,17 @@ public class DeviceLocationPage  extends ParentClass implements Page
 		})
 		public MobileElement denyLink;
 		
+		@AndroidFindBy (id = "com.android.packageinstaller:id/permission_message")
+		public MobileElement message;
+		
+		@AndroidFindBy (id = "com.android.packageinstaller:id/permission_deny_button")
+		public MobileElement deny;
+		
+		@AndroidFindBy (id = "com.android.packageinstaller:id/permission_allow_button")
+		public MobileElement allow;
+		
+		
+		
 		//######################  DENY  ##############################
 		
 		//Click the Deny button - An alert window appears
@@ -60,6 +71,7 @@ public class DeviceLocationPage  extends ParentClass implements Page
 		
 		@AndroidFindBy (id = "android:id/button2")
 		public MobileElement denyPopUpCancel;
+
 			
 		// alert Popup CANCEL goes back to the GrantPermissionsPage
 		
@@ -95,27 +107,57 @@ public class DeviceLocationPage  extends ParentClass implements Page
 	
 	public void clickWhileUsingTheAppLink() 
 	{
-		utils.log().info("Device Location - Clicked " + whileUsingTheAppLink.getText());
-		click(whileUsingTheAppLink);
-		utils.log().info("Device Location - Clicked " + whileUsingTheAppLink.getText());
+		try {
+			click(whileUsingTheAppLink);
+			utils.log().info("Device Location - Clicked " + whileUsingTheAppLink.getText());
+		} catch (Exception e) {
+			utils.log().info("Device Location - While Using The App Link is not displayed");
+		}
 	}
 	
 	public void clickOnlyThisTimeLink() 
 	{
-		utils.log().info("Device Location - Clicked " + onlyThisTimeLink.getText());
-		click(onlyThisTimeLink);
-		utils.log().info("Device Location - Clicked " + onlyThisTimeLink.getText());
+		try {
+			click(onlyThisTimeLink);
+			utils.log().info("Device Location - Clicked " + onlyThisTimeLink.getText());
+		} catch (Exception e) {
+			utils.log().info("Device Location - Only This Time Link is not displayed");
+		}
 	}
 	
 	public void clickDenyLink() 
 	{
-		click(denyLink);
-		utils.log().info("Device Location - Clicked " + denyLink.getText());
+		try {
+			click(denyLink);
+			utils.log().info("Device Location - Clicked " + denyLink.getText());
+		} catch (Exception e) {
+			utils.log().info("Device Location - Deny Link is not displayed");
+		}
+	}
+	
+	public void clickDeny() 
+	{
+		try {
+			click(deny);
+			utils.log().info("Device Location - Clicked on " + deny.getText() + " button");
+		} catch (Exception e) {
+			utils.log().info("Device Location - Deny button is not displayed");
+		}
+	}
+	
+	public void clickAllow() 
+	{
+		try {
+			click(allow);
+			utils.log().info("Device Location - Clicked on " + allow.getText() + " button");
+		} catch (Exception e) {
+			utils.log().info("Device Location - Allow button is not displayed");
+		}
 	}
 	
 	@Override
 	public boolean isAt() {
-		if(onlyThisTimeLink.isDisplayed())
+		if(message.isDisplayed())
 		{
 			utils.log().info("At Device Location Page");
 			return true;
@@ -126,5 +168,4 @@ public class DeviceLocationPage  extends ParentClass implements Page
 			return false;
 		}
 	}
-	
 }

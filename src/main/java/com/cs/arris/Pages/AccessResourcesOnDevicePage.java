@@ -38,6 +38,15 @@ public class AccessResourcesOnDevicePage extends ParentClass implements Page
 	})
 	public MobileElement denyLink;
 	
+	@AndroidFindBy (id = "com.android.packageinstaller:id/permission_message")
+	public MobileElement message;
+	
+	@AndroidFindBy (id = "com.android.packageinstaller:id/permission_deny_button")
+	public MobileElement deny;
+	
+	@AndroidFindBy (id = "com.android.packageinstaller:id/permission_allow_button")
+	public MobileElement allow;
+	
 	public AccessResourcesOnDevicePage()
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
@@ -55,16 +64,36 @@ public class AccessResourcesOnDevicePage extends ParentClass implements Page
 		utils.log().info("Access Resources On Device - Clicked on Deny Link");
 	}
 	
+	public void clickDeny() 
+	{
+		try {
+			click(deny);
+			utils.log().info("Access Resources On Device - Clicked on " + deny.getText() + " button");
+		} catch (Exception e) {
+			utils.log().info("Access Resources On Device - Deny button is not displayed");
+		}
+	}
+	
+	public void clickAllow() 
+	{
+		try {
+			click(allow);
+			utils.log().info("Access Resources On Device - Clicked on " + allow.getText() + " button");
+		} catch (Exception e) {
+			utils.log().info("Access Resources On Device - Allow button is not displayed");
+		}
+	}
+	
 	@Override
 	public boolean isAt() {
-		if(allowLink.isDisplayed())
+		if(message.isDisplayed())
 		{
-			utils.log().info("At Access Resource On Device Page");
+			utils.log().info("At Access Resources On Device Page");
 			return true;
 		}
 		else
 		{
-			utils.log().info("Access Resource On Device Page is not displayed");
+			utils.log().info("Device Location Page is not displayed");
 			return false;
 		}
 	}
