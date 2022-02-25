@@ -108,18 +108,13 @@ public class HomePage extends ParentClass implements Page {
 		@AndroidBy(id = "com.arris.sbcBeta:id/imgtotalperipheral") })
 	public MobileElement totalNoOfDevicesImage;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/imgNoLeftSatellite"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[217,1008][302,1192]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/imgNoLeftSatellite") })
+
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/imgNoLeftSatellite")
 	public MobileElement leftSatelliteImage;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/imgNoRightSatellite"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[769,1008][854,1192]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/imgNoRightSatellite") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/imgNoRightSatellite")
 	public MobileElement rightSatelliteImage;
-
+	
 	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textView162"),
 			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1569][784,1633]']"),
 			@AndroidBy(id = "com.arris.sbcBeta:id/textView162") })
@@ -423,24 +418,27 @@ public class HomePage extends ParentClass implements Page {
 
 	// Verify if all the required UI elements are displayed on the Home Page
 	public boolean verifyUIOnHomePage() {
-		utils.log().info("*****************************************");
-		utils.log().info("Details of UI Elements on the Home Page  ");
-		utils.log().info("*****************************************");
+		utils.log().info("************************************");
+		utils.log().info("Verifying Elements on the Home Page ");
+		utils.log().info("************************************");
 		try {
+			try {
 			if (homeTitle.isDisplayed()) 
 				utils.log().info("Title " + homeTitle.getText() + " is displayed");
-			else 
-				utils.log().info("Home Title is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Home Title is not displayed");}
 
+			try {
 			if (networkSpeedTitle.isDisplayed())
 				utils.log().info("Title " + networkSpeedTitle.getText() + " is displayed");
-			else
-				utils.log().info("Network Title is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Network Title is not displayed");}
 
+				try {
 			if (navigateButton.isDisplayed())
 				utils.log().info("Navigate Icon is displayed");
-			else
-				utils.log().info("Navigate Icon is displayed");
+			}catch(Exception e) {
+				utils.log().info("Navigate Icon is displayed");}
 			
 			try {
 			if (cloudIcon.isDisplayed())
@@ -448,112 +446,145 @@ public class HomePage extends ParentClass implements Page {
 			}catch(Exception e) {
 				utils.log().info("Cloud Icon is not displayed");}
 
+			try {
 			if (notificationsIcon.isDisplayed())
 				utils.log().info("Notifications Icon is displayed");
-			else
-				utils.log().info("Notifications Icon is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Notifications Icon is not displayed");}
 
+				try {
 			if (downloadText.isDisplayed())
 				utils.log().info("Download Text is displayed");
-			else
-				utils.log().info("Download Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Download Text is not displayed");}
 
+				try {
 			if (downloadSpeedText.isDisplayed())
 				utils.log().info("Download Speed Text " + downloadSpeedText.getText() + " is displayed");
-			else
-				utils.log().info("Download Speed Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Download Speed Text is not displayed");}
 
+				try {
 			if (uploadText.isDisplayed())
 				utils.log().info("Upload Text is displayed");
-			else
-				utils.log().info("Upload Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Upload Text is not displayed");}
 
+				try {
 			if (uploadSpeedText.isDisplayed())
 				utils.log().info("Upload Speed Text " + uploadSpeedText.getText() + " is displayed");
-			else
-				utils.log().info("Upload Speed Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Upload Speed Text is not displayed");}
 
+				try {
 			if (ssidName.isDisplayed())
 				utils.log().info("Main Router SSID Name " + ssidName.getText() + "  is displayed");
-			else
-				utils.log().info("Main Router SSID Name is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Main Router SSID Name is not displayed");}
 
+				try {
 			if (mainDeviceImage.isDisplayed())
 				utils.log().info("Main Router Device image is displayed");
-			else
-				utils.log().info("Main Router Device is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Main Router Device is not displayed");}
 
+				try {
 			if (mainDeviceName.isDisplayed())
 				utils.log().info("Main Router Device Name " + mainDeviceName.getText() + " is displayed");
-			else
-				utils.log().info("Main Router Device Name is displayed");
+			}catch(Exception e) {
+				utils.log().info("Main Router Device Name is displayed");}
 
+				try {
 			if (mainDeviceCounter.isDisplayed())
 				utils.log().info(mainDeviceCounter.getText() + " are connected to Main Router " );
-			else
-				utils.log().info("Devices conneced to the Main Router is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Devices conneced to the Main Router is not displayed");}
 
+				try {
 			if (totalNoOfDevicesImage.isDisplayed())
 				utils.log().info("Total number of devices image is displayed");
-			else
-				utils.log().info("Total number of devices image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Total number of devices image is not displayed");}
 
+				try {
 			if (totalNoOfDevices.isDisplayed())
 				utils.log().info(totalNoOfDevices.getText() + " text is displayed");
-			else
-				utils.log().info("Number of devices connected to the router is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Number of devices connected to the router is not displayed");}
 
+				try {
 			if (leftSatelliteImage.isDisplayed())
 				utils.log().info("Left Satellite Image is displayed");
-			else
-				utils.log().info("Left Satellite Image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Left Satellite Image is not displayed");}
 
+				try {
 			if (rightSatelliteImage.isDisplayed())
 				utils.log().info("Right Satellite Image is displayed");
-			else
-				utils.log().info("Right Satellite Image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Right Satellite Image is not displayed");}
 
+				try {
+			if (leftRouter.isDisplayed())
+				utils.log().info("Left Router Image is displayed");
+			}catch(Exception e) {
+				utils.log().info("Left Router Image is not displayed");}
+
+				try {
+			if (rightRouter.isDisplayed())
+				utils.log().info("Right Router Image is displayed");
+			}catch(Exception e) {
+				utils.log().info("Right Router Image is not displayed");}
+				
+				try {
 			if (deviceSignalStrengthLeaderBoardText.isDisplayed())
 				utils.log().info("Device Signal Strength Leader Board Text is displayed");
-			else
-				utils.log().info("Device Signal Strength Leader Board Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Device Signal Strength Leader Board Text is not displayed");}
 
+				try {
 			if (deviceSignalStrengthLeaderBoardImage.isDisplayed())
 				utils.log().info("Device Signal Strength Leader Board Image is displayed");
-			else
-				utils.log().info("Device Signal Strength Leader Board Image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Device Signal Strength Leader Board Image is not displayed");}
 
+				try {
 			if (bitRateDevices.isDisplayed())
 				utils.log().info("Device Signal Strength Leader Board is displayed for " + bitRateDevices.getText());
-			else
-				utils.log().info("Device Signal Strength Leader Board Count is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Device Signal Strength Leader Board Count is not displayed");}
 
 			super.swipeUp();
 
+			try {
 			if (speedTestHistoryText.isDisplayed())
 				utils.log().info("Speed Test History Text is displayed");
-			else
-				utils.log().info("Speed Test History Text is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Speed Test History Text is not displayed");}
 
+				try {
 			if (speedTestHistoryImage.isDisplayed())
 				utils.log().info("Speed Test History Image is displayed");
-			else
-				utils.log().info("Speed Test History Image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Speed Test History Image is not displayed");}
 
+				try {
 			if (speedTestHistoryDevices.isDisplayed())
 				utils.log().info("Count of Speed Test History Devices : " + speedTestHistoryDevices.getText() + " is displayed");
-			else
-				utils.log().info("Count of Speed Test History Devices is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Count of Speed Test History Devices is not displayed");}
 
+				try {
 			if (currentlyBlockedDevicesText.isDisplayed())
 				utils.log().info("Currently Blocked Devices Text is displayed");
-			else
-				utils.log().info("Currently Blocked Devices is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Currently Blocked Devices is not displayed");}
 
+				try {
 			if (currentlyBlockedDevicesImage.isDisplayed())
 				utils.log().info("Currently Blocked Devices Image is displayed");
-			else
-				utils.log().info("Currently Blocked Devices Image is not displayed");
+			}catch(Exception e) {
+				utils.log().info("Currently Blocked Devices Image is not displayed");}
 			
 			return true;
 		}catch(Exception e) {
@@ -606,6 +637,7 @@ public class HomePage extends ParentClass implements Page {
 }
 
 	public boolean clickNotificationsIcon() {
+		super.swipeDown();
 		if (notificationsIcon.isDisplayed()) {
 			click(notificationsIcon);
 			utils.log().info("Home Page - Clicked on Notifications Icon");
@@ -617,6 +649,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickNavigationButton() {
+		super.swipeDown();
 		if (navigateButton.isDisplayed()) {
 			click(navigateButton);
 			utils.log().info("Home Page - Clicked on Navigation Icon to display the Hamburger Menu");
@@ -628,6 +661,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickDeviceSignalStrengthImage() {
+		super.swipeUp();
 		if (deviceSignalStrengthLeaderBoardImage.isDisplayed()) {
 			click(deviceSignalStrengthLeaderBoardImage);
 			utils.log().info("Home Page - Clicked on Device Signal Strength Leader Board Image");
@@ -640,6 +674,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickSpeedTestHistoryImage() {
+		super.swipeUp();
 		if (speedTestHistoryImage.isDisplayed()) {
 			click(speedTestHistoryImage);
 			utils.log().info("Home Page - Clicked on Speed Test History Image");
@@ -663,6 +698,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickMainDeviceImage() {
+		super.swipeDown();
 		if (mainDeviceImage.isDisplayed()) {
 			click(mainDeviceImage);
 			utils.log().info("Home Page - Clicked on Main Device Image");
@@ -674,6 +710,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickDevicesImage() {
+		super.swipeDown();
 		if (totalNoOfDevicesImage.isDisplayed()) {
 			click(totalNoOfDevicesImage); 
 			utils.log().info("Home Page - Clicked on Devices Image");

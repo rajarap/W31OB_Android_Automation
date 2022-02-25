@@ -54,7 +54,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Feb 24, 2022 07:40:00 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Feb 24, 2022 08:35:05 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -71,6 +71,7 @@
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -123,10 +124,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='60.227%'><span class='strong'>53</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='38.636%'>34</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='1.136%'>1</span> skipped
                 </div>
             </div>
         </div>
@@ -144,17 +145,60 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify_SignUp_And_Onboard</span>
-						<span class='test-time'>Feb 24, 2022 07:40:00 PM</span>
+						<span class='test-name'>Login_And_Onboard</span>
+						<span class='test-time'>Feb 24, 2022 08:35:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:35:05 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:38:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 57s+148ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:38:02 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:38:07 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 24, 2022 07:40:00 PM</span>
-	<span class='label end-time'>Feb 24, 2022 07:40:31 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+705ms</span>
+	<span class='label start-time'>Feb 24, 2022 08:38:07 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:45:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 6m 52s+999ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -176,7 +220,7 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>7:40:31 PM</td>
+				<td class='timestamp'>8:45:00 PM</td>
 				<td class='step-details'>
 						Test Failed
 					
@@ -187,16 +231,2714 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify_SignUp_And_Onboard</span>
-						<span class='test-time'>Feb 24, 2022 07:40:32 PM</span>
+						<span class='test-name'>Verify_Home_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:45:01 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 24, 2022 07:40:32 PM</span>
-	<span class='label end-time'>Feb 24, 2022 07:40:32 PM</span>
+	<span class='label start-time'>Feb 24, 2022 08:45:01 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:45:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Device_Signal_Strength_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:45:01 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:45:01 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:45:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>8:45:01 PM</td>
+				<td class='step-details'>
+						Test Skipped
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Speed_Test_History_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:45:02 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:45:02 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:45:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+811ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:45:33 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Speed_Test_History_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:45:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:45:33 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:45:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Currently_Blocked_Devices_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:45:36 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:45:36 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:46:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+631ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:46:24 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Main_Devices_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:46:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:46:26 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:47:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 3s+250ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:47:30 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Main_Devices_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:47:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:47:30 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:47:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Total_Devices_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:47:33 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:47:33 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:48:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+365ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:48:03 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Total_Devices_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:48:04 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:48:04 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:48:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Hamburger_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:48:06 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:48:06 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:48:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+395ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:48:21 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Hamburger_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:48:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:48:22 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:48:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Home_Notifications_Navigation</span>
+						<span class='test-time'>Feb 24, 2022 08:48:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:48:24 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:49:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 1s+514ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:49:25 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:49:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:49:28 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 34s+169ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:50:02 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_Settings_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:04 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:04 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+831ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:50:15 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_Settings_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:17 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+247ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:50:21 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_About_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:23 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:23 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+78ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:50:27 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_About_License_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:29 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:47 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+523ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:50:47 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Menu_About_License_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:48 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:50:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Get_Another_Max_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:50:50 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:50:50 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:51:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 0s+187ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:51:50 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Get_Another_Max_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:51:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:51:51 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:51:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_About_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:51:55 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:51:55 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:52:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+47ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:52:10 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_About_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:52:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:52:11 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:52:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Help_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:52:13 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:52:13 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:52:43 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+220ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:52:43 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Help_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:52:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:52:44 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:52:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_FAQ_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:52:47 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:52:47 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+458ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:53:03 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_FAQ_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:03 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:03 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Self_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:06 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:06 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+147ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:53:23 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Self_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:23 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:23 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Chat_With_US_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:26 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+858ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:53:44 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Hamburger_Surfboard_Chat_With_US_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:44 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:53:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Amazon_Features_UI_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:53:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:53:47 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+159ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:54:22 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Get_Alexa_Skills_Drop_Down_Box</span>
+						<span class='test-time'>Feb 24, 2022 08:54:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:24 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+466ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:54:26 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Show_Password_Button</span>
+						<span class='test-time'>Feb 24, 2022 08:54:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:28 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+631ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:54:30 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Copy_Password</span>
+						<span class='test-time'>Feb 24, 2022 08:54:32 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:32 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+987ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:54:33 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Enable_AFFS_Feature</span>
+						<span class='test-time'>Feb 24, 2022 08:54:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:35 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:36 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+485ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:54:36 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Amazon_Feature_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:54:38 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:38 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+202ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:54:53 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Amazon_Feature_Help_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:54:54 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:54 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:54:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Add_Device_Menu</span>
+						<span class='test-time'>Feb 24, 2022 08:54:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:54:56 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:58:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 16s+803ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:58:13 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Cable_Modem_Tab</span>
+						<span class='test-time'>Feb 24, 2022 08:58:17 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:58:17 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:58:32 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+316ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:58:32 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Cable_Modem_Tab</span>
+						<span class='test-time'>Feb 24, 2022 08:58:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:58:33 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:58:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='43'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Max_Router_Tab</span>
+						<span class='test-time'>Feb 24, 2022 08:58:35 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:58:35 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:58:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+52ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:58:50 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Max_Router_Tab</span>
+						<span class='test-time'>Feb 24, 2022 08:58:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:58:51 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:58:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Device_Details_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:58:53 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:58:53 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+53ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:59:08 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='46'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Device_Details_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:08 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='47'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Specifications_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:11 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+50ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:24 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Add_Additional_Device</span>
+						<span class='test-time'>Feb 24, 2022 08:59:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:26 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+111ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:28 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Notifications_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:30 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+963ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:31 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_User_Guide_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:33 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+172ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:39 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_FAQ_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:40 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:40 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+445ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:46 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='52'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Remove_Device_Page</span>
+						<span class='test-time'>Feb 24, 2022 08:59:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 08:59:48 PM</span>
+	<span class='label end-time'>Feb 24, 2022 08:59:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+661ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:58 PM</td>
+				<td class='step-details'>
+						Test Passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Install_Left_Satellite</span>
+						<span class='test-time'>Feb 24, 2022 09:00:00 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:00:00 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:02:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 4s+512ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:02:05 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='54'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Install_Left_Satellite</span>
+						<span class='test-time'>Feb 24, 2022 09:02:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:02:06 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:02:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='55'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Install_Right_Satellite</span>
+						<span class='test-time'>Feb 24, 2022 09:02:09 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:02:09 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:03:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 0s+285ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:03:09 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='56'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Install_Right_Satellite</span>
+						<span class='test-time'>Feb 24, 2022 09:03:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:03:10 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:03:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Health_Page</span>
+						<span class='test-time'>Feb 24, 2022 09:03:15 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:03:15 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 55s+242ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:04:10 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='58'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Health_Page</span>
+						<span class='test-time'>Feb 24, 2022 09:04:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:11 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='59'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Optimization_Settings_Page</span>
+						<span class='test-time'>Feb 24, 2022 09:04:15 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:15 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+53ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:04:30 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='60'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Optimization_Settings_Page</span>
+						<span class='test-time'>Feb 24, 2022 09:04:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:31 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='61'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:04:34 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:34 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+173ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:04:50 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='62'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:04:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:51 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:04:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='63'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:04:53 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:04:53 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+61ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:05:08 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='64'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:05:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:09 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='65'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:05:12 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:12 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+37ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:05:27 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='66'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:05:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:27 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='67'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:05:30 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:30 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+472ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:05:46 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='68'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_Medium</span>
+						<span class='test-time'>Feb 24, 2022 09:05:46 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:46 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:05:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='69'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:05:49 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:05:49 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+115ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:06:05 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='70'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:06 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='71'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:08 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:08 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+28ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:06:23 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='72'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:24 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='73'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:27 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:27 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+58ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:06:42 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='74'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:42 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:06:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='75'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:06:45 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:06:45 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+78ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:07:00 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='76'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_High</span>
+						<span class='test-time'>Feb 24, 2022 09:07:01 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:01 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='77'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:03 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+159ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:07:20 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='78'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Connected_Device_Signal_Strength_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:20 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='79'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:23 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:23 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+64ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:07:38 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='80'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Signal_Strength_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:39 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:39 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='81'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate__Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:42 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:42 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+28ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:07:57 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='82'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Satellite_Link_Rate__Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:07:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:07:57 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:07:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='83'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:08:00 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:00 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+29ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:08:15 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='84'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_ISP_Speed_Link_Rate_Sensitivity_Low</span>
+						<span class='test-time'>Feb 24, 2022 09:08:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:16 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='85'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Optimization_Recommendations</span>
+						<span class='test-time'>Feb 24, 2022 09:08:19 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:19 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+37ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:08:34 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='86'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Network_Optimization_Recommendations</span>
+						<span class='test-time'>Feb 24, 2022 09:08:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:35 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='87'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Disabled_Network_Optimization_Settings</span>
+						<span class='test-time'>Feb 24, 2022 09:08:37 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:37 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+57ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:08:52 PM</td>
+				<td class='step-details'>
+						Test Failed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='88'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Disabled_Network_Optimization_Settings</span>
+						<span class='test-time'>Feb 24, 2022 09:08:53 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 24, 2022 09:08:53 PM</span>
+	<span class='label end-time'>Feb 24, 2022 09:08:53 PM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 					</div>
@@ -243,14 +2985,16 @@
 					<div class='category-heading'>
 						<span class='category-name'>Android_Android</span>
 						<span class='category-status right'>
-						<span class='label fail'>1</span>
+						<span class='label pass'>19</span>
+						<span class='label fail'>34</span>
+						<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							
-							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
-							
+							<span status="pass" class='label green accent-4 white-text'>Passed: 19</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 34</span>
+							<span status="skip" class='label yellow darken-2 white-text'>Skipped: 1</span>
 						</div>
 						<div class='category-tests'>
 							<table class='bordered table-results'>
@@ -263,8 +3007,273 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Feb 24, 2022 07:40:00 PM</td>
-										<td class='linked' test-id='1'>Verify_SignUp_And_Onboard</td>
+										<td>Feb 24, 2022 08:35:05 PM</td>
+										<td class='linked' test-id='1'>Login_And_Onboard</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:38:07 PM</td>
+										<td class='linked' test-id='2'>Verify_Home_UI_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:01 PM</td>
+										<td class='linked' test-id='4'>Verify_Home_Device_Signal_Strength_Navigation</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:02 PM</td>
+										<td class='linked' test-id='5'>Verify_Home_Speed_Test_History_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:36 PM</td>
+										<td class='linked' test-id='7'>Verify_Home_Currently_Blocked_Devices_Navigation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:46:26 PM</td>
+										<td class='linked' test-id='8'>Verify_Home_Main_Devices_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:47:33 PM</td>
+										<td class='linked' test-id='10'>Verify_Home_Total_Devices_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:48:06 PM</td>
+										<td class='linked' test-id='12'>Verify_Home_Hamburger_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:48:24 PM</td>
+										<td class='linked' test-id='14'>Verify_Home_Notifications_Navigation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:49:28 PM</td>
+										<td class='linked' test-id='15'>Verify_Hamburger_Menu_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:04 PM</td>
+										<td class='linked' test-id='16'>Verify_Hamburger_Menu_Settings_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:17 PM</td>
+										<td class='linked' test-id='17'>Verify_Hamburger_Menu_Settings_Help_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:23 PM</td>
+										<td class='linked' test-id='18'>Verify_Hamburger_Menu_About_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:29 PM</td>
+										<td class='linked' test-id='19'>Verify_Hamburger_Menu_About_License_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:50 PM</td>
+										<td class='linked' test-id='21'>Verify_Hamburger_Get_Another_Max_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:51:55 PM</td>
+										<td class='linked' test-id='23'>Verify_Hamburger_About_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:52:13 PM</td>
+										<td class='linked' test-id='25'>Verify_Hamburger_Surfboard_Help_UI_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:52:47 PM</td>
+										<td class='linked' test-id='27'>Verify_Hamburger_Surfboard_FAQ_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:06 PM</td>
+										<td class='linked' test-id='29'>Verify_Hamburger_Surfboard_Self_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:26 PM</td>
+										<td class='linked' test-id='31'>Verify_Hamburger_Surfboard_Chat_With_US_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:47 PM</td>
+										<td class='linked' test-id='33'>Verify_Amazon_Features_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:24 PM</td>
+										<td class='linked' test-id='34'>Verify_Get_Alexa_Skills_Drop_Down_Box</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:28 PM</td>
+										<td class='linked' test-id='35'>Verify_Show_Password_Button</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:32 PM</td>
+										<td class='linked' test-id='36'>Verify_Copy_Password</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:35 PM</td>
+										<td class='linked' test-id='37'>Verify_Enable_AFFS_Feature</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:38 PM</td>
+										<td class='linked' test-id='38'>Verify_Amazon_Feature_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:56 PM</td>
+										<td class='linked' test-id='40'>Verify_Add_Device_Menu</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:17 PM</td>
+										<td class='linked' test-id='41'>Verify_Cable_Modem_Tab</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:35 PM</td>
+										<td class='linked' test-id='43'>Verify_Max_Router_Tab</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:53 PM</td>
+										<td class='linked' test-id='45'>Verify_Device_Details_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:11 PM</td>
+										<td class='linked' test-id='47'>Verify_Specifications_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:26 PM</td>
+										<td class='linked' test-id='48'>Verify_Add_Additional_Device</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:30 PM</td>
+										<td class='linked' test-id='49'>Verify_Notifications_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:33 PM</td>
+										<td class='linked' test-id='50'>Verify_User_Guide_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:40 PM</td>
+										<td class='linked' test-id='51'>Verify_FAQ_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:48 PM</td>
+										<td class='linked' test-id='52'>Verify_Remove_Device_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:00:00 PM</td>
+										<td class='linked' test-id='53'>Verify_Install_Left_Satellite</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:02:09 PM</td>
+										<td class='linked' test-id='55'>Verify_Install_Right_Satellite</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:03:15 PM</td>
+										<td class='linked' test-id='57'>Verify_Network_Health_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:15 PM</td>
+										<td class='linked' test-id='59'>Verify_Network_Optimization_Settings_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:34 PM</td>
+										<td class='linked' test-id='61'>Verify_Connected_Device_Signal_Strength_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:53 PM</td>
+										<td class='linked' test-id='63'>Verify_Satellite_Signal_Strength_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:12 PM</td>
+										<td class='linked' test-id='65'>Verify_Satellite_Link_Rate_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:30 PM</td>
+										<td class='linked' test-id='67'>Verify_ISP_Speed_Link_Rate_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:49 PM</td>
+										<td class='linked' test-id='69'>Verify_Connected_Device_Signal_Strength_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:08 PM</td>
+										<td class='linked' test-id='71'>Verify_Satellite_Signal_Strength_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:27 PM</td>
+										<td class='linked' test-id='73'>Verify_Satellite_Link_Rate_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:45 PM</td>
+										<td class='linked' test-id='75'>Verify_ISP_Speed_Link_Rate_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:03 PM</td>
+										<td class='linked' test-id='77'>Verify_Connected_Device_Signal_Strength_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:23 PM</td>
+										<td class='linked' test-id='79'>Verify_Satellite_Signal_Strength_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:42 PM</td>
+										<td class='linked' test-id='81'>Verify_Satellite_Link_Rate__Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:00 PM</td>
+										<td class='linked' test-id='83'>Verify_ISP_Speed_Link_Rate_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:19 PM</td>
+										<td class='linked' test-id='85'>Verify_Network_Optimization_Recommendations</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:37 PM</td>
+										<td class='linked' test-id='87'>Verify_Disabled_Network_Optimization_Settings</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -303,13 +3312,14 @@
 					<div class='author-heading'>
 						<span class='author-name'>PrabhuRajarathinam</span>
 						<span class='author-status right'>
-						<span class='label fail'>1</span>
+						<span class='label pass'>19</span>
+						<span class='label fail'>34</span>
 						</span>
 					</div>
 					<div class='author-content hide'>
 						<div class='author-status-counts'>
-							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							<span class='label green accent-4 white-text'>Passed: 19</span>
+							<span class='label red lighten-1 white-text'>Failed: 34</span>
 							
 						</div>
 						<div class='author-tests'>
@@ -323,8 +3333,273 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Feb 24, 2022 07:40:00 PM</td>
-										<td class='linked' test-id='1'>Verify_SignUp_And_Onboard</td>
+										<td>Feb 24, 2022 08:35:05 PM</td>
+										<td class='linked' test-id='1'>Login_And_Onboard</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:38:07 PM</td>
+										<td class='linked' test-id='2'>Verify_Home_UI_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:01 PM</td>
+										<td class='linked' test-id='4'>Verify_Home_Device_Signal_Strength_Navigation</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:02 PM</td>
+										<td class='linked' test-id='5'>Verify_Home_Speed_Test_History_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:45:36 PM</td>
+										<td class='linked' test-id='7'>Verify_Home_Currently_Blocked_Devices_Navigation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:46:26 PM</td>
+										<td class='linked' test-id='8'>Verify_Home_Main_Devices_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:47:33 PM</td>
+										<td class='linked' test-id='10'>Verify_Home_Total_Devices_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:48:06 PM</td>
+										<td class='linked' test-id='12'>Verify_Home_Hamburger_Navigation</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:48:24 PM</td>
+										<td class='linked' test-id='14'>Verify_Home_Notifications_Navigation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:49:28 PM</td>
+										<td class='linked' test-id='15'>Verify_Hamburger_Menu_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:04 PM</td>
+										<td class='linked' test-id='16'>Verify_Hamburger_Menu_Settings_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:17 PM</td>
+										<td class='linked' test-id='17'>Verify_Hamburger_Menu_Settings_Help_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:23 PM</td>
+										<td class='linked' test-id='18'>Verify_Hamburger_Menu_About_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:29 PM</td>
+										<td class='linked' test-id='19'>Verify_Hamburger_Menu_About_License_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:50:50 PM</td>
+										<td class='linked' test-id='21'>Verify_Hamburger_Get_Another_Max_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:51:55 PM</td>
+										<td class='linked' test-id='23'>Verify_Hamburger_About_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:52:13 PM</td>
+										<td class='linked' test-id='25'>Verify_Hamburger_Surfboard_Help_UI_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:52:47 PM</td>
+										<td class='linked' test-id='27'>Verify_Hamburger_Surfboard_FAQ_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:06 PM</td>
+										<td class='linked' test-id='29'>Verify_Hamburger_Surfboard_Self_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:26 PM</td>
+										<td class='linked' test-id='31'>Verify_Hamburger_Surfboard_Chat_With_US_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:53:47 PM</td>
+										<td class='linked' test-id='33'>Verify_Amazon_Features_UI_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:24 PM</td>
+										<td class='linked' test-id='34'>Verify_Get_Alexa_Skills_Drop_Down_Box</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:28 PM</td>
+										<td class='linked' test-id='35'>Verify_Show_Password_Button</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:32 PM</td>
+										<td class='linked' test-id='36'>Verify_Copy_Password</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:35 PM</td>
+										<td class='linked' test-id='37'>Verify_Enable_AFFS_Feature</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:38 PM</td>
+										<td class='linked' test-id='38'>Verify_Amazon_Feature_Help_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:54:56 PM</td>
+										<td class='linked' test-id='40'>Verify_Add_Device_Menu</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:17 PM</td>
+										<td class='linked' test-id='41'>Verify_Cable_Modem_Tab</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:35 PM</td>
+										<td class='linked' test-id='43'>Verify_Max_Router_Tab</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:58:53 PM</td>
+										<td class='linked' test-id='45'>Verify_Device_Details_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:11 PM</td>
+										<td class='linked' test-id='47'>Verify_Specifications_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:26 PM</td>
+										<td class='linked' test-id='48'>Verify_Add_Additional_Device</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:30 PM</td>
+										<td class='linked' test-id='49'>Verify_Notifications_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:33 PM</td>
+										<td class='linked' test-id='50'>Verify_User_Guide_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:40 PM</td>
+										<td class='linked' test-id='51'>Verify_FAQ_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 08:59:48 PM</td>
+										<td class='linked' test-id='52'>Verify_Remove_Device_Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:00:00 PM</td>
+										<td class='linked' test-id='53'>Verify_Install_Left_Satellite</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:02:09 PM</td>
+										<td class='linked' test-id='55'>Verify_Install_Right_Satellite</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:03:15 PM</td>
+										<td class='linked' test-id='57'>Verify_Network_Health_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:15 PM</td>
+										<td class='linked' test-id='59'>Verify_Network_Optimization_Settings_Page</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:34 PM</td>
+										<td class='linked' test-id='61'>Verify_Connected_Device_Signal_Strength_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:04:53 PM</td>
+										<td class='linked' test-id='63'>Verify_Satellite_Signal_Strength_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:12 PM</td>
+										<td class='linked' test-id='65'>Verify_Satellite_Link_Rate_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:30 PM</td>
+										<td class='linked' test-id='67'>Verify_ISP_Speed_Link_Rate_Sensitivity_Medium</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:05:49 PM</td>
+										<td class='linked' test-id='69'>Verify_Connected_Device_Signal_Strength_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:08 PM</td>
+										<td class='linked' test-id='71'>Verify_Satellite_Signal_Strength_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:27 PM</td>
+										<td class='linked' test-id='73'>Verify_Satellite_Link_Rate_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:06:45 PM</td>
+										<td class='linked' test-id='75'>Verify_ISP_Speed_Link_Rate_Sensitivity_High</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:03 PM</td>
+										<td class='linked' test-id='77'>Verify_Connected_Device_Signal_Strength_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:23 PM</td>
+										<td class='linked' test-id='79'>Verify_Satellite_Signal_Strength_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:07:42 PM</td>
+										<td class='linked' test-id='81'>Verify_Satellite_Link_Rate__Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:00 PM</td>
+										<td class='linked' test-id='83'>Verify_ISP_Speed_Link_Rate_Sensitivity_Low</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:19 PM</td>
+										<td class='linked' test-id='85'>Verify_Network_Optimization_Recommendations</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 24, 2022 09:08:37 PM</td>
+										<td class='linked' test-id='87'>Verify_Disabled_Network_Optimization_Settings</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -349,7 +3624,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>88</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -361,19 +3636,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 24, 2022 07:40:00 PM</div>
+					<div class='panel-lead'>Feb 24, 2022 08:35:05 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 24, 2022 07:40:34 PM</div>
+			 		<div class='panel-lead'>Feb 24, 2022 09:08:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 33s+719ms</div>
+					<div class='panel-lead'>0h 33m 49s+916ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -390,11 +3665,11 @@
 						</tr>
 						<tr>
 							<td>Android_Android</td>
-							<td>0</td>
+							<td>19</td>
+							<td>34</td>
 							<td>1</td>
-							<td>0</td>
 							<td>
-									0%
+									35.185%
 							</td>
 						</tr>
 					</table>
@@ -408,14 +3683,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 2,
-				passParent: 1,
-				failParent: 1,
+                parentCount: 88,
+				passParent: 53,
+				failParent: 34,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 1,
+				skipParent: 1,
+				exceptionsParent: 35,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -440,7 +3715,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Verify_SignUp_And_Onboard":30.705,"Verify_SignUp_And_Onboard":0
+			        "Login_And_Onboard":177.148,"Verify_Home_UI_Page":412.999,"Verify_Home_UI_Page":0.001,"Verify_Home_Device_Signal_Strength_Navigation":0.001,"Verify_Home_Speed_Test_History_Navigation":30.811,"Verify_Home_Speed_Test_History_Navigation":0,"Verify_Home_Currently_Blocked_Devices_Navigation":48.631,"Verify_Home_Main_Devices_Navigation":63.25,"Verify_Home_Main_Devices_Navigation":0,"Verify_Home_Total_Devices_Navigation":30.365,"Verify_Home_Total_Devices_Navigation":0,"Verify_Home_Hamburger_Navigation":15.395,"Verify_Home_Hamburger_Navigation":0,"Verify_Home_Notifications_Navigation":61.514,"Verify_Hamburger_Menu_Page":34.169,"Verify_Hamburger_Menu_Settings_UI_Page":10.831,"Verify_Hamburger_Menu_Settings_Help_Page":4.247,"Verify_Hamburger_Menu_About_UI_Page":3.078,"Verify_Hamburger_Menu_About_License_Page":18.523,"Verify_Hamburger_Menu_About_License_Page":0,"Verify_Hamburger_Get_Another_Max_Page":60.187,"Verify_Hamburger_Get_Another_Max_Page":0,"Verify_Hamburger_About_Help_Page":15.047,"Verify_Hamburger_About_Help_Page":0,"Verify_Hamburger_Surfboard_Help_UI_Page":30.22,"Verify_Hamburger_Surfboard_Help_UI_Page":0,"Verify_Hamburger_Surfboard_FAQ_Help_Page":15.458,"Verify_Hamburger_Surfboard_FAQ_Help_Page":0,"Verify_Hamburger_Surfboard_Self_Help_Page":17.147,"Verify_Hamburger_Surfboard_Self_Help_Page":0,"Verify_Hamburger_Surfboard_Chat_With_US_Page":17.858,"Verify_Hamburger_Surfboard_Chat_With_US_Page":0,"Verify_Amazon_Features_UI_Page":35.159,"Verify_Get_Alexa_Skills_Drop_Down_Box":1.466,"Verify_Show_Password_Button":1.631,"Verify_Copy_Password":0.987,"Verify_Enable_AFFS_Feature":1.485,"Verify_Amazon_Feature_Help_Page":15.202,"Verify_Amazon_Feature_Help_Page":0,"Verify_Add_Device_Menu":196.803,"Verify_Cable_Modem_Tab":15.316,"Verify_Cable_Modem_Tab":0,"Verify_Max_Router_Tab":15.052,"Verify_Max_Router_Tab":0,"Verify_Device_Details_Page":15.053,"Verify_Device_Details_Page":0,"Verify_Specifications_Page":13.05,"Verify_Add_Additional_Device":2.111,"Verify_Notifications_Page":0.963,"Verify_User_Guide_Page":5.172,"Verify_FAQ_Page":5.445,"Verify_Remove_Device_Page":9.661,"Verify_Install_Left_Satellite":124.512,"Verify_Install_Left_Satellite":0,"Verify_Install_Right_Satellite":60.285,"Verify_Install_Right_Satellite":0,"Verify_Network_Health_Page":55.242,"Verify_Network_Health_Page":0,"Verify_Network_Optimization_Settings_Page":15.053,"Verify_Network_Optimization_Settings_Page":0,"Verify_Connected_Device_Signal_Strength_Sensitivity_Medium":16.173,"Verify_Connected_Device_Signal_Strength_Sensitivity_Medium":0,"Verify_Satellite_Signal_Strength_Sensitivity_Medium":15.061,"Verify_Satellite_Signal_Strength_Sensitivity_Medium":0,"Verify_Satellite_Link_Rate_Sensitivity_Medium":15.037,"Verify_Satellite_Link_Rate_Sensitivity_Medium":0,"Verify_ISP_Speed_Link_Rate_Sensitivity_Medium":15.472,"Verify_ISP_Speed_Link_Rate_Sensitivity_Medium":0,"Verify_Connected_Device_Signal_Strength_Sensitivity_High":16.115,"Verify_Connected_Device_Signal_Strength_Sensitivity_High":0,"Verify_Satellite_Signal_Strength_Sensitivity_High":15.028,"Verify_Satellite_Signal_Strength_Sensitivity_High":0,"Verify_Satellite_Link_Rate_Sensitivity_High":15.058,"Verify_Satellite_Link_Rate_Sensitivity_High":0,"Verify_ISP_Speed_Link_Rate_Sensitivity_High":15.078,"Verify_ISP_Speed_Link_Rate_Sensitivity_High":0,"Verify_Connected_Device_Signal_Strength_Sensitivity_Low":16.159,"Verify_Connected_Device_Signal_Strength_Sensitivity_Low":0.001,"Verify_Satellite_Signal_Strength_Sensitivity_Low":15.064,"Verify_Satellite_Signal_Strength_Sensitivity_Low":0,"Verify_Satellite_Link_Rate__Sensitivity_Low":15.028,"Verify_Satellite_Link_Rate__Sensitivity_Low":0,"Verify_ISP_Speed_Link_Rate_Sensitivity_Low":15.029,"Verify_ISP_Speed_Link_Rate_Sensitivity_Low":0,"Verify_Network_Optimization_Recommendations":15.037,"Verify_Network_Optimization_Recommendations":0,"Verify_Disabled_Network_Optimization_Settings":15.057,"Verify_Disabled_Network_Optimization_Settings":0
 			};
 		</script>
 	

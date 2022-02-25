@@ -215,3 +215,4 @@ com/cs/arris/Utilities/SwipeActions.class
 com/cs/arris/Pages/ParentalControlAddDeviceHelpPage.class
 com/cs/arris/Pages/MainDevicePage.class
 com/cs/arris/Pages/NetworkGeneralSettingsPage.class
+com/cs/arris/Pages/AddSatelliteRegistrationFailedPage.class
