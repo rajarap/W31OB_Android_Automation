@@ -39,7 +39,7 @@ pipeline
             {
                 allOf
                 {
-                    expression { params.FROM_JOB_NAME == 'Arris_Android_Manually_Build_Any_Branch_Or_Tag' }
+                    expression { params.FROM_JOB_NAME == 'Arris_Android_Manually_Build_Any_Branch_Or_Tag_EXP' }
                     expression { params.QA_AUTOMATION  == true }
                 }
             }
