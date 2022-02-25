@@ -20,10 +20,8 @@ public class FAQHelpPage extends ParentClass implements Page
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/txtToolBarTitle") //Help
 	public MobileElement helpTitle; 
 	
-	@AndroidFindAll({ 
-		@AndroidBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']"), // back button
-		@AndroidBy(xpath = "//android.widget.ImageButton[@bounds='[0,112][147,259]']") })
-		public MobileElement backButton;
+	@AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Navigate up\"]")
+	public MobileElement backButton;
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_text")
 	//Search product FAQs here and get answers to you most pressing issues.

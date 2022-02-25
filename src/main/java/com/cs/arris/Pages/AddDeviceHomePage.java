@@ -145,6 +145,7 @@ public class AddDeviceHomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickSpecificationsImage() {
+		super.swipeUp();
 		if (specificationsImage.isDisplayed()) {
 			click(specificationsImage);
 			utils.log().info("Add Device Home Page - Clicked on Specifications Image");
@@ -156,6 +157,7 @@ public class AddDeviceHomePage extends ParentClass implements Page {
 	}
 
 	public boolean clickDeviceDetailsText() {
+		super.swipeUp();
 		if (deviceDetailsText.isDisplayed()) {
 			click(deviceDetailsText);
 			utils.log().info("Add Device Home Page - Clicked on Device Details Text");

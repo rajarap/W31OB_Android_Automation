@@ -536,6 +536,8 @@ public class HomePage extends ParentClass implements Page {
 			}catch(Exception e) {
 				utils.log().info("Right Router Image is not displayed");}
 				
+			super.swipeUp();
+				
 				try {
 			if (deviceSignalStrengthLeaderBoardText.isDisplayed())
 				utils.log().info("Device Signal Strength Leader Board Text is displayed");
@@ -554,8 +556,7 @@ public class HomePage extends ParentClass implements Page {
 			}catch(Exception e) {
 				utils.log().info("Device Signal Strength Leader Board Count is not displayed");}
 
-			super.swipeUp();
-
+			
 			try {
 			if (speedTestHistoryText.isDisplayed())
 				utils.log().info("Speed Test History Text is displayed");
@@ -733,6 +734,7 @@ public class HomePage extends ParentClass implements Page {
 	}
 	
 	public boolean clickTapHereToTurnON() {
+		super.swipeDown();
 		if (tapToTurnOnNetworkHealth.isDisplayed()) {
 			click(tapToTurnOnNetworkHealth);
 			utils.log().info("Home Page - Clicked on Tap Here To Turn ON Button");

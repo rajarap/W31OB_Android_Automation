@@ -93,6 +93,11 @@ public class HomeNetworkHealthOptimizationPage extends ParentClass implements Pa
 	     return optSettings;
 	  }
 	 
+	 public HomeNetowrkSatellitePerformanceAndConnectionHealthPage getSatellitePerformancePageObject() {
+		 HomeNetowrkSatellitePerformanceAndConnectionHealthPage satellitePerformance = new HomeNetowrkSatellitePerformanceAndConnectionHealthPage();
+		 return satellitePerformance;
+	 }
+	  
 	 public HomeNetowrkDevicesWifiClientConnectionHealthPage getWifiClientConnectionPageObject() {
 		 HomeNetowrkDevicesWifiClientConnectionHealthPage wifiConnection = new HomeNetowrkDevicesWifiClientConnectionHealthPage();
 	     return wifiConnection;

@@ -18,10 +18,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class AboutViewLicensesPage extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/ivDialogClose]"), // CONTINUE
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[915,146][1046,241]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/ivDialogClose") })
+
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/ivDialogClose")
 	public MobileElement closeButton;
 
 	@AndroidFindBy(xpath = "//android.view.View[@bounds='[49,338][1031,1010]']")
@@ -29,10 +27,8 @@ public class AboutViewLicensesPage extends ParentClass implements Page {
 	// "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.widget.TextView")
 	public MobileElement deviceImage;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@bounds='[49,1007][1031,1225]']")
-	// @AndroidFindBy (xpath =
-	// "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.widget.ListView/android.view.View[1]")
-	public MobileElement surfboardWarranty;
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/aboutTitle")
+	public MobileElement termsAndConditions;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@bounds='[49,1222][1031,1451]']")
 	public MobileElement surfboardimage;
@@ -120,11 +116,6 @@ public class AboutViewLicensesPage extends ParentClass implements Page {
 				utils.log().info("mAX Router Image is displayed");
 			else
 				utils.log().info("mAX Router Image is not displayed");
-
-			if (surfboardWarranty.isDisplayed())
-				utils.log().info("Surfboard Warranty Text : " + surfboardWarranty.getText() + " is displayed");
-			else
-				utils.log().info("Surfboard Warranty Text is not displayed");
 
 			if (surfboardimage.isDisplayed())
 				utils.log().info("Surfboard Image is displayed");
@@ -248,11 +239,11 @@ public class AboutViewLicensesPage extends ParentClass implements Page {
 
 	@Override
 	public boolean isAt() {
-		if (surfboardWarranty.isDisplayed()) {
-			utils.log().info("On View Licenses Page");
+		if (termsAndConditions.isDisplayed()) {
+			utils.log().info("On Terms and Conditions Page");
 			return true;
 		} else {
-			utils.log().info("Not on View Licenses Help Page");
+			utils.log().info("Not onTerms and Conditions Help Page");
 			return false;
 		}
 	}
