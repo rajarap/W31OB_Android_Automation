@@ -25,6 +25,7 @@ com/cs/arris/Pages/NetworkGeneralSettingsIPv6EnableInfoDialog.class
 com/cs/arris/Pages/NetworkGeneralSettingsPortForwardingPage.class
 com/cs/arris/Pages/AmazonFeaturesPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimeEditTimeUnitDialog.class
+com/cs/arris/Pages/HomeNetowrkSatellitePerformanceAndConnectionHealthPage.class
 com/cs/arris/Pages/SpeedTestHistoryPage.class
 com/cs/arris/Pages/AFFSHelpPage.class
 com/cs/arris/Pages/ErrorCode_0003_1003_Service_Is_Currently_Not_Available.class
@@ -43,6 +44,7 @@ com/cs/arris/Pages/TermsAndConditionsPage.class
 com/cs/arris/Pages/SelectYourDevicePage2.class
 com/cs/arris/Pages/NetworkDevicePrioritySettings.class
 com/cs/arris/Pages/DevicesPage.class
+com/cs/arris/Pages/HomeNetowrkTurnOffNetworkOptimizationDialog.class
 com/cs/arris/Pages/CongratulationsPage.class
 com/cs/arris/Pages/AboutViewLicensesPage.class
 com/cs/arris/Pages/RebootYouRouterDialog.class
