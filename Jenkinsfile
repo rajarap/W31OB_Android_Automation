@@ -53,10 +53,15 @@ pipeline
             steps
             {
                 echo '===== Automated Test Started ====='
-                sh """
-                   /Users/rm2652/Library/Android/sdk/platform-tools/adb devices
-                   mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
-                """   
+                
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+                {
+                	sh """
+                   		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
+                		"""   
+                }
+                
                 echo '=====Automated Test Completed====='
             }
         }
@@ -75,10 +80,14 @@ pipeline
             steps
             {
                 echo '===== Automated Test Started ====='
-                sh """
-                    /Users/rm2652/Library/Android/sdk/platform-tools/adb devices
-                    mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
-                """       
+                
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+                {
+                	sh """
+                    	/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                    	mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
+               		 """       
+                }
                 echo '=====Automated Test Completed====='
             }
         }
