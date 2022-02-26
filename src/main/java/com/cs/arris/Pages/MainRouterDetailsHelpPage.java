@@ -19,11 +19,7 @@ public class MainRouterDetailsHelpPage extends ParentClass implements Page
 {
 	public TestUtils utils = new TestUtils();
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/ivDialogClose]"),  //CONTINUE
-		@AndroidBy (xpath = "//android.widget.ImageView[@bounds='[915,146][1046,241]']"),
-		@AndroidBy (id = "com.arris.sbcBeta:id/ivDialogClose") 
-	})
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/ivDialogClose") 
 	public MobileElement closeButton; 
 	
 	@AndroidFindBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.widget.TextView")
@@ -68,8 +64,6 @@ public class MainRouterDetailsHelpPage extends ParentClass implements Page
 		if(routerDetails.isDisplayed())
 		{
 			utils.log().info("On Router Details Help Page");
-			utils.log().info("---------------------------");
-
 			return true;}
 		else {
 			utils.log().info("Not on Router Details Help Page");

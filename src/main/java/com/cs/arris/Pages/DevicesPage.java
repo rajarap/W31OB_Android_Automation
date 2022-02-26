@@ -61,9 +61,7 @@ public class DevicesPage extends ParentClass implements Page {
 			@AndroidBy(xpath = "//android.widget.ImageButton[@bounds='[0,112][147,259]']") })
 	public MobileElement backButton;
 
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/helpIcon']"),
-			@AndroidBy(xpath = "//android.widget.ImageButton[@bounds='[980,153][1046,219]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/helpIcon") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/helpIcon")
 	public MobileElement helpIcon;
 
 	@AndroidFindAll({

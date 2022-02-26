@@ -94,13 +94,13 @@ public class TC02_Medium_Test extends ParentClass
 			
 			TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
 			  getStarted.clickGetStartedButton();
-		  }).grantPermissionsPage(grantPermission -> {
-			  grantPermission.clickContinueButton();
-		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickOnlyThisTimeLink();
-		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
-			  super.pause(3);
-			  accessResoucesOnDevice.clickAllowLink();
+			}).grantPermissionsPage(grantPermission -> {
+				  grantPermission.clickContinueButton();
+			  }).deviceLocationPage(deviceLocation -> {
+				  deviceLocation.clickAllow();
+			  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
+				  super.pause(3);
+				  accessResoucesOnDevice.clickAllow();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();
@@ -465,7 +465,7 @@ public class TC02_Medium_Test extends ParentClass
 		public void Verify_Connected_Devices_On_Ethernet_Tab_Page() {
 			SoftAssert softmain34 = new SoftAssert();
 			softmain34.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().verifyConnectedDeviceDetails());
-			
+			new MainDeviceAllTabPage().getEthernetPageObject().clickBackButton();
 			softmain34.assertAll();
 		}
 		
@@ -514,16 +514,16 @@ public class TC02_Medium_Test extends ParentClass
 //			softmain37.assertAll();
 //		}
 
-		@Test(priority = 38, dependsOnMethods = { "Login_And_Onboard"})
-		public void Verify_Main_Device_Help_Page() {
-			SoftAssert softmain38 = new SoftAssert();
-			softmain38.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().clickHelpButton());
-			if(new MainDeviceAllTabPage().getMainRouterDetailsHelpPageObject().isAt())
-				new MainDeviceAllTabPage().getMainRouterDetailsHelpPageObject().clickCloseButton();
-			new MainDeviceAllTabPage().getEthernetPageObject().clickBackButton();
-			
-			softmain38.assertAll();
-		}
+//		@Test(priority = 38, dependsOnMethods = { "Login_And_Onboard"})
+//		public void Verify_Main_Device_Help_Page() {
+//			SoftAssert softmain38 = new SoftAssert();
+//			softmain38.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().clickHelpButton());
+//			if(new MainDeviceAllTabPage().getMainRouterDetailsHelpPageObject().isAt())
+//				new MainDeviceAllTabPage().getMainRouterDetailsHelpPageObject().clickCloseButton();
+//			new MainDeviceAllTabPage().getEthernetPageObject().clickBackButton();
+//			
+//			softmain38.assertAll();
+//		}
 	  
 		@Test(priority = 39, dependsOnMethods = { "Login_And_Onboard"})
 		public void Verify_Devices_UI_Page() {
@@ -562,20 +562,21 @@ public class TC02_Medium_Test extends ParentClass
 		{
 			SoftAssert softdevices5 = new SoftAssert();
 			softdevices5.assertTrue(new DevicesPage().verifyOfflineDeviceDetails());
+			softdevices5.assertTrue(new DevicesPage().clickBackButton());
 			softdevices5.assertAll();
 		}
 		
 		
-		@Test(priority = 43, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
-		public void Verify_Devices_Help_Page() 
-		{
-			SoftAssert softdevices6 = new SoftAssert();
-			softdevices6.assertTrue(new DevicesPage().clickHelpButton());
-			if(new DevicesPage().getDevicesHelpPageObject().isAt())
-				softdevices6.assertTrue(new DevicesPage().getDevicesHelpPageObject().clickCloseButton());
-			softdevices6.assertTrue(new DevicesPage().clickBackButton());
-			softdevices6.assertAll();
-		}
+//		@Test(priority = 43, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
+//		public void Verify_Devices_Help_Page() 
+//		{
+//			SoftAssert softdevices6 = new SoftAssert();
+//			softdevices6.assertTrue(new DevicesPage().clickHelpButton());
+//			if(new DevicesPage().getDevicesHelpPageObject().isAt())
+//				softdevices6.assertTrue(new DevicesPage().getDevicesHelpPageObject().clickCloseButton());
+//			softdevices6.assertTrue(new DevicesPage().clickBackButton());
+//			softdevices6.assertAll();
+//		}
 	  
 		@Test(priority = 44, dependsOnMethods = { "Login_And_Onboard"})
 		public void Verify_Devices_Signal_Strength_UI_Page() {
@@ -585,6 +586,7 @@ public class TC02_Medium_Test extends ParentClass
 			utils.log().info("********************************************");
 			SoftAssert softsignal2 = new SoftAssert();
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			super.swipeUp();
 			new HomePage().clickDeviceSignalStrengthImage();
 			if(new DeviceSignalStrengthLeaderBoardPage().isAt()) 
 				softsignal2.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifyUIOnDeviceSignalStrengthPage());

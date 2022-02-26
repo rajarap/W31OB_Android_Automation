@@ -115,67 +115,33 @@ public class HomePage extends ParentClass implements Page {
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/imgNoRightSatellite")
 	public MobileElement rightSatelliteImage;
 	
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textView162"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1569][784,1633]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/textView162") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textView162")
 	public MobileElement deviceSignalStrengthLeaderBoardText;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/img_full_screen2"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[924,1596][995,1667]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_full_screen2") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/img_full_screen2")
 	public MobileElement deviceSignalStrengthLeaderBoardImage;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textBitRateDevices"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1633][118,1693]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/textBitRateDevices") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textBitRateDevices")
 	public MobileElement bitRateDevices;
 
-	@AndroidFindBy(xpath = "//android.view.ViewGroup[@bounds='[51,1154][1029,1346]']")
-	public MobileElement deviceSignalStrengthButton;
-
-	@AndroidFindAll({ 
-			@AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textView163"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1838][437,1902]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/textView163") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textView163")
 	public MobileElement speedTestHistoryText;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/img_full_screen3"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[924,1873][995,1944]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_full_screen3") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/img_full_screen3")
 	public MobileElement speedTestHistoryImage;
 
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textSpeedHistoryDevices"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1919][129,1979]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/textSpeedHistoryDevices") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textSpeedHistoryDevices")
 	public MobileElement speedTestHistoryDevices;
 
-	@AndroidFindBy(xpath = "//android.view.ViewGroup[@bounds='[51,1397][1029,1657]']")
-	public MobileElement speedTestHistoryButton;
 
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textView164")
+	public MobileElement currentlyBlockedDevicesText; 
 
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/textView164"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1742][585,1806]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/textView164") })
-	public MobileElement currentlyBlockedDevicesText; // Currently Blocked Devices
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/img_full_screen5"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[924,1742][995,1813]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_full_screen5") })
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/img_full_screen5")
 	public MobileElement currentlyBlockedDevicesImage;
 
-	@AndroidFindBy(id = "com.arris.sbcBeta:id/imgBlockedDevices")
-	public MobileElement currentlyBlockedDevicesButton;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/img_full_screen3"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[85,1806][578,1866]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_full_screen3") })
-	public MobileElement parentalControlIsDisabled; // Parental Control is disabled
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/textBlockedDevices")
+	public MobileElement parentalControlIsDisabled;
 
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/img_full_screen5"),
@@ -205,51 +171,6 @@ public class HomePage extends ParentClass implements Page {
 			@AndroidBy(xpath = "//android.widget.LinearLayout[@bounds='[0,2000][355,2042]']"),
 			@AndroidBy(id = "com.arris.sbcBeta:id/home_view") })
 	public MobileElement homeButton;
-
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/home_txt"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[137,2089][218,2135]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/home_txt") })
-	public MobileElement homeButtonText;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/img_footer_home"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[142,2018][213,2042]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_footer_home") })
-	public MobileElement homeButtonImage;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.LinearLayout[@resource-id='com.arris.sbcBeta:id/network_view"),
-			@AndroidBy(xpath = "//android.widget.LinearLayout[@bounds='[362,2000][717,2042]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/network_view") })
-	public MobileElement networkButton;
-
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/network_txt"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[484,2089][595,2135]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/network_txt") })
-	public MobileElement networkButtonText;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView@resource-id='com.arris.sbcBeta:id/img_footer_network"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[504,2018][575,2042]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_footer_network") })
-	public MobileElement networkButtonImage;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.LinearLayout[@resource-id='com.arris.sbcBeta:id/parental_view"),
-			@AndroidBy(xpath = "//android.widget.LinearLayout[@bounds='[724,2000][1080,2042]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/parental_view") })
-	public MobileElement parentalButton;
-
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/parental_txt"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[844,2089][959,2135]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/parental_txt") })
-	public MobileElement parentalButtonText;
-
-	@AndroidFindAll({
-			@AndroidBy(xpath = "//android.widget.ImageView[@resource-id='ccom.arris.sbcBeta:id/img_footer_parental"),
-			@AndroidBy(xpath = "//android.widget.ImageView[@bounds='[866,2018][937,2042]']"),
-			@AndroidBy(id = "com.arris.sbcBeta:id/img_footer_parental") })
-	public MobileElement parentalButtonImage;
 
 	// Network Optimization dialog elements
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/dialog_heading")
@@ -668,8 +589,7 @@ public class HomePage extends ParentClass implements Page {
 			utils.log().info("Home Page - Clicked on Device Signal Strength Leader Board Image");
 			return true;
 		} else {
-			utils.log().info(
-					"Home Page - Device Signal Strength Leader Board Image is either not visible or is not present on the DOM");
+			utils.log().info("Home Page - Device Signal Strength Leader Board Image is either not visible or is not present on the DOM");
 			return false;
 		}
 	}
