@@ -766,12 +766,13 @@ public class ParentClass
 			 return ipAdd;
 		}
 			
-		public void generateRandomNumber13()
+		public int generateRandomNumber13()
 		{
 			int min = 1;
 			int max = 2;
 			Random rand = new Random();
 			randNumber = rand.nextInt(max - min + 1) + min;
+			return randNumber;
 		}
 		
 		//For Network - LAN IP Reservation

@@ -258,11 +258,11 @@ public class ParentalControlUserProfilePage extends ParentClass implements Page 
 				utils.log().info(totalDevicesAdded.getText() + " text is displayed");
 			else
 				utils.log().info("Total Devices Added text is not displayed");
-
-			if (expandDeviceListButton.isDisplayed())
-				utils.log().info("Expand button image is displayed");
-			else
-				utils.log().info("Expand button image is not displayed");
+			try {
+				if (expandDeviceListButton.isDisplayed())
+					utils.log().info("Expand button image is displayed");
+			}catch(Exception e) {
+				utils.log().info("Expand button image is not displayed");}
 
 			if (ruleCountForProfile.isDisplayed())
 				utils.log().info(ruleCountForProfile.getText() + " text is displayed");

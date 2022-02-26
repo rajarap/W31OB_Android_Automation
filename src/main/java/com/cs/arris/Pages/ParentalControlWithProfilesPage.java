@@ -81,7 +81,13 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/parental_enable_disable' and @checked='false']")
 	public MobileElement disableParentalControlToggleButton;
-
+	
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/parental_global_plus_icon")
+	public MobileElement pauseAllProfilesExpandButton;
+	
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/pause_internet_enable_disable")
+	public MobileElement pauseAllProfilesToggleButton;
+	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/pause_internet_enable_disable' and @checked='true']")
 	public MobileElement enablePauseAllProfilesToggleButton;
 
@@ -257,7 +263,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 			if (addProfileLink.isDisplayed())
 				utils.log().info(addProfileLink.getText() + " link is displayed");
 			else
-				utils.log().info("Add Profile link is not displayed");
+				utils.log().info("Add Profile link is not displayed");	
 			
 			try {
 				if (pauseAllProfilesText.isDisplayed())
@@ -268,17 +274,12 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 				if (pauseInternetAccessToAllText.isDisplayed())
 					utils.log().info(pauseInternetAccessToAllText.getText() + " text is displayed");
 			}catch(Exception exp) {utils.log().info("Pause Internet For All Profiles text is not displayed");}
+			
+			try {	
+				if (pauseAllProfilesToggleButton.isDisplayed())
+					utils.log().info("Pause All Profiles Toggle button is displayed");
+			}catch(Exception exp) {utils.log().info("Pause All Profiles Toggle button is not displayed");}
 
-			try {	
-				if (disablePauseAllProfilesToggleButton.isDisplayed())
-					utils.log().info("Pause All Profiles Switch button is OFF");
-			}catch(Exception exp) {utils.log().info("Pause All Profiles Switch button enabled");}
-			
-			try {	
-				if (enablePauseAllProfilesToggleButton.isDisplayed())
-					utils.log().info("Pause All Profiles Switch button is ON");
-			}catch(Exception exp) {utils.log().info("Pause All Profiles Switch button disabled");}
-			
 			try {	
 				if (noProfilesText1.isDisplayed())
 					utils.log().info(noProfilesText1.getText());
@@ -423,8 +424,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 				utils.log().info("User Profile : " + i);
 				utils.log().info("------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
-						"//android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[" + i
-								+ "]");
+						"//android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
 
 				for (MobileElement e : entity) {
 					try {
@@ -561,27 +561,25 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 	}
 
 	public boolean clickOnUserProfile() {
-		utils.log().info("****************************************");
-		utils.log().info("Selecting a User Profile from the list  ");
-		utils.log().info("****************************************");
-		//super.generateRandomNumber13();
+		utils.log().info("*****************************************");
+		utils.log().info(" Selecting a User Profile from the list  ");
+		utils.log().info("*****************************************");
+		int count = super.generateRandomNumber13();
 
 		try {
-			for (int i = 1; i <= 1; i++) {
-//				utils.log().info("User Profile : " + i);
-//				utils.log().info("------------------");
+			for (int i = count ; i <= count; i++) {
+				utils.log().info("User Profile : " + i);
+				utils.log().info("-------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
-						"//androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
+				"//android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
 
-				for (MobileElement e : entity) {
+				for (MobileElement e : entity) 
+				{
 					try {
-						//if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").isDisplayed()) {
-							utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]").getText());
-							click(super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]"));
-						//}
+							utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getText());
+							click(super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']"));
 					} catch (Exception exp) {
-						utils.log().info("User Profile Name is not displayed ");
-					}
+						utils.log().info("User Profile Name is not displayed ");}
 				}
 			}
 			return true;
