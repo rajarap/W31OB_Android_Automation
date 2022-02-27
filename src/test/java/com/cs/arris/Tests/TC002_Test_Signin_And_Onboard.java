@@ -132,7 +132,7 @@ public class TC002_Test_Signin_And_Onboard extends ParentClass
 			  connectionRequired.turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 			  super.pause(15);
 			  connectionRequired.clickContinue();
-			  super.pause(20);
+			  super.pause(30);
 		  }).congratulations(congrats -> {
 			  congrats.clickContinueButton();
 			  super.pause(5);
