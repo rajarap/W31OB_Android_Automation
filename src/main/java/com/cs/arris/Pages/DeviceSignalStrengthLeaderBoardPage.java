@@ -145,6 +145,11 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 		return footerIconsPage;
 	}
 	
+	public AppRatingDialog getAppRatingDialogObject() {
+		AppRatingDialog ratingDialog = new AppRatingDialog();
+		return ratingDialog;
+	}
+	
 	public boolean verifyUIOnDeviceSignalStrengthPage() {
 		try {
 			utils.log().info("                                                              ");

@@ -54,7 +54,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Feb 26, 2022 04:51:55 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Feb 27, 2022 01:41:58 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -71,6 +71,7 @@
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -123,10 +124,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='85.185%'><span class='strong'>23</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='4.167%'><span class='strong'>1</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='14.815%'>4</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='4.167%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='91.667%'>22</span> skipped
                 </div>
             </div>
         </div>
@@ -144,17 +145,17 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Login_And_Onboard</span>
-						<span class='test-time'>Feb 26, 2022 04:51:55 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:41:58 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:51:55 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:54:52 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 57s+128ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:41:58 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+349ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -174,11 +175,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:54:52 PM</td>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>1:44:07 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Failed
 					
 				</td>
 			</tr>
@@ -189,15 +190,29 @@
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify_Parental_Control_UI_Page</span>
-						<span class='test-time'>Feb 26, 2022 04:54:57 PM</span>
+						<span class='test-name'>Login_And_Onboard</span>
+						<span class='test-time'>Feb 27, 2022 01:44:08 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:54:57 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:57:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 5s+839ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:08 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Parental_Control_UI_Page</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -217,11 +232,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:57:03 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -230,17 +245,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='4'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Profile_Page</span>
-						<span class='test-time'>Feb 26, 2022 04:57:05 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:57:05 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:57:18 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+746ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -260,11 +275,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:57:18 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -273,17 +288,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='5'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_User_Profile_Page</span>
-						<span class='test-time'>Feb 26, 2022 04:57:21 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:57:21 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:58:27 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 5s+948ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -303,11 +318,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:58:27 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -316,17 +331,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='6'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_User_Profile_Help_Page</span>
-						<span class='test-time'>Feb 26, 2022 04:58:29 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:58:29 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:58:35 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+664ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -346,11 +361,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:58:35 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -359,17 +374,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='7'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Edit_User_Profile_Name</span>
-						<span class='test-time'>Feb 26, 2022 04:58:37 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:58:37 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:58:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+479ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -389,11 +404,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:58:43 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -402,17 +417,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='8'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Device_To_User_Profile</span>
-						<span class='test-time'>Feb 26, 2022 04:58:45 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:58:45 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+826ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -432,11 +447,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:03 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -445,17 +460,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='9'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Device_Help_Page</span>
-						<span class='test-time'>Feb 26, 2022 04:59:05 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:05 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:08 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+124ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -475,11 +490,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:08 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -488,17 +503,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='10'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Devices_Associated_With_User_Profile</span>
-						<span class='test-time'>Feb 26, 2022 04:59:11 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:11 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:12 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+772ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -518,11 +533,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:12 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -531,17 +546,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='11'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Rule_To_User_Profile</span>
-						<span class='test-time'>Feb 26, 2022 04:59:15 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:15 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:16 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+188ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -561,11 +576,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:16 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -574,17 +589,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='12'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_EveryDay_Schedule_To_Rule</span>
-						<span class='test-time'>Feb 26, 2022 04:59:18 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:18 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:24 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+472ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -604,11 +619,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:24 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -617,17 +632,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='13'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Select_Start_Time_For_EveryDay_Schedule</span>
-						<span class='test-time'>Feb 26, 2022 04:59:27 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:27 PM</span>
-	<span class='label end-time'>Feb 26, 2022 04:59:30 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+799ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -647,11 +662,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:59:30 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -660,17 +675,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='14'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Select_Stop_Time_For_EveryDay_Schedule</span>
-						<span class='test-time'>Feb 26, 2022 04:59:32 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 04:59:32 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:00:42 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 9s+832ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -690,11 +705,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:00:42 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -703,17 +718,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='15'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Custom_Schedule_To_Rule</span>
-						<span class='test-time'>Feb 26, 2022 05:00:44 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:00:44 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:00:46 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+285ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -733,11 +748,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:00:46 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -746,17 +761,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='16'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Custom_Schedule_Select_DOW</span>
-						<span class='test-time'>Feb 26, 2022 05:00:48 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:00:48 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:00:51 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+441ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -776,11 +791,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:00:51 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -789,117 +804,103 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='17'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Add_Custom_Schedule_Select_Start_Time</span>
-						<span class='test-time'>Feb 26, 2022 05:00:53 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:00:53 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:00:54 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+12ms</span>
-</div>
-<div class='test-attributes'>
-	<div class='category-list'>
-		<span class='category label'>Android_Android</span>
-	</div>
-	<div class='author-list'>
-		<span class='author label'>PrabhuRajarathinam</span>
-	</div>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:00:54 PM</td>
-				<td class='step-details'>
-						Test Passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Add_Custom_Schedule_Select_Stop_Time</span>
-						<span class='test-time'>Feb 26, 2022 05:00:56 PM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:00:56 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:02:05 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 8s+437ms</span>
-</div>
-<div class='test-attributes'>
-	<div class='category-list'>
-		<span class='category label'>Android_Android</span>
-	</div>
-	<div class='author-list'>
-		<span class='author label'>PrabhuRajarathinam</span>
-	</div>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>5:02:05 PM</td>
-				<td class='step-details'>
-						Test Failed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Add_Custom_Schedule_Select_Stop_Time</span>
-						<span class='test-time'>Feb 26, 2022 05:02:05 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:02:05 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:02:05 PM</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
+				<td class='step-details'>
+						Test Skipped
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify_Add_Custom_Schedule_Select_Stop_Time</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Android_Android</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>PrabhuRajarathinam</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
+				<td class='step-details'>
+						Test Skipped
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='19'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Rules_Associated_With_User</span>
-						<span class='test-time'>Feb 26, 2022 05:02:08 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:02:08 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:02:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+877ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -919,11 +920,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:02:25 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -932,17 +933,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='20'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Pause_Internet_For_All_Users</span>
-						<span class='test-time'>Feb 26, 2022 05:02:28 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:02:28 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:02:35 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+264ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -962,11 +963,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:02:35 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -975,17 +976,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='21'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Currently_Blocked_Profiles</span>
-						<span class='test-time'>Feb 26, 2022 05:02:37 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:02:37 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:03:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 47s+840ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -1005,11 +1006,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>5:03:25 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -1018,17 +1019,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='22'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Resume_Internet_For_All_Users</span>
-						<span class='test-time'>Feb 26, 2022 05:03:28 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:03:28 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:03:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+264ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -1048,11 +1049,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>5:03:43 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Failed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -1061,31 +1062,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Resume_Internet_For_All_Users</span>
-						<span class='test-time'>Feb 26, 2022 05:03:43 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:03:43 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:03:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='24'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='23'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</span>
-						<span class='test-time'>Feb 26, 2022 05:03:45 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:03:45 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:04:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+635ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -1105,11 +1092,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>5:04:03 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Failed
+						Test Skipped
 					
 				</td>
 			</tr>
@@ -1118,31 +1105,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</span>
-						<span class='test-time'>Feb 26, 2022 05:04:04 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:04:04 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:04:04 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='26'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='24'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Parental_Control_Help_Page</span>
-						<span class='test-time'>Feb 26, 2022 05:04:06 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Feb 27, 2022 01:44:14 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:04:06 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:04:24 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+586ms</span>
+	<span class='label start-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label end-time'>Feb 27, 2022 01:44:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -1162,30 +1135,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>5:04:24 PM</td>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>1:44:14 PM</td>
 				<td class='step-details'>
-						Test Failed
+						Test Skipped
 					
 				</td>
 			</tr>
 		</tbody>
 	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Parental_Control_Help_Page</span>
-						<span class='test-time'>Feb 26, 2022 05:04:25 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2022 05:04:25 PM</span>
-	<span class='label end-time'>Feb 26, 2022 05:04:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 					</div>
 				</li>
@@ -1231,15 +1190,15 @@
 					<div class='category-heading'>
 						<span class='category-name'>Android_Android</span>
 						<span class='category-status right'>
-						<span class='label pass'>19</span>
-						<span class='label fail'>4</span>
+						<span class='label fail'>1</span>
+						<span class='label others'>22</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 19</span>
-							<span status="fail" class='label red lighten-1 white-text'>Failed: 4</span>
 							
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
+							<span status="skip" class='label yellow darken-2 white-text'>Skipped: 22</span>
 						</div>
 						<div class='category-tests'>
 							<table class='bordered table-results'>
@@ -1252,119 +1211,119 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Feb 26, 2022 04:51:55 PM</td>
+										<td>Feb 27, 2022 01:41:58 PM</td>
 										<td class='linked' test-id='1'>Login_And_Onboard</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:54:57 PM</td>
-										<td class='linked' test-id='2'>Verify_Parental_Control_UI_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:57:05 PM</td>
-										<td class='linked' test-id='3'>Verify_Add_Profile_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:57:21 PM</td>
-										<td class='linked' test-id='4'>Verify_User_Profile_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:29 PM</td>
-										<td class='linked' test-id='5'>Verify_User_Profile_Help_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:37 PM</td>
-										<td class='linked' test-id='6'>Verify_Edit_User_Profile_Name</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:45 PM</td>
-										<td class='linked' test-id='7'>Verify_Add_Device_To_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:05 PM</td>
-										<td class='linked' test-id='8'>Verify_Add_Device_Help_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:11 PM</td>
-										<td class='linked' test-id='9'>Verify_Devices_Associated_With_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:15 PM</td>
-										<td class='linked' test-id='10'>Verify_Add_Rule_To_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:18 PM</td>
-										<td class='linked' test-id='11'>Verify_Add_EveryDay_Schedule_To_Rule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:27 PM</td>
-										<td class='linked' test-id='12'>Verify_Select_Start_Time_For_EveryDay_Schedule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:32 PM</td>
-										<td class='linked' test-id='13'>Verify_Select_Stop_Time_For_EveryDay_Schedule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:44 PM</td>
-										<td class='linked' test-id='14'>Verify_Add_Custom_Schedule_To_Rule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:48 PM</td>
-										<td class='linked' test-id='15'>Verify_Add_Custom_Schedule_Select_DOW</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:53 PM</td>
-										<td class='linked' test-id='16'>Verify_Add_Custom_Schedule_Select_Start_Time</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:56 PM</td>
-										<td class='linked' test-id='17'>Verify_Add_Custom_Schedule_Select_Stop_Time</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:08 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='3'>Verify_Parental_Control_UI_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='4'>Verify_Add_Profile_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='5'>Verify_User_Profile_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='6'>Verify_User_Profile_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='7'>Verify_Edit_User_Profile_Name</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='8'>Verify_Add_Device_To_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='9'>Verify_Add_Device_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='10'>Verify_Devices_Associated_With_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='11'>Verify_Add_Rule_To_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='12'>Verify_Add_EveryDay_Schedule_To_Rule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='13'>Verify_Select_Start_Time_For_EveryDay_Schedule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='14'>Verify_Select_Stop_Time_For_EveryDay_Schedule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='15'>Verify_Add_Custom_Schedule_To_Rule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='16'>Verify_Add_Custom_Schedule_Select_DOW</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='17'>Verify_Add_Custom_Schedule_Select_Start_Time</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='18'>Verify_Add_Custom_Schedule_Select_Stop_Time</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='19'>Verify_Rules_Associated_With_User</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:28 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='20'>Verify_Pause_Internet_For_All_Users</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:37 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='21'>Verify_Currently_Blocked_Profiles</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:03:28 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='22'>Verify_Resume_Internet_For_All_Users</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:03:45 PM</td>
-										<td class='linked' test-id='24'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='23'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:04:06 PM</td>
-										<td class='linked' test-id='26'>Verify_Parental_Control_Help_Page</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='24'>Verify_Parental_Control_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -1402,14 +1361,13 @@
 					<div class='author-heading'>
 						<span class='author-name'>PrabhuRajarathinam</span>
 						<span class='author-status right'>
-						<span class='label pass'>19</span>
-						<span class='label fail'>4</span>
+						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='author-content hide'>
 						<div class='author-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 19</span>
-							<span class='label red lighten-1 white-text'>Failed: 4</span>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 						<div class='author-tests'>
@@ -1423,119 +1381,119 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Feb 26, 2022 04:51:55 PM</td>
+										<td>Feb 27, 2022 01:41:58 PM</td>
 										<td class='linked' test-id='1'>Login_And_Onboard</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:54:57 PM</td>
-										<td class='linked' test-id='2'>Verify_Parental_Control_UI_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:57:05 PM</td>
-										<td class='linked' test-id='3'>Verify_Add_Profile_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:57:21 PM</td>
-										<td class='linked' test-id='4'>Verify_User_Profile_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:29 PM</td>
-										<td class='linked' test-id='5'>Verify_User_Profile_Help_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:37 PM</td>
-										<td class='linked' test-id='6'>Verify_Edit_User_Profile_Name</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:58:45 PM</td>
-										<td class='linked' test-id='7'>Verify_Add_Device_To_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:05 PM</td>
-										<td class='linked' test-id='8'>Verify_Add_Device_Help_Page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:11 PM</td>
-										<td class='linked' test-id='9'>Verify_Devices_Associated_With_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:15 PM</td>
-										<td class='linked' test-id='10'>Verify_Add_Rule_To_User_Profile</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:18 PM</td>
-										<td class='linked' test-id='11'>Verify_Add_EveryDay_Schedule_To_Rule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:27 PM</td>
-										<td class='linked' test-id='12'>Verify_Select_Start_Time_For_EveryDay_Schedule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 04:59:32 PM</td>
-										<td class='linked' test-id='13'>Verify_Select_Stop_Time_For_EveryDay_Schedule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:44 PM</td>
-										<td class='linked' test-id='14'>Verify_Add_Custom_Schedule_To_Rule</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:48 PM</td>
-										<td class='linked' test-id='15'>Verify_Add_Custom_Schedule_Select_DOW</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:53 PM</td>
-										<td class='linked' test-id='16'>Verify_Add_Custom_Schedule_Select_Start_Time</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Feb 26, 2022 05:00:56 PM</td>
-										<td class='linked' test-id='17'>Verify_Add_Custom_Schedule_Select_Stop_Time</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:08 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='3'>Verify_Parental_Control_UI_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='4'>Verify_Add_Profile_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='5'>Verify_User_Profile_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='6'>Verify_User_Profile_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='7'>Verify_Edit_User_Profile_Name</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='8'>Verify_Add_Device_To_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='9'>Verify_Add_Device_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='10'>Verify_Devices_Associated_With_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='11'>Verify_Add_Rule_To_User_Profile</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='12'>Verify_Add_EveryDay_Schedule_To_Rule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='13'>Verify_Select_Start_Time_For_EveryDay_Schedule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='14'>Verify_Select_Stop_Time_For_EveryDay_Schedule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='15'>Verify_Add_Custom_Schedule_To_Rule</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='16'>Verify_Add_Custom_Schedule_Select_DOW</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='17'>Verify_Add_Custom_Schedule_Select_Start_Time</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='18'>Verify_Add_Custom_Schedule_Select_Stop_Time</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='19'>Verify_Rules_Associated_With_User</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:28 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='20'>Verify_Pause_Internet_For_All_Users</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:02:37 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='21'>Verify_Currently_Blocked_Profiles</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:03:28 PM</td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
 										<td class='linked' test-id='22'>Verify_Resume_Internet_For_All_Users</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:03:45 PM</td>
-										<td class='linked' test-id='24'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='23'>Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 									<tr>
-										<td>Feb 26, 2022 05:04:06 PM</td>
-										<td class='linked' test-id='26'>Verify_Parental_Control_Help_Page</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Feb 27, 2022 01:44:14 PM</td>
+										<td class='linked' test-id='24'>Verify_Parental_Control_Help_Page</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -1559,7 +1517,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>27</div>
+					<div class='panel-lead'>24</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -1571,19 +1529,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 26, 2022 04:51:55 PM</div>
+					<div class='panel-lead'>Feb 27, 2022 01:41:58 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 26, 2022 05:04:27 PM</div>
+			 		<div class='panel-lead'>Feb 27, 2022 01:44:14 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 12m 31s+928ms</div>
+					<div class='panel-lead'>0h 2m 16s+472ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -1600,11 +1558,11 @@
 						</tr>
 						<tr>
 							<td>Android_Android</td>
-							<td>19</td>
-							<td>4</td>
 							<td>0</td>
+							<td>1</td>
+							<td>22</td>
 							<td>
-									82.609%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -1618,14 +1576,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 27,
-				passParent: 23,
-				failParent: 4,
+                parentCount: 24,
+				passParent: 1,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 4,
+				skipParent: 22,
+				exceptionsParent: 23,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -1650,7 +1608,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Login_And_Onboard":177.128,"Verify_Parental_Control_UI_Page":125.839,"Verify_Add_Profile_Page":12.746,"Verify_User_Profile_Page":65.948,"Verify_User_Profile_Help_Page":5.664,"Verify_Edit_User_Profile_Name":5.479,"Verify_Add_Device_To_User_Profile":17.826,"Verify_Add_Device_Help_Page":3.124,"Verify_Devices_Associated_With_User_Profile":1.772,"Verify_Add_Rule_To_User_Profile":1.188,"Verify_Add_EveryDay_Schedule_To_Rule":6.472,"Verify_Select_Start_Time_For_EveryDay_Schedule":2.799,"Verify_Select_Stop_Time_For_EveryDay_Schedule":69.832,"Verify_Add_Custom_Schedule_To_Rule":2.285,"Verify_Add_Custom_Schedule_Select_DOW":2.441,"Verify_Add_Custom_Schedule_Select_Start_Time":1.012,"Verify_Add_Custom_Schedule_Select_Stop_Time":68.437,"Verify_Add_Custom_Schedule_Select_Stop_Time":0,"Verify_Rules_Associated_With_User":17.877,"Verify_Pause_Internet_For_All_Users":7.264,"Verify_Currently_Blocked_Profiles":47.84,"Verify_Resume_Internet_For_All_Users":15.264,"Verify_Resume_Internet_For_All_Users":0,"Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users":17.635,"Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users":0,"Verify_Parental_Control_Help_Page":18.586,"Verify_Parental_Control_Help_Page":0
+			        "Login_And_Onboard":129.349,"Login_And_Onboard":0.001,"Verify_Parental_Control_UI_Page":0,"Verify_Add_Profile_Page":0,"Verify_User_Profile_Page":0,"Verify_User_Profile_Help_Page":0,"Verify_Edit_User_Profile_Name":0,"Verify_Add_Device_To_User_Profile":0,"Verify_Add_Device_Help_Page":0,"Verify_Devices_Associated_With_User_Profile":0,"Verify_Add_Rule_To_User_Profile":0,"Verify_Add_EveryDay_Schedule_To_Rule":0,"Verify_Select_Start_Time_For_EveryDay_Schedule":0.001,"Verify_Select_Stop_Time_For_EveryDay_Schedule":0,"Verify_Add_Custom_Schedule_To_Rule":0,"Verify_Add_Custom_Schedule_Select_DOW":0,"Verify_Add_Custom_Schedule_Select_Start_Time":0,"Verify_Add_Custom_Schedule_Select_Stop_Time":0,"Verify_Rules_Associated_With_User":0,"Verify_Pause_Internet_For_All_Users":0,"Verify_Currently_Blocked_Profiles":0,"Verify_Resume_Internet_For_All_Users":0,"Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users":0,"Verify_Parental_Control_Help_Page":0
 			};
 		</script>
 	

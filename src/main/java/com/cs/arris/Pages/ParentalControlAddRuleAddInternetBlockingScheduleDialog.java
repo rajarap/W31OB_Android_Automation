@@ -235,6 +235,12 @@ public class ParentalControlAddRuleAddInternetBlockingScheduleDialog extends Par
 			return false;
 		}
 	}
+	
+	public boolean selectMinutes()
+	{
+		super.swipeMinutes(Direction.UP);
+		return true;
+	}
 
 	public boolean verifyUIOnCustomClick() {
 		try {

@@ -59,6 +59,7 @@ import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.SupportsNetworkStateManagement;
 import io.appium.java_client.ios.IOSDriver;
@@ -70,6 +71,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class ParentClass 
 {
@@ -825,6 +828,143 @@ public class ParentClass
 			//2 Devices ( 2.4 GHz)
 			String[] allDevices = totalDevices.trim().split(" ");  //2
 			return Integer.valueOf(allDevices[0]);
+		}
+		
+		public void swipeUserProfile(Direction dir) {
+		    Dimension size;
+			size = getDriver().manage().window().getSize();
+			TouchAction action = new TouchAction(getDriver());
+
+		    int startX = 0;
+		    int endX = 0;
+		    int startY = 0;
+		    int endY = 0;
+
+		    switch (dir) {
+		        case LEFT:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.08);
+		            endX = (int) (size.width * 0.70);
+		            action.press(PointOption.point(260, 400)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(120, 400)).release().perform();
+
+		            break;
+		    }
+		}
+		
+		public void swipeMinutes(Direction dir) {
+		    Dimension size;
+			size = getDriver().manage().window().getSize();
+			TouchAction action = new TouchAction(getDriver());
+
+		    int startX = 0;
+		    int endX = 0;
+		    int startY = 0;
+		    int endY = 0;
+
+		    switch (dir) {
+		        case UP:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.08);
+		            endX = (int) (size.width * 0.70);
+		            action.press(PointOption.point(184, 660)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(184, 626)).release().perform();
+
+		            break;
+		    }
+		}
+		
+		public void swipeAssocaitedDevices(Direction dir) {
+		    Dimension size;
+			size = getDriver().manage().window().getSize();
+			TouchAction action = new TouchAction(getDriver());
+
+		    int startX = 0;
+		    int endX = 0;
+		    int startY = 0;
+		    int endY = 0;
+
+		    switch (dir) {
+		        case LEFT:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.08);
+		            endX = (int) (size.width * 0.70);
+		            action.press(PointOption.point(275, 422)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(127, 422)).release().perform();
+
+		            break;
+		    }
+		}
+		
+		public void swipeAssocaitedRules(Direction dir) {
+		    Dimension size;
+			size = getDriver().manage().window().getSize();
+			TouchAction action = new TouchAction(getDriver());
+
+		    int startX = 0;
+		    int endX = 0;
+		    int startY = 0;
+		    int endY = 0;
+
+		    switch (dir) {
+		        case LEFT:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.08);
+		            endX = (int) (size.width * 0.70);
+		            action.press(PointOption.point(250, 555)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(140, 555)).release().perform();
+
+		            break;
+		    }
+		}
+		
+		public void swipeConnectedDevices(Direction dir) {
+		    Dimension size;
+			size = getDriver().manage().window().getSize();
+			TouchAction action = new TouchAction(getDriver());
+
+		    int startX = 0;
+		    int endX = 0;
+		    int startY = 0;
+		    int endY = 0;
+
+		    switch (dir) {
+		        case RIGHT:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.90);
+		            endX = (int) (size.width * 0.05);
+		            action.press(PointOption.point(427, 878)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(427, 554)).release().perform();
+
+		            break;
+
+		        case LEFT:
+		            startY = (int) (size.height / 2);
+		            startX = (int) (size.width * 0.08);
+		            endX = (int) (size.width * 0.70);
+		            action.press(PointOption.point(245, 392)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(120, 392)).release().perform();
+
+		            break;
+
+		        case UP:
+		            endY = (int) (size.height * 0.50);
+		            startY = (int) (size.height * 0.10);
+		            startX = (size.width / 2);
+		            action.press(PointOption.point(169, 492)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+                    .moveTo(PointOption.point(1697, 200)).release().perform();
+		            break;
+
+
+		        case DOWN:
+		            startY = (int) (size.height * 0.70);
+		            endY = (int) (size.height * 0.30);
+		            startX = (size.width / 2);
+		            action.press(PointOption.point(427, 878)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+                    .moveTo(PointOption.point(427, 554)).release().perform();
+
+		            break;
+		    }
 		}
 }
 	

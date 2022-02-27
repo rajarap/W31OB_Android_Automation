@@ -134,16 +134,10 @@ public class TC02_Medium_Test extends ParentClass
 				  setupwifi.clickskipTutorialButton();
 				  super.pause(3);
 		  }).homePage(home -> {
-			  try
-			  {
-				  if(home.okButton.isDisplayed())
-				  {
-					  home.clickOkButton();
-				  }
-			  }catch(Exception e)
-			  {
-				  e.getMessage();
-			  }
+			  try {
+				if(home.okButton.isDisplayed()) {
+					  home.clickOkButton();  }
+			  }catch(Exception e) { e.getMessage();  }
 		  });
 	  }
 	  
@@ -590,6 +584,12 @@ public class TC02_Medium_Test extends ParentClass
 			new HomePage().clickDeviceSignalStrengthImage();
 			if(new DeviceSignalStrengthLeaderBoardPage().isAt()) 
 				softsignal2.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifyUIOnDeviceSignalStrengthPage());
+			
+			try {
+				if(new DeviceSignalStrengthLeaderBoardPage().getAppRatingDialogObject().isAt())
+					softsignal2.assertTrue(new ParentalControlWithProfilesPage().getAppRatingDialogObject().clickRemindMeLaterLink());
+			}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
+			
 			softsignal2.assertAll();
 		}
 		
