@@ -9,6 +9,12 @@
 	<parameter name="platform" value="Android" />
 	<parameter name="device" value="Android" />
 
+	<test name="Signin_And_Onboard_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC002_Test_Signin_And_Onboard" />
+		</classes>
+	</test> 
+
 	<test name="Complex_Tests">
 		<classes>
 			<class name="com.cs.arris.Tests.TC03_Complex_Test" />
