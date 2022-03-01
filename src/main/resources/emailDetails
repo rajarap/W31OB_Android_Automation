@@ -12,6 +12,10 @@
 //username=arrisuser2652@gmail.com
 //password=arrisuser123
 
+//hostname=smtp.gmail.com
+//username=csuser2652@gmail.com
+//password=csuser123
+
 hostname=smtp.gmail.com
-username=csuser2652@gmail.com
-password=csuser123
+username=sbcuser2652@gmail.com
+password=sbcuser123
