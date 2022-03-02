@@ -97,10 +97,10 @@ public class TC02_Medium_Test extends ParentClass
 			}).grantPermissionsPage(grantPermission -> {
 				  grantPermission.clickContinueButton();
 			  }).deviceLocationPage(deviceLocation -> {
-				  deviceLocation.clickAllow();
+				  deviceLocation.clickOnlyThisTimeLink();
 			  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 				  super.pause(3);
-				  accessResoucesOnDevice.clickAllow();
+				  accessResoucesOnDevice.clickAllowLink();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();

@@ -113,8 +113,6 @@ public class NetworkPage extends ParentClass implements Page {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Enables DFS (up to) 160MHz channels']")
 	public MobileElement enableDFSLabel;
 
-
-
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Network Settings']")
 	public MobileElement networkSettingsLabel;
 
@@ -600,10 +598,10 @@ public class NetworkPage extends ParentClass implements Page {
 			else
 				utils.log().info("LAN Settings label is not displayed");
 
-			if (devicePrioritySettings.isDisplayed())
-				utils.log().info(devicePrioritySettings.getText() + " label is displayed");
-			else
-				utils.log().info("Device Priority Settings label is not displayed");
+//			if (devicePrioritySettings.isDisplayed())
+//				utils.log().info(devicePrioritySettings.getText() + " label is displayed");
+//			else
+//				utils.log().info("Device Priority Settings label is not displayed");
 
 			if (timeZone.isDisplayed())
 				utils.log().info(timeZone.getText() + " label is displayed");

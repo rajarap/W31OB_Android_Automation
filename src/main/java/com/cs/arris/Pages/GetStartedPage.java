@@ -26,6 +26,8 @@ public class GetStartedPage extends ParentClass implements Page
 	@AndroidFindBy (xpath ="//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/welcome_one_circle_bg']")
 	private MobileElement getStartedImage;
 	
+	//com.arris.sbc:id/btn_start_welcome
+	
 	@AndroidFindAll({
 		@AndroidBy (id = "com.arris.sbcBeta:id/btn_start_welcome"),
 		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_start_welcome']"),

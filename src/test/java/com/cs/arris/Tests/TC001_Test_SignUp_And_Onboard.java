@@ -80,10 +80,10 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 		  }).grantPermissionsPage(grantPermission -> {
 			  grantPermission.clickContinueButton();
 		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickAllow();
+			  deviceLocation.clickOnlyThisTimeLink();
 		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllow();
+			  accessResoucesOnDevice.clickAllowLink();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();
@@ -98,7 +98,7 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  signup.enterFirstName(firstName);
 			  signup.enterLastName(lastName);
 			  signup.clickAgreeTermsAndConditionsCheckBox();
-			  super.pause(2);
+			  super.pause(10);
 			  
 			  if(new TermsAndConditionsPage().isAt()) {
 //				  ((JavascriptExecutor) super.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight)");
