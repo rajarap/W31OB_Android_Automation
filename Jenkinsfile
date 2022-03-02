@@ -60,9 +60,7 @@ pipeline
                       	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Simple
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Medium
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Complex
+                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
                 }
                 
@@ -87,7 +85,10 @@ pipeline
                 
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
                 {
-                	sh """
+                  	sh """  
+                      	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
+                   		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                        /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
                 }
@@ -142,8 +143,7 @@ pipeline
             emailext body: '''${SCRIPT, template="groovy-html.template"}''',
             subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' -  SUCCESS',
             mimeType: 'text/html',
-            to: 'prabhu.rajarathinam@mobileprogramming.com'
-            //to: "${ANDROID_RECP}"
+            to: "${ANDROID_RECP}"
         }
 
         failure
@@ -153,8 +153,7 @@ pipeline
             subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - FAILED',
             mimeType: 'text/html',
             attachLog: true, 
-            to: 'prabhu.rajarathinam@mobileprogramming.com'
-            //to: "${ANDROID_RECP}"
+            to: "${ANDROID_RECP}"
         }
 
         unstable
@@ -164,8 +163,7 @@ pipeline
             subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - UNSTABLE',
             mimeType: 'text/html',
             attachLog: true, 
-            to: 'prabhu.rajarathinam@mobileprogramming.com'
-            //to: "${ANDROID_RECP}"
+            to: "${ANDROID_RECP}"
         }
     }
 }
