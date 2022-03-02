@@ -681,7 +681,7 @@ public class TC01_Simple_Test extends ParentClass
 			softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 			softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-			super.pause(20);
+			super.pause(30);
 			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 			super.pause(70);
 			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
@@ -1013,55 +1013,55 @@ public class TC01_Simple_Test extends ParentClass
 			softnetwork16.assertAll();
 		}
 		
-		@Test(priority = 58, dependsOnMethods = { "Login_And_Onboard" })
-		public void Verify_Install_Right_Satellite() {
-			utils.log().info("                                               ");
-			utils.log().info("***********************************************");
-			utils.log().info("Test: Hamburger Menu - Install Right Satellite ");
-			utils.log().info("***********************************************");
-			
-			SoftAssert softsatellite2 = new SoftAssert();
-			
-			new HomePage().getFooterIconsPageObject().clickHomeButton();
-			
-			if(new HomePage().isAt())
-				softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
-			
-			softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-			super.pause(2);
-			softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); //Each satellite expands your network
+//		@Test(priority = 58, dependsOnMethods = { "Login_And_Onboard" })
+//		public void Verify_Install_Right_Satellite() {
+//			utils.log().info("                                               ");
+//			utils.log().info("***********************************************");
+//			utils.log().info("Test: Hamburger Menu - Install Right Satellite ");
+//			utils.log().info("***********************************************");
+//			
+//			SoftAssert softsatellite2 = new SoftAssert();
+//			
+//			new HomePage().getFooterIconsPageObject().clickHomeButton();
+//			
+//			if(new HomePage().isAt())
+//				softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
+//			
+//			softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+//			super.pause(2);
+//			softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); //Each satellite expands your network
+////			super.pause(10);
+////
+////			try {
+////				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+////			}catch(Exception e) {}
+////
+////			try {
+////				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+////			}catch(Exception e) {}
+//			
+//			softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+//			softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+//			softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+//			super.pause(20);
+//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+//			super.pause(70);
+//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 //			super.pause(10);
-//
+//			softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+//			super.pause(15);
 //			try {
-//				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+//				if(new AddSatelliteRegistrationFailedPage().isAt()) {
+//					softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+//				}
 //			}catch(Exception e) {}
-//
-//			try {
-//				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
-//			}catch(Exception e) {}
-			
-			softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-			softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-			softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-			super.pause(20);
-			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-			super.pause(70);
-			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-			super.pause(10);
-			softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-			super.pause(15);
-			try {
-				if(new AddSatelliteRegistrationFailedPage().isAt()) {
-					softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-				}
-			}catch(Exception e) {}
-			super.pause(45);
-			softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-			super.pause(3);
-			softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
-			
-			softsatellite2.assertAll();
-		}
+//			super.pause(45);
+//			softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+//			super.pause(3);
+//			softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+//			
+//			softsatellite2.assertAll();
+//		}
 
 }
 
