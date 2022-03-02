@@ -88,9 +88,7 @@ pipeline
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
                 {
                 	sh """
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Simple
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Medium
-                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid-Complex
+                   		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
                 }
                 
