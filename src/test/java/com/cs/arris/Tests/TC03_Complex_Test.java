@@ -157,17 +157,17 @@ public class TC03_Complex_Test extends ParentClass
 			}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 			
 			if(new ParentalControlWithProfilesPage().isAt()) {
-				for(int i = 1; i <= 4; i++)	{
+				for(int i = 1; i <= 3; i++)	{
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().clickAddProfilesLink());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().enterProfileName());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().clickCreateProfileButton());
 				}				
 			}
-			utils.log().info("Deleting a User Profile");
-			super.swipeUserProfile(Direction.LEFT);
-			if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
-				click(new ParentalControlWithProfilesPage().deleteButton);
-			}
+//			utils.log().info("Deleting a User Profile");
+//			super.swipeUserProfile(Direction.LEFT);
+//			if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+//				click(new ParentalControlWithProfilesPage().deleteButton);
+//			}
 //			if(new ParentalControlWithProfilesPage().isAt()) 
 //				softcontrol3.assertTrue(new ParentalControlWithProfilesPage().verifyUserProfile());
 			
