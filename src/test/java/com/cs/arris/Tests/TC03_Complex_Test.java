@@ -17,6 +17,7 @@ import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
 import com.cs.arris.Pages.ParentalControlWithProfilesPage;
 import com.cs.arris.Pages.SiginPage;
+import com.cs.arris.Utilities.Direction;
 import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Workflows.HomePage_Workflow;
 import com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow;
@@ -155,17 +156,19 @@ public class TC03_Complex_Test extends ParentClass
 			}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 			
 			if(new ParentalControlWithProfilesPage().isAt()) {
-				for(int i = 1; i <= 3; i++)	{
+				for(int i = 1; i <= 4; i++)	{
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().clickAddProfilesLink());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().enterProfileName());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().clickCreateProfileButton());
-				}
+				}				
+			}
+			utils.log().info("Deleting a User Profile");
+			super.swipeUserProfile(Direction.LEFT);
+			if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+				click(new ParentalControlWithProfilesPage().deleteButton);
 			}
 //			if(new ParentalControlWithProfilesPage().isAt()) 
 //				softcontrol3.assertTrue(new ParentalControlWithProfilesPage().verifyUserProfile());
-			
-//			if(new ParentalControlWithProfilesPage().isAt()) 
-//				softcontrol3.assertTrue(new ParentalControlWithProfilesPage().deleteUserProfile());
 			
 			softcontrol3.assertAll();
 		}
@@ -256,8 +259,13 @@ public class TC03_Complex_Test extends ParentClass
 			SoftAssert softcontrol9 = new SoftAssert();
 			softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
 			softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyAssociatedDeviceList());
-			//softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteAssociatedDevice());
-			softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
+//			softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteAssociatedDevice());
+			
+			utils.log().info("Deleting an Associated Device");
+			super.swipeAssocaitedDevices(Direction.LEFT);
+			if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon.isDisplayed()) {
+				click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon);}
+//			softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
 			
 			softcontrol9.assertAll();
 		}
@@ -318,7 +326,9 @@ public class TC03_Complex_Test extends ParentClass
 			softcontrol13.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickStopTimeLink());
 			
 			if (new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().isAt()) 
-				softcontrol13.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().clickOkButton());
+				super.swipeMinutes(Direction.UP);
+				
+			softcontrol13.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().clickOkButton());
 				
 			softcontrol13.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickSaveChangesButton());
 			super.pause(3);
@@ -365,8 +375,9 @@ public class TC03_Complex_Test extends ParentClass
 			softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickStopTimeLink());
 			
 			if (new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().isAt()) 
-				softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().clickOkButton());
-			
+				super.swipeMinutes(Direction.UP);
+			softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().clickOkButton());
+				
 			softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickSaveChangesButton());
 			softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().clickBackButton());
 			super.pause(3);
@@ -389,7 +400,12 @@ public class TC03_Complex_Test extends ParentClass
 			SoftAssert softcontrol19 = new SoftAssert();
 			softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
 			softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyRulesAssociatedWithUser());
-			//softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteAssociatedRulesList());
+			
+			utils.log().info("Deleting an Associated Rule");
+			super.swipeAssocaitedRules(Direction.LEFT);
+			if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteRuleIcon.isDisplayed()) {
+				click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteRuleIcon);}
+			
 			softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
 			softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickBackButton());
 			

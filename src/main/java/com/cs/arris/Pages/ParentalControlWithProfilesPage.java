@@ -85,6 +85,10 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/parental_global_plus_icon")
 	public MobileElement pauseAllProfilesExpandButton;
 	
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/delete")
+	public MobileElement deleteButton;
+	
+		
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/pause_internet_enable_disable")
 	public MobileElement pauseAllProfilesToggleButton;
 	

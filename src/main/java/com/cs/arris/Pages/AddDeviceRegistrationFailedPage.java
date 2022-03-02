@@ -33,6 +33,9 @@ public class AddDeviceRegistrationFailedPage extends ParentClass implements Page
 
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/tv_try_again")
 	public MobileElement continueButton;
+	
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/tv_errorCode")
+	public MobileElement error_code; //0003-1003
 
 	public AddDeviceRegistrationFailedPage() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
@@ -105,6 +108,16 @@ public class AddDeviceRegistrationFailedPage extends ParentClass implements Page
 
 			return true;
 		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean verifyErrorCode() {
+		if(error_code.isDisplayed()) {
+			super.tapForLogs(531, 1324);
+			return true;
+		}else {
+			utils.log().info("No Error code is displayed");
 			return false;
 		}
 	}

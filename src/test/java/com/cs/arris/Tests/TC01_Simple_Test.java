@@ -41,6 +41,7 @@ import com.cs.arris.Pages.AddSatelliteUnpackYourSatellitePage;
 import com.cs.arris.Pages.AddSatelliteUpToDatePage;
 import com.cs.arris.Pages.AppRatingDialog;
 import com.cs.arris.Pages.ConnectionToWifiNeededPage;
+import com.cs.arris.Pages.DebugLogsDialog;
 import com.cs.arris.Pages.HomeNetowrkTurnOffNetworkOptimizationDialog;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
@@ -524,10 +525,6 @@ public class TC01_Simple_Test extends ParentClass
 				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
 				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
 				super.pause(15);}
-			
-			if(new AddDeviceRegistrationFailedPage().isAt())
-				softhome2.assertTrue(new AddDeviceRegistrationFailedPage().clickContinueButton());
-			super.pause(10);
 			
 			if(new AddDeviceCongratulationsPage().isAt())
 				softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
