@@ -306,9 +306,9 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			driver.navigate().to(alexaSkillsLink.getText());
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//			driver.navigate().to(alexaSkillsLink.getText());
 //			String webURL = driver.getCurrentUrl();
 //			try {
 //				if (webURL.equalsIgnoreCase(alexaSkillsLink.getText())) {
@@ -325,8 +325,8 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 			
-			if (driver != null)
-				driver.quit();
+//			if (driver != null)
+//				driver.quit();
 			
 			return true;
 		} catch (Exception e) {
@@ -348,8 +348,8 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
 //			String webURL = driver.getCurrentUrl(); 
 //			try {
 //				if (webURL.contains("amazon.com/gp/help/customer/")) {
@@ -367,8 +367,8 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 
-			if (driver != null)
-				driver.quit();
+//			if (driver != null)
+//				driver.quit();
 
 			return true;
 		} catch (Exception e) {

@@ -384,9 +384,9 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			String webURL = driver.getCurrentUrl();// http://shop.surfboard.com
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//			String webURL = driver.getCurrentUrl();// http://shop.surfboard.com
 //			try {
 //				if (webURL.equalsIgnoreCase("http://shop.surfboard.com")) {
 //					driver.getPageSource();
@@ -403,8 +403,8 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 			
-			if (driver != null)
-				driver.quit();
+//			if (driver != null)
+//				driver.quit();
 			
 			return true;
 		} catch (Exception e) {
@@ -427,8 +427,8 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
 //			String webURL = driver.getCurrentUrl(); // arris.secure.force.com/consumers
 //			try {
 //				if (webURL.contains("arris.secure.force.com/consumers/")) {
@@ -448,8 +448,8 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 
-			if (driver != null)
-				driver.quit();
+//			if (driver != null)
+//				driver.quit();
 
 			return true;
 		} catch (Exception e) {
@@ -472,8 +472,8 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
 //			String webURL = driver.getCurrentUrl();
 //			// www5.nohold.net/Arris/ukp.aspx?pid=15&login=1&alt1=app&alt2=mAX+Pro+W31&model=mAX+Pro+W31&donelr=1
 //			if (webURL.contains(
@@ -496,8 +496,8 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 
-			if (driver != null)
-				driver.quit();
+//			if (driver != null)
+//				driver.quit();
 
 			return true;
 		} catch (Exception e) {
