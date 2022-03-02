@@ -55,11 +55,11 @@ public class NetworkPage extends ParentClass implements Page {
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/enable_guest_wifi_text")
 	public MobileElement enableDisableGuestNetwork;
 
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/guest_network_enable_disable' and @checked='false']")
-//	public MobileElement disableGuestNetworkToggleButton;
-//
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/guest_network_enable_disable' and @checked='true']")
-//	public MobileElement enableGuestNetworkToggleButton;
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/guest_network_enable_disable' and @checked='false']")
+	public MobileElement disableGuestNetworkToggleButton;
+
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/guest_network_enable_disable' and @checked='true']")
+	public MobileElement enableGuestNetworkToggleButton;
 	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/guest_network_enable_disable']")
 	public MobileElement guestNetworkToggleButton;
@@ -233,7 +233,6 @@ public class NetworkPage extends ParentClass implements Page {
 		return generalSettings;
 	}
 	
-	
 	public boolean clickBackButton() {
 		if (backIcon.isDisplayed()) {
 			click(backIcon);
@@ -349,26 +348,25 @@ public class NetworkPage extends ParentClass implements Page {
 		}
 	}
 	
+
 	public boolean enableGuestWifiNetwork() {
-		if (guestNetworkToggleButton.isSelected()) {
-			utils.log().info("Enable/Disable Guest Network is already enabled");
+		if (disableGuestNetworkToggleButton.isDisplayed()) {
+			click(disableGuestNetworkToggleButton);
+			utils.log().info("Enable/Disable Guest Network is enabled");
 			return true;
 		}else {
-			click(guestNetworkToggleButton);
-			super.pause(20);
-			utils.log().info("Enable/Disable Guest Network is now enabled");
+			utils.log().info("Enable/Disable Guest Network is already enabled");
 			return true;
 		}
 	}
 
 	public boolean disableGuestWifiNetwork() {
-		if (!(guestNetworkToggleButton.isSelected())) {
-			utils.log().info("Enable/Disable Guest Network is already disabled");
+		if (enableGuestNetworkToggleButton.isDisplayed()) {
+			click(enableGuestNetworkToggleButton);
+			utils.log().info("Enable/Disable Guest Network is diabled");
 			return true;
-		} else {
-			click(guestNetworkToggleButton);
-			super.pause(20);
-			utils.log().info("Enable/Disable Guest Network is now disabled");
+		}else {
+			utils.log().info("Enable/Disable Guest Network is already disabled");
 			return true;
 		}
 	}

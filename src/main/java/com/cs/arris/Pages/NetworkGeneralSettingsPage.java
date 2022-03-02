@@ -31,15 +31,15 @@ public class NetworkGeneralSettingsPage extends ParentClass implements Page {
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/upnp_text")
 	public MobileElement upnpLabel;
 
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable' and @checked='false']")
-//	public MobileElement disableUPNPToggleButton;
-//
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable' and @checked='true']")
-//	public MobileElement enableUPNPToggleButton;
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable' and @checked='false']")
+	public MobileElement disableUPNPToggleButton;
+
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable' and @checked='true']")
+	public MobileElement enableUPNPToggleButton;
 	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable']")
 	public MobileElement UPNPToggleButton;
-
+	
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/upnp_info_icon")
 	public MobileElement upnpInfoIcon;
 
@@ -176,23 +176,23 @@ public class NetworkGeneralSettingsPage extends ParentClass implements Page {
 	}
 
 	public boolean enableUPnP() {
-		if (UPNPToggleButton.isSelected()) {
-			utils.log().info("UPnP is already enabled");
+		if (disableUPNPToggleButton.isDisplayed()) {
+			click(disableUPNPToggleButton);
+			utils.log().info("UPnP is enabled");
 			return true;
 		} else {
-			click(UPNPToggleButton);
-			utils.log().info("UPnP is now enabled");
+			utils.log().info("UPnP is already enabled");
 			return true;
 		}
 	}
 
 	public boolean disableUPnP() {
-		if (!(UPNPToggleButton.isSelected())) {
-			utils.log().info("UPnP is already disabled");
+		if (enableUPNPToggleButton.isDisplayed()) {
+			click(enableUPNPToggleButton);
+			utils.log().info("UPnP is disabled");
 			return true;
 		} else {
-			click(UPNPToggleButton);
-			utils.log().info("UPnP is now disabled");
+			utils.log().info("UPnP is already disabled");
 			return true;
 		}
 	}
@@ -261,12 +261,12 @@ public class NetworkGeneralSettingsPage extends ParentClass implements Page {
 				utils.log().info("UPnP Link is displayed");
 			
 			try {
-				if (UPNPToggleButton.isDisplayed() && !(UPNPToggleButton.isSelected()))
+				if (disableUPNPToggleButton.isDisplayed())
 					utils.log().info("UPnp toggle button is displayed but is disabled");
 			}catch(Exception e) {}
 			
 			try {
-				if (UPNPToggleButton.isDisplayed() && UPNPToggleButton.isSelected())
+				if (enableUPNPToggleButton.isDisplayed())
 					utils.log().info("UPnp toggle button is displayed and is enabled");
 			}catch(Exception e) {}
 			
