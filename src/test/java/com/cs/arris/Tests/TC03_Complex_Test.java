@@ -134,7 +134,7 @@ public class TC03_Complex_Test extends ParentClass
 		  });
 	  }
 	  
-//	  @Test(priority = 2, dependsOnMethods = {"Login_And_Onboard" })
+	  @Test(priority = 2, dependsOnMethods = {"Login_And_Onboard" })
 		public void Verify_Parental_Control_UI_Page() {
 			SoftAssert softcontrol2 = new SoftAssert();
 			softcontrol2.assertTrue(new HomePage().getFooterIconsPageObject().clickParentalButton());
