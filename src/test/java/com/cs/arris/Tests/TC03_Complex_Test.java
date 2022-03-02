@@ -323,7 +323,7 @@ public class TC03_Complex_Test extends ParentClass
 		@Test(priority = 13, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
 		public void Verify_Select_Stop_Time_For_EveryDay_Schedule() {
 			SoftAssert softcontrol13 = new SoftAssert();
-			super.pause(65);
+			//super.pause(65);
 			softcontrol13.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickStopTimeLink());
 			
 			if (new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().isAt()) 
@@ -372,7 +372,7 @@ public class TC03_Complex_Test extends ParentClass
 		@Test(priority = 17, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
 		public void Verify_Add_Custom_Schedule_Select_Stop_Time() {
 			SoftAssert softcontrol17 = new SoftAssert();
-			super.pause(65);
+			//super.pause(65);
 			softcontrol17.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickStopTimeLink());
 			
 			if (new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().getDatePickerDialogObject().isAt()) 
@@ -1083,14 +1083,14 @@ public class TC03_Complex_Test extends ParentClass
 		public void Verify_General_Settings_UPnP_Settings() 
 		{
 			SoftAssert softnet40 = new SoftAssert();
-			softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().disableUPnP());
+//			softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().disableUPnP());
 			try{
 				if(new NetworkPage().getAppRatingPageObject().isAt())
 					new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
 			}catch(Exception e) {
-//				utils.log().info("App Rating Dialog did not appear");
+				utils.log().info("App Rating Dialog did not appear");
 			}
-			softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().enableUPnP());
+//			softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().enableUPnP());
 			
 			softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickUPNPInfoIcon());
 			if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().isAt())
@@ -1331,7 +1331,7 @@ public class TC03_Complex_Test extends ParentClass
 					if(new NetworkPage().getEnableGuestNetworkAlertDialogObject().isAt())
 						softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkAlertDialogObject().clickOkButton());
 					}
-					super.pause(60);
+					super.pause(50);
 				}catch(Exception e) {utils.log().info("Enable Guest Network Page did not appear");}
 			
 //			try {
@@ -1370,9 +1370,6 @@ public class TC03_Complex_Test extends ParentClass
 			if(new NetworkPage().isAt())
 				softnet50.assertTrue(new NetworkPage().get5GHzWidebandModeAlertDialogObject().clickCloseButton());
 			softnet50.assertTrue(new NetworkPage().clickfiveGHzWidebandInfoIcon());
-			
-			if(new WideBandModeAlertInfoDialog().isAt())
-				softnet50.assertTrue(new WideBandModeAlertInfoDialog().clickCloseButton());
 			
 			softnet50.assertTrue(new NetworkPage().clickExtendedWifiSettingsExpandButton());
 			softnet50.assertTrue(new NetworkPage().clickBackButton());
