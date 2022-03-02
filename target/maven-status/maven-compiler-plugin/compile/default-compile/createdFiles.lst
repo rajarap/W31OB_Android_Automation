@@ -4,6 +4,7 @@ com/cs/arris/Utilities/InValidOTP.class
 com/cs/arris/Pages/ParentalControlAlertDialog.class
 com/cs/arris/Pages/HomeNetowrkDevicesWifiClientConnectionHealthPage.class
 com/cs/arris/Pages/FooterIconsPage.class
+com/cs/arris/Pages/WideBandModeAlertInfoDialog.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.class
 com/cs/arris/Pages/GenerateEmailAndPasscode.class
 com/cs/arris/Pages/AddDeviceEstablishingConnectionPage.class
@@ -52,6 +53,7 @@ com/cs/arris/Pages/RebootYouRouterDialog.class
 com/cs/arris/Pages/ErrorCode_0000_1506_Warranty_Support_Page.class
 com/cs/arris/Pages/AddDeviceNotificationsPage.class
 com/cs/arris/Reports/ExtentReport.class
+com/cs/arris/Pages/DebugLogsDialog.class
 com/cs/arris/Pages/FAQHelpPage.class
 com/cs/arris/Pages/ErrorCode_0015_1805_Something_Went_Wrong_Page.class
 com/cs/arris/Pages/Error_0005_1200_Bluetooth_Connection_Failed_Page.class

@@ -99,6 +99,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0002_1304_Internet_Connection_Not_Available_Page.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1603_Failure_To_Configure_Your_Router_Page.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/WideBandModeAlertInfoDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEnableGuestNetworkDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteInstallAdditionalSatelliteDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceEnterMACAddressManuallyPage.java
@@ -117,6 +118,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteUpToDatePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/CurrentlyBlockedDevicesPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkDevicePrioritySettings.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DebugLogsDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlWithProfilesPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettings.java

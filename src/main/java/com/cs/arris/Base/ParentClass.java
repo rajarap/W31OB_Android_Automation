@@ -124,7 +124,7 @@ public class ParentClass
 	public List<String> selectedProfileNames = new ArrayList<String>();
 	public List<String> deviceNames = new ArrayList<String>();
 	public List<String> lanIPRuleName = new ArrayList<String>();
-	public TouchAction action = new TouchAction(getDriver());
+
 	
 	private static final String ESCAPE_PROPERTY = "org.uncommons.reportng.escape-output";
 	
@@ -968,15 +968,16 @@ public class ParentClass
 		    }
 		}
 		
-		public void tapForLogs(int x, int y) {
-			PointOption p = new PointOption();
-			p.point(x, y);
-			
-			for(int i=0; i <=7; i++) {
-				action.tap(p);
-				action.release().perform();
-			}
-		}
+//		public void tapForLogs(int x, int y) {
+//			TouchAction action = new TouchAction(getDriver());
+//			PointOption p = new PointOption();
+//			p.point(x, y);
+//			
+//			for(int i=0; i <=7; i++) {
+//				action.tap(p);
+//				action.release().perform();
+//			}
+//		}
 
 }
 	

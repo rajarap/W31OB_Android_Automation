@@ -112,15 +112,15 @@ public class AddDeviceRegistrationFailedPage extends ParentClass implements Page
 		}
 	}
 	
-	public boolean verifyErrorCode() {
-		if(error_code.isDisplayed()) {
-			super.tapForLogs(531, 1324);
-			return true;
-		}else {
-			utils.log().info("No Error code is displayed");
-			return false;
-		}
-	}
+//	public boolean verifyErrorCode() {
+//		if(error_code.isDisplayed()) {
+//			super.tapForLogs(531, 1324);
+//			return true;
+//		}else {
+//			utils.log().info("No Error code is displayed");
+//			return false;
+//		}
+//	}
 
 	@Override
 	public boolean isAt() {
