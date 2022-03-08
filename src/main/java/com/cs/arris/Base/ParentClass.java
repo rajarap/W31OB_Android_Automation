@@ -111,6 +111,7 @@ public class ParentClass
 	public String ssidNumber;
 //	public String ssidName;
 //	public String ssidpwd;
+	public String yopEmailId;
 	public String randNum;
 	public String profileName;
 	public String ruleName;
@@ -253,8 +254,6 @@ public class ParentClass
 				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("androidAppLocation"));
 				desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
 				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, getProps().getProperty("timeout"));
-//				desiredCapabilities.setCapability("adbExecTimeout", 50000);
-//				desiredCapabilities.setCapability("appWaitforLaunch", false);
 				driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
 				setDriver(driver);
 				getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -275,6 +274,7 @@ public class ParentClass
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID, getProps().getProperty("xcodeOrgId"));
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.UPDATE_WDA_BUNDLEID, getProps().getProperty("updatedWDABundleId"));
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
+				desiredCapabilities.setCapability(IOSMobileCapabilityType.BROWSER_NAME, "Chrome");
 				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
 				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
@@ -791,6 +791,17 @@ public class ParentClass
 			 lanIPRuleName.add(ruleName);
 		}
 		
+		public void generateEmailId()
+		{
+			Random r = new Random();
+			int low = 1;
+			int high = 999;
+			
+			int result = r.nextInt(high-low) + low;
+			String temp = String.valueOf(result);
+			yopEmailId= "user"+ temp + "@yopmail.com";
+		}
+		
 //		//For Network - LAN IP Reservation
 //		public String generateGuestNetworkName()
 //		{
@@ -968,17 +979,6 @@ public class ParentClass
 		    }
 		}
 		
-//		public void tapForLogs(int x, int y) {
-//			TouchAction action = new TouchAction(getDriver());
-//			PointOption p = new PointOption();
-//			p.point(x, y);
-//			
-//			for(int i=0; i <=7; i++) {
-//				action.tap(p);
-//				action.release().perform();
-//			}
-//		}
-
 }
 	
 	

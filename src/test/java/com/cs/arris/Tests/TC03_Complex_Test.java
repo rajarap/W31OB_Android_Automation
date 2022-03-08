@@ -95,10 +95,10 @@ public class TC03_Complex_Test extends ParentClass
 		  }).grantPermissionsPage(grantPermission -> {
 			  grantPermission.clickContinueButton();
 		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickOnlyThisTimeLink();
+			  deviceLocation.clickAllow();
 		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllowLink();
+			  accessResoucesOnDevice.clickAllow();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();

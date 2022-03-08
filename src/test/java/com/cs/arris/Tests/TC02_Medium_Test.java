@@ -94,13 +94,13 @@ public class TC02_Medium_Test extends ParentClass
 			
 			TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
 			  getStarted.clickGetStartedButton();
-			}).grantPermissionsPage(grantPermission -> {
+			  }).grantPermissionsPage(grantPermission -> {
 				  grantPermission.clickContinueButton();
 			  }).deviceLocationPage(deviceLocation -> {
-				  deviceLocation.clickOnlyThisTimeLink();
+				  deviceLocation.clickAllow();
 			  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 				  super.pause(3);
-				  accessResoucesOnDevice.clickAllowLink();
+				  accessResoucesOnDevice.clickAllow();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();

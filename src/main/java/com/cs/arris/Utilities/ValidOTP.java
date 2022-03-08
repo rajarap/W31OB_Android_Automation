@@ -19,6 +19,11 @@ import javax.mail.Store;
 import javax.mail.search.FlagTerm;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ValidOTP 
 {
@@ -37,6 +42,7 @@ public class ValidOTP
 	public InputStream testData = null;
 	TestUtils utils = new TestUtils();
 	Properties properties = new Properties();
+	public WebDriver driver;
 	
 	public String getValidOTP()
 	{
@@ -101,15 +107,15 @@ public class ValidOTP
 	    return OTP;
 	}
 
-	private static String getOTPCode(String content) {
-        String otpCodePattern = "[^a-zA-Z:!.\"<>\\/=\\-;,\\s*]\\d\\d\\d\\d\\d";
-        Pattern p = Pattern.compile(otpCodePattern);
-        Matcher m = p.matcher(content); 
-        if(m.find())
-        	return m.group(0);
-        else
-        	return "No Matcher";
-	}
+//	private static String getOTPCode(String content) {
+//        String otpCodePattern = "[^a-zA-Z:!.\"<>\\/=\\-;,\\s*]\\d\\d\\d\\d\\d";
+//        Pattern p = Pattern.compile(otpCodePattern);
+//        Matcher m = p.matcher(content); 
+//        if(m.find())
+//        	return m.group(0);
+//        else
+//        	return "No Matcher";
+//	}
 	
 	private static String getInvalidOTPCode(String content) {
 		String[] contents = content.split(" ");
@@ -240,8 +246,35 @@ public class ValidOTP
 					return s;
 			}
 		}
-
 		return null;
+	}
+	
+	public String getValidOTP(String email) {
+		String otpCode = getYopMail(email);
+		return otpCode;
+	}
+	
+	
+	public String getYopMail(String emailId) {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://yopmail.com");
+		driver.findElement(By.id("login")).sendKeys(emailId);
+		driver.findElement(By.className("md")).click();
+
+		String content = driver.findElement(By.xpath("//*[@id='mail']/div)")).getText();
+		String otpCode = getOTPCode(content);
+		return otpCode;
+	}
+	
+	private String getOTPCode(String content) {
+        String otpCodePattern = "[^a-zA-Z:!.\"<>\\/=\\-;,\\s*]\\d\\d\\d\\d\\d";
+        Pattern p = Pattern.compile(otpCodePattern);
+        Matcher m = p.matcher(content); 
+        if(m.find())
+        	return m.group(0);
+        else
+        	return "No Matcher";
 	}
 }
 

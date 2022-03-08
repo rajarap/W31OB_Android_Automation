@@ -427,7 +427,7 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 			}
 			utils.log().info("Switched to WEBVIEW");
 
-//			WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 //			driver = new ChromeDriver();
 //			String webURL = driver.getCurrentUrl(); // arris.secure.force.com/consumers
 //			try {
@@ -443,6 +443,7 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 //			} catch (Exception e) {
 //				utils.log().info("Unable to fetch Self Help Web Page objects");
 //			}
+			
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			

@@ -1,10 +1,10 @@
 package com.cs.arris.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Interface.Page;
-import com.cs.arris.Utilities.RandomEmailAddress;
 import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.MobileElement;
@@ -18,7 +18,6 @@ public class SignupPage  extends ParentClass implements Page
 	public TestUtils utils = new TestUtils();
 	public String email;
 	public String emailID;
-	public RandomEmailAddress random;
 	
 	@AndroidFindBy (xpath = "//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/need_help']") 
 	public MobileElement helpIcon;
@@ -154,6 +153,19 @@ public class SignupPage  extends ParentClass implements Page
 	{
 		click(signinButton);
 		utils.log().info("SignUp Page - Clicked on Signin Button");
+	}
+	
+//	public void getEmailAddress() {
+//		super.getDriver().navigate().to("https://yopmail.com");
+//		super.getDriver().findElement(By.id("login")).sendKeys(emailid);
+//		super.getDriver().findElement(By.className("md")).click();
+//		super.pause(5);
+//		//super.getDriver().findElement(By.id("login")).click();
+//	}
+	
+	public String getEmailAddress() {
+		super.generateEmailId();
+		return super.yopEmailId;
 	}
 	
 	@Override

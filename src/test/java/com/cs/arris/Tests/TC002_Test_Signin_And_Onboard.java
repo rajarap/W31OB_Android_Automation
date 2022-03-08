@@ -41,8 +41,8 @@ public class TC002_Test_Signin_And_Onboard extends ParentClass
 			  this.lastName = properties.getProperty("lastname");
 			  utils.log().info("Last Name : " + this.lastName);
 			  
-			  this.email = properties.getProperty("email");
-			  utils.log().info("Email address : " + this.email);
+//			  this.email = properties.getProperty("email");
+//			  utils.log().info("Email address : " + this.email);
 			  
 			  this.ssidName = super.generateRouterSSID();
 			  utils.log().info("SSID Name : " + this.ssidName);
@@ -72,10 +72,10 @@ public class TC002_Test_Signin_And_Onboard extends ParentClass
 		  }).grantPermissionsPage(grantPermission -> {
 			  grantPermission.clickContinueButton();
 		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickOnlyThisTimeLink();
+			  deviceLocation.clickAllow();
 		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllowLink();
+			  accessResoucesOnDevice.clickAllow();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();

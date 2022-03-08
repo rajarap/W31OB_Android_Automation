@@ -209,6 +209,13 @@ public class TestUtils {
 //		 }
 //         
 //    }
+	 
+	 
+	 public void resetMaxRouter() throws IOException {
+		 ProcessBuilder processBuilder = new ProcessBuilder();
+		 processBuilder.command("dmcli", "eRT", "setv", "Device.X_ARRIS_COM_HNE.FactoryReset", "bool", "1");
+		 processBuilder.start();
+	 }
 
 	public String getFirstName() {
 		return firstName;

@@ -5,6 +5,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationISPSpeedRatePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkReserveLANIPDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestHistoryPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0005_0000_BlueTooth_Is_Not_Enabled.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkAddDeviceSelectOneDeviceOfHighestPriorityDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/GenerateEmailAndPasscode.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/MainDevice24GHzTabPage.java
@@ -17,6 +18,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceStepsForActivationPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseTimeEditTimeUnitDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANSettingsPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0002_0000_Internet_Connection_Not_Available.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NameYourNetwokSSIDPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEditPortForwardingRulePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseTimePage.java
@@ -27,6 +29,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANSettingsHelpPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileAddRulePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DeviceLocationPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/EmailTest.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/FooterIconsPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANSettingsPage.java
@@ -42,6 +45,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANIPConfigurationHelpPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceActivateYourDeviceWithServiceProviderPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0015_0000_Cannot_Connect_To_mAX_Device.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/ValidOTP.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1506_Warranty_Support_Page.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/TestingDeviceCount.java
@@ -51,11 +55,13 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AboutHelpPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsIPv6EnableInfoDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0002_1304_Internet_Connection_Not_Available_On_Router.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/TestMail.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlCurrentlyBlockedPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SelectYourDevicePage2.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTDisabledTroubleShootPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANDNSConfigurationHelpPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0003_1014_Service_Not_Available.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlResumeInternetforAllProfilesDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANIPReservationPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfilePage.java
@@ -64,11 +70,14 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SelectYourDevicePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ConnectMaxRouterToInternetPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1016_Maximum_Verification_Attempts_Exceeded.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/MaximumVerificationReachedPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/PlugInMaxRouterPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSkipPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceFAQPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SevenTapGmail.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceChooseInternetServiceProviderPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0003_0000_Service_Is_Currently_Not_Available.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SiginPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceSelectDevice2Page.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceFooterIconsPage.java
@@ -85,7 +94,9 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Interface/W31_Onboarding_TestData.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Reports/ExtentReport.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANSettingsHelpPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0001_0000_BlueTooth_Connection_Failed.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteRegistrationFailedPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SevenTapEmail.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage2.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ConnectToWifiUsingRouterSSID.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteCongratulationsPage.java
@@ -111,6 +122,7 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkDNSConfigurationStaticAlertDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortForwardingPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/JsonMappers/SignUp_TestData.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0013_0000_Multiple_Devices_Found.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SetUpYourWiFiManagementPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AccessResourcesPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NotificationPage.java
@@ -124,10 +136,12 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettings.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/UnPackYourBoxPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0006_0000_BlueTooth_Communication_Failure.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage4.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/TermsAndConditionsPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkOptimizationDialog2.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SignupPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/Mail.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlankSpeedTestHistoryPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEnableGuestNetworkAlertDialog.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/MainDeviceEthernetTabPage.java
@@ -186,9 +200,11 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANSubnetDHCPRangeConfigurationPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteUnpackYourSatellitePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage1.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SevenTapLogs.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/Error_0001_1201_Bluetooth_Pairing_Failed_Page.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSettingsPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0015_1805_OTP_Screen_Continue_Onboarding.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestHelpPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DevicesPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceSuccessPage.java
@@ -201,9 +217,10 @@
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Listeners/TestListener.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatellitePlaceYourSatellitePage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Interface/Page.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/TapSevenTimes.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0003_1003_Service_Is_Currently_Not_Available.java
+/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Exceptions/EC_0014_0000_Bluetooth_Pairing_Failed.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AboutViewLicensesPage.java
-/Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/RandomEmailAddress.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceHamburgerMenuPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/GetStartedPage.java
 /Users/rm2652/Documents/SBC-Android-CICD-Main3-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsHelpPage.java

@@ -136,10 +136,10 @@ public class TC01_Simple_Test extends ParentClass
 		  }).grantPermissionsPage(grantPermission -> {
 			  grantPermission.clickContinueButton();
 		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickOnlyThisTimeLink();
+			  deviceLocation.clickAllow();
 		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllowLink();
+			  accessResoucesOnDevice.clickAllow();
 		  }).selectYourDevicePage(selectDevice -> {
 			  selectDevice.selectSurfboardMaxOption();
 			  selectDevice.clickNextButton();
@@ -187,7 +187,7 @@ public class TC01_Simple_Test extends ParentClass
 		public void Verify_Home_Device_Signal_Strength_Navigation() {
 			SoftAssert softhome3 = new SoftAssert();
 			softhome3.assertTrue(new HomePage().clickDeviceSignalStrengthImage());
-			if(new HomePage().getDeviceSignalStrengthPageObject().isAt())
+				if(new HomePage().getDeviceSignalStrengthPageObject().isAt())
 				softhome3.assertTrue(new HomePage().getDeviceSignalStrengthPageObject().clickCloseIcon());
 			softhome3.assertAll();
 		}

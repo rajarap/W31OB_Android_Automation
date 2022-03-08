@@ -5,7 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Interface.Page;
-import com.cs.arris.Utilities.RandomEmailAddress;
 import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Utilities.GetOTPFromNada;
 import com.cs.arris.Utilities.ValidOTP;
@@ -17,7 +16,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class EnterValidOTPPage   extends ParentClass implements Page
 {
 	public TestUtils utils = new TestUtils();
-	public RandomEmailAddress random;
 //	public OTP otp;
 	public GetOTPFromNada nadaOTP;
 	
