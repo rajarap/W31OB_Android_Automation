@@ -17,13 +17,21 @@ public class MaximumVerificationReachedPage  extends ParentClass implements Page
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_error_frag_description") 
 	public MobileElement pleaseWaitMessage;
 	
-	@AndroidFindBy (xpath = "//android.widget.TextView[@text='0000-1016']") 
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_error_frag_code") 
 	public MobileElement error_code_0000_1016;
 
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/btn_error_frag_retry") 
 	public MobileElement tryAgainButton;	
 	
-	
+	public void clickTryAgainButton() {
+		if (tryAgainButton.isDisplayed()) {
+		click(tryAgainButton); 
+		utils.log().info("Clicked Try Again Button");
+	} else {
+		utils.log().info("Try Again button is not displayed");
+	}
+	}
+
 	
 	@Override
 	public boolean isAt() {

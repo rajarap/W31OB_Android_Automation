@@ -2,6 +2,7 @@ package com.cs.arris.Tests;
 
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -85,8 +86,8 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  this.lastName = properties.getProperty("lastname");
 			  utils.log().info("Last Name : " + this.lastName);
 			  
-			  this.email = properties.getProperty("email");
-			  utils.log().info("Email address : " + this.email);
+//			  this.email = properties.getProperty("email");
+//			  utils.log().info("Email address : " + this.email);
 			  
 			  this.ssidName = super.generateRouterSSID();
 			  utils.log().info("SSID Name : " + this.ssidName);
@@ -218,160 +219,45 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 //		  });
 //	}
 	  
-//	  @Test(priority = 1)
-//	  public void Verify_SignUp_And_Onboard()
-//	  {
-//			new GetStartedPage().clickGetStartedButton();
-//			new GrantPermissionsPage().clickContinueButton();
-//			new DeviceLocationPage().clickAllow();
-//			new AccessResourcesOnDevicePage().clickAllow();
-//			new SelectYourDevicePage().selectSurfboardMaxOption();
-//			new SelectYourDevicePage().clickNextButton();
-//			new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
-//			new SelectYourDevicePage2().clickNextButton();
-//			new SiginPage().clickSignUpButton();
-//			email = new SignupPage().getEmailAddress();
-//			new SignupPage().enterValidEmailAddress(email);
-//			new SignupPage().enterFirstName(firstName);
-//			new SignupPage().enterLastName(lastName);
-//			new SignupPage().clickAgreeTermsAndConditionsCheckBox();
-//			super.pause(5);
-//			if(new TermsAndConditionsPage().isAt()) {
-//				for(int i=1; i<=18; i++) {
-//					super.swipeUp();
-//				}
-//				  super.pause(3);
-//					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
-//						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
-//					}
-//				}
-//			  super.pause(2);
-//			  new EmailTest().displayMessage();
-//			  super.getDriver().runAppInBackground(Duration.ofSeconds(30));
-//			  try {
-//				passCode = new EmailTest().getValidOTP(email);
-//			} catch (MalformedURLException e1) {}
-//			  super.getDriver().activateApp("com.arris.sbcBeta");
-//			  new SignupPage().clickSignupButton();
-//			 	  
-//			  new EnterValidOTPPage().enterValidPassCode(passCode);
-//			  new CodeVerifiedPage().getCodeVerifiedText();
-//			  new CodeVerifiedPage().clickNextButton();
-//			  super.pause(3);
-//			  try {
-//				  if(new CodeVerifiedPage().continueOnBoardingButton.isDisplayed())
-//					  new SevenTapLogs().tapSeven();
-//				  	  new SevenTapLogs().clickYesButton();
-//				      new SevenTapLogs().clickGmailIcon();
-//				      new SevenTapLogs().enterEmailAddress();
-//				      new SevenTapLogs().clickSendButton();
-//				      new CodeVerifiedPage().clickContinueOnboardingButton();
-//				      utils.log().info("EC-0015-1805 - The mobile device cannot connect to your Router");
-//			  }catch(EC_0015_1805_OTP_Screen_Continue_Onboarding e) { 
-//				  new EC_0015_1805_OTP_Screen_Continue_Onboarding("EC-0015-1805 - The mobile device cannot connect to your Router", e);
-//			  }
-//			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
-//			  new SetupHomeNetworkPage().clickNextButton();
-//			  new UnPackYourBoxPage().clickNextButton();
-//			  new PlugInMaxRouterPage().clickNextButton();
-//			  super.pause(20);
-//			  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
-//			  super.pause(10);
-//			  try {
-//				  if(new ServiceNotAvailablePage().error_code_0003_1003.isDisplayed() || new ServiceNotAvailablePage().error_code_0003_1014.isDisplayed())
-//					  new SevenTapLogs().tapSeven();
-//			  	  	  new SevenTapLogs().clickYesButton();
-//			  	  	  new SevenTapLogs().clickGmailIcon();
-//			  	  	  new SevenTapLogs().enterEmailAddress();
-//			  	  	  new SevenTapLogs().clickSendButton();
-//			  	  	  new CodeVerifiedPage().clickContinueOnboardingButton();
-//			  	  	  utils.log().info("EC-0003-1014/1003 - Service is currently not available.  We are exeperncing an issue connecting to our back office");
-//			  	}catch(EC_0003_1014_Service_Not_Available e) { 
-//					  new EC_0015_1805_OTP_Screen_Continue_Onboarding("EC-0003-1014/1003 - Service is currently not available.  We are exeperncing an issue connecting to our back office", e);
-//				  }
-//			  new ConnectMaxRouterToInternetPage().clickNextButton();
-//			  super.pause(5);
-//			  new SystemFirmwareUpdatePage().clickNextButton();
-//			  super.pause(10);
-//			  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
-//			  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
-//			  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
-//			  new NameYourNetwokSSIDPage().clickNextButton();
-//			  super.pause(25);
-//			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-//			  super.pause(15);
-//			  new ConnectionToWifiNeededPage().clickContinue();
-//			  super.pause(20);
-//			  new CongratulationsPage().clickContinueButton();
-//			  super.pause(5);
-//			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
-//			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
-//			  super.pause(5);
-//			  new NetworkOptimizationDialog().clickOkButton();
-//			  super.pause(5);
-//			  new HomePage().getSSIDName();  
-//	  }
-	  
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-			new GetStartedPage().clickGetStartedButton();
-			new GrantPermissionsPage().clickContinueButton();
-			new DeviceLocationPage().clickAllow();
-			new AccessResourcesOnDevicePage().clickAllow();
-			new SelectYourDevicePage().selectSurfboardMaxOption();
-			new SelectYourDevicePage().clickNextButton();
-			new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
-			new SelectYourDevicePage2().clickNextButton();
-			new SiginPage().enterEmailAddress(email);
-//			new SiginPage().clickSignUpButton();
-			new SiginPage().clickSigninButton();
-			try {
-				  if(new MaximumVerificationReachedPage().isAt()) {
-					 new TapSevenTimes().tapSeven();
-					  
-			  		if(new SevenTapLogs().isAt()) 
-			  			new SevenTapLogs().clickYesButton();
-			  		
-			  		if(new SevenTapGmail().isAt()) 
-			  			new SevenTapGmail().clickGmailIcon();
-			  		
-			  		if(new SevenTapEmail().isAt()) {
-			  			new SevenTapEmail().enterEmailAddress();
-			  			new SevenTapEmail().clickSendButton();}
-	  		
-				      utils.log().info("EC-0015-1805 - The mobile device cannot connect to your Router");
-				  }
-			  }catch(EC_0015_1805_OTP_Screen_Continue_Onboarding e) { 
-				  new EC_0015_1805_OTP_Screen_Continue_Onboarding("EC-0015-1805 - The mobile device cannot connect to your Router", e);
-			  }
+		  try {
+			  new GetStartedPage().clickGetStartedButton();
+			  new GrantPermissionsPage().clickContinueButton();
+			  new DeviceLocationPage().clickAllow();
+			  new AccessResourcesOnDevicePage().clickAllow();
+			  new SelectYourDevicePage().selectSurfboardMaxOption();
+			  new SelectYourDevicePage().clickNextButton();
+			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+			  new SelectYourDevicePage2().clickNextButton();
+			  new SiginPage().clickSignUpButton();
+			  email = new SignupPage().getEmailAddress();  //yopEmailId in ParentClass
+			  new SignupPage().enterValidEmailAddress(email);
+			  new SignupPage().enterFirstName(firstName);
+			  new SignupPage().enterLastName(lastName);
+			  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
+			  super.pause(5);
+			  if(new TermsAndConditionsPage().isAt()) {
+				for(int i=1; i<=17; i++) {
+					super.swipeUp();
+				}
+				  super.pause(3);
+					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
+						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
+						super.pause(3);
+						passCode = new EmailTest().getValidOTP(email); 
+					}
+				}
+//			  passCode = new EmailTest().getValidOTP(email);  
+			  super.pause(2);
+			  new SignupPage().clickSignupButton();
 			  super.pause(20);
-			  passCode = new ValidOTP().getValidOTP();	  
+//			  super.getDriver().activateApp("com.arris.sbcBeta");
 			  new EnterValidOTPPage().enterValidPassCode(passCode);
 			  new CodeVerifiedPage().getCodeVerifiedText();
 			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
-			  try {
-				  if(new CodeVerifiedPage().continueOnBoardingButton.isDisplayed()) {
-					  new TapSevenTimes().tapSeven();
-					  
-				  		if(new SevenTapLogs().isAt()) 
-				  			new SevenTapLogs().clickYesButton();
-				  		
-				  		if(new SevenTapGmail().isAt()) 
-				  			new SevenTapGmail().clickGmailIcon();
-				  		
-				  		if(new SevenTapEmail().isAt()) {
-				  			new SevenTapEmail().enterEmailAddress();
-				  			new SevenTapEmail().clickSendButton();}
-				  		
-			  			new CodeVerifiedPage().clickContinueOnboardingButton();}
-				  		
-				      utils.log().info("EC-0015-1805 - The mobile device cannot connect to your Router");
-			  }catch(EC_0015_1805_OTP_Screen_Continue_Onboarding e) { 
-				  new EC_0015_1805_OTP_Screen_Continue_Onboarding("EC-0015-1805 - The mobile device cannot connect to your Router", e);
-			  }
-			  
 			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
 			  new SetupHomeNetworkPage().clickNextButton();
 			  new UnPackYourBoxPage().clickNextButton();
@@ -379,25 +265,6 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  super.pause(20);
 			  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
 			  super.pause(10);
-			  try {
-				  if(new ServiceNotAvailablePage().error_code_0003_1003.isDisplayed() || new ServiceNotAvailablePage().error_code_0003_1014.isDisplayed())
-					  new TapSevenTimes().tapSeven();
-				  
-			  		if(new SevenTapLogs().isAt()) 
-			  			new SevenTapLogs().clickYesButton();
-			  		
-			  		if(new SevenTapGmail().isAt()) 
-			  			new SevenTapGmail().clickGmailIcon();
-			  		
-			  		if(new SevenTapEmail().isAt()) {
-			  			new SevenTapEmail().enterEmailAddress();
-			  			new SevenTapEmail().clickSendButton();}
-			  		
-			  	  	  utils.log().info("EC-0003-1014/1003 - Service is currently not available.  We are exeperncing an issue connecting to our back office");
-			  	}catch(EC_0003_1014_Service_Not_Available e) { 
-					  new EC_0015_1805_OTP_Screen_Continue_Onboarding("EC-0003-1014/1003 - Service is currently not available.  We are exeperncing an issue connecting to our back office", e);
-				  }
-			  
 			  new ConnectMaxRouterToInternetPage().clickNextButton();
 			  super.pause(5);
 			  new SystemFirmwareUpdatePage().clickNextButton();
@@ -419,6 +286,81 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new NetworkOptimizationDialog().clickOkButton();
 			  super.pause(5);
 			  new HomePage().getSSIDName();  
+		  }catch(Exception e) {
+			  new TapSevenTimes().tapSeven();
+			  super.pause(3);
+			  new SevenTapLogs().clickYesButton();
+			  super.pause(3);
+			  new SevenTapGmail().clickGmailIcon();
+			  super.pause(3);
+			  new SevenTapEmail().enterEmailAddress();
+			  super.pause(3);
+			  new SevenTapEmail().clickSendButton();
+			  Assert.fail();}
 	  }
+
+	  
+//
+//	  
+//	  @Test(priority = 1)
+//	  public void Verify_SignIn_And_Onboard_With_Already_Registered_Email_Account()
+//	  {
+//		  try {
+//			new GetStartedPage().clickGetStartedButton();
+//			new GrantPermissionsPage().clickContinueButton();
+//			new DeviceLocationPage().clickAllow();
+//			new AccessResourcesOnDevicePage().clickAllow();
+//			new SelectYourDevicePage().selectSurfboardMaxOption();
+//			new SelectYourDevicePage().clickNextButton();
+//			new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+//			new SelectYourDevicePage2().clickNextButton();
+//			new SiginPage().enterEmailAddress(email);
+////			new SiginPage().clickSignUpButton();
+//			new SiginPage().clickSigninButton();
+//			  super.pause(20);
+//			  passCode = new ValidOTP().getValidOTP();	  
+//			  new EnterValidOTPPage().enterValidPassCode(passCode);
+//			  new CodeVerifiedPage().getCodeVerifiedText();
+//			  new CodeVerifiedPage().clickNextButton();
+//			  super.pause(3);
+//			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
+//			  new SetupHomeNetworkPage().clickNextButton();
+//			  new UnPackYourBoxPage().clickNextButton();
+//			  new PlugInMaxRouterPage().clickNextButton();
+//			  super.pause(20);
+//			  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
+//			  super.pause(10);	  
+//			  new ConnectMaxRouterToInternetPage().clickNextButton();
+//			  super.pause(5);
+//			  new SystemFirmwareUpdatePage().clickNextButton();
+//			  super.pause(10);
+//			  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
+//			  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
+//			  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
+//			  new NameYourNetwokSSIDPage().clickNextButton();
+//			  super.pause(25);
+//			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+//			  super.pause(15);
+//			  new ConnectionToWifiNeededPage().clickContinue();
+//			  super.pause(20);
+//			  new CongratulationsPage().clickContinueButton();
+//			  super.pause(5);
+//			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+//			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
+//			  super.pause(5);
+//			  new NetworkOptimizationDialog().clickOkButton();
+//			  super.pause(5);
+//			  new HomePage().getSSIDName();  
+//	  }catch(Exception e) {
+//				  new TapSevenTimes().tapSeven();
+//				  super.pause(3);
+//			  	  new SevenTapLogs().clickYesButton();
+//			  	  super.pause(3);
+//			  	  new SevenTapGmail().clickGmailIcon();
+//			  	  super.pause(3);
+//		  		  new SevenTapEmail().enterEmailAddress();
+//		  		 super.pause(3);
+//		  		  new SevenTapEmail().clickSendButton();}
+//	  }
 }
 

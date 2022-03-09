@@ -29,12 +29,7 @@ public class TapSevenTimes extends ParentClass{
 		p.withCoordinates(x, y);
 		utils.log().info("Tapping 7 times");
 		for(int i=0; i <= 7; i++) {
-			action.tap(p);
-			action.release().perform();
+			action.tap(p).release().perform();
 		}
 	}
-
-	
-  
-
 }

@@ -13,12 +13,26 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.cs.arris.Base.ParentClass;
+import com.cs.arris.Pages.AccessResourcesOnDevicePage;
+import com.cs.arris.Pages.CodeVerifiedPage;
+import com.cs.arris.Pages.DeviceLocationPage;
+import com.cs.arris.Pages.EnterValidOTPPage;
+import com.cs.arris.Pages.GetStartedPage;
+import com.cs.arris.Pages.GrantPermissionsPage;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
 import com.cs.arris.Pages.ParentalControlWithProfilesPage;
+import com.cs.arris.Pages.SelectYourDevicePage;
+import com.cs.arris.Pages.SelectYourDevicePage2;
+import com.cs.arris.Pages.SetUpYourWiFiManagementPage;
 import com.cs.arris.Pages.SiginPage;
 import com.cs.arris.Pages.WideBandModeAlertInfoDialog;
 import com.cs.arris.Utilities.Direction;
+import com.cs.arris.Utilities.EmailTest;
+import com.cs.arris.Utilities.SevenTapEmail;
+import com.cs.arris.Utilities.SevenTapGmail;
+import com.cs.arris.Utilities.SevenTapLogs;
+import com.cs.arris.Utilities.TapSevenTimes;
 import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Workflows.HomePage_Workflow;
 import com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow;
@@ -69,8 +83,8 @@ public class TC03_Complex_Test extends ParentClass
 			  this.lastName = properties.getProperty("lastname");
 			  utils.log().info("Last Name : " + this.lastName);
 			  
-			  this.email = properties.getProperty("email");
-			  utils.log().info("Email address : " + this.email);
+//			  this.email = properties.getProperty("email");
+//			  utils.log().info("Email address : " + this.email);
 			  
 			  this.udid = properties.getProperty("udid");
 			  utils.log().info("UDID : " + this.udid);
@@ -90,58 +104,58 @@ public class TC03_Complex_Test extends ParentClass
 	  @Test(priority = 1)
 	  public void Login_And_Onboard()
 	  {
-		  TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
-			  getStarted.clickGetStartedButton();
-		  }).grantPermissionsPage(grantPermission -> {
-			  grantPermission.clickContinueButton();
-		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickAllow();
-		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
+		  utils.log().info("                        ");
+			utils.log().info("************************");
+			utils.log().info("Test: Login And Onboard ");
+			utils.log().info("************************");
+			
+			new GetStartedPage().clickGetStartedButton();
+			  new GrantPermissionsPage().clickContinueButton();
+			  new DeviceLocationPage().clickAllow();
+			  new AccessResourcesOnDevicePage().clickAllow();
+			  new SelectYourDevicePage().selectSurfboardMaxOption();
+			  new SelectYourDevicePage().clickNextButton();
+			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+			  new SelectYourDevicePage2().clickNextButton();
+			  new SiginPage().enterEmailAddress(super.yopEmailId);
+			  new SiginPage().clickSigninButton();
+			  super.pause(20);
+			  passCode = new EmailTest().getValidOTP(email);  
+			  super.pause(20);
+//			  super.getDriver().activateApp("com.arris.sbcBeta");
+			  new EnterValidOTPPage().enterValidPassCode(passCode);
+			  new CodeVerifiedPage().getCodeVerifiedText();
+			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllow();
-		  }).selectYourDevicePage(selectDevice -> {
-			  selectDevice.selectSurfboardMaxOption();
-			  selectDevice.clickNextButton();
-		  }).selectYourDevicePage2(selectDevice2 -> {
-			  selectDevice2.selectMaxProAX11000RadioButton();
-			  selectDevice2.clickNextButton();
-			  super.pause(3);
-		  }).welcomeSigninPage(signin -> {
-			  signin.enterEmailAddress(email);
-			  signin.clickSigninButton();
-			  super.pause(12);
-		  }).getOTPCode(getOTP -> {
-			  passCode = getOTP.getValidOTP();
-	  		}).enterOTPPage(otpverify -> {
-			  otpverify.enterValidPassCode(passCode);
-	  		 }).codeVerifiedPage(codeVerified -> {
-				  codeVerified.getCodeVerifiedText();
-				  codeVerified.clickNextButton();
-				  super.pause(3);
-				  try
-				  {
-					  if(codeVerified.continueOnBoardingButton.isDisplayed()) {
-						  codeVerified.clickContinueOnboardingButton();  }
-				  }catch(Exception e){
-					  e.getMessage(); }
-			  }).setupWifi(setupwifi ->{
-				  setupwifi.clickskipTutorialButton();
-				  super.pause(3);
-		  }).homePage(home -> {
-			  try
-			  {
-				  if(home.okButton.isDisplayed())
-					  home.clickOkButton();
-			  }catch(Exception e) { e.getMessage(); }
-		  });
+			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+			  super.pause(5);
+			  try {
+				  if(new HomePage().okButton.isDisplayed())
+					  new HomePage().clickOkButton();
+			  }catch(Exception e) {
+				  e.getMessage(); }
 	  }
 	  
 	  @Test(priority = 2, dependsOnMethods = {"Login_And_Onboard" })
 		public void Verify_Parental_Control_UI_Page() {
 			SoftAssert softcontrol2 = new SoftAssert();
-			softcontrol2.assertTrue(new HomePage().getFooterIconsPageObject().clickParentalButton());
-			if(new ParentalControlWithProfilesPage().isAt())
-				softcontrol2.assertTrue(new ParentalControlWithProfilesPage().verifyUIOnParentalControlProfilesPage());
+			try {
+				softcontrol2.assertTrue(new HomePage().getFooterIconsPageObject().clickParentalButton());
+				if (new ParentalControlWithProfilesPage().isAt())
+					softcontrol2
+							.assertTrue(new ParentalControlWithProfilesPage().verifyUIOnParentalControlProfilesPage());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			softcontrol2.assertAll();
 		}
 		
@@ -157,7 +171,7 @@ public class TC03_Complex_Test extends ParentClass
 			}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 			
 			if(new ParentalControlWithProfilesPage().isAt()) {
-				for(int i = 1; i <= 3; i++)	{
+				for(int i = 1; i <= 4; i++)	{
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().clickAddProfilesLink());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().enterProfileName());
 					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().clickCreateProfileButton());
@@ -177,12 +191,25 @@ public class TC03_Complex_Test extends ParentClass
 		@Test(priority = 4, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 		public void Verify_User_Profile_Page() {
 			SoftAssert softcontrol4 = new SoftAssert();
-			if(new ParentalControlWithProfilesPage().isAt())
-				softcontrol4.assertTrue(new ParentalControlWithProfilesPage().clickOnUserProfile());
-			super.pause(3);
-			if(new ParentalControlWithProfilesPage().getUserProfilePageObject().isAt())
-				softcontrol4.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyUIOnUserProfilePage());
-			
+			try {
+				if (new ParentalControlWithProfilesPage().isAt())
+					softcontrol4.assertTrue(new ParentalControlWithProfilesPage().clickOnUserProfile());
+				super.pause(3);
+				if (new ParentalControlWithProfilesPage().getUserProfilePageObject().isAt())
+					softcontrol4.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.verifyUIOnUserProfilePage());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			softcontrol4.assertAll();
 		}
 		
@@ -220,20 +247,45 @@ public class TC03_Complex_Test extends ParentClass
 		public void Verify_Add_Device_To_User_Profile() {
 			SoftAssert softcontrol7 = new SoftAssert();
 			softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickAddDeviceLink());
-			
-			if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().isAt()) {
-				softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().verifyDevicesInAddDevicePage());
-				utils.log().info("Clicking on Add Device button without selecting any device");
-				softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().clickAddDeviceButton());
-				
-				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().alertTitle.isDisplayed()) {
-					utils.log().info("Alert dialog box with message - " + new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().description.getText()+ " - is displayed");
-					softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().clickCloseButtonOnAlertDialog());	
+			try {
+
+				if (new ParentalControlWithProfilesPage().getUserProfilePageObject()
+						.getParentalUserProfileAddDevicePageObject().isAt()) {
+					softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.getParentalUserProfileAddDevicePageObject().verifyDevicesInAddDevicePage());
+					utils.log().info("Clicking on Add Device button without selecting any device");
+					softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.getParentalUserProfileAddDevicePageObject().clickAddDeviceButton());
+
+					if (new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.getParentalUserProfileAddDevicePageObject().alertTitle.isDisplayed()) {
+						utils.log()
+								.info("Alert dialog box with message - "
+										+ new ParentalControlWithProfilesPage().getUserProfilePageObject()
+												.getParentalUserProfileAddDevicePageObject().description.getText()
+										+ " - is displayed");
+						softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+								.getParentalUserProfileAddDevicePageObject().clickCloseButtonOnAlertDialog());
+					}
+
+					softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.getParentalUserProfileAddDevicePageObject().selectADeviceForUserProfile());
+					softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject()
+							.getParentalUserProfileAddDevicePageObject().clickAddDeviceButton());
+					// softcontrol7.assertTrue(new
+					// ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().verifyDeviceCountAfterAssociatingToUser());
 				}
-					
-				softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().selectADeviceForUserProfile());
-				softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().clickAddDeviceButton());
-				//softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddDevicePageObject().verifyDeviceCountAfterAssociatingToUser());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
 			}
 			
 			softcontrol7.assertAll();
@@ -542,14 +594,14 @@ public class TC03_Complex_Test extends ParentClass
 			softnet7.assertAll();
 		}
 
-		@Test(priority = 31, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page", "Verify_WAN_Settings_WAN_IP_Configuration_IPv4_DHCP_UI_Page"})
+		@Test(priority = 31, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 		public void Verify_WAN_Settings_WAN_IP_Configuration_IPv4_Static_UI_Page() {
 			SoftAssert softnet8 = new SoftAssert();
 			softnet8.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv4ConfigurationPageObject().verifyUIOnWANIPv4Static());
 			softnet8.assertAll();
 		}
 
-		@Test(priority = 32, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page", "Verify_WAN_Settings_WAN_IP_Configuration_IPv4_Static_UI_Page"})
+		@Test(priority = 32, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 		public void Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateful_UI_Page() {
 			SoftAssert softnet9 = new SoftAssert();
 			softnet9.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv4ConfigurationPageObject().clickWANIPv6Tab());
@@ -558,14 +610,14 @@ public class TC03_Complex_Test extends ParentClass
 			softnet9.assertAll();
 		}
 
-		@Test(priority = 33, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page", "Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateful_UI_Page"})
+		@Test(priority = 33, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 		public void Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateless_UI_Page() {
 			SoftAssert softnet10 = new SoftAssert();
 			softnet10.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv6ConfigurationPageObject().verifyUIOnWANIPv6Stateless());
 			softnet10.assertAll();
 		}
 
-		@Test(priority = 34, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page", "Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateful_UI_Page"})
+		@Test(priority = 34, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 		public void Verify_WAN_Settings_WAN_IP_Configuration_Help_Page() {
 			SoftAssert softnet11 = new SoftAssert();
 			new NetworkPage().getWANSettingsPageObject().getWANIPv6ConfigurationPageObject().clickHelpButton();
@@ -590,7 +642,7 @@ public class TC03_Complex_Test extends ParentClass
 			softnet12.assertAll();
 		}
 		
-		@Test(priority = 36, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_DNS_Configuration_IPv4_Automatic_UI_Page"})
+		@Test(priority = 36, dependsOnMethods = {"Login_And_Onboard"})
 		public void Verify_WAN_Settings_DNS_Configuration_IPv4_Static_UI_Page() 
 		{
 			SoftAssert softnet13 = new SoftAssert();
@@ -598,7 +650,7 @@ public class TC03_Complex_Test extends ParentClass
 			softnet13.assertAll();
 		}
 		
-		@Test(priority = 37, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_DNS_Configuration_IPv4_Static_UI_Page"})
+		@Test(priority = 37, dependsOnMethods = {"Login_And_Onboard"})
 		public void Verify_WAN_Settings_DNS_Configuration_IPv6_Automatic_UI_Page() 
 		{
 			SoftAssert softnet14 = new SoftAssert();
@@ -608,7 +660,7 @@ public class TC03_Complex_Test extends ParentClass
 			softnet14.assertAll();
 		}
 		
-		@Test(priority = 38, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_DNS_Configuration_IPv6_Automatic_UI_Page"})
+		@Test(priority = 38, dependsOnMethods = {"Login_And_Onboard"})
 		public void Verify_WAN_Settings_DNS_Configuration_IPv6_Static_UI_Page() 
 		{
 			SoftAssert softnet15 = new SoftAssert();
@@ -616,7 +668,7 @@ public class TC03_Complex_Test extends ParentClass
 			softnet15.assertAll();
 		}
 		
-		@Test(priority = 39, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_DNS_Configuration_IPv6_Static_UI_Page"})
+		@Test(priority = 39, dependsOnMethods = {"Login_And_Onboard"})
 		public void Verify_WAN_Settings_DNS_Configuration_Help_Page() 
 		{
 			SoftAssert softnet16 = new SoftAssert();
@@ -1148,47 +1200,117 @@ public class TC03_Complex_Test extends ParentClass
 			SoftAssert softnet45 = new SoftAssert();
 //			if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt()) 
 //			{
-			for(int i = 1 ; i <=3 ; i++)
-			{
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().selectTCP());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterIPAddress());
-				softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-				
-				try {
-					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed()) {
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());}
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed()) {
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());}
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed()) {
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());}
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed()) {
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());}
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed()) {
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());}
-					else
+			try {
+				for (int i = 1; i <= 3; i++) {
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterPortRuleName());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.selectTCP());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterInternalPortStart());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterInternalPortEnd());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterExternalPortStart());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterExternalPortEnd());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.enterIPAddress());
+					softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.clickSaveButton());
+
+					try {
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().clickSaveButton());
+						if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed()) {
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterPortRuleName());
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().clickSaveButton());
+						} else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed()) {
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterInternalPortStart());
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().clickSaveButton());
+						} else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed()) {
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterInternalPortEnd());
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().clickSaveButton());
+						} else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed()) {
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterExternalPortStart());
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().clickSaveButton());
+						} else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed()) {
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterExternalPortEnd());
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().clickSaveButton());
+						} else
+							utils.log().info("All Port details are valid");
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().clickSaveButton());
+					} catch (Exception e) {
 						utils.log().info("All Port details are valid");
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-				}catch(Exception e) {utils.log().info("All Port details are valid");}
-				super.pause(15);
-				try {
-					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt()) 
-						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.getPortRuleEditFailedDialogObject().clickOKButton());
-						}catch(Exception e) {
-							//utils.log().info("Port Rule Edit Failed Dialog did not appear");
-							}
+					}
+					super.pause(15);
+					try {
+						if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
+							softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
+									.clickOKButton());
+					} catch (Exception e) {
+						// utils.log().info("Port Rule Edit Failed Dialog did not appear");
+					}
+				}
+
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
 			}
 			softnet45.assertAll();
 		}
@@ -1241,42 +1363,105 @@ public class TC03_Complex_Test extends ParentClass
 		{
 			SoftAssert softnet47 = new SoftAssert();
 			new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton();
-			if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().isAt())
-			{
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterPortForwardingRuleName());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterInternalPortStart());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterInternalPortEnd());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyInternalPortStartLessThenPortEnd());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterExternalPortStart());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterExternalPortEnd());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyExternalPortStartLessThenPortEnd());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterValidIPAddress());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().verifyEnterInValidIPAddress());
-				softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-				try {
-					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-					else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-					else
+			try {
+				if (new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject()
+						.getPortForwardingAddRulePageObject().isAt()) {
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterPortForwardingRuleName());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterInternalPortStart());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterInternalPortEnd());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyInternalPortStartLessThenPortEnd());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterExternalPortStart());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterExternalPortEnd());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyExternalPortStartLessThenPortEnd());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterValidIPAddress());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.verifyEnterInValidIPAddress());
+					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+							.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+							.clickSaveButton());
+					try {
+						if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterPortRuleName());
+						else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterInternalPortStart());
+						else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterInternalPortEnd());
+						else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterExternalPortStart());
+						else if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().enterExternalPortEnd());
+						else
+							utils.log().info("All Port details are valid");
+						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().clickSaveButton());
+						super.pause(25);
+					} catch (Exception e) {
 						utils.log().info("All Port details are valid");
-					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-					super.pause(25);
-				}catch(Exception e) {utils.log().info("All Port details are valid");}
-				
-				
-				try {
-				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt()) 
-					softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-							.getPortRuleEditFailedDialogObject().clickOKButton());
-				super.pause(25);
-					}catch(Exception e) {utils.log().info("Port Rule Edit Failed Dialog did not appear");}
+					}
+
+					try {
+						if (new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject()
+								.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
+							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
+									.clickOKButton());
+						super.pause(25);
+					} catch (Exception e) {
+						utils.log().info("Port Rule Edit Failed Dialog did not appear");
+					}
+				}
+
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
 			}
 			softnet47.assertAll();
 		}

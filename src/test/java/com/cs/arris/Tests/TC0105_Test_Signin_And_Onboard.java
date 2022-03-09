@@ -16,7 +16,7 @@ import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Workflows.TC51_Signin_And_Onboard_Workflow;
 
 
-public class TC002_Test_Signin_And_Onboard extends ParentClass
+public class TC0105_Test_Signin_And_Onboard extends ParentClass
 {
 	TestUtils utils = new TestUtils();
 	String firstName;

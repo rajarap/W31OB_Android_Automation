@@ -27,7 +27,7 @@ import com.cs.arris.Workflows.TC55_Login_And_Verify_HomeSpeedTestHistoryPage_Wor
  
 
 
-public class TC006_Login_And_Test_Home_Speed_Test_History_Page extends ParentClass
+public class TC0104_Login_And_Test_Home_Speed_Test_History_Page extends ParentClass
 {
 	TestUtils utils = new TestUtils();
 	String firstName;

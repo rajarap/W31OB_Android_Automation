@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.cs.arris.Base.ParentClass;
+import com.cs.arris.Pages.AccessResourcesOnDevicePage;
 import com.cs.arris.Pages.AddDeviceAccessCameraDialog;
 import com.cs.arris.Pages.AddDeviceActivateYourDeviceWithServiceProviderPage;
 import com.cs.arris.Pages.AddDeviceChooseInternetServiceProviderPage;
@@ -40,13 +41,26 @@ import com.cs.arris.Pages.AddSatelliteSuccessfullyConnectedToInternetPage;
 import com.cs.arris.Pages.AddSatelliteUnpackYourSatellitePage;
 import com.cs.arris.Pages.AddSatelliteUpToDatePage;
 import com.cs.arris.Pages.AppRatingDialog;
+import com.cs.arris.Pages.CodeVerifiedPage;
 import com.cs.arris.Pages.ConnectionToWifiNeededPage;
 import com.cs.arris.Pages.DebugLogsDialog;
+import com.cs.arris.Pages.DeviceLocationPage;
+import com.cs.arris.Pages.EnterValidOTPPage;
+import com.cs.arris.Pages.GetStartedPage;
+import com.cs.arris.Pages.GrantPermissionsPage;
 import com.cs.arris.Pages.HomeNetowrkTurnOffNetworkOptimizationDialog;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.NetworkPage;
+import com.cs.arris.Pages.SelectYourDevicePage;
+import com.cs.arris.Pages.SelectYourDevicePage2;
+import com.cs.arris.Pages.SetUpYourWiFiManagementPage;
 import com.cs.arris.Pages.SiginPage;
 import com.cs.arris.Pages.SpeedTestPage;
+import com.cs.arris.Utilities.EmailTest;
+import com.cs.arris.Utilities.SevenTapEmail;
+import com.cs.arris.Utilities.SevenTapGmail;
+import com.cs.arris.Utilities.SevenTapLogs;
+import com.cs.arris.Utilities.TapSevenTimes;
 import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Workflows.HomePage_Workflow;
 import com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow;
@@ -71,8 +85,8 @@ public class TC01_Simple_Test extends ParentClass
 	int totalCountOfDevices;
 	
 	//HomePage
-	public TC003_Login_And_Test_Home_Page getHomePageTestObject() {
-		TC003_Login_And_Test_Home_Page homePageTest = new TC003_Login_And_Test_Home_Page();
+	public TC0101_Login_And_Test_Home_Page getHomePageTestObject() {
+		TC0101_Login_And_Test_Home_Page homePageTest = new TC0101_Login_And_Test_Home_Page();
 		return homePageTest;
 	}
 	//Hamburger Menu And Settings About Help Page
@@ -131,50 +145,34 @@ public class TC01_Simple_Test extends ParentClass
 			utils.log().info("************************");
 			utils.log().info("Test: Login And Onboard ");
 			utils.log().info("************************");
-		  TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
-			  getStarted.clickGetStartedButton();
-		  }).grantPermissionsPage(grantPermission -> {
-			  grantPermission.clickContinueButton();
-		  }).deviceLocationPage(deviceLocation -> {
-			  deviceLocation.clickAllow();
-		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
+			
+			new GetStartedPage().clickGetStartedButton();
+			  new GrantPermissionsPage().clickContinueButton();
+			  new DeviceLocationPage().clickAllow();
+			  new AccessResourcesOnDevicePage().clickAllow();
+			  new SelectYourDevicePage().selectSurfboardMaxOption();
+			  new SelectYourDevicePage().clickNextButton();
+			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+			  new SelectYourDevicePage2().clickNextButton();
+			  new SiginPage().enterEmailAddress(super.yopEmailId);
+			  new SiginPage().clickSigninButton();
+			  super.pause(20);
+			  passCode = new EmailTest().getValidOTP(email);  
+			  super.pause(20);
+//			  super.getDriver().activateApp("com.arris.sbcBeta");
+			  new EnterValidOTPPage().enterValidPassCode(passCode);
+			  new CodeVerifiedPage().getCodeVerifiedText();
+			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
-			  accessResoucesOnDevice.clickAllow();
-		  }).selectYourDevicePage(selectDevice -> {
-			  selectDevice.selectSurfboardMaxOption();
-			  selectDevice.clickNextButton();
-		  }).selectYourDevicePage2(selectDevice2 -> {
-			  selectDevice2.selectMaxProAX11000RadioButton();
-			  selectDevice2.clickNextButton();
-			  super.pause(3);
-		  }).welcomeSigninPage(signin -> {
-			  signin.enterEmailAddress(email);
-			  signin.clickSigninButton();
-			  super.pause(12);
-		  }).getOTPCode(getOTP -> {
-			  passCode = getOTP.getValidOTP();
-	  		}).enterOTPPage(otpverify -> {
-			  otpverify.enterValidPassCode(passCode);
-	  		 }).codeVerifiedPage(codeVerified -> {
-				  codeVerified.getCodeVerifiedText();
-				  codeVerified.clickNextButton();
-				  super.pause(3);
-				  try {
-					  if(codeVerified.continueOnBoardingButton.isDisplayed())
-						  codeVerified.clickContinueOnboardingButton();
-					  super.pause(5);
-				  }catch(Exception e) {e.getMessage(); }
-			  }).setupWifi(setupwifi ->{
-				  setupwifi.clickskipTutorialButton();
-				  super.pause(3);
-		  }).homePage(home -> {
+			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+			  super.pause(5);
 			  try {
-				  if(home.okButton.isDisplayed())
-					  home.clickOkButton();
+				  if(new HomePage().okButton.isDisplayed())
+					  new HomePage().clickOkButton();
 			  }catch(Exception e) {
 				  e.getMessage(); }
-		  });
 	  }
+
 	  
 		@Test(priority = 2 , dependsOnMethods = { "Login_And_Onboard" })
 		public void Verify_Home_UI_Page() {
@@ -472,63 +470,80 @@ public class TC01_Simple_Test extends ParentClass
 			SoftAssert softhome2 = new SoftAssert();
 			
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			try {
+				if (new HomePage().isAt())
+					softhome2.assertTrue(new HomePage().clickNavigationButton());
+
+				if (new HomePage().getHamburgerMenuPageObject().isAt())
+					softhome2.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddDeviceButton());
+
+				if (new AddDeviceSelectDevice1Page().isAt()) {
+					softhome2.assertTrue(new AddDeviceSelectDevice1Page().selectISPCableRadioButton());
+					softhome2.assertTrue(new AddDeviceSelectDevice1Page().clickNextButton());
+				}
+
+				if (new AddDeviceSelectDevice2Page().isAt()) {
+					softhome2.assertTrue(new AddDeviceSelectDevice2Page().selectT25RadioButton());
+					softhome2.assertTrue(new AddDeviceSelectDevice2Page().clickNextButton());
+					super.pause(5);
+				}
+
+				if (new AddDeviceStepsForActivationPage().isAt())
+					softhome2.assertTrue(new AddDeviceStepsForActivationPage().clickStartButton());
+				super.pause(5);
+
+				if (new AddDeviceLetsStartWithDeviceConnectionPage().isAt())
+					softhome2.assertTrue(new AddDeviceLetsStartWithDeviceConnectionPage().clickNextButton());
+				super.pause(5);
+
+				if (new AddDeviceChooseInternetServiceProviderPage().isAt())
+					softhome2.assertTrue(new AddDeviceChooseInternetServiceProviderPage().clickNextButton());
+				super.pause(5);
+
+				if (new AddDeviceActivateYourDeviceWithServiceProviderPage().isAt())
+					softhome2.assertTrue(new AddDeviceActivateYourDeviceWithServiceProviderPage().clickSkipButton());
+				super.pause(5);
+
+				if (new AddDeviceEstablishingConnectionPage().isAt())
+					softhome2.assertTrue(new AddDeviceEstablishingConnectionPage().clickOnlineButton());
+				super.pause(5);
+
+				if (new AddDeviceSuccessPage().isAt())
+					softhome2.assertTrue(new AddDeviceSuccessPage().clickNextButton());
+				super.pause(5);
+
+				if (new AddDeviceScanBarCodePage().isAt())
+					softhome2.assertTrue(new AddDeviceScanBarCodePage().clickScanButton());
+				super.pause(5);
+
+				if (new AddDeviceAccessCameraDialog().isAt())
+					softhome2.assertTrue(new AddDeviceAccessCameraDialog().clickEnterManuallyButton());
+				super.pause(5);
+
+				if (new AddDeviceEnterMACAddressManuallyPage().isAt()) {
+					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterSerialNumber());
+					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
+					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
+					super.pause(15);
+				}
+
+				if (new AddDeviceCongratulationsPage().isAt())
+					softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
+				super.pause(5);
+				
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			
-			if(new HomePage().isAt())
-				softhome2.assertTrue(new HomePage().clickNavigationButton());
-			
-			if(new HomePage().getHamburgerMenuPageObject().isAt())
-				softhome2.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddDeviceButton());
-			
-			if(new AddDeviceSelectDevice1Page().isAt()) {
-				softhome2.assertTrue(new AddDeviceSelectDevice1Page().selectISPCableRadioButton());
-				softhome2.assertTrue(new AddDeviceSelectDevice1Page().clickNextButton());}
-			
-			if(new AddDeviceSelectDevice2Page().isAt()) {
-				softhome2.assertTrue(new AddDeviceSelectDevice2Page().selectT25RadioButton());
-				softhome2.assertTrue(new AddDeviceSelectDevice2Page().clickNextButton());
-				super.pause(5);}
-			
-			if(new AddDeviceStepsForActivationPage().isAt())
-				softhome2.assertTrue(new AddDeviceStepsForActivationPage().clickStartButton());
-			super.pause(5);
-			
-			if(new AddDeviceLetsStartWithDeviceConnectionPage().isAt())
-				softhome2.assertTrue(new AddDeviceLetsStartWithDeviceConnectionPage().clickNextButton());
-			super.pause(5);
-			
-			if(new AddDeviceChooseInternetServiceProviderPage().isAt())
-				softhome2.assertTrue(new AddDeviceChooseInternetServiceProviderPage().clickNextButton());
-			super.pause(5);
-			
-			if(new AddDeviceActivateYourDeviceWithServiceProviderPage().isAt())
-				softhome2.assertTrue(new AddDeviceActivateYourDeviceWithServiceProviderPage().clickSkipButton());
-			super.pause(5);
-			
-			if(new AddDeviceEstablishingConnectionPage().isAt())
-				softhome2.assertTrue(new AddDeviceEstablishingConnectionPage().clickOnlineButton());
-			super.pause(5);
-			
-			if(new AddDeviceSuccessPage().isAt())
-				softhome2.assertTrue(new AddDeviceSuccessPage().clickNextButton());
-			super.pause(5);
-			
-			if(new AddDeviceScanBarCodePage().isAt())
-				softhome2.assertTrue(new AddDeviceScanBarCodePage().clickScanButton());
-			super.pause(5);
-			
-			if(new AddDeviceAccessCameraDialog().isAt())
-				softhome2.assertTrue(new AddDeviceAccessCameraDialog().clickEnterManuallyButton());
-			super.pause(5);
-			
-			if(new AddDeviceEnterMACAddressManuallyPage().isAt()) {
-				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterSerialNumber());
-				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
-				softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
-				super.pause(15);}
-			
-			if(new AddDeviceCongratulationsPage().isAt())
-				softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
-			super.pause(5);
 			softhome2.assertAll();
 		}
 			
@@ -632,17 +647,31 @@ public class TC01_Simple_Test extends ParentClass
 		@Test(priority = 40, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Remove_Device_Page() {
 			SoftAssert softhome10 = new SoftAssert();
-			if(new AddDeviceHomePage().isAt())
-				softhome10.assertTrue(new AddDeviceHomePage().clickNavigationButton());
-				
-			if(new AddDeviceHomePage().getHamburgerMenuObject().isAt())
-				softhome10.assertTrue(new AddDeviceHomePage().getHamburgerMenuObject().clickRemoveDeviceeButton());
-			
-			if(new AddDeviceHomePage().getRemoveDevicePageObject().isAt()) {
-				softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().selectDeviceToRemove());
-				softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().clickNextButton());
-				super.pause(3);}
-				
+			try {
+				if (new AddDeviceHomePage().isAt())
+					softhome10.assertTrue(new AddDeviceHomePage().clickNavigationButton());
+
+				if (new AddDeviceHomePage().getHamburgerMenuObject().isAt())
+					softhome10.assertTrue(new AddDeviceHomePage().getHamburgerMenuObject().clickRemoveDeviceeButton());
+
+				if (new AddDeviceHomePage().getRemoveDevicePageObject().isAt()) {
+					softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().selectDeviceToRemove());
+					softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().clickNextButton());
+					super.pause(3);
+				}
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
+
 			softhome10.assertAll();
 		}
 		
@@ -657,12 +686,16 @@ public class TC01_Simple_Test extends ParentClass
 			
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
 			
-			if(new HomePage().isAt())
-				softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
-			
-			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-			super.pause(2);
-			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); //Each satellite expands your network
+			try {
+				if (new HomePage().isAt())
+					softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
+
+				softsatellite1
+						.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+				super.pause(2);
+				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite
+																										// expands your
+																										// network
 //			softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 //			
 //			//2
@@ -677,26 +710,39 @@ public class TC01_Simple_Test extends ParentClass
 //			try {
 //				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
 //			}catch(Exception e) {utils.log().info("Add Satellite Page 3 is not displayed");}
-			
-			softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-			softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-			super.pause(30);
-			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-			super.pause(70);
-			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-			super.pause(10);
-			softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-			super.pause(15);
-			try {
-				if(new AddSatelliteRegistrationFailedPage().isAt()) {
-					softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+
+				softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+				softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+				softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+				super.pause(30);
+				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+				super.pause(70);
+				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+				super.pause(10);
+				softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+				super.pause(15);
+				try {
+					if (new AddSatelliteRegistrationFailedPage().isAt()) {
+						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+					}
+				} catch (Exception e) {
 				}
-			}catch(Exception e) {}
-			super.pause(45);
-			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-			super.pause(3);
-			softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+				super.pause(45);
+				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+				super.pause(3);
+				softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			
 			softsatellite1.assertAll();
 		}
@@ -711,16 +757,25 @@ public class TC01_Simple_Test extends ParentClass
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
 			super.pause(10);
 			softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
-			
-			try
-			{
-				if(new HomePage().getSkipTutorialPageObject().isAt())
+			try {
+				if (new HomePage().getSkipTutorialPageObject().isAt())
 					softnetwork1.assertTrue(new HomePage().getSkipTutorialPageObject().clickSkipText());
-			}catch(Exception e) { utils.log().info("Skip Tutorial Page did not appear");}
-			
-			if(new HomePage().getNetworkOtptimizationPageObject().isAt()) {
-				softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().verifyNetworkOptimizationPageUI());
-				softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon());
+
+				if (new HomePage().getNetworkOtptimizationPageObject().isAt()) {
+					softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().verifyNetworkOptimizationPageUI());
+					softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon());
+				}
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
 			}
 			
 			softnetwork1.assertAll();
@@ -1013,57 +1068,118 @@ public class TC01_Simple_Test extends ParentClass
 			softnetwork16.assertAll();
 		}
 		
-//		@Test(priority = 58, dependsOnMethods = { "Login_And_Onboard" })
-//		public void Verify_Install_Right_Satellite() {
-//			utils.log().info("                                               ");
-//			utils.log().info("***********************************************");
-//			utils.log().info("Test: Hamburger Menu - Install Right Satellite ");
-//			utils.log().info("***********************************************");
-//			
-//			SoftAssert softsatellite2 = new SoftAssert();
-//			
-//			new HomePage().getFooterIconsPageObject().clickHomeButton();
-//			
-//			if(new HomePage().isAt())
-//				softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
-//			
-//			softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-//			super.pause(2);
-//			softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); //Each satellite expands your network
-////			super.pause(10);
-////
-////			try {
-////				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-////			}catch(Exception e) {}
-////
-////			try {
-////				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
-////			}catch(Exception e) {}
-//			
-//			softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-//			softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-//			softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//			super.pause(20);
-//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-//			super.pause(70);
-//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+		@Test(priority = 58, dependsOnMethods = { "Login_And_Onboard" })
+		public void Verify_Install_Right_Satellite() {
+			utils.log().info("                                               ");
+			utils.log().info("***********************************************");
+			utils.log().info("Test: Hamburger Menu - Install Right Satellite ");
+			utils.log().info("***********************************************");
+			
+			SoftAssert softsatellite2 = new SoftAssert();
+			
+			new HomePage().getFooterIconsPageObject().clickHomeButton();
+			
+			try {
+				if (new HomePage().isAt())
+					softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
+
+				softsatellite2
+						.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+				super.pause(2);
+				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite
+																										// expands your
+																										// network
 //			super.pause(10);
-//			softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-//			super.pause(15);
+//
 //			try {
-//				if(new AddSatelliteRegistrationFailedPage().isAt()) {
-//					softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-//				}
+//				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
 //			}catch(Exception e) {}
-//			super.pause(45);
-//			softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-//			super.pause(3);
-//			softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
-//			
-//			softsatellite2.assertAll();
-//		}
+//
+//			try {
+//				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage3().clickNextButton());
+//			}catch(Exception e) {}
+
+				softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+				softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+				softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+				super.pause(20);
+				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+				super.pause(70);
+				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+				super.pause(10);
+				softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+				super.pause(15);
+				try {
+					if (new AddSatelliteRegistrationFailedPage().isAt()) {
+						softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+					}
+				} catch (Exception e) {
+				}
+				super.pause(45);
+				softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+				super.pause(3);
+				softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
+			
+			softsatellite2.assertAll();
+		}
 
 }
 
 
-
+//
+//TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
+//getStarted.clickGetStartedButton();
+//}).grantPermissionsPage(grantPermission -> {
+//grantPermission.clickContinueButton();
+//}).deviceLocationPage(deviceLocation -> {
+//deviceLocation.clickAllow();
+//}).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
+//super.pause(3);
+//accessResoucesOnDevice.clickAllow();
+//}).selectYourDevicePage(selectDevice -> {
+//selectDevice.selectSurfboardMaxOption();
+//selectDevice.clickNextButton();
+//}).selectYourDevicePage2(selectDevice2 -> {
+//selectDevice2.selectMaxProAX11000RadioButton();
+//selectDevice2.clickNextButton();
+//super.pause(3);
+//}).welcomeSigninPage(signin -> {
+//signin.enterEmailAddress(email);
+//signin.clickSigninButton();
+//super.pause(12);
+//}).getOTPCode(getOTP -> {
+//passCode = getOTP.getValidOTP();
+//}).enterOTPPage(otpverify -> {
+//otpverify.enterValidPassCode(passCode);
+// }).codeVerifiedPage(codeVerified -> {
+//	  codeVerified.getCodeVerifiedText();
+//	  codeVerified.clickNextButton();
+//	  super.pause(3);
+//	  try {
+//		  if(codeVerified.continueOnBoardingButton.isDisplayed())
+//			  codeVerified.clickContinueOnboardingButton();
+//		  super.pause(5);
+//	  }catch(Exception e) {e.getMessage(); }
+//}).setupWifi(setupwifi ->{
+//	  setupwifi.clickskipTutorialButton();
+//	  super.pause(3);
+//}).homePage(home -> {
+//try {
+//	  if(home.okButton.isDisplayed())
+//		  home.clickOkButton();
+//}catch(Exception e) {
+//	  e.getMessage(); }
+//});
+//}

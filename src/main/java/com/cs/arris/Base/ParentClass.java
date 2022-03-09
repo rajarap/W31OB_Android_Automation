@@ -465,6 +465,11 @@ public class ParentClass
 		  e.clear();
 	  }
 	  
+	  public void clear(WebElement e) {
+		  waitForVisibility(e);
+		  e.clear();
+	  }
+	  
 	  public void click(WebElement w) {
 		  waitForVisibility(w);
 		  w.click();
@@ -483,6 +488,11 @@ public class ParentClass
 	  }
 	  
 	  public void sendKeys(MobileElement e, String txt) {
+		  waitForVisibility(e);
+		  e.sendKeys(txt);
+	  }
+	  
+	  public void sendKeys(WebElement e, String txt) {
 		  waitForVisibility(e);
 		  e.sendKeys(txt);
 	  }
@@ -697,7 +707,7 @@ public class ParentClass
 			int result = r.nextInt(high-low) + low;
 			randNum = String.valueOf(result);
 			String routerName = "arrisW31-"+ randNum;
-			utils.log().info("Name generated : " + routerName);
+		//	utils.log().info("Name generated : " + routerName);
 			return routerName;
 		}
 		
@@ -799,6 +809,7 @@ public class ParentClass
 			
 			int result = r.nextInt(high-low) + low;
 			String temp = String.valueOf(result);
+			utils.log().info("Mail-Id :" + temp);
 			yopEmailId= "user"+ temp + "@yopmail.com";
 		}
 		

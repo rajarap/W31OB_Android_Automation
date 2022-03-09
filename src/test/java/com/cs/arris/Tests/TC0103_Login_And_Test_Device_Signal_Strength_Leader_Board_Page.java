@@ -21,7 +21,7 @@ import com.cs.arris.Pages.SiginPage;
 import com.cs.arris.Utilities.TestUtils;
 
 
-public class TC005_Login_And_Test_Device_Signal_Strength_Leader_Board_Page extends ParentClass {
+public class TC0103_Login_And_Test_Device_Signal_Strength_Leader_Board_Page extends ParentClass {
 	TestUtils utils = new TestUtils();
 	String firstName;
 	String lastName;

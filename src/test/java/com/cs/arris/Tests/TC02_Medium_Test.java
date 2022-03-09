@@ -13,16 +13,30 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.cs.arris.Base.ParentClass;
+import com.cs.arris.Pages.AccessResourcesOnDevicePage;
 import com.cs.arris.Pages.AppRatingDialog;
+import com.cs.arris.Pages.CodeVerifiedPage;
+import com.cs.arris.Pages.DeviceLocationPage;
 import com.cs.arris.Pages.DeviceSignalStrengthLeaderBoardPage;
 import com.cs.arris.Pages.DevicesPage;
+import com.cs.arris.Pages.EnterValidOTPPage;
+import com.cs.arris.Pages.GetStartedPage;
+import com.cs.arris.Pages.GrantPermissionsPage;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.HomeSpeedTestHistoryPage;
 import com.cs.arris.Pages.MainDeviceAllTabPage;
 import com.cs.arris.Pages.NetworkPage;
 import com.cs.arris.Pages.ParentalControlWithProfilesPage;
+import com.cs.arris.Pages.SelectYourDevicePage;
+import com.cs.arris.Pages.SelectYourDevicePage2;
+import com.cs.arris.Pages.SetUpYourWiFiManagementPage;
 import com.cs.arris.Pages.SiginPage;
 import com.cs.arris.Pages.SpeedTestPage;
+import com.cs.arris.Utilities.EmailTest;
+import com.cs.arris.Utilities.SevenTapEmail;
+import com.cs.arris.Utilities.SevenTapGmail;
+import com.cs.arris.Utilities.SevenTapLogs;
+import com.cs.arris.Utilities.TapSevenTimes;
 import com.cs.arris.Utilities.TestUtils;
 import com.cs.arris.Workflows.HomePage_Workflow;
 import com.cs.arris.Workflows.TC52_Login_And_Verify_HomePage_Workflow;
@@ -66,8 +80,8 @@ public class TC02_Medium_Test extends ParentClass
 			  this.lastName = properties.getProperty("lastname");
 			  utils.log().info("Last Name : " + this.lastName);
 			  
-			  this.email = properties.getProperty("email");
-			  utils.log().info("Email address : " + this.email);
+//			  this.email = properties.getProperty("email");
+//			  utils.log().info("Email address : " + this.email);
 			  
 			  this.udid = properties.getProperty("udid");
 			  utils.log().info("UDID : " + this.udid);
@@ -87,66 +101,57 @@ public class TC02_Medium_Test extends ParentClass
 	  @Test(priority = 1)
 	  public void Login_And_Onboard()
 	  {
-			utils.log().info("                        ");
+		  utils.log().info("                        ");
 			utils.log().info("************************");
 			utils.log().info("Test: Login And Onboard ");
 			utils.log().info("************************");
 			
-			TC52_Login_And_Verify_HomePage_Workflow.getStartedPage(getStarted -> {
-			  getStarted.clickGetStartedButton();
-			  }).grantPermissionsPage(grantPermission -> {
-				  grantPermission.clickContinueButton();
-			  }).deviceLocationPage(deviceLocation -> {
-				  deviceLocation.clickAllow();
-			  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
-				  super.pause(3);
-				  accessResoucesOnDevice.clickAllow();
-		  }).selectYourDevicePage(selectDevice -> {
-			  selectDevice.selectSurfboardMaxOption();
-			  selectDevice.clickNextButton();
-		  }).selectYourDevicePage2(selectDevice2 -> {
-			  selectDevice2.selectMaxProAX11000RadioButton();
-			  selectDevice2.clickNextButton();
+			new GetStartedPage().clickGetStartedButton();
+			  new GrantPermissionsPage().clickContinueButton();
+			  new DeviceLocationPage().clickAllow();
+			  new AccessResourcesOnDevicePage().clickAllow();
+			  new SelectYourDevicePage().selectSurfboardMaxOption();
+			  new SelectYourDevicePage().clickNextButton();
+			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+			  new SelectYourDevicePage2().clickNextButton();
+			  new SiginPage().enterEmailAddress(super.yopEmailId);
+			  new SiginPage().clickSigninButton();
+			  super.pause(20);
+			  passCode = new EmailTest().getValidOTP(email);  
+			  super.pause(20);
+//			  super.getDriver().activateApp("com.arris.sbcBeta");
+			  new EnterValidOTPPage().enterValidPassCode(passCode);
+			  new CodeVerifiedPage().getCodeVerifiedText();
+			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
-		  }).welcomeSigninPage(signin -> {
-			  signin.enterEmailAddress(email);
-			  signin.clickSigninButton();
-			  super.pause(12);
-		  }).getOTPCode(getOTP -> {
-			  passCode = getOTP.getValidOTP();
-	  		}).enterOTPPage(otpverify -> {
-			  otpverify.enterValidPassCode(passCode);
-	  		 }).codeVerifiedPage(codeVerified -> {
-				  codeVerified.getCodeVerifiedText();
-				  codeVerified.clickNextButton();
-				  super.pause(3);
-				  try
-				  {
-					  if(codeVerified.continueOnBoardingButton.isDisplayed())
-					  {
-						  codeVerified.clickContinueOnboardingButton();
-					  }
-				  }catch(Exception e)
-				  {
-					  e.getMessage();
-				  }
-			  }).setupWifi(setupwifi ->{
-				  setupwifi.clickskipTutorialButton();
-				  super.pause(3);
-		  }).homePage(home -> {
+			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+			  super.pause(5);
 			  try {
-				if(home.okButton.isDisplayed()) {
-					  home.clickOkButton();  }
-			  }catch(Exception e) { e.getMessage();  }
-		  });
+				  if(new HomePage().okButton.isDisplayed())
+					  new HomePage().clickOkButton();
+			  }catch(Exception e) {
+				  e.getMessage(); }
 	  }
 	  
 	  @Test(priority = 2, dependsOnMethods = { "Login_And_Onboard" })
 		public void Verify_Main_Device_UI_On_All_Tab_Page() {
 			SoftAssert softmain2 = new SoftAssert();
 			softmain2.assertTrue(new HomePage().clickMainDeviceImage());
+			try {
 			if(new MainDeviceAllTabPage().isAt()) 
 				softmain2.assertTrue(new MainDeviceAllTabPage().verifyUIOnMainDevicePage());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			
 			softmain2.assertAll();
 		}
@@ -231,7 +236,7 @@ public class TC02_Medium_Test extends ParentClass
 		public void Verify_Main_Device_UI_On_5GHz_Tab_Page() {
 			SoftAssert softmain11 = new SoftAssert();
 			softmain11.assertTrue(new MainDeviceAllTabPage().click5GhzTab());
-			if(new MainDeviceAllTabPage().get5GHzPageObject().isAt())
+	//		if(new MainDeviceAllTabPage().get5GHzPageObject().isAt())
 	//			softmain11.assertTrue(new MainDeviceAllTabPage().get5GHzPageObject().verifyUIOn5GHzDevicePage());
 			softmain11.assertAll();
 		}
@@ -323,7 +328,7 @@ public class TC02_Medium_Test extends ParentClass
 		public void Verify_Main_Device_UI_On_24GHz_Tab_Page() {
 			SoftAssert softmain20 = new SoftAssert();
 			softmain20.assertTrue(new MainDeviceAllTabPage().click24GhzTab());
-			if(new MainDeviceAllTabPage().get24GHzPageObject().isAt())
+	//		if(new MainDeviceAllTabPage().get24GHzPageObject().isAt())
 	//			softmain20.assertTrue(new MainDeviceAllTabPage().get24GHzPageObject().verifyUIOn24GHzDevicePage());
 			
 			softmain20.assertAll();
@@ -418,7 +423,7 @@ public class TC02_Medium_Test extends ParentClass
 		public void Verify_Main_Device_UI_On_Ethernet_Tab_Page() {
 			SoftAssert softmain29 = new SoftAssert();
 			softmain29.assertTrue(new MainDeviceAllTabPage().clickEthernetTab());
-			if(new MainDeviceAllTabPage().getEthernetPageObject().isAt())
+	//		if(new MainDeviceAllTabPage().getEthernetPageObject().isAt())
 			//	softmain29.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().verifyUIOnEthernetDevicePage());
 			
 			softmain29.assertAll();
@@ -527,10 +532,23 @@ public class TC02_Medium_Test extends ParentClass
 			utils.log().info("********************************************");
 			SoftAssert softdevices2 = new SoftAssert();
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
-			if(new HomePage().isAt())
-				softdevices2.assertTrue(new HomePage().clickDevicesImage());
-			if(new DevicesPage().isAt()) 
-				softdevices2.assertTrue(new DevicesPage().verifyUIOnDevicesPage());
+			try {
+				if (new HomePage().isAt())
+					softdevices2.assertTrue(new HomePage().clickDevicesImage());
+				if (new DevicesPage().isAt())
+					softdevices2.assertTrue(new DevicesPage().verifyUIOnDevicesPage());
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				Assert.fail();
+			}
 			softdevices2.assertAll();
 		}
 			

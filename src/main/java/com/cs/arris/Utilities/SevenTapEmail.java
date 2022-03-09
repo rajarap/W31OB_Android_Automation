@@ -5,15 +5,16 @@ import com.cs.arris.Interface.Page;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.pagefactory.AndroidBy;
+import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class SevenTapEmail extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
-	public TouchAction action = new TouchAction(getDriver());
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Compose\"]")
-	public MobileElement ComposeTitle;
+	public MobileElement composeTitle;
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Send\"]")
 	public MobileElement sendButton;
@@ -27,34 +28,41 @@ public class SevenTapEmail extends ParentClass implements Page {
 	@AndroidFindBy(xpath = "//com.google.android.gm[@resource-id='com.google.android.gm:id/to']")
 	public MobileElement existingEmailAddressButton;
 	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"To\"]")
+//	@AndroidFindBy(id = "com.google.android.gm:id/to")
+//	public MobileElement toFieldTextBox;
+	
+	@AndroidFindAll({
+		@AndroidBy (id = "com.google.android.gm:id/to"),
+		@AndroidBy (xpath = "//android.widget.MultiAutoCompleteTextView[@resource-id='com.google.android.gm:id/to']"),
+		@AndroidBy (xpath = "//android.widget.MultiAutoCompleteTextView[@bounds='[189,358][1080,505]']")
+	})
 	public MobileElement toFieldTextBox;
 	
-	
-	public boolean clickSendButton() {
-		if (sendButton.isDisplayed()) {
-			click(sendButton); 
+		
+	public void clickSendButton() {
+		utils.log().info("Clicking on Send Button");
+		if (super.getDriver().findElementByXPath("//android.widget.TextView[@content-desc=\"Send\"]").isDisplayed()) {
+			click(super.getDriver().findElementByXPath("//android.widget.TextView[@content-desc=\"Send\"]")); 
 			utils.log().info("Clicked Send Button");
-			return true;
 		} else {
-			return false;
+			utils.log().info("Unable to find Send Button");
 		}
 	}
 	
-	public boolean enterEmailAddress() {
-		if (toFieldTextBox.isDisplayed()) {
-			clear(toFieldTextBox);
-			sendKeys(toFieldTextBox, super.getProps().getProperty("emailid"));
+	public void enterEmailAddress() {
+		utils.log().info("Entering email ids");
+		if(super.getDriver().findElementById("com.google.android.gm:id/to").isDisplayed()) {
+			clear(super.getDriver().findElementById("com.google.android.gm:id/to"));
+			sendKeys(super.getDriver().findElementById("com.google.android.gm:id/to"), super.getProps().getProperty("emailid"));
 			utils.log().info("Entered email address in To field");
-			return true;
 		} else {
-			return false;
+			utils.log().info("Unable to find To field");
 		}
 	}
 
 	@Override
 	public boolean isAt() {
-		if (ComposeTitle.isDisplayed()) {
+		if (composeTitle.isDisplayed()) {
 			utils.log().info("On Email Compose Page");
 			return true;
 		} else {
