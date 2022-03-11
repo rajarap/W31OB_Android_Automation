@@ -137,16 +137,6 @@ public class SignupPage  extends ParentClass implements Page
 	{
 		click(signupButton);
 		utils.log().info("SignUp Page - Clicked on Sign Up Button");
-
-		if(userAlreadyExistsText.isDisplayed())
-		{
-			click(signinButton);
-			utils.log().info("SignUp Page - Users already exists - Clicked on Signin Button");
-			sendKeys(signinEmailAddress, emailID);
-			utils.log().info("Signin Page - Users already exists - Entered users valid email address");
-			click(signinSigninButton);
-			utils.log().info("Signin Page - Users already exists - Clicked on Signin Button");
-		}
 	}
 	
 	public void clickSignInButton()
@@ -165,7 +155,7 @@ public class SignupPage  extends ParentClass implements Page
 	
 	public String getEmailAddress() {
 		super.generateEmailId();
-		return super.yopEmailId;
+		return super.mail7EmailId; //userxxxx
 	}
 	
 	@Override

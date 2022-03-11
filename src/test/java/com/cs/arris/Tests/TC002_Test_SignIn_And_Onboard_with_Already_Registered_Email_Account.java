@@ -19,8 +19,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.cs.arris.Base.ParentClass;
-import com.cs.arris.Exceptions.EC_0003_1014_Service_Not_Available;
-import com.cs.arris.Exceptions.EC_0015_1805_OTP_Screen_Continue_Onboarding;
 import com.cs.arris.Pages.AccessResourcesOnDevicePage;
 import com.cs.arris.Pages.CodeVerifiedPage;
 import com.cs.arris.Pages.CongratulationsPage;

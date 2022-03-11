@@ -1,5 +1,7 @@
 package com.cs.arris.Tests;
 
+import java.io.IOException;
+
 import com.cs.arris.Pages.BlueToothPage;
 import com.cs.arris.Pages.ConnectToWifiUsingRouterSSID;
 import com.cs.arris.Utilities.ValidOTP;
@@ -10,15 +12,29 @@ public class TestBluetooth {
 	
 	public static void main(String[] args)
 	{
-		setBluetooth();
+		enableBlueTooth();
+		disableBlueTooth();
 	}
 	
-	private static void setBluetooth() 
+	
+	public static void enableBlueTooth()
 	{
-		try {
-			bluetoothobj = new BlueToothPage();
-			bluetoothobj.disableBlueTooth();
-		} catch (Exception e) {
+		try 
+	    {
+	        ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_ENABLE");
+	        Process pc1 = pb1.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void disableBlueTooth()
+	{
+		try 
+	    {
+	        ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_DISABLE");
+	        Process pc1 = pb1.start();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

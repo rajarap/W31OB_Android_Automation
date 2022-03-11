@@ -19,8 +19,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.cs.arris.Base.ParentClass;
-import com.cs.arris.Exceptions.EC_0003_1014_Service_Not_Available;
-import com.cs.arris.Exceptions.EC_0015_1805_OTP_Screen_Continue_Onboarding;
 import com.cs.arris.Pages.AccessResourcesOnDevicePage;
 import com.cs.arris.Pages.BlueToothPage;
 import com.cs.arris.Pages.CodeVerifiedPage;
@@ -40,6 +38,7 @@ import com.cs.arris.Pages.NameYourNetwokSSIDPage;
 import com.cs.arris.Pages.NetworkOptimizationDialog;
 import com.cs.arris.Pages.OptimizeYourNetworkPage;
 import com.cs.arris.Pages.PlugInMaxRouterPage;
+import com.cs.arris.Pages.ResendOTPDialog;
 import com.cs.arris.Pages.SelectYourDevicePage;
 import com.cs.arris.Pages.SelectYourDevicePage2;
 import com.cs.arris.Pages.ServiceNotAvailablePage;
@@ -73,7 +72,6 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 	String ssidName;
 	String ssidpass;
 	String udid;
-	BlueToothPage blueTooth = new BlueToothPage();;
 	
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
@@ -122,7 +120,7 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 			    utils.log().info("Turning OFF Wifi..........");
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
 				utils.log().info("Wifi Turned OFF");
-				new GetStartedPage().clickGetStartedButton();
+				  new GetStartedPage().clickGetStartedButton();
 				  new GrantPermissionsPage().clickContinueButton();
 				  new DeviceLocationPage().clickAllow();
 				  new AccessResourcesOnDevicePage().clickAllow();
@@ -131,29 +129,27 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 				  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 				  new SelectYourDevicePage2().clickNextButton();
 				  new SiginPage().clickSignUpButton();
-				  email = new SignupPage().getEmailAddress();  //yopEmailId in ParentClass
-				  new SignupPage().enterValidEmailAddress(email);
+				  email = new SignupPage().getEmailAddress();  //userXXXX
+				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
 				  new SignupPage().enterFirstName(firstName);
 				  new SignupPage().enterLastName(lastName);
 				  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
 				  super.pause(5);
 				  if(new TermsAndConditionsPage().isAt()) {
-					for(int i=1; i<=18; i++) {
+					for(int i=1; i<=17; i++) {
 						super.swipeUp();
 					}
 					  super.pause(3);
 						if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
 							new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
+							super.pause(3);
+							new SignupPage().clickSignupButton();
+							new EnterValidOTPPage().enterValidPassCode(email);
+							super.pause(3);
+							new CodeVerifiedPage().getCodeVerifiedText();
+							new CodeVerifiedPage().clickNextButton();
 						}
 					}
-				  super.pause(2);
-				  new SignupPage().clickSignupButton();
-				  passCode = new EmailTest().getValidOTP(email);  
-				  super.pause(20);
-//				  super.getDriver().activateApp("com.arris.sbcBeta");
-				  new EnterValidOTPPage().enterValidPassCode(passCode);
-				  new CodeVerifiedPage().getCodeVerifiedText();
-				  new CodeVerifiedPage().clickNextButton();
 				  super.pause(3);
 				  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
 				  new SetupHomeNetworkPage().clickNextButton();
@@ -172,9 +168,9 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 				  new NameYourNetwokSSIDPage().clickNextButton();
 				  super.pause(25);
 				  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-				  super.pause(15);
+				  super.pause(25);
 				  new ConnectionToWifiNeededPage().clickContinue();
-				  super.pause(20);
+				  super.pause(25);
 				  new CongratulationsPage().clickContinueButton();
 				  super.pause(5);
 				  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
@@ -182,18 +178,18 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 				  super.pause(5);
 				  new NetworkOptimizationDialog().clickOkButton();
 				  super.pause(5);
-				  new HomePage().getSSIDName();   
-		  	}catch(Exception e) {
+				  new HomePage().getSSIDName();  
+			  }catch(Exception e) {
 				  new TapSevenTimes().tapSeven();
 				  super.pause(3);
-			  	  new SevenTapLogs().clickYesButton();
-			  	  super.pause(3);
-			  	  new SevenTapGmail().clickGmailIcon();
-			  	  super.pause(3);
-		  		  new SevenTapEmail().enterEmailAddress();
-		  		 super.pause(3);
-		  		  new SevenTapEmail().clickSendButton();
-		  	}finally {
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(3);
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(3);
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(3);
+				  new SevenTapEmail().clickSendButton();
+		  }finally {
 			    utils.log().info("Turning ON Wifi..........");
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun on wifi
 				utils.log().info("Wifi Turned ON");

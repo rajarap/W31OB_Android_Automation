@@ -9,7 +9,6 @@ com/cs/arris/Pages/MaximumVerificationReachedPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.class
 com/cs/arris/Pages/GenerateEmailAndPasscode.class
 com/cs/arris/Pages/AddDeviceEstablishingConnectionPage.class
-com/cs/arris/Exceptions/EC_0003_1014_Service_Not_Available.class
 com/cs/arris/Pages/AccessResourcesOnDevicePage.class
 com/cs/arris/Pages/EnterInValidOTPPage.class
 com/cs/arris/Pages/NotificationPage.class
@@ -82,7 +81,6 @@ com/cs/arris/Utilities/TestUtils.class
 com/cs/arris/Pages/AddDeviceActivateYourDeviceWithServiceProviderPage.class
 com/cs/arris/Pages/AccessResourcesPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationISPSpeedRatePage.class
-com/cs/arris/Exceptions/EC_0002_0000_Internet_Connection_Not_Available.class
 com/cs/arris/Utilities/Mail.class
 com/cs/arris/Pages/SetUpYourWiFiManagementPage.class
 com/cs/arris/Pages/BTDisabledTroubleShootPage.class
@@ -111,9 +109,7 @@ com/cs/arris/Pages/AddSatelliteUpToDatePage.class
 com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.class
 com/cs/arris/Pages/AddSatelliteAddNewSatellitePage3.class
 com/cs/arris/Pages/SystemFirmwareUpdatePage.class
-com/cs/arris/Exceptions/EC_0014_0000_Bluetooth_Pairing_Failed.class
 com/cs/arris/Utilities/SevenTapGmail.class
-com/cs/arris/Exceptions/EC_0003_0000_Service_Is_Currently_Not_Available.class
 com/cs/arris/Pages/TurnOnBluetoothDialog.class
 com/cs/arris/Pages/NetworkGeneralSettingsHelpPage.class
 com/cs/arris/Utilities/TestMail.class
@@ -152,7 +148,6 @@ com/cs/arris/Pages/ServiceNotAvailablePage.class
 com/cs/arris/Pages/ParentalControlAddProfileDialog.class
 com/cs/arris/Pages/MainDeviceRestartRouterDialog.class
 com/cs/arris/Pages/GetStartedPage.class
-com/cs/arris/Exceptions/EC_0015_0000_Cannot_Connect_To_mAX_Device.class
 com/cs/arris/Pages/RetrieveOTPPage.class
 com/cs/arris/Pages/HamburgerMenuPage.class
 com/cs/arris/Pages/AddSatellitePlaceYourSatellitePage.class
@@ -168,25 +163,21 @@ com/cs/arris/Pages/EditDeviceNameDialog.class
 com/cs/arris/Pages/NetworkWANIPConfigurationIPv4Page.class
 com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.class
 com/cs/arris/Pages/Error_0001_1201_Bluetooth_Pairing_Failed_Page.class
-com/cs/arris/Exceptions/EC_0006_0000_BlueTooth_Communication_Failure.class
 com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedPage.class
 com/cs/arris/Pages/ParentalControlUserProfileAddDevicePage.class
 com/cs/arris/Pages/Network5GHzWidebandModeAlertDialog.class
-com/cs/arris/Exceptions/EC_0005_0000_BlueTooth_Is_Not_Enabled.class
 com/cs/arris/Pages/AddDeviceAccessCameraDialog.class
 com/cs/arris/Pages/ParentalControlUserProfileAddRuleDatePickerDialog.class
 com/cs/arris/Pages/SetupHomeNetworkPage.class
 com/cs/arris/Pages/NetworkPortRuleEditFaliedAlertDialog.class
 com/cs/arris/Pages/ErrorCode_0000_1603_Failure_To_Configure_Your_Router_Page.class
 com/cs/arris/Pages/HomeNetowrkISPServicePerformanceAndConnectionHealthPage.class
-com/cs/arris/Exceptions/EC_0001_0000_BlueTooth_Connection_Failed.class
 com/cs/arris/Pages/AddDeviceSelectDevice1Page.class
 com/cs/arris/Pages/SettingsHelpPage.class
 com/cs/arris/Utilities/TapSevenTimes.class
 com/cs/arris/Utilities/SevenTapEmail.class
 com/cs/arris/Pages/ErrorCode_0000_1015_Invalid_OTP_Page.class
 com/cs/arris/Pages/EditMainDeviceNameDialog.class
-com/cs/arris/Exceptions/EC_0015_1805_OTP_Screen_Continue_Onboarding.class
 com/cs/arris/Pages/ParentalControlCurrentlyBlockedPage.class
 com/cs/arris/Pages/NetworkLANDHCPIPRangeBetween1And255AlertDialog.class
 com/cs/arris/Base/ParentClass.class
@@ -221,7 +212,6 @@ com/cs/arris/Interface/W31_Onboarding_TestData.class
 com/cs/arris/Pages/AddDeviceStepsForActivationPage.class
 com/cs/arris/Pages/NetworkEditReserveLANIPDialog.class
 com/cs/arris/Pages/NetworkLANDHCPIPRangeEmptyOctetAlertDialog.class
-com/cs/arris/Exceptions/EC_0013_0000_Multiple_Devices_Found.class
 com/cs/arris/Pages/OptimizeYourNetworkPage.class
 com/cs/arris/Pages/AppRatingDialog.class
 com/cs/arris/Pages/NetworkDevicePrioritySettingsAddDeviceHelpPage.class

@@ -28,7 +28,6 @@ public class BlueToothPage extends ParentClass implements Page
 	
 	@AndroidFindAll({
 		@AndroidBy (xpath = "//android.widget.LinearLayout[@resource-id='android:id/parentPanel']"),
-		@AndroidBy (xpath = "//android.widget.LinearLayout[@bounds='[1,1775][1079,2042]']"),
 		@AndroidBy (id = "android:id/parentPanel") 
 	})
 	public MobileElement parentPanel;
@@ -58,19 +57,14 @@ public class BlueToothPage extends ParentClass implements Page
 	{
 		try 
 	    {
-	        ProcessBuilder pb1 = new ProcessBuilder("/opt/homebrew/bin/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_ENABLE");
+	        ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_ENABLE");
 	        Process pc1 = pb1.start();
 	        
-	        if(parentPanel.isDisplayed())
-	        {
+	        if(parentPanel.isDisplayed()){
 	        	click(allowButton);
 	        	utils.log().info("Clicked Allow button to enable Bluetooth");
-	        }
-	        else
-	        {
-	        	utils.log().info("Parent Panel is not displayed. Unable to enable bluetooth");
-	        }
-
+	        }else{
+	        	utils.log().info("Parent Panel is not displayed. Unable to enable bluetooth");}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,19 +74,14 @@ public class BlueToothPage extends ParentClass implements Page
 	{
 		try 
 	    {
-	        ProcessBuilder pb1 = new ProcessBuilder("/opt/homebrew/bin/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_DISABLE");
+	        ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "shell", "am", "start", "-a", "android.bluetooth.adapter.action.REQUEST_DISABLE");
 	        Process pc1 = pb1.start();
 	        
-	        if(parentPanel.isDisplayed())
-	        {
+	        if(parentPanel.isDisplayed()){
 	        	click(allowButton);
 	        	utils.log().info("Clicked Allow button to disable Bluetooth");
-	        }
-	        else
-	        {
-	        	utils.log().info("Parent Panel is not displayed. Unable to disable bluetooth");
-	        }
-
+	        }else{
+	        	utils.log().info("Parent Panel is not displayed. Unable to disable bluetooth");}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -100,16 +89,12 @@ public class BlueToothPage extends ParentClass implements Page
 	
 	@Override
 	public boolean isAt() {
-		 if(parentPanel.isDisplayed())
-	        {
+		 if(parentPanel.isDisplayed()){
 	        	utils.log().info("Parent panel to allow or deny bluetooth accessibility is displayed");
 	        	return true;
-	        }
-	        else
-	        {
+	      }else{
 	        	utils.log().info("Parent panel to allow or deny bluetooth accessibility is not displayed");
-	        	return false;
-	        }
+	        	return false;}
 	}
 	
 }

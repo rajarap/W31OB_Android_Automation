@@ -3,6 +3,7 @@ package com.cs.arris.Tests;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -56,17 +57,17 @@ public class TC03_Complex_Test extends ParentClass
 	String uploadSpeed;
 	int totalCountOfDevices;
 	
-	//Parental Control
-	public TC010_Login_And_Test_Parental_Control_Page getParentalControlPageTestObject() {
-		TC010_Login_And_Test_Parental_Control_Page parentalPageTest = new TC010_Login_And_Test_Parental_Control_Page();
-		return parentalPageTest;
-	}
-	
-	//Network
-	public TC011_Login_And_Test_Network_Page getNetworkTestObject() {
-		TC011_Login_And_Test_Network_Page networkPageTest = new TC011_Login_And_Test_Network_Page();
-		return networkPageTest;
-	}
+//	//Parental Control
+//	public TC010_Login_And_Test_Parental_Control_Page getParentalControlPageTestObject() {
+//		TC010_Login_And_Test_Parental_Control_Page parentalPageTest = new TC010_Login_And_Test_Parental_Control_Page();
+//		return parentalPageTest;
+//	}
+//	
+//	//Network
+//	public TC011_Login_And_Test_Network_Page getNetworkTestObject() {
+//		TC011_Login_And_Test_Network_Page networkPageTest = new TC011_Login_And_Test_Network_Page();
+//		return networkPageTest;
+//	}
 	
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
@@ -102,7 +103,7 @@ public class TC03_Complex_Test extends ParentClass
 	  }
 	  
 	  @Test(priority = 1)
-	  public void Login_And_Onboard()
+	  public void Login_And_Onboard(ITestContext context)
 	  {
 		  utils.log().info("                        ");
 			utils.log().info("************************");
@@ -117,10 +118,10 @@ public class TC03_Complex_Test extends ParentClass
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
-			  new SiginPage().enterEmailAddress(super.yopEmailId);
+			  new SiginPage().enterEmailAddress((String) context.getAttribute("email")+"@mail7.io");
 			  new SiginPage().clickSigninButton();
 			  super.pause(20);
-			  passCode = new EmailTest().getValidOTP(email);  
+			  passCode = new EmailTest().getValidOTP((String) context.getAttribute("email"));  
 			  super.pause(20);
 //			  super.getDriver().activateApp("com.arris.sbcBeta");
 			  new EnterValidOTPPage().enterValidPassCode(passCode);

@@ -3,6 +3,7 @@ package com.cs.arris.Tests;
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -19,8 +20,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.cs.arris.Base.ParentClass;
-import com.cs.arris.Exceptions.EC_0003_1014_Service_Not_Available;
-import com.cs.arris.Exceptions.EC_0015_1805_OTP_Screen_Continue_Onboarding;
 import com.cs.arris.Pages.AccessResourcesOnDevicePage;
 import com.cs.arris.Pages.CodeVerifiedPage;
 import com.cs.arris.Pages.CongratulationsPage;
@@ -39,6 +38,7 @@ import com.cs.arris.Pages.NameYourNetwokSSIDPage;
 import com.cs.arris.Pages.NetworkOptimizationDialog;
 import com.cs.arris.Pages.OptimizeYourNetworkPage;
 import com.cs.arris.Pages.PlugInMaxRouterPage;
+import com.cs.arris.Pages.ResendOTPDialog;
 import com.cs.arris.Pages.SelectYourDevicePage;
 import com.cs.arris.Pages.SelectYourDevicePage2;
 import com.cs.arris.Pages.ServiceNotAvailablePage;
@@ -110,117 +110,9 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 		   utils.log().info("\n" + "****** starting test:" + m.getName() + "******" + "\n");
 	  }
 	  
-//	  @Test(priority = 1)
-//	  public void Verify_SignUp_And_Onboard()
-//	  {
-//		  TC50_SignUp_And_Onboard_Workflow.getStartedPage(getStarted -> {
-//			  getStarted.clickGetStartedButton();
-//		  }).grantPermissionsPage(grantPermission -> {
-//			  grantPermission.clickContinueButton();
-//		  }).deviceLocationPage(deviceLocation -> {
-//			  deviceLocation.clickAllow();
-//		  }).accessResourcesOnDevicePage(accessResoucesOnDevice -> {
-//			  super.pause(3);
-//			  accessResoucesOnDevice.clickAllow();
-//		  }).selectYourDevicePage(selectDevice -> {
-//			  selectDevice.selectSurfboardMaxOption();
-//			  selectDevice.clickNextButton();
-//		  }).selectYourDevicePage2(selectDevice2 -> {
-//			  selectDevice2.selectMaxProAX11000RadioButton();   
-//			  selectDevice2.clickNextButton();
-//			  super.pause(3);
-//		  }).welcomeSigninPage(signin -> {
-//			  signin.clickSignUpButton();
-//		  }).welcomeSignupPage(signup -> {
-//			  email = signup.getEmailAddress();
-//			  signup.enterValidEmailAddress(email);
-//			  signup.enterFirstName(firstName);
-//			  signup.enterLastName(lastName);
-//			  signup.clickAgreeTermsAndConditionsCheckBox();
-//			  super.pause(10);
-//			  
-//			  if(new TermsAndConditionsPage().isAt()) {
-////				  ((JavascriptExecutor) super.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//				for(int i=1; i<=18; i++) {
-//					super.swipeUp();
-//				}
-//				  super.pause(3);
-//					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
-//						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
-//					}
-//				}
-//			  super.pause(2);
-//			  signup.clickSignupButton();
-//			  super.pause(5);
-//		  }).getOTPCode(getOTP -> {
-//			  super.getDriver().runAppInBackground(Duration.ofSeconds(20));
-//			  passCode = new EmailTest().getValidOTP(email);
-//		      super.getDriver().activateApp("com.arris.sbcBeta");
-//		}).enterOTPPage(otpverify -> {
-//			  otpverify.enterValidPassCode(passCode);
-//		 }).codeVerifiedPage(codeVerified -> {
-//			  codeVerified.getCodeVerifiedText();
-//			  codeVerified.clickNextButton();
-//			  super.pause(3);
-//			  try
-//			  {
-//				  if(codeVerified.continueOnBoardingButton.isDisplayed())
-//				  {
-//					  codeVerified.clickContinueOnboardingButton();
-//				  }
-//			  }catch(Exception e)
-//			  {
-//				  e.getMessage();
-//			  }
-//		  }).optimizeYourNetworkPage(optimize -> {
-//			  optimize.clickSkipOptimizeButton();
-//		  }).setUpHomeNetworkPage(homeNetwork -> {
-//			  homeNetwork.clickNextButton();
-//		  }).unPackYourBoxPage(unpackBox -> {
-//			  unpackBox.clickNextButton();
-//		  }).plugInYourMaxRouterPage(pluginRouter -> {
-//			  pluginRouter.clickNextButton();
-//			  super.pause(20);
-//		  }).maxRouterConnectedToMobilePage(connectedRouterToMobile -> {
-//			  connectedRouterToMobile.clickNextButton();
-//			  super.pause(10);
-//		  }).maxRouterConnectedToInternetPage(connecedRouterToInternet -> {
-//			  connecedRouterToInternet.clickNextButton();
-//			  super.pause(5);
-//		  }).systemFirmwareUpdatePage(firmwareUpdate -> {
-//			  firmwareUpdate.clickNextButton();
-//			  super.pause(10);
-//		  }).warrantyAndSupportPage(warrantyAndSupport -> {
-//			  warrantyAndSupport.clickContinueButton();
-//		  }).nameYourNetworkPage(nameYourNetwork -> {
-//			  nameYourNetwork.enterSSIDName(this.ssidName);
-//			  nameYourNetwork.enterSSIDPassword(this.ssidpass);
-//			  nameYourNetwork.clickNextButton();
-//			  super.pause(25);
-//		  }).connectNeeded(connectionRequired -> { 
-//			  super.pause(15);
-//			  connectionRequired.turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-//			  super.pause(15);
-//			  connectionRequired.clickContinue();
-//			  super.pause(20);
-//		  }).congratulations(congrats -> {
-//			  congrats.clickContinueButton();
-//			  super.pause(5);
-//		  }).setupWifi(setupwifi ->{
-//			  setupwifi.clickskipTutorialButton();
-//		  }).installSatellite(insatellite -> {
-//			  insatellite.clickInstallLaterButton();
-//			  super.pause(5);
-//		  }).networkOptimization(optimization -> {
-//			  optimization.clickOkButton();
-//			  super.pause(5);
-//	  		}).homePage(homepage -> {
-//			  homepage.getSSIDName();			  
-//		  });
-//	}
-	  
+  
 	  @Test(priority = 1)
-	  public void Verify_SignUp_And_Onboard()
+	  public void Verify_SignUp_And_Onboard(ITestContext context)
 	  {
 		  try {
 			  new GetStartedPage().clickGetStartedButton();
@@ -232,8 +124,9 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
 			  new SiginPage().clickSignUpButton();
-			  email = new SignupPage().getEmailAddress();  //yopEmailId in ParentClass
-			  new SignupPage().enterValidEmailAddress(email);
+			  email = new SignupPage().getEmailAddress();  //userXXXX
+			  context.setAttribute("email", email);
+			  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
 			  new SignupPage().enterFirstName(firstName);
 			  new SignupPage().enterLastName(lastName);
 			  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
@@ -246,17 +139,19 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
 						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
 						super.pause(3);
-						passCode = new EmailTest().getValidOTP(email); 
+						new SignupPage().clickSignupButton();
+						new EnterValidOTPPage().enterInValidPassCode("123456");
+						 Assert.assertTrue(new EnterValidOTPPage().verifyInvalidPassCodeMessage());
+						 new EnterValidOTPPage().clickResendLink();
+						 new ResendOTPDialog().clickOKButton();
+						 super.pause(5);
+						 new EnterValidOTPPage().clearOtpTextBox();
+						new EnterValidOTPPage().enterValidPassCode(email);
+						super.pause(3);
+						new CodeVerifiedPage().getCodeVerifiedText();
+						new CodeVerifiedPage().clickNextButton();
 					}
 				}
-//			  passCode = new EmailTest().getValidOTP(email);  
-			  super.pause(2);
-			  new SignupPage().clickSignupButton();
-			  super.pause(20);
-//			  super.getDriver().activateApp("com.arris.sbcBeta");
-			  new EnterValidOTPPage().enterValidPassCode(passCode);
-			  new CodeVerifiedPage().getCodeVerifiedText();
-			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
 			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
 			  new SetupHomeNetworkPage().clickNextButton();
@@ -275,9 +170,9 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new NameYourNetwokSSIDPage().clickNextButton();
 			  super.pause(25);
 			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-			  super.pause(15);
+			  super.pause(25);
 			  new ConnectionToWifiNeededPage().clickContinue();
-			  super.pause(20);
+			  super.pause(25);
 			  new CongratulationsPage().clickContinueButton();
 			  super.pause(5);
 			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
@@ -298,69 +193,5 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new SevenTapEmail().clickSendButton();
 			  Assert.fail();}
 	  }
-
-	  
-//
-//	  
-//	  @Test(priority = 1)
-//	  public void Verify_SignIn_And_Onboard_With_Already_Registered_Email_Account()
-//	  {
-//		  try {
-//			new GetStartedPage().clickGetStartedButton();
-//			new GrantPermissionsPage().clickContinueButton();
-//			new DeviceLocationPage().clickAllow();
-//			new AccessResourcesOnDevicePage().clickAllow();
-//			new SelectYourDevicePage().selectSurfboardMaxOption();
-//			new SelectYourDevicePage().clickNextButton();
-//			new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
-//			new SelectYourDevicePage2().clickNextButton();
-//			new SiginPage().enterEmailAddress(email);
-////			new SiginPage().clickSignUpButton();
-//			new SiginPage().clickSigninButton();
-//			  super.pause(20);
-//			  passCode = new ValidOTP().getValidOTP();	  
-//			  new EnterValidOTPPage().enterValidPassCode(passCode);
-//			  new CodeVerifiedPage().getCodeVerifiedText();
-//			  new CodeVerifiedPage().clickNextButton();
-//			  super.pause(3);
-//			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
-//			  new SetupHomeNetworkPage().clickNextButton();
-//			  new UnPackYourBoxPage().clickNextButton();
-//			  new PlugInMaxRouterPage().clickNextButton();
-//			  super.pause(20);
-//			  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
-//			  super.pause(10);	  
-//			  new ConnectMaxRouterToInternetPage().clickNextButton();
-//			  super.pause(5);
-//			  new SystemFirmwareUpdatePage().clickNextButton();
-//			  super.pause(10);
-//			  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
-//			  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
-//			  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
-//			  new NameYourNetwokSSIDPage().clickNextButton();
-//			  super.pause(25);
-//			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-//			  super.pause(15);
-//			  new ConnectionToWifiNeededPage().clickContinue();
-//			  super.pause(20);
-//			  new CongratulationsPage().clickContinueButton();
-//			  super.pause(5);
-//			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
-//			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
-//			  super.pause(5);
-//			  new NetworkOptimizationDialog().clickOkButton();
-//			  super.pause(5);
-//			  new HomePage().getSSIDName();  
-//	  }catch(Exception e) {
-//				  new TapSevenTimes().tapSeven();
-//				  super.pause(3);
-//			  	  new SevenTapLogs().clickYesButton();
-//			  	  super.pause(3);
-//			  	  new SevenTapGmail().clickGmailIcon();
-//			  	  super.pause(3);
-//		  		  new SevenTapEmail().enterEmailAddress();
-//		  		 super.pause(3);
-//		  		  new SevenTapEmail().clickSendButton();}
-//	  }
 }
 

@@ -3,6 +3,7 @@ package com.cs.arris.Tests;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -84,27 +85,27 @@ public class TC01_Simple_Test extends ParentClass
 	String uploadSpeed;
 	int totalCountOfDevices;
 	
-	//HomePage
-	public TC0101_Login_And_Test_Home_Page getHomePageTestObject() {
-		TC0101_Login_And_Test_Home_Page homePageTest = new TC0101_Login_And_Test_Home_Page();
-		return homePageTest;
-	}
-	//Hamburger Menu And Settings About Help Page
-	public TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page getSettingsAboutHelpTestObject() {
-		TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page  settingsAboutHelpTest = new TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page();
-		return settingsAboutHelpTest;
-	}
-	
-	//Hamburger Menu Amazon Feature
-	public TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature getAmazonFeatureTestObject() {
-		TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature  amazonFeatureTest = new TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature();
-		return amazonFeatureTest;
-	}
-	//Add And Remove Devices
-	public TC013_Login_And_Test_Add_And_Remove_Device getAddRemoveDeviceTestObject() {
-		TC013_Login_And_Test_Add_And_Remove_Device  addRemoveDeviceTest = new TC013_Login_And_Test_Add_And_Remove_Device();
-		return addRemoveDeviceTest;
-	}
+//	//HomePage
+//	public TC0101_Login_And_Test_Home_Page getHomePageTestObject() {
+//		TC0101_Login_And_Test_Home_Page homePageTest = new TC0101_Login_And_Test_Home_Page();
+//		return homePageTest;
+//	}
+//	//Hamburger Menu And Settings About Help Page
+//	public TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page getSettingsAboutHelpTestObject() {
+//		TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page  settingsAboutHelpTest = new TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page();
+//		return settingsAboutHelpTest;
+//	}
+//	
+//	//Hamburger Menu Amazon Feature
+//	public TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature getAmazonFeatureTestObject() {
+//		TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature  amazonFeatureTest = new TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature();
+//		return amazonFeatureTest;
+//	}
+//	//Add And Remove Devices
+//	public TC013_Login_And_Test_Add_And_Remove_Device getAddRemoveDeviceTestObject() {
+//		TC013_Login_And_Test_Add_And_Remove_Device  addRemoveDeviceTest = new TC013_Login_And_Test_Add_And_Remove_Device();
+//		return addRemoveDeviceTest;
+//	}
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
 	 {
@@ -139,7 +140,7 @@ public class TC01_Simple_Test extends ParentClass
 	  }
 	  
 	  @Test(priority = 1)
-	  public void Login_And_Onboard()
+	  public void Login_And_Onboard(ITestContext context)
 	  {
 			utils.log().info("                        ");
 			utils.log().info("************************");
@@ -154,10 +155,10 @@ public class TC01_Simple_Test extends ParentClass
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
-			  new SiginPage().enterEmailAddress(super.yopEmailId);
+			  new SiginPage().enterEmailAddress((String) context.getAttribute("email")+"@mail7.io");
 			  new SiginPage().clickSigninButton();
 			  super.pause(20);
-			  passCode = new EmailTest().getValidOTP(email);  
+			  passCode = new EmailTest().getValidOTP((String) context.getAttribute("email"));  
 			  super.pause(20);
 //			  super.getDriver().activateApp("com.arris.sbcBeta");
 			  new EnterValidOTPPage().enterValidPassCode(passCode);

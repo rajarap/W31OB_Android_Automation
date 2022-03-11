@@ -9,11 +9,29 @@
 	<parameter name="platform" value="Android" />
 	<parameter name="device" value="Android" />
 
-	<test name="SignUp_And_Onboard_Test">
+	<test name="Disable_Wifi_On_Mobile_And_Try_Onboard_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard" />
+		</classes>
+	</test> 
+
+	<test name="Disable_Bluetooth_On_Mobile_And_Try_Onboard_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC004_Test_Disconnect_BlueTooth_On_Mobile_And_Onboard" />
+		</classes>
+	</test> 
+
+	<test name="SignUp_And_Onboard_With_Valid_Invalid_OTP_Test">
 		<classes>
 			<class name="com.cs.arris.Tests.TC001_Test_SignUp_And_Onboard" />
 		</classes>
 	</test> 
+
+	<test name="Simple_Tests">
+		<classes>
+			<class name="com.cs.arris.Tests.TC01_Simple_Test" />
+		</classes>
+	</test>
 
 </suite>
 
@@ -23,6 +41,25 @@
 
 	<parameter name="platform" value="Android" />
 	<parameter name="device" value="Android" />
+
+	<test name="Disable_Bluetooth_On_Mobile_And_Onboard_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC004_Test_Disconnect_BlueTooth_On_Mobile_And_Onboard" />
+		</classes>
+	</test> 
+
+	<test name="Disable_Wifi_On_Mobile_And_Onboard_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard" />
+		</classes>
+	</test> 
+
+
+
+
+
+
+
 
 	<test name="Signin_And_Onboard_Test">
 		<classes>

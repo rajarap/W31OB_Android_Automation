@@ -6,8 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Interface.Page;
 import com.cs.arris.Utilities.TestUtils;
-import com.cs.arris.Utilities.GetOTPFromNada;
-import com.cs.arris.Utilities.ValidOTP;
+import com.cs.arris.Utilities.EmailTest;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -17,7 +16,7 @@ public class EnterValidOTPPage   extends ParentClass implements Page
 {
 	public TestUtils utils = new TestUtils();
 //	public OTP otp;
-	public GetOTPFromNada nadaOTP;
+	public String passCode;
 	
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/need_help") 
@@ -33,7 +32,7 @@ public class EnterValidOTPPage   extends ParentClass implements Page
 	public MobileElement emailAddress;
 	
 	@AndroidFindBy (xpath = "//android.widget.EditText[@resource-id='com.arris.sbcBeta:id/etConfirmPasscode']")
-	public MobileElement otpCode;
+	public MobileElement otpCodeTextBox;
 	
 	@AndroidFindBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/tvResendPasscode']")
 	public MobileElement resendPassCode;
@@ -54,16 +53,29 @@ public class EnterValidOTPPage   extends ParentClass implements Page
 		return emailAddress.getText();
 	}
 	
-	public void enterValidPassCode(String passcode)
+	public void enterValidPassCode(String email)
 	{
-		utils.log().info("Entering valid OTP..." + passcode);
-		super.sendKeys(otpCode, passcode);
+		utils.log().info("Obtaining OTP from mail7.io...");
+		passCode = new EmailTest().getValidOTP(email); 
+		utils.log().info("Entering valid OTP..." + passCode);
+		super.sendKeys(otpCodeTextBox, passCode);
 	}
+	
+//	public void enterValidPassCode(String passcode)
+//	{
+//		utils.log().info("Entering valid OTP..." + passcode);
+//		super.sendKeys(otpCode, passcode);
+//	}
 	
 	public void enterInValidPassCode(String passcode)
 	{
 		utils.log().info("Entering invalid OTP..." + passcode);
-		super.sendKeys(otpCode, passcode);
+		super.sendKeys(otpCodeTextBox, passcode);
+	}
+	
+	public void clearOtpTextBox()
+	{
+		clear(otpCodeTextBox);
 	}
 	
 	public boolean verifyInvalidPassCodeMessage()
@@ -88,12 +100,12 @@ public class EnterValidOTPPage   extends ParentClass implements Page
 	
 	public void clearPassCodeText()
 	{
-		otpCode.clear();
+		otpCodeTextBox.clear();
 	}
 	
 	@Override
 	public boolean isAt() {
-		if(otpCode.isDisplayed())
+		if(otpCodeTextBox.isDisplayed())
 		{
 			utils.log().info("At Enter OTP Page");
 			return true;

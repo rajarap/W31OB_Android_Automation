@@ -111,7 +111,7 @@ public class ParentClass
 	public String ssidNumber;
 //	public String ssidName;
 //	public String ssidpwd;
-	public String yopEmailId;
+	public String mail7EmailId;
 	public String randNum;
 	public String profileName;
 	public String ruleName;
@@ -801,16 +801,28 @@ public class ParentClass
 			 lanIPRuleName.add(ruleName);
 		}
 		
+//		public void generateEmailId()
+//		{
+//			Random r = new Random();
+//			int low = 1;
+//			int high = 9999;
+//			
+//			int result = r.nextInt(high-low) + low;
+//			String temp = String.valueOf(result);
+//			utils.log().info("Mail-Id :" + temp);
+//			yopEmailId= "user"+ temp + "@yopmail.com";
+//		}
+		
 		public void generateEmailId()
 		{
 			Random r = new Random();
 			int low = 1;
-			int high = 999;
+			int high = 9999;
 			
 			int result = r.nextInt(high-low) + low;
 			String temp = String.valueOf(result);
-			utils.log().info("Mail-Id :" + temp);
-			yopEmailId= "user"+ temp + "@yopmail.com";
+			utils.log().info("Mail-Id :" + "user" + temp + "@mail7.io");
+			mail7EmailId= "user"+ temp;
 		}
 		
 //		//For Network - LAN IP Reservation
