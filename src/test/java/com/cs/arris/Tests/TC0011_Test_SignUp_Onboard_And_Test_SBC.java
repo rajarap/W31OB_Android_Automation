@@ -239,7 +239,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			  Assert.fail();}
 	  }
 	  
-		@Test(priority = 2, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Add_Device_Menu() {
 			utils.log().info("                                             ");
 			utils.log().info("*********************************************");
@@ -334,7 +334,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome2.assertAll();
 		}
 //		
-//		@Test(priority = 2, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+//		@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 //		public void Verify_Cable_Modem_Tab() {
 //			SoftAssert softhome0 = new SoftAssert();
 //			if(new AddDeviceHomePage().isAt())
@@ -343,7 +343,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			softhome0.assertAll();
 //		}
 //		
-//		@Test(priority = 3, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+//		@Test(priority = 3, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 //		public void Verify_Max_Router_Tab() {
 //			SoftAssert softhome3 = new SoftAssert();
 //			softhome3.assertTrue(new AddDeviceHomePage().clickMaxRouterTab());
@@ -353,7 +353,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			softhome3.assertAll();
 //		}
 		
-		@Test(priority = 4, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 4, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Device_Details_Page() {
 			SoftAssert softhome4 = new SoftAssert();
 			softhome4.assertTrue(new AddDeviceHomePage().clickDeviceDetailsText());
@@ -365,7 +365,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome4.assertAll();
 		}
 		
-		@Test(priority = 5, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 5, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Specifications_Page() {
 			SoftAssert softhome5 = new SoftAssert();
 			softhome5.assertTrue(new AddDeviceHomePage().clickSpecificationsImage());
@@ -376,7 +376,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome5.assertAll();
 		}
 		
-		@Test(priority = 6, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 6, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Add_Additional_Device() {
 			SoftAssert softhome6 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
@@ -391,7 +391,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome6.assertAll();
 		}
 		
-		@Test(priority = 7, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 7, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Notifications_Page() {
 			SoftAssert softhome7 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
@@ -403,7 +403,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome7.assertAll();
 		}
 		
-		@Test(priority = 8, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 8, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_User_Guide_Page() {
 			SoftAssert softhome8 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
@@ -417,7 +417,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome8.assertAll();
 		}
 		
-		@Test(priority = 9, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 9, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_FAQ_Page() {
 			SoftAssert softhome9 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
@@ -431,7 +431,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome9.assertAll();
 		}
 		
-		@Test(priority = 10, dependsOnMethods = { "Login_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 10, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Remove_Device_Page() {
 			SoftAssert softhome10 = new SoftAssert();
 			try {
@@ -463,7 +463,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		}
 		
 		
-		@Test(priority = 11, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 11, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Install_Left_Satellite() {
 			utils.log().info("                                              ");
 			utils.log().info("**********************************************");
@@ -533,7 +533,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softsatellite1.assertAll();
 		}
 		
-		@Test(priority = 12, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 12, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Network_Health_Page() {
 		utils.log().info("                             ");
 		utils.log().info("*****************************");
@@ -854,7 +854,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softnetwork16.assertAll();
 		}
 		
-		@Test(priority = 28, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 28, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Install_Right_Satellite() {
 			utils.log().info("                                               ");
 			utils.log().info("***********************************************");
@@ -924,7 +924,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		
 			
 		//TC008_Login_And_Test_Hamburger_Menu_And_Settings_About_Help_Page
-		@Test(priority = 29, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 29, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Menu_Settings_UI_Page() {
 			utils.log().info("                                                             ");
 			utils.log().info("*************************************************************");
@@ -940,7 +940,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger3.assertAll();
 		}
 		
-		@Test(priority = 30, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 30, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Menu_Settings_Sign_Out() {
 			SoftAssert softburger4 = new SoftAssert();
 			String userEmail = new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getUserEmailAddress();
@@ -954,7 +954,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger4.assertAll();
 		}
 		
-//		@Test(priority = 31, dependsOnMethods = { "Login_And_Onboard" })
+//		@Test(priority = 31, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 //		public void Verify_Hamburger_Menu_Settings_Help_Page() {
 //			SoftAssert softburger5 = new SoftAssert();
 ////			softburger5.assertTrue(new HomePage().clickNavigationButton());
@@ -967,7 +967,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //		}
 		
 
-		@Test(priority = 32, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 32, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Menu_About_UI_Page() {
 			SoftAssert softburger6 = new SoftAssert();
 			softburger6.assertTrue(new HomePage().clickNavigationButton());
@@ -980,7 +980,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger6.assertAll();
 		}
 		
-		@Test(priority = 33, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 33, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Menu_About_License_Page() {
 			SoftAssert softburger7 = new SoftAssert();
 			softburger7.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickLicenseButton());
@@ -993,7 +993,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger7.assertAll();
 		}
 		
-		@Test(priority = 34, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 34, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Get_Another_Max_Page() {
 			SoftAssert softburger8 = new SoftAssert();
 //			if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAtAboutPage())
@@ -1003,7 +1003,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger8.assertAll();
 		}
 		
-		@Test(priority = 35, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 35, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_About_Help_Page() {
 			SoftAssert softburger9 = new SoftAssert();
 			softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickHelpIcon());
@@ -1026,7 +1026,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger10.assertAll();
 		}
 			
-		@Test(priority = 36, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 36, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Surfboard_FAQ_Help_Page() {
 			SoftAssert softburger11 = new SoftAssert();
 			softburger11.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickFAQButton());
@@ -1038,7 +1038,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger11.assertAll();
 		}
 		
-		@Test(priority = 37, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 37, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Surfboard_Self_Help_Page() {
 			SoftAssert softburger12 = new SoftAssert();
 			softburger12.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickSelfHelp());
@@ -1046,7 +1046,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softburger12.assertAll();
 		}
 		
-		@Test(priority = 38, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 38, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Hamburger_Surfboard_Chat_With_US_Page() {
 			SoftAssert softburger13 = new SoftAssert();
 			softburger13.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickLiveChatHelp());
@@ -1057,7 +1057,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		
 		
 		//TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature
-		@Test(priority = 39, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 39, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Amazon_Features_UI_Page() {
 			SoftAssert softfeatures3 = new SoftAssert();
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
@@ -1067,7 +1067,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softfeatures3.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().verifyUIOnAFFSPage());
 		}
 		
-		@Test(priority = 40, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 40, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Get_Alexa_Skills_Drop_Down_Box() {
 			SoftAssert softfeatures4 = new SoftAssert();
 			softfeatures4.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickGetAlexaSkillsButton());
@@ -1075,7 +1075,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softfeatures4.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickAlexaSkillsButtonAgain());
 		}
 		
-		@Test(priority = 41, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 41, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Show_Password_Button() {
 			SoftAssert softfeatures5 = new SoftAssert();
 			softfeatures5.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickShowPasswordButton());
@@ -1084,26 +1084,26 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			//softfeatures5.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().getPasswordText());
 		}
 		
-		@Test(priority = 42, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 42, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Copy_Password() {
 			SoftAssert softfeatures6 = new SoftAssert();
 			softfeatures6.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickCopyPasswordButton());
 			if(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickCopyPasswordOKButton());
 		}
 		
-		@Test(priority = 43, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 43, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Amazon_Alexa_Skills_Link() {
 			SoftAssert softfeatures7 = new SoftAssert();
 			softfeatures7.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickAlexaSkillsLink());
 		}
 		
-//		@Test(priority = 44, , dependsOnMethods = { "Login_And_Onboard" })
+//		@Test(priority = 44, , dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 //		public void Verify_Please_Tap_Here_Link() {
 //			SoftAssert softfeatures6 = new SoftAssert();
 //			softfeatures6.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickPleaseTapHereLink());
 //		}
 
-		@Test(priority = 45, dependsOnMethods = { "Login_And_Onboard" })
+		@Test(priority = 45, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 		public void Verify_Enable_AFFS_Feature() {
 			SoftAssert softfeatures9 = new SoftAssert();
 			softfeatures9.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().enableAFFS());
@@ -1120,7 +1120,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		
 		
 		
-		  @Test(priority = 50, dependsOnMethods = { "Login_And_Onboard" })
+		  @Test(priority = 50, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 			public void Verify_Main_Device_UI_On_All_Tab_Page() {
 				SoftAssert softmain2 = new SoftAssert();
 				softmain2.assertTrue(new HomePage().clickMainDeviceImage());
@@ -1143,7 +1143,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain2.assertAll();
 			}
 			
-			@Test(priority = 51, dependsOnMethods    = { "Login_And_Onboard", "Verify_Main_Device_UI_On_All_Tab_Page" })
+			@Test(priority = 51, dependsOnMethods    = { "Verify_SignUp_And_Onboard", "Verify_Main_Device_UI_On_All_Tab_Page" })
 			public void Verify_LED_Settings_UI_On_All_Tab() {
 				SoftAssert softmain3 = new SoftAssert();
 				softmain3.assertTrue(new MainDeviceAllTabPage().verifyUIOnLedSettings());
@@ -1151,7 +1151,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain3.assertAll();
 			}
 			
-			@Test(priority = 52, dependsOnMethods = { "Login_And_Onboard",  "Verify_LED_Settings_UI_On_All_Tab"})
+			@Test(priority = 52, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_LED_Settings_UI_On_All_Tab"})
 			public void Verify_Decrease_LED_Settings_On_All_Tab_Page() {
 				SoftAssert softmain4 = new SoftAssert();
 				softmain4.assertTrue(new MainDeviceAllTabPage().decreaseLedBrightnessSettings());
@@ -1159,7 +1159,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain4.assertAll();
 			}
 			
-			@Test(priority = 53, dependsOnMethods = { "Login_And_Onboard",  "Verify_LED_Settings_UI_On_All_Tab"})
+			@Test(priority = 53, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_LED_Settings_UI_On_All_Tab"})
 	  		public void Verify_Increase_LED_Settings_On_All_Tab_Page() {
 				SoftAssert softmain5 = new SoftAssert();
 				softmain5.assertTrue(new MainDeviceAllTabPage().increaseLedBrightnessSettings());
@@ -1167,7 +1167,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain5.assertAll();
 			}
 			
-			@Test(priority = 54, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
+			@Test(priority = 54, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
 			public void Verify_Devices_Count_Validation_On_All_Tab_Page() {
 				SoftAssert softmain6 = new SoftAssert();
 				softmain6.assertTrue(new MainDeviceAllTabPage().allTabvalidations());
@@ -1175,7 +1175,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain6.assertAll();
 			}
 			
-			@Test(priority = 55, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
+			@Test(priority = 55, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
 			public void Verify_Connected_Devices_On_All_Tab_Page() {
 				SoftAssert softmain7 = new SoftAssert();
 				softmain7.assertTrue(new MainDeviceAllTabPage().verifyConnectedDeviceDetails());
@@ -1183,7 +1183,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain7.assertAll();
 			}
 			
-			@Test(priority = 56, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
+			@Test(priority = 56, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
 			public void Verify_Main_Router_Details_On_All_Tab_Page() {
 				SoftAssert softmain8 = new SoftAssert();
 				softmain8.assertTrue(new MainDeviceAllTabPage().verifyMainRouterDetails());
@@ -1191,7 +1191,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain8.assertAll();
 			}
 			
-			@Test(priority = 57, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
+			@Test(priority = 57, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
 			public void Verify_Edit_Main_Router_Name_On_All_Tab_Page() {
 				SoftAssert softmain9 = new SoftAssert();
 				softmain9.assertTrue(new MainDeviceAllTabPage().clickMainDeviceName());
@@ -1205,7 +1205,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain9.assertAll();
 			}
 			
-//			@Test(priority = 58, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
+//			@Test(priority = 58, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_All_Tab_Page"})
 //			public void Verify_Edit_Connected_Device_Name_On_All_Tab_Page() {
 //				SoftAssert softmain10 = new SoftAssert();
 //					softmain10.assertTrue(new MainDeviceAllTabPage().clickDeviceName(1));
@@ -1219,7 +1219,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			}
 			
 			
-			@Test(priority = 59, dependsOnMethods = { "Login_And_Onboard"})
+			@Test(priority = 59, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Main_Device_UI_On_5GHz_Tab_Page() {
 				SoftAssert softmain11 = new SoftAssert();
 				softmain11.assertTrue(new MainDeviceAllTabPage().click5GhzTab());
@@ -1250,7 +1250,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain14.assertAll();
 //			}
 			
-			@Test(priority = 63, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_5GHz_Tab_Page"})
+			@Test(priority = 63, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_5GHz_Tab_Page"})
 			public void Verify_Devices_Count_Validation_On_5GHz_Tab_Page() {
 				SoftAssert softmain15 = new SoftAssert();
 				softmain15.assertTrue(new MainDeviceAllTabPage().get5GHzPageObject().GHz5Tabvalidations());
@@ -1258,7 +1258,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				
 			}
 			
-			@Test(priority = 64, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_5GHz_Tab_Page"})
+			@Test(priority = 64, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_5GHz_Tab_Page"})
 			public void Verify_Connected_Devices_On_5GHz_Tab_Page() {
 				SoftAssert softmain16 = new SoftAssert();
 				softmain16.assertTrue(new MainDeviceAllTabPage().get5GHzPageObject().verifyConnectedDeviceDetails());
@@ -1311,7 +1311,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			}
 			
 			
-			@Test(priority = 68, dependsOnMethods = { "Login_And_Onboard"})
+			@Test(priority = 68, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Main_Device_UI_On_24GHz_Tab_Page() {
 				SoftAssert softmain20 = new SoftAssert();
 				softmain20.assertTrue(new MainDeviceAllTabPage().click24GhzTab());
@@ -1345,14 +1345,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain23.assertAll();
 //			}
 			
-			@Test(priority = 72, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_24GHz_Tab_Page"})
+			@Test(priority = 72, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_24GHz_Tab_Page"})
 			public void Verify_Devices_Count_Validation_On_24GHz_Tab_Page() {
 				SoftAssert softmain24 = new SoftAssert();
 				softmain24.assertTrue(new MainDeviceAllTabPage().get24GHzPageObject().GHz24Tabvalidations());
 				softmain24.assertAll();
 			}
 			
-			@Test(priority = 73, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_24GHz_Tab_Page"})
+			@Test(priority = 73, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_24GHz_Tab_Page"})
 			public void Verify_Connected_Devices_On_24GHz_Tab_Page() {
 				SoftAssert softmain25 = new SoftAssert();
 				softmain25.assertTrue(new MainDeviceAllTabPage().get24GHzPageObject().verifyConnectedDeviceDetails());
@@ -1406,7 +1406,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain28.assertAll();
 //			}
 			
-			@Test(priority = 77, dependsOnMethods = { "Login_And_Onboard"})
+			@Test(priority = 77, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Main_Device_UI_On_Ethernet_Tab_Page() {
 				SoftAssert softmain29 = new SoftAssert();
 				softmain29.assertTrue(new MainDeviceAllTabPage().clickEthernetTab());
@@ -1439,7 +1439,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain32.assertAll();
 //			}
 			
-			@Test(priority = 81, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_Ethernet_Tab_Page"})
+			@Test(priority = 81, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_Ethernet_Tab_Page"})
 			public void Verify_Devices_Count_Validation_On_Ethernet_Tab_Page() {
 				SoftAssert softmain33 = new SoftAssert();
 				softmain33.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().ethernetTabvalidations());
@@ -1447,7 +1447,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softmain33.assertAll();
 			}
 			
-			@Test(priority = 82, dependsOnMethods = { "Login_And_Onboard",  "Verify_Main_Device_UI_On_Ethernet_Tab_Page"})
+			@Test(priority = 82, dependsOnMethods = { "Verify_SignUp_And_Onboard",  "Verify_Main_Device_UI_On_Ethernet_Tab_Page"})
 			public void Verify_Connected_Devices_On_Ethernet_Tab_Page() {
 				SoftAssert softmain34 = new SoftAssert();
 				softmain34.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().verifyConnectedDeviceDetails());
@@ -1500,7 +1500,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain37.assertAll();
 //			}
 
-//			@Test(priority = 86, dependsOnMethods = { "Login_And_Onboard"})
+//			@Test(priority = 86, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 //			public void Verify_Main_Device_Help_Page() {
 //				SoftAssert softmain38 = new SoftAssert();
 //				softmain38.assertTrue(new MainDeviceAllTabPage().getEthernetPageObject().clickHelpButton());
@@ -1511,7 +1511,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softmain38.assertAll();
 //			}
 		  
-			@Test(priority = 87, dependsOnMethods = { "Login_And_Onboard"})
+			@Test(priority = 87, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Devices_UI_Page() {
 				utils.log().info("                                            ");
 				utils.log().info("********************************************");
@@ -1539,7 +1539,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softdevices2.assertAll();
 			}
 				
-			@Test(priority = 88, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
+			@Test(priority = 88, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_UI_Page"})
 			public void Verify_Online_Devices_Details() 
 			{
 				SoftAssert softdevices3 = new SoftAssert();
@@ -1547,7 +1547,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softdevices3.assertAll();
 			}
 			
-			@Test(priority = 89, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
+			@Test(priority = 89, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_UI_Page"})
 			public void Verify_Edit_Device_Name() 
 			{
 				SoftAssert softdevices4 = new SoftAssert();
@@ -1556,7 +1556,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softdevices4.assertAll();
 			}
 			
-			@Test(priority = 90, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
+			@Test(priority = 90, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_UI_Page"})
 			public void Verify_Offline_Devices_Details() 
 			{
 				SoftAssert softdevices5 = new SoftAssert();
@@ -1567,7 +1567,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 			
-//			@Test(priority = 91, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_UI_Page"})
+//			@Test(priority = 91, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_UI_Page"})
 //			public void Verify_Devices_Help_Page() 
 //			{
 //				SoftAssert softdevices6 = new SoftAssert();
@@ -1578,7 +1578,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softdevices6.assertAll();
 //			}
 		  
-			@Test(priority = 92, dependsOnMethods = { "Login_And_Onboard"})
+			@Test(priority = 92, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Devices_Signal_Strength_UI_Page() {
 				utils.log().info("                                            ");
 				utils.log().info("********************************************");
@@ -1599,28 +1599,28 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softsignal2.assertAll();
 			}
 			
-//			@Test(priority = 93, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
+//			@Test(priority = 93, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 //			public void Verify_Signal_Strength_For_Devices() {
 //				SoftAssert softsignal3 = new SoftAssert();
 //				softsignal3.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifySignalStrengthForDevices());
 //				softsignal3.assertAll();
 //			}
 			
-			@Test(priority = 94, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
+			@Test(priority = 94, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 			public void Verify_Sorting_Devices_From_Strong_To_Weak() {
 				SoftAssert softsignal4= new SoftAssert();
 				softsignal4.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifySignalStrengthStrongToWeak());
 				softsignal4.assertAll();
 			}
 			
-			@Test(priority = 95, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
+			@Test(priority = 95, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 			public void Verify_Sorting_Devices_From_Weak_To_Strong() {
 				SoftAssert softsignal5= new SoftAssert();
 				softsignal5.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifySignalStrengthWeakToStrong());
 				softsignal5.assertAll();
 			}
 			
-			@Test(priority = 96, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
+			@Test(priority = 96, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 			public void Verify_Editing_Device_Name() {
 				SoftAssert softsignal6= new SoftAssert();
 				softsignal6.assertTrue(new DeviceSignalStrengthLeaderBoardPage().clickDeviceName(2));
@@ -1630,7 +1630,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softsignal6.assertAll();
 			}
 		  
-		  @Test(priority = 97, dependsOnMethods = { "Login_And_Onboard"})
+		  @Test(priority = 97, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 			public void Verify_Speed_Test_Page() {
 				utils.log().info("                                ");
 				utils.log().info("********************************");
@@ -1653,7 +1653,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}
 		  }
 		  
-		  @Test(priority = 98, dependsOnMethods = { "Login_And_Onboard", "Verify_Speed_Test_Page"})
+		  @Test(priority = 98, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
 			public void Verify_Perform_Speed_Test() {
 				SoftAssert softspeedtest3 = new SoftAssert();
 				for (int i = 0; i < 3; i++)
@@ -1662,7 +1662,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}
 			}
 		  
-		  @Test(priority = 99, dependsOnMethods = { "Login_And_Onboard", "Verify_Speed_Test_Page"})
+		  @Test(priority = 99, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
 			public void Verify_Speed_Test_Help_page() {
 				SoftAssert softspeedtest4 = new SoftAssert();
 				softspeedtest4.assertTrue(new SpeedTestPage().clickHelpButton());
@@ -1671,7 +1671,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softspeedtest4.assertAll();
 			}
 		  
-		  @Test(priority = 100, dependsOnMethods = { "Login_And_Onboard", "Verify_Speed_Test_Page"})
+		  @Test(priority = 100, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
 			public void Verify_Home_Speed_Test_History_Page() {
 				SoftAssert softspeedtest5 = new SoftAssert();
 				if(new HomePage().isAt()) 
@@ -1683,7 +1683,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softspeedtest5.assertTrue(new HomeSpeedTestHistoryPage().getFooterIconsPageObject().clickHomeButton());
 			}
 		  
-		  @Test(priority = 101, dependsOnMethods = {"Login_And_Onboard" })
+		  @Test(priority = 101, dependsOnMethods = {"Verify_SignUp_And_Onboard" })
 			public void Verify_Parental_Control_UI_Page() {
 				utils.log().info("                         ");
 				utils.log().info("*************************");
@@ -1697,7 +1697,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol2.assertAll();
 			}
 			
-			@Test(priority = 102, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 102, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Add_Profile_Page() {
 				SoftAssert softcontrol3 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt())
@@ -1726,7 +1726,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol3.assertAll();
 			}
 			
-			@Test(priority = 103, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 103, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_User_Profile_Page() {
 				SoftAssert softcontrol4 = new SoftAssert();
 					if (new ParentalControlWithProfilesPage().isAt())
@@ -1737,7 +1737,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol4.assertAll();
 			}
 			
-			@Test(priority = 104, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 104, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_User_Profile_Help_Page() {
 				SoftAssert softcontrol5 = new SoftAssert();
 				softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickHelpIcon());
@@ -1751,7 +1751,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol5.assertAll();
 			}
 			
-			@Test(priority = 105, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 105, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Edit_User_Profile_Name() {
 				SoftAssert softcontrol6 = new SoftAssert();
 				softcontrol6.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getExistingUserName());
@@ -1767,7 +1767,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol6.assertAll();
 			}
 			
-			@Test(priority = 106, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 106, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Device_To_User_Profile() {
 				SoftAssert softcontrol7 = new SoftAssert();
 				softcontrol7.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickAddDeviceLink());
@@ -1801,7 +1801,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol7.assertAll();
 			}
 			
-//			@Test(priority = 107, dependsOnMethods = {"Login_And_Onboard"})
+//			@Test(priority = 107, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 //			public void Verify_Add_Device_Help_Page() {
 //				SoftAssert softcontrol8 = new SoftAssert();
 //				softcontrol8.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickAddDeviceLink());
@@ -1817,7 +1817,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softcontrol8.assertAll();
 //			}
 			
-			@Test(priority = 108, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 108, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Devices_Associated_With_User_Profile() {
 				SoftAssert softcontrol9 = new SoftAssert();
 				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
@@ -1833,7 +1833,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol9.assertAll();
 			}
 			
-			@Test(priority = 109, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 109, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Rule_To_User_Profile() {
 				SoftAssert softcontrol10 = new SoftAssert();
 				softcontrol10.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickAddRuleLink());
@@ -1844,7 +1844,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol10.assertAll();
 			}
 			
-			@Test(priority = 110, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 110, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_EveryDay_Schedule_To_Rule() {
 				SoftAssert softcontrol11 = new SoftAssert();
 //				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().isAt()) 
@@ -1866,7 +1866,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol11.assertAll();
 			}
 			
-			@Test(priority = 111, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 111, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Select_Start_Time_For_EveryDay_Schedule() {
 				SoftAssert softcontrol12 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().isAt()) 
@@ -1882,7 +1882,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol12.assertAll();
 			}
 			
-			@Test(priority = 112, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 112, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Select_Stop_Time_For_EveryDay_Schedule() {
 				SoftAssert softcontrol13 = new SoftAssert();
 				//super.pause(65);
@@ -1899,7 +1899,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol13.assertAll();
 			}
 			
-			@Test(priority = 113, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 113, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Custom_Schedule_To_Rule() {
 				SoftAssert softcontrol14 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().isAt()) {
@@ -1910,7 +1910,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol14.assertAll();
 			}
 			
-			@Test(priority = 114, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 114, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Custom_Schedule_Select_DOW() {
 				SoftAssert softcontrol15 = new SoftAssert();
 				softcontrol15.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickSunday());
@@ -1920,7 +1920,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol15.assertAll();
 				}
 			
-			@Test(priority = 115, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 115, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Custom_Schedule_Select_Start_Time() {
 				SoftAssert softcontrol16 = new SoftAssert();
 				softcontrol16.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileAddRulePageObject().getInternetBlockingScheduleDialogObject().clickStartTimeLink());
@@ -1931,7 +1931,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol16.assertAll();
 				}
 			
-			@Test(priority = 116, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 116, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Add_Custom_Schedule_Select_Stop_Time() {
 				SoftAssert softcontrol17 = new SoftAssert();
 				//super.pause(65);
@@ -1948,7 +1948,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol17.assertAll();
 			}
 //			
-//			@Test(priority = 117, dependsOnMethods = {"Login_And_Onboard"})
+//			@Test(priority = 117, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 //			public void Verify_Enable_Schedule_Time_UI_Page() {
 //				SoftAssert softcontrol18 = new SoftAssert();
 	//
@@ -1958,7 +1958,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softcontrol18.assertAll();
 //			}
 			
-			@Test(priority = 118, dependsOnMethods = {"Login_And_Onboard" , "Verify_User_Profile_Page"})
+			@Test(priority = 118, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Rules_Associated_With_User() {
 				SoftAssert softcontrol19 = new SoftAssert();
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
@@ -1975,7 +1975,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol19.assertAll();
 			}
 			
-			@Test(priority = 119, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 119, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Pause_Internet_For_All_Users() {
 				SoftAssert softcontrol20 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt()) {
@@ -1986,7 +1986,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol20.assertAll();
 			}
 			
-			@Test(priority = 120, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 120, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Currently_Blocked_Profiles() {
 				SoftAssert softcontrol21 = new SoftAssert();
 				softcontrol21.assertTrue(new ParentalControlWithProfilesPage().clickCurrentlyBlockedTab());
@@ -1998,7 +1998,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol21.assertAll();
 			}
 			
-			@Test(priority = 121, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 121, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Resume_Internet_For_All_Users() {
 				SoftAssert softcontrol22 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt()) {
@@ -2009,7 +2009,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol22.assertAll();
 			}
 			
-			@Test(priority = 122, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 122, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users() {
 				SoftAssert softcontrol23 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt())
@@ -2022,7 +2022,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol23.assertAll();
 			}
 			
-			@Test(priority = 123, dependsOnMethods = {"Login_And_Onboard" , "Verify_Parental_Control_UI_Page"})
+			@Test(priority = 123, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
 			public void Verify_Parental_Control_Help_Page() {
 				SoftAssert softcontrol24 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt())
@@ -2041,7 +2041,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 			
 			
-			@Test(priority = 125, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 125, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Network_UI_Page() {
 				utils.log().info("                     ");
 				utils.log().info("*********************");
@@ -2053,7 +2053,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet2.assertAll();
 			}
 
-//			@Test(priority = 126, dependsOnMethods = {"Login_And_Onboard"})
+//			@Test(priority = 126, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 //			public void Verify_Newtork_Help_Page() {
 //				SoftAssert softnet3 = new SoftAssert();
 //				softnet3.assertTrue(new NetworkPage().clickHelpButton());
@@ -2061,7 +2061,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet3.assertAll();
 //			}
 
-			@Test(priority = 127, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 127, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Newtork_Test_Connection_Speed_Page() {
 				SoftAssert softnet4 = new SoftAssert();
 		//		super.swipeUp();
@@ -2071,7 +2071,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet4.assertAll();
 			}
 
-			@Test(priority = 128, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 128, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_UI_Page() {
 				SoftAssert softnet5 = new SoftAssert();
 				softnet5.assertTrue(new NetworkPage().clickNetworkSettingsExpandButton());
@@ -2086,7 +2086,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet5.assertAll();
 			}
 
-//			@Test(priority = 129, dependsOnMethods = {"Login_And_Onboard"})
+//			@Test(priority = 129, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 //			public void Verify_WAN_Settings_Help_Page() {
 //				SoftAssert softnet6 = new SoftAssert();
 //				softnet6.assertTrue(new NetworkPage().getWANSettingsPageObject().clickHelpButton());
@@ -2095,7 +2095,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet6.assertAll();
 //			}
 
-			@Test(priority = 130, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 130, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_IPv4_DHCP_UI_Page() {
 				SoftAssert softnet7 = new SoftAssert();
 				new NetworkPage().getWANSettingsPageObject().clickWANIPConfigurationLink();
@@ -2104,14 +2104,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet7.assertAll();
 			}
 
-			@Test(priority = 131, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 131, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_IPv4_Static_UI_Page() {
 				SoftAssert softnet8 = new SoftAssert();
 				softnet8.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv4ConfigurationPageObject().verifyUIOnWANIPv4Static());
 				softnet8.assertAll();
 			}
 
-			@Test(priority = 132, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 132, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateful_UI_Page() {
 				SoftAssert softnet9 = new SoftAssert();
 				softnet9.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv4ConfigurationPageObject().clickWANIPv6Tab());
@@ -2120,14 +2120,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet9.assertAll();
 			}
 
-			@Test(priority = 133, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateless_UI_Page() {
 				SoftAssert softnet10 = new SoftAssert();
 				softnet10.assertTrue(new NetworkPage().getWANSettingsPageObject().getWANIPv6ConfigurationPageObject().verifyUIOnWANIPv6Stateless());
 				softnet10.assertAll();
 			}
 
-			@Test(priority = 134, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 134, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_Help_Page() {
 				SoftAssert softnet11 = new SoftAssert();
 				new NetworkPage().getWANSettingsPageObject().getWANIPv6ConfigurationPageObject().clickHelpButton();
@@ -2142,7 +2142,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet11.assertAll();
 			}
 			
-			@Test(priority = 135, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 135, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_DNS_Configuration_IPv4_Automatic_UI_Page() 
 			{
 				SoftAssert softnet12 = new SoftAssert();
@@ -2152,7 +2152,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet12.assertAll();
 			}
 			
-			@Test(priority = 136, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 136, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_DNS_Configuration_IPv4_Static_UI_Page() 
 			{
 				SoftAssert softnet13 = new SoftAssert();
@@ -2160,7 +2160,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet13.assertAll();
 			}
 			
-			@Test(priority = 137, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 137, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_DNS_Configuration_IPv6_Automatic_UI_Page() 
 			{
 				SoftAssert softnet14 = new SoftAssert();
@@ -2170,7 +2170,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet14.assertAll();
 			}
 			
-			@Test(priority = 138, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 138, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_DNS_Configuration_IPv6_Static_UI_Page() 
 			{
 				SoftAssert softnet15 = new SoftAssert();
@@ -2178,7 +2178,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet15.assertAll();
 			}
 			
-			@Test(priority = 139, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 139, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_DNS_Configuration_Help_Page() 
 			{
 				SoftAssert softnet16 = new SoftAssert();
@@ -2194,7 +2194,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet16.assertAll();
 			}
 			
-			@Test(priority = 140, dependsOnMethods = {"Login_And_Onboard", "Verify_WAN_Settings_UI_Page"})
+			@Test(priority = 140, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_WAN_Settings_UI_Page"})
 			public void Verify_WAN_Settings_LAC_Alert_Dialog() 
 			{
 				SoftAssert softnet17 = new SoftAssert();
@@ -2206,7 +2206,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet17.assertAll();
 			}
 			
-			@Test(priority = 141, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 141, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_LAN_Settings_UI_Page() 
 			{
 				SoftAssert softnet18 = new SoftAssert();
@@ -2223,7 +2223,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet18.assertAll();
 			}
 			
-			@Test(priority = 142, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_UI_Page"})
+			@Test(priority = 142, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_UI_Page"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Page() 
 			{
 				SoftAssert softnet19 = new SoftAssert();
@@ -2233,7 +2233,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet19.assertAll();
 			}
 			
-			@Test(priority = 143, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Page"})
+			@Test(priority = 143, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Page"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page() 
 			{
 				SoftAssert softnet20 = new SoftAssert();
@@ -2249,7 +2249,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}
 			}
 			
-			@Test(priority = 144, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page"})
+			@Test(priority = 144, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Rules() 
 			{
 				SoftAssert softnet21 = new SoftAssert();
@@ -2257,7 +2257,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet21.assertAll();
 			}
 			
-			@Test(priority = 145, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Rules"})
+			@Test(priority = 145, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Rules"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Edit_Devices_Page() 
 			{
 				SoftAssert softnet22 = new SoftAssert();
@@ -2273,7 +2273,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 			}
 
-			@Test(priority = 146, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Page"})
+			@Test(priority = 146, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Page"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Help_Page() {
 				SoftAssert softnet23 = new SoftAssert();
 				softnet23.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().clickHelpButton());
@@ -2284,7 +2284,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet23.assertAll();
 			}
 			
-			@Test(priority = 147, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_UI_Page"})
+			@Test(priority = 147, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_UI_Page"})
 			public void Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page() 
 			{
 				SoftAssert softnet24 = new SoftAssert();
@@ -2296,7 +2296,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet24.assertAll();
 			}
 			
-			@Test(priority = 148, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
+			@Test(priority = 148, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
 			public void Verify_Edit_LAN_Subnet_DHCP_Range_Configuration_Page() 
 			{
 				SoftAssert softnet25 = new SoftAssert();
@@ -2333,7 +2333,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet25.assertAll();
 			}
 			
-			@Test(priority = 149, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
+			@Test(priority = 149, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
 			public void Edit_LAN_Subnet_Configuration_Octets() 
 			{
 				SoftAssert softnet26 = new SoftAssert();
@@ -2357,7 +2357,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet26.assertAll();
 			}
 			
-			@Test(priority = 150, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
+			@Test(priority = 150, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page"})
 			public void Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Help_Page() 
 			{
 				SoftAssert softnet27 = new SoftAssert();
@@ -2369,7 +2369,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}
 			}
 			
-			@Test(priority = 151, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_UI_Page"})
+			@Test(priority = 151, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_UI_Page"})
 			public void Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page() 
 			{
 				SoftAssert softnet28 = new SoftAssert();
@@ -2391,7 +2391,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet28.assertAll();
 			}
 			
-			@Test(priority = 152, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page"})
+			@Test(priority = 152, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page"})
 			public void Verify_LAN_Settings_LAN_DHCP_Set_Lease_Time_Page() 
 			{
 				SoftAssert softnet29 = new SoftAssert();
@@ -2442,7 +2442,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet29.assertAll();
 			}
 			
-			@Test(priority = 153, dependsOnMethods = {"Login_And_Onboard", "Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page"})
+			@Test(priority = 153, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page"})
 			public void Verify_LAN_Settings_LAN_DHCP_Set_Lease_Time_Help_Page() 
 			{
 				SoftAssert softnet30 = new SoftAssert();
@@ -2460,7 +2460,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet30.assertAll();
 			}
 			
-			@Test(priority = 154, dependsOnMethods = {"Login_And_Onboard"})
+			@Test(priority = 154, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Device_Priority_Settings_UI_Page() 
 			{
 				SoftAssert softnet31 = new SoftAssert();
@@ -2503,7 +2503,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet31.assertAll();
 			}
 			
-//			@Test(priority = 155, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
+//			@Test(priority = 155, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
 //			public void Verify_Device_Priority_Settings_Add_Device_UI_Page() 
 //			{
 //				SoftAssert softnet32 = new SoftAssert();
@@ -2513,7 +2513,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				}
 //			}
 			
-			@Test(priority = 156, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_UI_Page"})
+			@Test(priority = 156, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_UI_Page"})
 			public void Verify_Device_Priority_Settings_Add_Device_Page() 
 			{
 				SoftAssert softnet33 = new SoftAssert();
@@ -2540,7 +2540,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet33.assertAll();
 			}
 			
-//			@Test(priority = 157, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
+//			@Test(priority = 157, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
 //			public void Verify_Device_Priority_Settings_Add_Device() 
 //			{
 //				SoftAssert softnet74 = new SoftAssert();
@@ -2553,7 +2553,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet74.assertAll();
 //			}
 			
-			@Test(priority = 158, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
+			@Test(priority = 158, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
 			public void Verify_Device_Priority_Settings_Added_Device_Page() 
 			{
 				SoftAssert softnet34 = new SoftAssert();
@@ -2571,7 +2571,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet34.assertAll();
 			}
 			
-			@Test(priority = 159, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
+			@Test(priority = 159, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
 			public void Verify_Device_Priority_Settings_Add_Device_Help_Page() 
 			{
 				SoftAssert softnet35 = new SoftAssert();
@@ -2585,7 +2585,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet35.assertAll();
 			}
 			
-//			@Test(priority = 160, dependsOnMethods = {"Login_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
+//			@Test(priority = 160, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
 //			public void Verify_Device_Priority_Settings_Help_Page() 
 //			{
 //				SoftAssert softnet36 = new SoftAssert();
@@ -2598,7 +2598,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet36.assertAll();
 //			}
 			
-			@Test(priority = 161, dependsOnMethods = {"Login_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 161, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Time_Zone_Settings_UI_Page() 
 			{
 				SoftAssert softnet37 = new SoftAssert();
@@ -2612,7 +2612,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet37.assertAll();
 			}
 			
-//			@Test(priority = 162, dependsOnMethods = {"Login_And_Onboard", "Verify_Time_Zone_Settings_UI_Page"})
+//			@Test(priority = 162, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Time_Zone_Settings_UI_Page"})
 //			public void Verify_Time_Zone_Settings_Help_Page() 
 //			{
 //				SoftAssert softnet38 = new SoftAssert();
@@ -2623,7 +2623,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet38 .assertAll();
 //			}
 			
-			@Test(priority = 163, dependsOnMethods = {"Login_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 163, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_General_Settings_UI_Page() 
 			{
 				SoftAssert softnet39 = new SoftAssert();
@@ -2642,7 +2642,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet39.assertAll();
 			}
 			
-			@Test(priority = 164, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 164, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_UPnP_Settings() 
 			{
 				SoftAssert softnet40 = new SoftAssert();
@@ -2661,7 +2661,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet40.assertAll();
 			}
 			
-			@Test(priority = 165, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 165, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_IPv6_Enable_Settings() 
 			{
 				SoftAssert softnet39 = new SoftAssert();
@@ -2671,7 +2671,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet39.assertAll();
 			}
 			
-			@Test(priority = 166, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_Bridge_Mode_Settings() 
 			{
 				SoftAssert softnet42 = new SoftAssert();
@@ -2681,7 +2681,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet42.assertAll();
 			}
 			
-			@Test(priority = 167, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_Port_Forwarding_Settings() 
 			{
 				SoftAssert softnet43 = new SoftAssert();
@@ -2691,7 +2691,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet43.assertAll();
 			}
 			
-			@Test(priority = 168, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+			@Test(priority = 168, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Page() 
 			{
 				SoftAssert softnet44 = new SoftAssert();
@@ -2705,7 +2705,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet44.assertAll();
 			}
 			
-			@Test(priority = 169, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+			@Test(priority = 169, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 			public void Verify_General_Settings_Port_Forwarding_Add_Rules() 
 			{
 				SoftAssert softnet45 = new SoftAssert();
@@ -2827,7 +2827,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 				
 
-//			@Test(priority = 170)
+//			@Test(priority = 170, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 	//
 //			public void Verify_General_Settings_Port_Forwarding_Edit_Rules() 
 //			{
@@ -2869,7 +2869,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet46.assertAll();
 //			}
 	//
-			@Test(priority = 171)
+			@Test(priority = 171, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Validations() 
 			{
 				SoftAssert softnet47 = new SoftAssert();
@@ -2977,7 +2977,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet47.assertAll();
 			}
 			
-			@Test(priority = 172, dependsOnMethods = {"Login_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+			@Test(priority = 172, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 			public void Verify_General_Settings_Port_Forwarding_Help_Page() 
 			{
 				SoftAssert softnet48 = new SoftAssert();
@@ -2997,7 +2997,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet48.assertAll();
 			}
 			
-			@Test(priority = 173, dependsOnMethods = {"Login_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 173, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Guest_WiFi_Network_Page() 
 			{
 				SoftAssert softnet49 = new SoftAssert();
@@ -3023,7 +3023,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet49.assertAll();
 			}
 			
-			@Test(priority = 174, dependsOnMethods = {"Login_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 174, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Extended_WiFi_Settings_Page() 
 			{
 				SoftAssert softnet50 = new SoftAssert();

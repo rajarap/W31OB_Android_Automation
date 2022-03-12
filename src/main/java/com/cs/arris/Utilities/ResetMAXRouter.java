@@ -1,16 +1,33 @@
 package com.cs.arris.Utilities;
 
 import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Properties;
+
+import org.python.util.PythonInterpreter;
 
 public class ResetMAXRouter 
 {
 	public void reset() {
-		try {
-			Runtime.getRuntime().exec("python3 /Users/rm2652/Documents/ResetMaxRouterScript/reset.py");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Runtime.getRuntime().exec("python3 /Users/rm2652/Documents/ResetMaxRouterScript/reset.py");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		Properties props = new Properties();
+        props.put("python.home", "/Library/Frameworks/Python.framework/Versions/3.10/lib");
+        props.put("python.console.encoding", "UTF-8");
+        props.put("python.security.respectJavaAccessibility", "false");
+        props.put("python.import.site", "false");
+        Properties preprops = System.getProperties();
+        PythonInterpreter.initialize(preprops, props, new String[0]);
+		
+		try (PythonInterpreter pyInterp = new PythonInterpreter()) {
+	    StringWriter output = new StringWriter();
+	    pyInterp.setOut(output);
+	    pyInterp.exec("print('Hello Baeldung Readers!!')");
+	 }
 
 	}
 
@@ -25,11 +42,7 @@ public class ResetMAXRouter
 
 
 
-//try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-//    StringWriter output = new StringWriter();
-//    pyInterp.setOut(output);
-//    pyInterp.exec("print('Hello Baeldung Readers!!')");
-// }
+
 
 
 
