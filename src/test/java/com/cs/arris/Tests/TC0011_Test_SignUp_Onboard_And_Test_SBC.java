@@ -2513,7 +2513,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				}
 //			}
 			
-			@Test(priority = 156, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_UI_Page"})
+			@Test(priority = 156, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Device_Priority_Settings_Add_Device_Page() 
 			{
 				SoftAssert softnet33 = new SoftAssert();
@@ -2553,7 +2553,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet74.assertAll();
 //			}
 			
-			@Test(priority = 158, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
+			@Test(priority = 158, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Device_Priority_Settings_Added_Device_Page() 
 			{
 				SoftAssert softnet34 = new SoftAssert();
@@ -2571,7 +2571,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet34.assertAll();
 			}
 			
-			@Test(priority = 159, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
+			@Test(priority = 159, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Device_Priority_Settings_Add_Device_Help_Page() 
 			{
 				SoftAssert softnet35 = new SoftAssert();
