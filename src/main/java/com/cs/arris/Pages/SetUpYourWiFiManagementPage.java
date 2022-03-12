@@ -23,11 +23,13 @@ public class SetUpYourWiFiManagementPage extends ParentClass implements Page
 	})
 	public MobileElement getStartedButton; 
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip]"),  //SKIP TUTORIAL
-		@AndroidBy (xpath = "//android.widget.TextView[@bounds='[61,1829][1019,1966]']"),
-		@AndroidBy (id = "com.arris.sbcBeta:id/btnskip") 
-	})
+//	@AndroidFindAll({
+//		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/btnskip]"),  //SKIP TUTORIAL
+//		@AndroidBy (xpath = "//android.widget.TextView[@bounds='[61,1829][1019,1966]']"),
+//		@AndroidBy (id = "com.arris.sbcBeta:id/btnskip") 
+//	})
+//	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/btnskip") 
 	public MobileElement skipTutorialButton; 
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_getting_started") 

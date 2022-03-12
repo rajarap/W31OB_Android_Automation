@@ -6,6 +6,7 @@ com/cs/arris/Workflows/TC55_Login_And_Verify_HomeSpeedTestHistoryPage_Workflow.c
 com/cs/arris/Tests/TC003_Test_SignUp_And_Onboard_with_Already_Registered_Email_Account.class
 com/cs/arris/Workflows/UserSignUpWorkflow.class
 com/cs/arris/Workflows/UserUnSuccessfulSigninWorkflow.class
+com/cs/arris/Tests/TC067_Verify_Factory_Reset.class
 com/cs/arris/Tests/TestSSID.class
 com/cs/arris/Tests/TC007_Login_And_Test_Main_Device_Page.class
 com/cs/arris/Workflows/TC54_Login_And_Verify_DeviceSignalStrengthLeaderBoardPage_Workflow.class

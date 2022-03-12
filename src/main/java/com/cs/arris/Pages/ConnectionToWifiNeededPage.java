@@ -27,11 +27,13 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 	public String pwd;
 	public String udid;
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btnRetry']"),  //CONTINUE
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[122,1953][958,2042]']"),
-		@AndroidBy (id = "com.arris.sbcBeta:id/btnRetry") 
-	})
+//	@AndroidFindAll({
+//		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btnRetry']"),  //CONTINUE
+//		@AndroidBy (xpath = "//android.widget.Button[@bounds='[122,1953][958,2042]']"),
+//		@AndroidBy (id = "com.arris.sbcBeta:id/btnRetry") 
+//	})
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/btnRetry") 
 	public MobileElement continueButton; 
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_congratulations") 
@@ -54,7 +56,7 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
+	   super.getDriver().runAppInBackground(Duration.ofSeconds(40));
        try 
        {
     	   utils.log().info("Running adb shell to login to mAX " + this.ssid + " network");
@@ -70,11 +72,6 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        utils.log().info("Activating App running in Background");
        super.pause(3);
        super.getDriver().activateApp("com.arris.sbcBeta");
-	}
-	
-	public void isConnectedToRouterSSID()
-	{
-		
 	}
 	
 	public void clickContinue()

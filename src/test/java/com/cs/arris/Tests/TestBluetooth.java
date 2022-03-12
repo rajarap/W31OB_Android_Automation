@@ -3,10 +3,8 @@ package com.cs.arris.Tests;
 import java.io.IOException;
 
 import com.cs.arris.Pages.BlueToothPage;
-import com.cs.arris.Pages.ConnectToWifiUsingRouterSSID;
-import com.cs.arris.Utilities.ValidOTP;
 
-public class TestBluetooth {
+public class TestBluetooth{
 	
 	public static BlueToothPage bluetoothobj;
 	
@@ -38,5 +36,4 @@ public class TestBluetooth {
 			e.printStackTrace();
 		}
 	}
-
 }

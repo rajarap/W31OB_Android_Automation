@@ -44,11 +44,13 @@ public class InstallAdditionalSatellitePage extends ParentClass implements Page
 	})
 	public MobileElement cancelButton; 
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/dialog_install_later']"),  //SKIP TUTORIAL
-		@AndroidBy (xpath = "//android.widget.TextView[@bounds='[151,1374][929,1511]']"),
-		@AndroidBy (id = "com.arris.sbcBeta:id/dialog_install_later") 
-	})
+//	@AndroidFindAll({
+//		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/dialog_install_later']"),  //SKIP TUTORIAL
+//		@AndroidBy (xpath = "//android.widget.TextView[@bounds='[151,1374][929,1511]']"),
+//		@AndroidBy (id = "com.arris.sbcBeta:id/dialog_install_later") 
+//	})
+//	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/dialog_install_later") 
 	public MobileElement installLaterButton; 
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_getting_started") 

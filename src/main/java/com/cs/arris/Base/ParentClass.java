@@ -1,9 +1,12 @@
 package com.cs.arris.Base;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.URL;
 import java.time.Duration;
@@ -117,6 +120,7 @@ public class ParentClass
 	public String ruleName;
 	public String editedDeviceName;
 	public String editedMainDeviceName;
+	public String newEmailId;
 	public int noOfDevices;
 	public int randNumber;
 	public int ipNumber;
@@ -166,6 +170,7 @@ public class ParentClass
 		
 		server.stop();
 		utils.log().info("Appium server stopped");
+		System.gc();
 		
 	}
 	
@@ -801,17 +806,38 @@ public class ParentClass
 			 lanIPRuleName.add(ruleName);
 		}
 		
-//		public void generateEmailId()
-//		{
-//			Random r = new Random();
-//			int low = 1;
-//			int high = 9999;
-//			
-//			int result = r.nextInt(high-low) + low;
-//			String temp = String.valueOf(result);
-//			utils.log().info("Mail-Id :" + temp);
-//			yopEmailId= "user"+ temp + "@yopmail.com";
-//		}
+		public void writeToProperties(String emailId) 
+		{
+			String email_id = emailId;
+			Properties prop = new Properties();
+			File file = new File("src/test/resources/testdata/signin");
+			
+			try {
+                InputStream in = new FileInputStream(file);
+                prop.load(in);
+            	} catch (IOException ex) {}
+			
+				//Setting the value to  our properties file.
+				prop.setProperty("email", emailId);
+				//Getting the value from  our properties file.
+				String newEmailId = prop.getProperty("email").trim();
+				utils.log().info("New email id : " + newEmailId);
+
+				try {
+					prop.store(new FileOutputStream("src/test/resources/testdata/signin"), null);
+				} catch (IOException ex) { }
+			
+//	        try (OutputStream out = new FileOutputStream(file))
+//	        {
+//	            p.setProperty("email", email_id);
+//	            p.store(out, null);
+//	            out.flush();
+//	            
+//	        }
+//	        catch (IOException e) {
+//	            e.printStackTrace();
+//	        }
+		}
 		
 		public void generateEmailId()
 		{
@@ -822,6 +848,7 @@ public class ParentClass
 			int result = r.nextInt(high-low) + low;
 			String temp = String.valueOf(result);
 			utils.log().info("Mail-Id :" + "user" + temp + "@mail7.io");
+			writeToProperties( "user" + temp);
 			mail7EmailId= "user"+ temp;
 		}
 		
@@ -870,16 +897,8 @@ public class ParentClass
 			size = getDriver().manage().window().getSize();
 			TouchAction action = new TouchAction(getDriver());
 
-		    int startX = 0;
-		    int endX = 0;
-		    int startY = 0;
-		    int endY = 0;
-
 		    switch (dir) {
 		        case LEFT:
-		            startY = (int) (size.height / 2);
-		            startX = (int) (size.width * 0.08);
-		            endX = (int) (size.width * 0.70);
 		            action.press(PointOption.point(734, 1087)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
 		                    .moveTo(PointOption.point(173, 1087)).release().perform();
 
@@ -892,18 +911,11 @@ public class ParentClass
 			size = getDriver().manage().window().getSize();
 			TouchAction action = new TouchAction(getDriver());
 
-		    int startX = 0;
-		    int endX = 0;
-		    int startY = 0;
-		    int endY = 0;
 
 		    switch (dir) {
 		        case LEFT:
-		            startY = (int) (size.height / 2);
-		            startX = (int) (size.width * 0.08);
-		            endX = (int) (size.width * 0.70);
-		            action.press(PointOption.point(885, 1402)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(300, 1402)).release().perform();
+		            action.press(PointOption.point(800, 1325)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(275, 1325)).release().perform();
 
 		            break;
 		    }
@@ -924,8 +936,8 @@ public class ParentClass
 		            startY = (int) (size.height / 2);
 		            startX = (int) (size.width * 0.08);
 		            endX = (int) (size.width * 0.70);
-		            action.press(PointOption.point(800, 1672)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(245, 1672)).release().perform();
+		            action.press(PointOption.point(810, 1730)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(255, 1730)).release().perform();
 
 		            break;
 		    }
@@ -946,8 +958,8 @@ public class ParentClass
 		            endY = (int) (size.height * 0.50);
 		            startY = (int) (size.height * 0.10);
 		            startX = (size.width / 2);
-		            action.press(PointOption.point(536, 1226)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-                    .moveTo(PointOption.point(536, 1063)).release().perform();
+		            action.press(PointOption.point(536, 1243)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+                    .moveTo(PointOption.point(530, 895)).release().perform();
 
 		            break;
 		    }

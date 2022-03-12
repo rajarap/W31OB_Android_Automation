@@ -37,6 +37,7 @@ public class NetworkGeneralSettingsPage extends ParentClass implements Page {
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable' and @checked='true']")
 	public MobileElement enableUPNPToggleButton;
 	
+	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/upnp_enable_disable']")
 	public MobileElement UPNPToggleButton;
 	

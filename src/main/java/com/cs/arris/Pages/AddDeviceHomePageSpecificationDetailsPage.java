@@ -27,6 +27,7 @@ public class AddDeviceHomePageSpecificationDetailsPage extends ParentClass imple
 	}
 
 	public boolean clickBackButton() {
+		super.swipeUp();
 		if (backButton.isDisplayed()) {
 			click(backButton);
 			utils.log().info("Clicked on Back Button");

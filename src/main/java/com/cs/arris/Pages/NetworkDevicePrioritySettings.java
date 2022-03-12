@@ -38,10 +38,16 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/device_enable_disable']")
 	public MobileElement devicePrioritySettingToggleButton;
 	
-	@AndroidFindBy(xpath = "//android.widget.Switch[@text='ON']")
-	public MobileElement enabledDevicePrioritySettingToggleButton;
+//	@AndroidFindBy(xpath = "//android.widget.Switch[@text='ON']")
+//	public MobileElement enabledDevicePrioritySettingToggleButton;
+//	
+//	@AndroidFindBy(xpath = "//android.widget.Switch[@text='OFF']")
+//	public MobileElement disabledDevicePrioritySettingToggleButton;
 	
-	@AndroidFindBy(xpath = "//android.widget.Switch[@text='OFF']")
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/device_enable_disable' and @checked='true']")
+	public MobileElement enabledDevicePrioritySettingToggleButton;
+
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/device_enable_disable' and @checked='false']")
 	public MobileElement disabledDevicePrioritySettingToggleButton;
 
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/add_device_configure")

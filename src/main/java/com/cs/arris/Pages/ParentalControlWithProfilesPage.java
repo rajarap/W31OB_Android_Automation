@@ -366,7 +366,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 		if (disablePauseAllProfilesToggleButton.isDisplayed()) {
 			click(disablePauseAllProfilesToggleButton);
 			if (this.getPauseInternetForAllDialogObject().isAt()) {
-				this.getPauseInternetForAllDialogObject().verifyUIOnPauseInternetForAllDialog();
+				//this.getPauseInternetForAllDialogObject().verifyUIOnPauseInternetForAllDialog();
 				this.getPauseInternetForAllDialogObject().clickYesPauseButton();
 				super.pause(5);
 			}
@@ -382,7 +382,7 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 		if (enablePauseAllProfilesToggleButton.isDisplayed()) {
 			click(enablePauseAllProfilesToggleButton);
 			if (this.getResumeInternetForAllDialogObject().isAt()) {
-				this.getResumeInternetForAllDialogObject().verifyUIOnResumeInternetForAllDialog();
+				//this.getResumeInternetForAllDialogObject().verifyUIOnResumeInternetForAllDialog();
 				this.getResumeInternetForAllDialogObject().clickYesResumeButton();
 				super.pause(5);
 			}

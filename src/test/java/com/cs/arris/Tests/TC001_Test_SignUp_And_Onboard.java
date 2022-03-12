@@ -3,6 +3,7 @@ package com.cs.arris.Tests;
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.ISuite;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -51,6 +52,7 @@ import com.cs.arris.Pages.TermsAndConditionsPage;
 import com.cs.arris.Pages.UnPackYourBoxPage;
 import com.cs.arris.Utilities.Direction;
 import com.cs.arris.Utilities.EmailTest;
+import com.cs.arris.Utilities.ResetMAXRouter;
 import com.cs.arris.Utilities.SevenTapEmail;
 import com.cs.arris.Utilities.SevenTapGmail;
 import com.cs.arris.Utilities.SevenTapLogs;
@@ -85,10 +87,7 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 
 			  this.lastName = properties.getProperty("lastname");
 			  utils.log().info("Last Name : " + this.lastName);
-			  
-//			  this.email = properties.getProperty("email");
-//			  utils.log().info("Email address : " + this.email);
-			  
+			    
 			  this.ssidName = super.generateRouterSSID();
 			  utils.log().info("SSID Name : " + this.ssidName);
 			  
@@ -125,7 +124,8 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new SelectYourDevicePage2().clickNextButton();
 			  new SiginPage().clickSignUpButton();
 			  email = new SignupPage().getEmailAddress();  //userXXXX
-			  context.setAttribute("email", email);
+			  ISuite suite = context.getSuite();
+			  suite.setAttribute("email", email);
 			  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
 			  new SignupPage().enterFirstName(firstName);
 			  new SignupPage().enterLastName(lastName);
@@ -170,17 +170,22 @@ public class TC001_Test_SignUp_And_Onboard extends ParentClass
 			  new NameYourNetwokSSIDPage().clickNextButton();
 			  super.pause(25);
 			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-			  super.pause(25);
-			  new ConnectionToWifiNeededPage().clickContinue();
-			  super.pause(25);
+			  super.pause(40);
+			  try {
+				  if(new ConnectionToWifiNeededPage().continueButton.isDisplayed())
+					  new ConnectionToWifiNeededPage().clickContinue();
+			  }catch(Exception e) {}
+			  super.pause(30);
 			  new CongratulationsPage().clickContinueButton();
-			  super.pause(5);
+			  super.pause(3);
 			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+			  super.pause(3);
 			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
-			  super.pause(5);
+			  super.pause(3);
 			  new NetworkOptimizationDialog().clickOkButton();
-			  super.pause(5);
+			  super.pause(20);
 			  new HomePage().getSSIDName();  
+
 		  }catch(Exception e) {
 			  new TapSevenTimes().tapSeven();
 			  super.pause(3);

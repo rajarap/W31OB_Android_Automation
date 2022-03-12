@@ -24,11 +24,8 @@ public class NetworkOptimizationDialog extends ParentClass implements Page
 	//@AndroidFindBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/dialog_description']") // text = Let's check for available software updates for your system.
 	public MobileElement networkOptimizationMessage;
 	
-	@AndroidFindAll({
-		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_dialog_ok']"), // text = NEXT
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[147,1283][933,1420]']"),
-		@AndroidBy (id = "com.arris.sbcBeta:id/btn_dialog_ok") 
-	})
+	
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/btn_dialog_ok") 
 	public MobileElement okButton;
 	
 	public NetworkOptimizationDialog()

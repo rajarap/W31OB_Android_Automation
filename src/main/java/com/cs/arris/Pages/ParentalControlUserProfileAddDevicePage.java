@@ -204,7 +204,7 @@ public class ParentalControlUserProfileAddDevicePage extends ParentClass impleme
 		//utils.log().info("Number of Devices listed in the Add Device page is  : " + super.devicesConnectedToRouter);
 
 			try {
-				for (int i = 2; i <= 2; i++) {
+				for (int i = 1; i <= 1; i++) {
 					utils.log().info("Device : " + i);
 					utils.log().info("--------------------");
 

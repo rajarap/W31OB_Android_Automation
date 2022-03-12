@@ -1,6 +1,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/SigninAsInvalidUserTest.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/SampleTest.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/GetStartedPageTest.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC067_Verify_Factory_Reset.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/HomePage_Workflow.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC0104_Login_And_Test_Home_Speed_Test_History_Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC50_SignUp_And_Onboard_Workflow.java

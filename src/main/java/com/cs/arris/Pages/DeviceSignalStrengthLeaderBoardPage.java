@@ -16,15 +16,18 @@ import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
 	public List<MobileElement> listOfDevices;
 	public int counter = 1;
+	public TouchAction action;
 
 	@AndroidFindAll({ 
 		@AndroidBy(id = "com.arris.sbcBeta:id/txtHeader"), // DEVICE SIGNAL STRENGTH LEADER BOARD
@@ -57,7 +60,8 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 
 	@AndroidFindAll({
 			@AndroidBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]"),
-			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[526,579][979,647]']") })
+			@AndroidBy(xpath = "//android.widget.TextView[@bounds='[526,579][979,647]']"),
+			@AndroidBy(xpath = "//android.widget.TextView[@text='Strong to Weak']"),})
 	public MobileElement strongToWeak;
 
 	@AndroidFindAll({
@@ -429,7 +433,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			utils.log().info("Bit Rate Device count is : " + size);
 			
 			click(signalStrengthOptions);
-			click(weakToStrong);
+			clickWeakToStrong();
 
 			for (int i = 1; i <= size; i++) {
 				utils.log().info("                     ");
@@ -521,6 +525,17 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 				utils.log().info("Error in Device Signal Strength Leader Board Page");
 			return false;
 			}
+	}
+	
+	public void clickWeakToStrong() {
+		int x = 625;
+		int y = 625;
+		PointOption p = new PointOption();
+		p.withCoordinates(x, y);
+		utils.log().info("Clicked on Gmail Icon");
+		action = new TouchAction(super.getDriver());
+		action.tap(p).release().perform();
+
 	}
 
 	private Integer convertSignalStrengthToInteger(String ghz) // 5GHz

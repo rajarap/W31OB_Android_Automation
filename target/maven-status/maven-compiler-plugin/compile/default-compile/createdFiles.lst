@@ -102,6 +102,7 @@ com/cs/arris/Pages/NetworkLANSubnetDHCPChangeIPRangeConfigurationAlertDialog.cla
 com/cs/arris/Pages/ValidationCodePage.class
 com/cs/arris/Pages/NetworkWANDNSConfigurationHelpPage.class
 com/cs/arris/Pages/ErrorCode_0002_1002_Internet_Connection_Not_Available_On_Mobile_Device.class
+com/cs/arris/Utilities/TestToProp.class
 com/cs/arris/Pages/AddDeviceSuccessPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimeHelpPage.class
 com/cs/arris/Pages/ParentalControlUserProfileAddRulePage.class
@@ -153,6 +154,7 @@ com/cs/arris/Pages/HamburgerMenuPage.class
 com/cs/arris/Pages/AddSatellitePlaceYourSatellitePage.class
 com/cs/arris/Pages/NetworkWANDNSConfigurationIPv6Page.class
 com/cs/arris/Pages/NetworkDevicePrioritySettingsSelectAtleatOneDeviceAlertDialog.class
+com/cs/arris/Utilities/ResetMAXRouter.class
 com/cs/arris/Pages/AddDeviceFooterIconsPage.class
 com/cs/arris/Pages/ConnectMaxRouterToInternetPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.class

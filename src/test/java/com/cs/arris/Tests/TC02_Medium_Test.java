@@ -3,6 +3,7 @@ package com.cs.arris.Tests;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
+import org.testng.ISuite;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -115,13 +116,11 @@ public class TC02_Medium_Test extends ParentClass
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
-			  new SiginPage().enterEmailAddress((String) context.getAttribute("email")+"@mail7.io");
+			  ISuite suite = context.getSuite();
+			  email = (String) suite.getAttribute("email");
+			  new SiginPage().enterEmailAddress(email+"@mail7.io");
 			  new SiginPage().clickSigninButton();
-			  super.pause(20);
-			  passCode = new EmailTest().getValidOTP((String) context.getAttribute("email"));  
-			  super.pause(20);
-//			  super.getDriver().activateApp("com.arris.sbcBeta");
-			  new EnterValidOTPPage().enterValidPassCode(passCode);
+			  new EnterValidOTPPage().enterValidPassCode(email);
 			  new CodeVerifiedPage().getCodeVerifiedText();
 			  new CodeVerifiedPage().clickNextButton();
 			  super.pause(3);
@@ -574,6 +573,7 @@ public class TC02_Medium_Test extends ParentClass
 		public void Verify_Offline_Devices_Details() 
 		{
 			SoftAssert softdevices5 = new SoftAssert();
+			softdevices5.assertTrue(new DevicesPage().clickOfflineTab());
 			softdevices5.assertTrue(new DevicesPage().verifyOfflineDeviceDetails());
 			softdevices5.assertTrue(new DevicesPage().clickBackButton());
 			softdevices5.assertAll();
@@ -612,12 +612,12 @@ public class TC02_Medium_Test extends ParentClass
 			softsignal2.assertAll();
 		}
 		
-		@Test(priority = 45, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
-		public void Verify_Signal_Strength_For_Devices() {
-			SoftAssert softsignal3 = new SoftAssert();
-			softsignal3.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifySignalStrengthForDevices());
-			softsignal3.assertAll();
-		}
+//		@Test(priority = 45, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
+//		public void Verify_Signal_Strength_For_Devices() {
+//			SoftAssert softsignal3 = new SoftAssert();
+//			softsignal3.assertTrue(new DeviceSignalStrengthLeaderBoardPage().verifySignalStrengthForDevices());
+//			softsignal3.assertAll();
+//		}
 		
 		@Test(priority = 46, dependsOnMethods = { "Login_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 		public void Verify_Sorting_Devices_From_Strong_To_Weak() {
