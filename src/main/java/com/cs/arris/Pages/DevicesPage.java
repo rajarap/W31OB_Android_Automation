@@ -436,6 +436,7 @@ public class DevicesPage extends ParentClass implements Page {
 //		}
 //	}
 	
+	@SuppressWarnings("unchecked")
 	public boolean verifyOnlineDeviceDetails() {
 		this.getOnlineDevicesCount();
 		utils.log().info("***************************************************");
@@ -591,6 +592,7 @@ public class DevicesPage extends ParentClass implements Page {
 	}
 
 	// To verify the details of online devices
+	@SuppressWarnings("unchecked")
 	public boolean verifyOfflineDeviceDetails() {
 			super.swipeDown();
 			this.getOfflineDevicesCount();
