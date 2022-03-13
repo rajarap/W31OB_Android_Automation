@@ -6,9 +6,7 @@ public class TestToProp {
 	{
 //		ParentClass parent = new ParentClass();
 //		parent.writeToProperties("user345");
-		
-		ResetMAXRouter max = new ResetMAXRouter();
-		max.reset();
+
 	}
 
 }
