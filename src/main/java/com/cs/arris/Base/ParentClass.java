@@ -914,8 +914,8 @@ public class ParentClass
 
 		    switch (dir) {
 		        case LEFT:
-		            action.press(PointOption.point(800, 1325)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(275, 1325)).release().perform();
+		            action.press(PointOption.point(745, 1025)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(265, 1025)).release().perform();
 
 		            break;
 		    }

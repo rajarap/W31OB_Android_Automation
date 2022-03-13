@@ -101,11 +101,20 @@ public class NetworkPage extends ParentClass implements Page {
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/wideband_info_icon")
 	public MobileElement fiveGHzWidebandInfoIcon;
 	
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/wideband_network_enable_disable' and @checked='false']")
-//	public MobileElement disableWidebandModeToggleButton;
-//
-//	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/wideband_network_enable_disable' and @checked='true']")
-//	public MobileElement enableWidebandModeToggleButton;
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/client_steering_info_icon")
+	public MobileElement bandSteeringInfoIcon;
+	
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/wideband_network_enable_disable' and @checked='false']")
+	public MobileElement disableWidebandModeToggleButton;
+
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/wideband_network_enable_disable' and @checked='true']")
+	public MobileElement enableWidebandModeToggleButton;
+	
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/client_steering_enable_disable' and @checked='false']")
+	public MobileElement disableBandSteeringdModeToggleButton;
+
+	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/client_steering_enable_disable' and @checked='true']")
+	public MobileElement enableBandSteeringModeToggleButton;
 	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@resource-id='com.arris.sbcBeta:id/wideband_network_enable_disable']")
 	public MobileElement widebandModeToggleButton;
@@ -326,24 +335,57 @@ public class NetworkPage extends ParentClass implements Page {
 		}
 	}
 	
-	public boolean enable5GHzWidebandMode() {
-		if (widebandModeToggleButton.isSelected()) {
-			utils.log().info("5GHz Wideband Mode is already enabled");
+	public boolean clickBandSteeringInfoIcon() {
+		if (bandSteeringInfoIcon.isDisplayed()) {
+			click(bandSteeringInfoIcon);
+			utils.log().info("Clicked on Band Steering Info Icon");
 			return true;
 		} else {
-			click(widebandModeToggleButton);
-			utils.log().info("5GHz Wideband Mode is now enabled");
+			utils.log().info("Band Steering Mode Info Icon is not displayed");
+			return false;
+		}
+	}
+	
+	public boolean enable5GHzWidebandMode() {
+		if (disableWidebandModeToggleButton.isDisplayed()) {
+			click(disableWidebandModeToggleButton);
+			utils.log().info("5GHz Wideband Mode is enabled");
+			return true;
+		} else {
+			utils.log().info("5GHz Wideband Mode is already enabled");
 			return true;
 		}
 	}
 
 	public boolean disable5GHzWidebandMode() {
-		if (!(widebandModeToggleButton.isSelected())) {
-			utils.log().info("5GHz Wideband Mode is already disabled");
+		if (enableWidebandModeToggleButton.isDisplayed()) {
+			click(enableWidebandModeToggleButton);
+			utils.log().info("5GHz Wideband Mode is disabled");
 			return true;
 		} else {
-			click(widebandModeToggleButton);
-			utils.log().info("5GHz Wideband Mode is now disabled");
+			utils.log().info("5GHz Wideband Mode is already disabled");
+			return true;
+		}
+	}
+	
+	public boolean enableBandSteeringMode() {
+		if (disableBandSteeringdModeToggleButton.isDisplayed()) {
+			click(disableBandSteeringdModeToggleButton);
+			utils.log().info("Band Steering Mode is enabled");
+			return true;
+		} else {
+			utils.log().info("Band Steering Mode is already enabled");
+			return true;
+		}
+	}
+
+	public boolean disableBandSteeringMode() {
+		if (enableBandSteeringModeToggleButton.isDisplayed()) {
+			click(enableBandSteeringModeToggleButton);
+			utils.log().info("Band Steering Mode is disabled");
+			return true;
+		} else {
+			utils.log().info("Band Steering Mode is already disabled");
 			return true;
 		}
 	}

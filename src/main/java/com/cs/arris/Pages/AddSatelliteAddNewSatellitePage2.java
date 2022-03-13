@@ -1,20 +1,17 @@
 package com.cs.arris.Pages;
 
-import org.apache.commons.lang3.time.StopWatch;
 import org.openqa.selenium.support.PageFactory;
-
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Interface.Page;
 import com.cs.arris.Utilities.TestUtils;
-
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
-public class AddSatelliteAddNewSatellitePage2 extends ParentClass implements Page {
+
+public class AddSatelliteAddNewSatellitePage2 extends ParentClass implements Page { 
+	//To continue with satellite install, please connect to arrisw31-654 network. Please connect through the Wi-Fi settings of your mobile device if not connected already.
+	//If this page come connect to Wifi
 	public TestUtils utils = new TestUtils();
 	
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/title_placementTip")
@@ -64,10 +61,10 @@ public class AddSatelliteAddNewSatellitePage2 extends ParentClass implements Pag
 	@Override
 	public boolean isAt() {
 		if (addSatelliteTitle.isDisplayed()) {
-			utils.log().info("On ADD SATELLITE2 Page");
+			utils.log().info("On ADD SATELLITE2 - Connect to SSID Page");
 			return true;
 		} else {
-			utils.log().info("Not on ADD SATELLITE2 Page");
+			utils.log().info("Not on ADD SATELLITE2  - Connect to SSID Page");
 			return false;
 		}
 	}

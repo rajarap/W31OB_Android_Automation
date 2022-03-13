@@ -1,46 +1,10 @@
 package com.cs.arris.Utilities;
 
-import java.io.StringWriter;
-import java.util.Properties;
-
-import org.python.util.PythonInterpreter;
-
 public class ResetMAXRouter 
 {
 	public static void main(String args[]) {
 
-		Properties props = new Properties();
-        props.put("python.home", "/Users/rm2652/Documents/Softwares/Jython/Lib");
-        props.put("python.console.encoding", "UTF-8");
-        props.put("python.security.respectJavaAccessibility", "false");
-        props.put("python.import.site", "false");
-        Properties preprops = System.getProperties();
-        PythonInterpreter.initialize(preprops, props, new String[0]);
-		
-		try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-	    StringWriter output = new StringWriter();
-	    pyInterp.setOut(output);
-	    pyInterp.exec("import serial,sys,os,time\n"
-	    		+ "baudrate = 115200\n"
-	    		+ "comport = \"usbserial-142310\"\n"
-	    		+ "dmCLICMDS = \"dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1\"\n"
-	    		+ "ser = serial.Serial()\n"
-	    		+ "ser.baudrate = baudrate\n"
-	    		+ "ser.port = comport\n"
-	    		+ "ser.open()\n"
-	    		+ "ser.write(dmCLICMDS)\n"
-	    		+ "#ser.write(\"toish bt devices\")\n"
-	    		+ "ser.write('\\n')\n"
-	    		+ "#time.sleep(5)\n"
-	    		+ "lines = ser.read(300)\n"
-	    		+ "print (\" the lines ==>\",lines)\n"
-	    		+ "i = 1\n"
-	    		+ "if \"Restarting system\" in lines or \"SIGKILL\" in lines:       \n"
-	    		+ "          print (\"Reset was successful\")\n"
-	    		+ "else:\n"
-	    		+ "          print (\"Unable to send reboot command\")\n"
-	    		+ "ser.close()");
-	 }
+
 
 	}
 
@@ -184,4 +148,44 @@ public class ResetMAXRouter
 //	}
 //	
 //
+//}
+
+
+
+
+
+
+
+
+//Properties props = new Properties();
+//props.put("python.home", "/Users/rm2652/Documents/Softwares/Jython/Lib");
+//props.put("python.console.encoding", "UTF-8");
+//props.put("python.security.respectJavaAccessibility", "false");
+//props.put("python.import.site", "false");
+//Properties preprops = System.getProperties();
+//PythonInterpreter.initialize(preprops, props, new String[0]);
+//
+//try (PythonInterpreter pyInterp = new PythonInterpreter()) {
+//StringWriter output = new StringWriter();
+//pyInterp.setOut(output);
+//pyInterp.exec("import serial,sys,os,time\n"
+//		+ "baudrate = 115200\n"
+//		+ "comport = \"usbserial-142310\"\n"
+//		+ "dmCLICMDS = \"dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1\"\n"
+//		+ "ser = serial.Serial()\n"
+//		+ "ser.baudrate = baudrate\n"
+//		+ "ser.port = comport\n"
+//		+ "ser.open()\n"
+//		+ "ser.write(dmCLICMDS)\n"
+//		+ "#ser.write(\"toish bt devices\")\n"
+//		+ "ser.write('\\n')\n"
+//		+ "#time.sleep(5)\n"
+//		+ "lines = ser.read(300)\n"
+//		+ "print (\" the lines ==>\",lines)\n"
+//		+ "i = 1\n"
+//		+ "if \"Restarting system\" in lines or \"SIGKILL\" in lines:       \n"
+//		+ "          print (\"Reset was successful\")\n"
+//		+ "else:\n"
+//		+ "          print (\"Unable to send reboot command\")\n"
+//		+ "ser.close()");
 //}

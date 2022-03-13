@@ -13,7 +13,7 @@ import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class WideBandModeAlertInfoDialog extends ParentClass implements Page {
+public class BandSteeringModeAlertInfoDialog extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
 
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/error_header_dialog") 
@@ -28,7 +28,7 @@ public class WideBandModeAlertInfoDialog extends ParentClass implements Page {
 	@AndroidFindBy(id = "com.arris.sbcBeta:id/cancel_dialog")
 	public MobileElement closeButton;
 	
-	public WideBandModeAlertInfoDialog() {
+	public BandSteeringModeAlertInfoDialog() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
 
@@ -56,10 +56,10 @@ public class WideBandModeAlertInfoDialog extends ParentClass implements Page {
 	@Override
 	public boolean isAt() {
 		if (titleText.isDisplayed()) {
-			utils.log().info("On 5GHz Wideband Mode Page");
+			utils.log().info("On Enable Band Steering Page");
 			return true;
 		} else {
-			utils.log().info("Not on 5GHz Wideband Mode Page");
+			utils.log().info("Not on Enable Band Steering Page");
 			return false;
 		}
 

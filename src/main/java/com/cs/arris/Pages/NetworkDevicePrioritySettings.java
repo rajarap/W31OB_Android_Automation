@@ -230,11 +230,11 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 		utils.log().info("***********************************");
 		utils.log().info(" Devices Assigned Highest Priority ");
 		utils.log().info("***********************************");
-		
+		int count = 1;
 		try 
 		{
 			utils.log().info("                          ");
-			utils.log().info("Prioritized Device  : " + counter);
+			utils.log().info("Prioritized Device  : " + count);
 			utils.log().info("--------------------------");
 
 			List<MobileElement> entity = (List<MobileElement>) super.getDriver()
@@ -253,7 +253,7 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 					utils.log().info("Highest Priority Radion Button option is selected");
 				}		
 			}
-			counter++;
+			count++;
 			return true;
 		}catch(Exception e){
 			utils.log().info("No Device found to prioritize");

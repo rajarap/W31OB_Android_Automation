@@ -459,7 +459,7 @@ public class DevicesPage extends ParentClass implements Page {
 
 				for (MobileElement e : entity) 
 				{
-					click(e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[2]"));
+					click(super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[2]"));
 					
 					try {
 						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[1]").isDisplayed())

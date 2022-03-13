@@ -528,11 +528,10 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 	}
 	
 	public void clickWeakToStrong() {
-		int x = 625;
-		int y = 625;
+		int x = 650;
+		int y = 630;
 		PointOption p = new PointOption();
 		p.withCoordinates(x, y);
-		utils.log().info("Clicked on Gmail Icon");
 		action = new TouchAction(super.getDriver());
 		action.tap(p).release().perform();
 
