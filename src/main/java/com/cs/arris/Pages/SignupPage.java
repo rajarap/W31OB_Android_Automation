@@ -130,7 +130,6 @@ public class SignupPage  extends ParentClass implements Page
 			click(agreeCheckBox);
 			utils.log().info("SignUp Page - Clicked on I Agree to Terms and Conditions check box");
 		}
-		
 	}
 	
 	public void clickSignupButton()
