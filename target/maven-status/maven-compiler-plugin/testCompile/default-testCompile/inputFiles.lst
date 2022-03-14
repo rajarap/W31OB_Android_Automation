@@ -13,6 +13,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/GrantPermissionPageTest.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC004_Test_Disconnect_BlueTooth_On_Mobile_And_Onboard.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC02_EC_0002_1002_Disconnect_Wifi_On_Mobile_Workflow.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC0011_Test_SignUp_Onboard_And_Test_SBC.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC007_Login_And_Test_Main_Device_Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC03_Verify_Invalid_OTP_Workflow.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC04_EC_0002_1304_Internet_Connection_Not_Available_On_Router_Workflow.java

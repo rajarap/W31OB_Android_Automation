@@ -4,6 +4,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceSelectDevice2Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceHomePageDeviceDetailsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ResendOTPDialog.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BandSteeringModeAlertInfoDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/InValidOTP.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkReserveLANIPDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteAddNewSatellitePage2.java
@@ -20,6 +21,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTDisabledTroubleShootPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkDevicePrioritySettings.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SerialComPortCommunicator.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceLetsStartWithDeviceConnectionPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1303_Router_Failed_To_Connect_To_Internet.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationISPSpeedRatePage.java
@@ -48,9 +50,11 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/RetrieveOTPPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSatelliteSignalPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseNoChangesUpdatedDialog.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SerialCommunicator.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseTimeAppliedSameChangesDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileHelpPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/PortReader.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSkipPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/Direction.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Listeners/TestListener.java

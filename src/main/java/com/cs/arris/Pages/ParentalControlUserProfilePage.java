@@ -469,49 +469,49 @@ public class ParentalControlUserProfilePage extends ParentClass implements Page 
 		}
 	}
 	
-	public boolean deleteAssociatedDevice() {
-		utils.log().info("*****************************************************");
-		utils.log().info("Delete Devices Associated with Selected User Profile ");
-		utils.log().info("*****************************************************");
-		
-		try {
-				for (int i = 1; i <= 1 ; i++) 
-				{
-					utils.log().info("Deleting Associated Device : " + i);
-					utils.log().info("---------------------------------");
-					List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
-							"//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.widget.FrameLayout");
-					
-					for (MobileElement e : entity) {
-						try {
-							if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed())
-								utils.log().info("Device Name: " + e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']")
-										.getText() + " is associated with the user : " + userProfileTitle.getText());
-						} catch (Exception exp) {
-							utils.log().info("Device name associated with the user is not available in the list ");
-						}
-						
-						try {
-							if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed())
-								elementX = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").getLocation().getX();
-								elementY = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").getLocation().getY();
-								new SwipeOnElement().swipeAction(elementX, elementY, "Left");
-								if(deleteDeviceIcon.isDisplayed())
-									click(deleteDeviceIcon);
-						} catch (Exception exp) {
-							utils.log().info("Unable to Delete the device associated with user");
-						}
-						
-						utils.log().info("****************************************************");
-						utils.log().info("                                                    ");
-					}
-				}
-			return true;
-		} catch (Exception e) {
-			utils.log().info("No devices from the Device List are associated with this user : " + userProfileTitle.getText());
-			return false;
-		}
-	}
+//	public boolean deleteAssociatedDevice() {
+//		utils.log().info("*****************************************************");
+//		utils.log().info("Delete Devices Associated with Selected User Profile ");
+//		utils.log().info("*****************************************************");
+//		
+//		try {
+//				for (int i = 1; i <= 1 ; i++) 
+//				{
+//					utils.log().info("Deleting Associated Device : " + i);
+//					utils.log().info("---------------------------------");
+//					List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
+//							"//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.widget.FrameLayout");
+//					
+//					for (MobileElement e : entity) {
+//						try {
+//							if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed())
+//								utils.log().info("Device Name: " + e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']")
+//										.getText() + " is associated with the user : " + userProfileTitle.getText());
+//						} catch (Exception exp) {
+//							utils.log().info("Device name associated with the user is not available in the list ");
+//						}
+//						
+//						try {
+//							if (e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed())
+//								elementX = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").getLocation().getX();
+//								elementY = super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").getLocation().getY();
+//								new SwipeOnElement().swipeAction(elementX, elementY, "Left");
+//								if(deleteDeviceIcon.isDisplayed())
+//									click(deleteDeviceIcon);
+//						} catch (Exception exp) {
+//							utils.log().info("Unable to Delete the device associated with user");
+//						}
+//						
+//						utils.log().info("****************************************************");
+//						utils.log().info("                                                    ");
+//					}
+//				}
+//			return true;
+//		} catch (Exception e) {
+//			utils.log().info("No devices from the Device List are associated with this user : " + userProfileTitle.getText());
+//			return false;
+//		}
+//	}
 	
 	public boolean verifyRulesAssociatedWithUser() {
 		super.swipeUp();

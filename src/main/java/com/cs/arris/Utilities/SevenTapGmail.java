@@ -30,6 +30,7 @@ public class SevenTapGmail extends ParentClass implements Page {
 	public void clickGmailIcon() {
 		int x = 165;
 		int y = 1630;
+		
 		PointOption p = new PointOption();
 		p.withCoordinates(x, y);
 		utils.log().info("Clicked on Gmail Icon");

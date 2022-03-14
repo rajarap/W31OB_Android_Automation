@@ -56,10 +56,10 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	   super.getDriver().runAppInBackground(Duration.ofSeconds(40));
+	   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
        try 
        {
-    	   utils.log().info("Running adb shell to login to mAX " + this.ssid + " network");
+    	   utils.log().info("Connecting to " + this.ssid + " network");
     	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "am", "start", "-n", "com.steinwurf.adbjoinwifi/.MainActivity", "-e", "ssid", this.ssid, "-e", "password_type", "WPA", "-e", "password", this.pwd);
            Process pc1 = pb1.start();
            super.pause(3);

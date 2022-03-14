@@ -462,116 +462,116 @@ public class DevicesPage extends ParentClass implements Page {
 					click(super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[2]"));
 					
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[1]").isDisplayed())
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[1]").isDisplayed())
 							utils.log().info("Device Image is displayed");
 					} catch (Exception exp) {
 						utils.log().info("Device Image is not displayed");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[2]").isDisplayed())
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.ImageView[2]").isDisplayed())
 							utils.log().info("Expand Button Image is displayed");
 					} catch (Exception exp) {
 						utils.log().info("Expand button is not available : ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[1]").isDisplayed())
-							utils.log().info("Device Name: " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[1]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[1]").isDisplayed())
+							utils.log().info("Device Name: " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[1]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Name is not available ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[2]").isDisplayed())
-							utils.log().info("Device Signal Strength : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[2]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[2]").isDisplayed())
+							utils.log().info("Device Signal Strength : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[2]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Signal Strength is not available ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[3]").isDisplayed())
-							utils.log().info("Device Download Speed : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[3]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[3]").isDisplayed())
+							utils.log().info("Device Download Speed : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[3]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Download Speed data is not available ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[4]").isDisplayed())
-							utils.log().info("Device Upload Speed : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[4]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[4]").isDisplayed())
+							utils.log().info("Device Upload Speed : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.widget.TextView[4]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Upload Speed data is not available ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]").isDisplayed())
-							utils.log().info("Label : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]").isDisplayed())
+							utils.log().info("Label : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]").getText());
 					} catch (Exception exp) {
 						utils.log().info("IP Address Label is not displayed ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]").isDisplayed())
-							utils.log().info("Device IP Address : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]").isDisplayed())
+							utils.log().info("Device IP Address : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device IP Address is not available ");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]").isDisplayed())
-							utils.log().info("Label : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]").isDisplayed())
+							utils.log().info("Label : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]").getText());
 					} catch (Exception exp) {
 						utils.log().info("MAC Address Label is not displayed");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[4]").isDisplayed())
-							utils.log().info("Device MAC Address : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[4]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[4]").isDisplayed())
+							utils.log().info("Device MAC Address : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[4]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device MAC Address is not available");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[5]").isDisplayed())
-							utils.log().info("Label : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[5]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[5]").isDisplayed())
+							utils.log().info("Label : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[5]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Channel Label is not displayed");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[7]").isDisplayed())
-							utils.log().info("Device Channel Number : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[7]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[7]").isDisplayed())
+							utils.log().info("Device Channel Number : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[7]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Channel Number is not available");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[6]").isDisplayed())
-							utils.log().info("Label	: " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[6]").getText());
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[6]").isDisplayed())
+							utils.log().info("Label	: " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[6]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Status Label is not displayed");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[8]").isDisplayed())
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[8]").isDisplayed())
 							utils.log()
-									.info("Device Status : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[8]").getText());
+									.info("Device Status : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[8]").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Status is not available");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[9]").isDisplayed())
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[9]").isDisplayed())
 							utils.log()
-									.info("Label : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[9]").getText());
+									.info("Label : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[9]").getText());
 					} catch (Exception exp) {
 						utils.log().info("RSSI Label is not displayed");
 					}
 
 					try {
-						if (e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[10]").isDisplayed())
+						if (super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[10]").isDisplayed())
 							utils.log()
-									.info("RSSI Value : " + e.findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[10]").getText());
+									.info("RSSI Value : " + super.getDriver().findElementByXPath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[10]").getText());
 					} catch (Exception exp) {
 						utils.log().info("RSSI data is not available ");
 					}
@@ -609,18 +609,18 @@ public class DevicesPage extends ParentClass implements Page {
 					"//androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
 					
 					for (MobileElement e : entity) {
-						if (e.findElementById("com.arris.sbcBeta:id/imgDevice").isDisplayed())
+						if (super.getDriver().findElementById("com.arris.sbcBeta:id/imgDevice").isDisplayed())
 							utils.log().info("Device Image is displayed");
 						else
 							utils.log().info("Device Image is not available : ");
 
-						if (e.findElementById("com.arris.sbcBeta:id/txtDeviceName").isDisplayed())
-							utils.log().info("Device Name: " + e.findElementById("com.arris.sbcBeta:id/txtDeviceName").getText());
+						if (super.getDriver().findElementById("com.arris.sbcBeta:id/txtDeviceName").isDisplayed())
+							utils.log().info("Device Name: " + super.getDriver().findElementById("com.arris.sbcBeta:id/txtDeviceName").getText());
 						else
 							utils.log().info("Device Name is not available ");
 
-						if (e.findElementById("com.arris.sbcBeta:id/txtLastOnline").isDisplayed())
-							utils.log().info(e.findElementById("com.arris.sbcBeta:id/txtLastOnline").getText());
+						if (super.getDriver().findElementById("com.arris.sbcBeta:id/txtLastOnline").isDisplayed())
+							utils.log().info(super.getDriver().findElementById("com.arris.sbcBeta:id/txtLastOnline").getText());
 						else
 							utils.log().info("Last Online data is not available ");
 

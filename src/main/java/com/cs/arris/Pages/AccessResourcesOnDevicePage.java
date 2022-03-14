@@ -76,12 +76,8 @@ public class AccessResourcesOnDevicePage extends ParentClass implements Page
 	
 	public void clickAllow() 
 	{
-		try {
-			click(allow);
-			utils.log().info("Access Resources On Device - Clicked on " + allow.getText() + " button");
-		} catch (Exception e) {
-			utils.log().info("Access Resources On Device - Allow button is not displayed");
-		}
+		click(allow);
+		utils.log().info("Access Resources On Device - Clicked on Allow button");
 	}
 	
 	@Override

@@ -149,7 +149,7 @@ public class DeviceLocationPage  extends ParentClass implements Page
 	{
 		try {
 			click(allow);
-			utils.log().info("Device Location - Clicked on " + allow.getText() + " button");
+			utils.log().info("Device Location - Clicked on Allow button");
 		} catch (Exception e) {
 			utils.log().info("Device Location - Allow button is not displayed");
 		}

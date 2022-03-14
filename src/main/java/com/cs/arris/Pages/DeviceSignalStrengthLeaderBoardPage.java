@@ -423,6 +423,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public boolean verifySignalStrengthWeakToStrong() {
 		try {
 			utils.log().info("****************************************************************");
@@ -436,18 +437,16 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			clickWeakToStrong();
 
 			for (int i = 1; i <= size; i++) {
-				utils.log().info("                     ");
+				utils.log().info("                ");
 				utils.log().info("Devices  : " + i);
-				utils.log().info("---------------------");
+				utils.log().info("---------------");
 
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
 						"//android.view.ViewGroup[@content-desc='SBC Test']/androidx.recyclerview.widget.RecyclerView/android.widget.ScrollView["+i+"]/android.view.ViewGroup/android.view.ViewGroup");
 
 				for (MobileElement e : entity) {
 					try {
-						if (e.findElementByXPath(
-								"//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/imgDevice']")
-								.isDisplayed())
+						if (super.getDriver().findElementByXPath("//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/imgDevice']").isDisplayed())
 							utils.log().info("Device Image is displayed");
 					} catch (Exception exp) {
 						utils.log().info("Device Image is not available/displayed");
@@ -455,42 +454,42 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 
 					try {
 						utils.log().info("Device Name            : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtDeviceName").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtDeviceName").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Name is not available/displayed");
 					}
 
 					try {
 						utils.log().info("Device Signal Strength : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtMainSignalStrength").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtMainSignalStrength").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Signal Strength is not available/displayed");
 					}
 
 					try {
 						utils.log().info("Device Download Speed  : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtMainDownloadSpeed").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtMainDownloadSpeed").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Download Speed is not available/displayed");
 					}
 
 					try {
 						utils.log().info("Device Upload Speed    : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtMainUpLoadSpeed").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtMainUpLoadSpeed").getText());
 					} catch (Exception exp) {
 						utils.log().info("Device Upload Speed is not available/displayed");
 					}
 
 					try {
 						utils.log().info("RSSI Label             : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtStatusTitle").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtStatusTitle").getText());
 					} catch (Exception exp) {
 						utils.log().info("RSSI Label is not available/displayed");
 					}
 
 					try {
 						utils.log().info("RSSI Value             : "
-								+ e.findElementById("com.arris.sbcBeta:id/txtStatus").getText());
+								+ super.getDriver().findElementById("com.arris.sbcBeta:id/txtStatus").getText());
 					} catch (Exception exp) {
 						utils.log().info("RSSI data is not available/displayed");
 					}
@@ -505,11 +504,12 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public boolean clickDeviceName(int i) {
 		try {
-				utils.log().info("                             ");
+				utils.log().info("                           ");
 				utils.log().info("Editing Device Name  : " + i);
-				utils.log().info("-----------------------------");
+				utils.log().info("----------------------------");
 
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
 						"//android.view.ViewGroup[@content-desc='SBC Test']/androidx.recyclerview.widget.RecyclerView/android.widget.ScrollView["+i+"]/android.view.ViewGroup/android.view.ViewGroup");

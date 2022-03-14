@@ -451,10 +451,10 @@ public class ParentClass
 		}		
 	}
 	
-	 public void waitForVisibility(MobileElement e) {
-		  WebDriverWait wait = new WebDriverWait(getDriver(), TestUtils.WAIT);
-		  wait.until(ExpectedConditions.visibilityOf(e));
-	  }
+//	 public void waitForVisibility(MobileElement e) {
+//		  WebDriverWait wait = new WebDriverWait(getDriver(), TestUtils.WAIT);
+//		  wait.until(ExpectedConditions.visibilityOf(e));
+//	  }
 	  
 	  public void waitForVisibility(WebElement e){
 		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
@@ -462,6 +462,15 @@ public class ParentClass
 		  .pollingEvery(Duration.ofSeconds(5))
 		  .ignoring(NoSuchElementException.class);
 		  
+		  wait.until(ExpectedConditions.visibilityOf(e));
+		  }
+	  
+	  public void waitForVisibility(MobileElement e){
+		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+		  .withTimeout(Duration.ofSeconds(60))
+		  .pollingEvery(Duration.ofSeconds(5))
+		  .ignoring(NoSuchElementException.class);
+
 		  wait.until(ExpectedConditions.visibilityOf(e));
 		  }
 	  

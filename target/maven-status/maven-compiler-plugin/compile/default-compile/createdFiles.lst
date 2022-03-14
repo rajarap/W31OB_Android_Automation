@@ -29,6 +29,7 @@ com/cs/arris/Pages/AmazonFeaturesPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimeEditTimeUnitDialog.class
 com/cs/arris/Pages/HomeNetowrkSatellitePerformanceAndConnectionHealthPage.class
 com/cs/arris/Pages/SpeedTestHistoryPage.class
+com/cs/arris/Utilities/SerialComPortCommunicator.class
 com/cs/arris/Pages/AFFSHelpPage.class
 com/cs/arris/Pages/ErrorCode_0003_1003_Service_Is_Currently_Not_Available.class
 com/cs/arris/Pages/NetworkAddDeviceSelectOneDeviceOfHighestPriorityDialog.class
@@ -80,6 +81,7 @@ com/cs/arris/Pages/NetworkLANSettingsPage.class
 com/cs/arris/Utilities/TestUtils.class
 com/cs/arris/Pages/AddDeviceActivateYourDeviceWithServiceProviderPage.class
 com/cs/arris/Pages/AccessResourcesPage.class
+com/cs/arris/Utilities/PortReader.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationISPSpeedRatePage.class
 com/cs/arris/Utilities/Mail.class
 com/cs/arris/Pages/SetUpYourWiFiManagementPage.class
@@ -120,6 +122,7 @@ com/cs/arris/Pages/MainDevice24GHzTabPage.class
 com/cs/arris/Pages/AddDeviceCongratulationsPage.class
 com/cs/arris/Pages/MainDeviceEthernetTabPage.class
 com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedToInternetPage.class
+com/cs/arris/Pages/BandSteeringModeAlertInfoDialog.class
 com/cs/arris/Pages/AmazonWiFiSimpleSetupDialog.class
 com/cs/arris/Pages/NetworkLANIPReservationHelpPage.class
 com/cs/arris/JsonMappers/Signin_TestData.class
@@ -180,6 +183,7 @@ com/cs/arris/Utilities/TapSevenTimes.class
 com/cs/arris/Utilities/SevenTapEmail.class
 com/cs/arris/Pages/ErrorCode_0000_1015_Invalid_OTP_Page.class
 com/cs/arris/Pages/EditMainDeviceNameDialog.class
+com/cs/arris/Utilities/SerialCommunicator.class
 com/cs/arris/Pages/ParentalControlCurrentlyBlockedPage.class
 com/cs/arris/Pages/NetworkLANDHCPIPRangeBetween1And255AlertDialog.class
 com/cs/arris/Base/ParentClass.class
