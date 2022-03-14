@@ -32,11 +32,11 @@ public class EmailTest extends ParentClass{
 			driver.get("https://mail7.io");
 			super.pause(5);
 			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[1]")).sendKeys(emailId); 
-			super.pause(3);
+			super.pause(5);
 			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[2]")).click();  //Go to inbox
-			super.pause(3);
+			super.pause(5);
 			driver.findElement(By.xpath("/html/body/div[2]/div[5]/div/div/div/div/div/div/div/main/div/div/ul[2]/li/div[2]/div[1]/b")).click();
-			super.pause(3);
+			super.pause(5);
 			driver.switchTo().frame(0);
 			content = driver.findElement(By.xpath("/html/body")).getText(); 
 			driver.switchTo().defaultContent();
