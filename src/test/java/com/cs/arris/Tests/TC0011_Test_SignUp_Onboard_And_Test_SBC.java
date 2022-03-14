@@ -482,8 +482,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}catch(Exception e) {}
 			
 			new HomePage().getFooterIconsPageObject().clickHomeButton();
-			
-			try {
+
 				if (new HomePage().isAt())
 					softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
 
@@ -535,18 +534,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 				super.pause(10);
 				softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
-			} catch (Exception e) {
-				new TapSevenTimes().tapSeven();
-				super.pause(3);
-				new SevenTapLogs().clickYesButton();
-				super.pause(3);
-				new SevenTapGmail().clickGmailIcon();
-				super.pause(3);
-				new SevenTapEmail().enterEmailAddress();
-				super.pause(3);
-				new SevenTapEmail().clickSendButton();
-				Assert.fail();
-			}
 			
 			softsatellite1.assertAll();
 		}
@@ -2803,7 +2790,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //						} catch (Exception e) {
 //							utils.log().info("All Port details are valid");
 //						}
-						super.pause(3);
+						super.pause(8);
 						try {
 							if (new NetworkPage().getGeneralSettingsPageObject()
 									.getNetworkGeneralSettingsPortForwardingPageObject()

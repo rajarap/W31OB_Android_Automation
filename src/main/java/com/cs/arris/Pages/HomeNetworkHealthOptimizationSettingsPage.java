@@ -258,8 +258,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapLow()
 		{
-			int endX = 64;
-			int endY = 1200;
+			int endX = 72;
+			int endY = 1059;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
@@ -267,8 +267,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapMedium()
 		{
-			int endX = 541;
-			int endY = 1200;
+			int endX = 524;
+			int endY = 1059;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
@@ -277,8 +277,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapHigh()
 		{
-			int endX = 1014;
-			int endY = 1200;
+			int endX = 992;
+			int endY = 1059;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();

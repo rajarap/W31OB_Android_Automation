@@ -434,7 +434,8 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 			utils.log().info("Bit Rate Device count is : " + size);
 			
 			click(signalStrengthOptions);
-			clickWeakToStrong();
+			
+			this.clickWeakToStrong();
 
 			for (int i = 1; i <= size; i++) {
 				utils.log().info("                ");
@@ -528,8 +529,10 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 	}
 	
 	public void clickWeakToStrong() {
-		int x = 650;
-		int y = 630;
+		
+		int x = 633;
+		int y = 633;
+		
 		PointOption p = new PointOption();
 		p.withCoordinates(x, y);
 		action = new TouchAction(super.getDriver());
