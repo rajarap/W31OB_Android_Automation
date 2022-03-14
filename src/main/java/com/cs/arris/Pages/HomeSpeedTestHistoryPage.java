@@ -104,9 +104,9 @@ public class HomeSpeedTestHistoryPage extends ParentClass implements Page
 	 
 		public boolean verifyHomeSpeedTestHistory() {
 			try {
-				utils.log().info("*************************************");
-				utils.log().info("Details of Speed Test History Details");
-				utils.log().info("*************************************");
+				utils.log().info("**************************");
+				utils.log().info("Speed Test History Details");
+				utils.log().info("**************************");
 
 				utils.log().info("Title : " + speedTestHistoryTitle.getText());
 				MobileElement recycleView = (MobileElement) super.getDriver().findElementByXPath(

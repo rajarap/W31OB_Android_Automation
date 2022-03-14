@@ -530,8 +530,8 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 	
 	public void clickWeakToStrong() {
 		
-		int x = 633;
-		int y = 633;
+		int x = 650;
+		int y = 629;
 		
 		PointOption p = new PointOption();
 		p.withCoordinates(x, y);

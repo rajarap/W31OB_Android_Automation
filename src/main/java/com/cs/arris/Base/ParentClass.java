@@ -908,8 +908,8 @@ public class ParentClass
 
 		    switch (dir) {
 		        case LEFT:
-		            action.press(PointOption.point(734, 1087)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(173, 1087)).release().perform();
+		            action.press(PointOption.point(728, 1024)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(173, 1024)).release().perform();
 
 		            break;
 		    }
@@ -923,8 +923,8 @@ public class ParentClass
 
 		    switch (dir) {
 		        case LEFT:
-		            action.press(PointOption.point(745, 1025)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(265, 1025)).release().perform();
+		            action.press(PointOption.point(913, 1027)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(202, 1027)).release().perform();
 
 		            break;
 		    }
@@ -945,8 +945,8 @@ public class ParentClass
 		            startY = (int) (size.height / 2);
 		            startX = (int) (size.width * 0.08);
 		            endX = (int) (size.width * 0.70);
-		            action.press(PointOption.point(810, 1730)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(255, 1730)).release().perform();
+		            action.press(PointOption.point(880, 1340)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(230, 1340)).release().perform();
 
 		            break;
 		    }

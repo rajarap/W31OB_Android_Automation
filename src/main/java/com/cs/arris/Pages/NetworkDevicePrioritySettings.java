@@ -228,10 +228,10 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 	@SuppressWarnings("unchecked")
 	public boolean selectDevicesWithHighestPriority(int i) 
 	{
-		utils.log().info("                                   ");
-		utils.log().info("***********************************");
-		utils.log().info(" Devices Assigned Highest Priority ");
-		utils.log().info("***********************************");
+//		utils.log().info("                                   ");
+//		utils.log().info("***********************************");
+//		utils.log().info(" Devices Assigned Highest Priority ");
+//		utils.log().info("***********************************");
 
 		try 
 		{
@@ -252,7 +252,6 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 
 					if (super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").isDisplayed()) {			
 						click(super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']"));
-						utils.log().info("Highest Priority Radio Button option is selected");
 					}		
 				}
 			return true;

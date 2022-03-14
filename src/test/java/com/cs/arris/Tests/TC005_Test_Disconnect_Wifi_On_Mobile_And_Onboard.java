@@ -114,7 +114,7 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 	  
  
 	  @Test(priority = 1)
-	  public void Verify_Disconnect_BlueTooth_On_Mobile_And_Onboard()
+	  public void Verify_Disconnect_Wifi_On_Mobile_And_Onboard()
 	  {
 		  try {
 			    utils.log().info("Turning OFF Wifi..........");
