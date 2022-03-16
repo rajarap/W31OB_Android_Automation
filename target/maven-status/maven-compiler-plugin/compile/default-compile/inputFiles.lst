@@ -1,3 +1,4 @@
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothTurnOnDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEditPortForwardingRulePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANIPConfigurationHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ConnectToWifiUsingRouterSSID.java
@@ -64,6 +65,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/FooterIconsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Interface/Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DevicesPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootProceedPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEditGuestNetworkDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEditReserveLANIPDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AccessResourcesOnDevicePage.java
@@ -185,6 +187,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetowrkSatellitePerformanceAndConnectionHealthPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEnableGuestNetworkAlertDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlHelpPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/InternetConnectionNotAvailable.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANSubnetDHCPConfigurationHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingAddRulePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DevicesHelpPage.java
@@ -212,6 +215,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/MainDevice5GHzTabPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomePage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NotificationPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Interface/W31_Onboarding_TestData.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkDevicePrioritySettingsSelectAtleatOneDeviceAlertDialog.java

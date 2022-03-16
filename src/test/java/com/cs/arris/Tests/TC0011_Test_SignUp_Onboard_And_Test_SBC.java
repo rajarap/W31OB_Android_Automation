@@ -50,6 +50,8 @@ import com.cs.arris.Pages.AddSatelliteUpToDatePage;
 import com.cs.arris.Pages.AppRatingDialog;
 import com.cs.arris.Pages.BandSteeringModeAlertInfoDialog;
 import com.cs.arris.Pages.BlueToothConnectionFailedPage;
+import com.cs.arris.Pages.BlueToothConnectionFailedTroubleShootPage;
+import com.cs.arris.Pages.BlueToothConnectionFailedTroubleShootProceedPage;
 import com.cs.arris.Pages.BlueToothPage;
 import com.cs.arris.Pages.CodeVerifiedPage;
 import com.cs.arris.Pages.CongratulationsPage;
@@ -111,6 +113,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 	String ssidName;
 	String ssidpass;
 	String udid;
+	String logsEmail;
 	
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
@@ -218,6 +221,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  new ConnectionToWifiNeededPage().clickContinue();
 			  }catch(Exception e) {}
 			  super.pause(15);
+//			  try {
+//				  if(new ConnectionToWifiNeededPage().continueButton.isDisplayed())
+//					  new ConnectionToWifiNeededPage().clickContinue();
+//			  }catch(Exception e) {}
+//			  super.pause(15);
 			  new CongratulationsPage().clickContinueButton();
 			  super.pause(5);
 			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
@@ -255,7 +263,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 			SoftAssert softhome2 = new SoftAssert();
 			
-			new HomePage().getFooterIconsPageObject().clickHomeButton();
+	//		new HomePage().getFooterIconsPageObject().clickHomeButton();
 			try {
 				if (new HomePage().isAt())
 					softhome2.assertTrue(new HomePage().clickNavigationButton());
@@ -340,7 +348,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 			softhome2.assertAll();
 		}
-//		
+		
 //		@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 //		public void Verify_Cable_Modem_Tab() {
 //			SoftAssert softhome0 = new SoftAssert();
@@ -359,7 +367,10 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			
 //			softhome3.assertAll();
 //		}
-//		
+		
+		
+		
+		
 		@Test(priority = 4, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_Device_Details_Page() {
 			SoftAssert softhome4 = new SoftAssert();
@@ -415,7 +426,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			SoftAssert softhome8 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
 				softhome8.assertTrue(new AddDeviceHomePage().getAddDeviceFooterIconsPageObject().clickUserGuideButton());
-			super.pause(3);
+			super.pause(5);
 
 			if(new AddDeviceHomePage().getUserGuidePageObject().isAt())
 				super.swipeUp();
@@ -463,7 +474,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				new SevenTapEmail().enterEmailAddress();
 				super.pause(3);
 				new SevenTapEmail().clickSendButton();
-				Assert.fail();
 			}
 
 			softhome10.assertAll();
@@ -479,7 +489,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("Test: Hamburger Menu - Settings, About and Help Menu Options ");
 					utils.log().info("*************************************************************");
 					SoftAssert softburger3 = new SoftAssert();
-					new HomePage().getFooterIconsPageObject().clickHomeButton();
+	//				new HomePage().getFooterIconsPageObject().clickHomeButton();
 					softburger3.assertTrue(new HomePage().clickNavigationButton());
 					softburger3.assertTrue(new HomePage().getHamburgerMenuPageObject().clickSettingsButton());
 					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAt())
@@ -546,20 +556,20 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					SoftAssert softburger8 = new SoftAssert();
 					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAtAboutPage())
 						softburger8.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickGetAnotherMaxRouterButton());
-					//softburger8.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
+					softburger8.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
 						
 					softburger8.assertAll();
 				}
 				
-				@Test(priority = 17, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-				public void Verify_Hamburger_About_Help_Page() {
-					SoftAssert softburger9 = new SoftAssert();
-					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickHelpIcon());
-					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getAboutHelpPageObject().clickCloseButton());
-					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
-					
-					softburger9.assertAll();
-				}
+//				@Test(priority = 17, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+//				public void Verify_Hamburger_About_Help_Page() {
+//					SoftAssert softburger9 = new SoftAssert();
+//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickHelpIcon());
+//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getAboutHelpPageObject().clickCloseButton());
+//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
+//					
+//					softburger9.assertAll();
+//				}
 				
 				@Test(priority = 18)
 				public void Verify_Hamburger_Surfboard_Help_UI_Page() {
@@ -724,7 +734,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("Test: Main Device   ");
 				utils.log().info("********************");
 				SoftAssert softmain2 = new SoftAssert();
-				new HomePage().getFooterIconsPageObject().clickHomeButton();
+	//			new HomePage().getFooterIconsPageObject().clickHomeButton();
 				softmain2.assertTrue(new HomePage().clickMainDeviceImage());
 				softmain2.assertTrue(new MainDeviceAllTabPage().verifyUIOnMainDevicePage());		
 				softmain2.assertAll();
@@ -1105,7 +1115,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("Test: Online and Offline Connected Devices  ");
 				utils.log().info("********************************************");
 				SoftAssert softdevices2 = new SoftAssert();
-				new HomePage().getFooterIconsPageObject().clickHomeButton();
+//				new HomePage().getFooterIconsPageObject().clickHomeButton();
 					if (new HomePage().isAt())
 						softdevices2.assertTrue(new HomePage().clickDevicesImage());
 //					if (new DevicesPage().isAt())
@@ -1517,6 +1527,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				if(new ParentalControlWithProfilesPage().isAt()) {
 					//new ParentalControlWithProfilesPage().pauseAllProfilesExpandButton.click();
 					softcontrol22.assertTrue(new ParentalControlWithProfilesPage().disablePauseInternetAccessForAllProfiles());
+					super.pause(10);
 					//softcontrol22.assertTrue(new ParentalControlWithProfilesPage().verifyResumeInternetAccessForAllUserProfile());
 				}
 				softcontrol22.assertAll();
@@ -1978,19 +1989,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_Device_Priority_Settings_UI_Page() 
 			{
 				SoftAssert softnet31 = new SoftAssert();
-				//remove this if above test are uncommented
-//				new HomePage().getFooterIconsPageObject().clickNetworkButton();
-//				new NetworkPage().clickNetworkSettingsExpandButton();
-//				super.swipeUp();
-//				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
-//				super.pause(30);
-//				try{
-//					if(new NetworkPage().getAppRatingPageObject().isAt())
-//						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-//				}catch(Exception e) {
-//					utils.log().info("App Rating Dialog did not appear");
-//				}
-//				remove this if above test are uncommented
 				super.swipeUp();
 				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
 				super.pause(3);
@@ -2074,19 +2072,19 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
 				{
 //					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().verifyUIOnNetworkPrioritizedDevices());
-					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(1));
-					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
+//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
 					
 					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
 						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
-					super.pause(10);
+					super.pause(5);
 					
 				}
 				softnet34.assertAll();
 			}
 			
 			@Test(priority = 137, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-			public void Verify_Device_Priority_Settings_Add_Device_Help_Page() 
+			public void Verify_Device_Priority_Settings_Disable_Device_Prioritation() 
 			{
 				SoftAssert softnet35 = new SoftAssert();
 //				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
@@ -2094,7 +2092,8 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				
 //				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().isAt())
 //					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().clickCloseButton());
-//				
+//									softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
+				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
 				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickBackButton());
 				softnet35.assertAll();
 			}
@@ -2455,7 +2454,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						if(new NetworkPage().getEnableGuestNetworkAlertDialogObject().isAt())
 							softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkAlertDialogObject().clickOkButton());
 						}
-						super.pause(70);
+						super.pause(75);
 					}catch(Exception e) {utils.log().info("Enable Guest Network Page did not appear");}
 				softnet49.assertAll();
 			}
@@ -2654,6 +2653,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_Connected_Device_Signal_Strength_Sensitivity_Low() {
 				SoftAssert softnetwork11 = new SoftAssert();
 				super.swipeDown();
+				
 				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
 					new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().tapLow();
 				softnetwork11.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickConnectedDeviceSignalButton());
@@ -2754,7 +2754,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnetwork15.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickLinkRateImage());
 //				if(new HomePage().getNetworkOtptimizationPageObject().getSatellitePerformancePageObject().isAt())
 //					new HomePage().getNetworkOtptimizationPageObject().getSatellitePerformancePageObject().clickBackButton();
-	//
+//	
 //				softnetwork15.assertAll();
 //			}
 			
@@ -2766,11 +2766,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
 					softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().disableHealthOptimization());
+				
 				if(new HomeNetowrkTurnOffNetworkOptimizationDialog().isAt())
 					new HomeNetowrkTurnOffNetworkOptimizationDialog().clickTurnOffButton();
+				
+				new HomePage().getFooterIconsPageObject().clickHomeButton();
 							
-				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton());
-				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickBackButton());
+//				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton());
+//				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickBackButton());
 
 				softnetwork16.assertAll();
 			}
@@ -2783,44 +2786,69 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("****************************");
 				
 				SoftAssert softsatellite1 = new SoftAssert();
-//				try {
-//					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-//					super.pause(15);
-//				}catch(Exception e) {}
 				
-				new HomePage().getFooterIconsPageObject().clickHomeButton();
+				utils.log().info("Manually switch on your Satellite and perform bluetooth pairing");
+				super.pause(60);
+			
+	//			new HomePage().getFooterIconsPageObject().clickHomeButton();
+				try {
 					if (new HomePage().isAt())
 						softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
 
 					softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
 					super.pause(5);
 					softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-					super.pause(25);
+					super.pause(30);
 					try {
 						if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-							try {
-								new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-								super.pause(10);
-								new AddSatelliteAddNewSatellitePage2().clickNextButton();
-							}catch(Exception e) {}
-						}
+							new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+							super.pause(10);
+							new AddSatelliteAddNewSatellitePage2().clickNextButton();}				
 					}catch(Exception e) {}
-					softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-					softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-					softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-					super.pause(90);
+					
 					try {
-						if(new BlueToothConnectionFailedPage().isAt()) {
+						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothPage().enableBlueTooth();
 							pause(5);
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(20);
+							super.pause(30);
 						}
 					}catch(Exception e) {}
+					
+					try {
+						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(23);
+						}
+					}catch(Exception e) {}
+					
+					softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+					softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+					softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+					super.pause(100);
+					
+					try {
+						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+							new BlueToothPage().enableBlueTooth();
+							pause(5);
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(30);
+						}
+					}catch(Exception e) {}
+					
+					try {
+						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(23);
+						}
+					}catch(Exception e) {}
+					
 					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 					super.pause(75);
 					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-					super.pause(10);
+					super.pause(20);
 					softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
 					super.pause(10);
 					try {
@@ -2828,13 +2856,26 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
 						}
 					} catch (Exception e) {	}
-					super.pause(25);
+					super.pause(60);
 					softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 					super.pause(10);
 					softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
 				
 				softsatellite1.assertAll();
+			}catch(Exception e) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(3);
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(3);
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(3);
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(3);
+				  new SevenTapEmail().clickSendButton();
 			}
+		}
+
+
 			
 			@Test(priority = 103, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 			public void Verify_Install_Right_Satellite() {
@@ -2844,8 +2885,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("*****************************");
 				
 				SoftAssert softsatellite2 = new SoftAssert();
+				utils.log().info("Manually switch on your Satellite2 and perform bluetooth pairing");
+				super.pause(60);
 				
-				new HomePage().getFooterIconsPageObject().clickHomeButton();
+//				new HomePage().getFooterIconsPageObject().clickHomeButton();
+				try {
 
 					if (new HomePage().isAt())
 						softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
@@ -2856,29 +2900,54 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					super.pause(20);
 					try {
 						if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-							try {
-								new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-								super.pause(10);
-								new AddSatelliteAddNewSatellitePage2().clickNextButton();
-							}catch(Exception e) {}
-						}
+							new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+							super.pause(10);
+							new AddSatelliteAddNewSatellitePage2().clickNextButton();}				
 					}catch(Exception e) {}
-					softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-					softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-					softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-					super.pause(90);
+					
 					try {
-						if(new BlueToothConnectionFailedPage().isAt()) {
+						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothPage().enableBlueTooth();
 							pause(5);
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(20);
+							super.pause(30);
 						}
 					}catch(Exception e) {}
+					
+					try {
+						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(23);
+						}
+					}catch(Exception e) {}
+					
+					softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+					softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+					softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+					super.pause(100);
+					
+					try {
+						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+							new BlueToothPage().enableBlueTooth();
+							pause(5);
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(30);
+						}
+					}catch(Exception e) {}
+					
+					try {
+						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(23);
+						}
+					}catch(Exception e) {}
+					
 					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 					super.pause(75);
 					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-					super.pause(10);
+					super.pause(20);
 					softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
 					super.pause(10);
 					try {
@@ -2886,16 +2955,25 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
 						}
 					} catch (Exception e) {	}
-					super.pause(25);
+					super.pause(60);
 					softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 					super.pause(10);
 					softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
 				
 				softsatellite2.assertAll();
+			}catch(Exception e) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(3);
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(3);
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(3);
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(3);
+				  new SevenTapEmail().clickSendButton();
 			}
-			
-			
-	
+		}
+
 }
 
 

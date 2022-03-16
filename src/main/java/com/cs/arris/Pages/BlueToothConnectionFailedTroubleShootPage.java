@@ -9,12 +9,12 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
-public class BlueToothConnectionFailedPage extends ParentClass implements Page
+public class BlueToothConnectionFailedTroubleShootPage extends ParentClass implements Page
 {
 	TestUtils utils = new TestUtils();
 
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_text") 
-	public MobileElement bluetoothConnectionFailed;
+	public MobileElement bluetoothConnectionFailedTroubleShootTitle;
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_description_text") 
 	public MobileElement bluetoothConnectionMessage;
@@ -22,18 +22,18 @@ public class BlueToothConnectionFailedPage extends ParentClass implements Page
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_error_code_text") 
 	public MobileElement bluetoothConnectionErrorCode;
 	
-	@AndroidFindBy (id = "com.arris.sbcBeta:id/btn_generic_error_retry") 
-	public MobileElement bluetoothConnectionFailedTryAgainButton;
+	@AndroidFindBy (id = "com.arris.sbcBeta:id/btn_generic_troubleshoot") 
+	public MobileElement bluetoothConnectionFailedTroubleShootButton;
 	
-	public BlueToothConnectionFailedPage()
+	public BlueToothConnectionFailedTroubleShootPage()
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
 
-	public boolean clickTryAgainbutton()
+	public boolean clickTroubleShootButton()
 	{
-		if(bluetoothConnectionFailedTryAgainButton.isDisplayed())	{
-			click(bluetoothConnectionFailedTryAgainButton);
+		if(bluetoothConnectionFailedTroubleShootButton.isDisplayed())	{
+			click(bluetoothConnectionFailedTroubleShootButton);
 			utils.log().info("Clicked on Try Again Button");
 			return true;
 		}else {
@@ -43,11 +43,11 @@ public class BlueToothConnectionFailedPage extends ParentClass implements Page
 	
 	@Override
 	public boolean isAt() {
-		 if(bluetoothConnectionFailed.isDisplayed()){
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED Page is displayed");
+		 if(bluetoothConnectionFailedTroubleShootTitle.isDisplayed()){
+	        	utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is displayed");
 	        	return true;
 	      }else{
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED Page is not displayed");
+	        	utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is not displayed");
 	        	return false;}
 	}
 	

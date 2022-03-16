@@ -22,7 +22,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class BlueToothPage extends ParentClass implements Page
+public class BlueToothTurnOnDialog extends ParentClass implements Page
 {
 	TestUtils utils = new TestUtils();
 	
@@ -48,11 +48,45 @@ public class BlueToothPage extends ParentClass implements Page
 	})
 	public MobileElement denyButton;
 	
-	public BlueToothPage()
+	@AndroidFindBy(id = "com.arris.sbc:id/dialog_title") 
+	public MobileElement blueToothDisabledTitle;
+	
+	@AndroidFindBy (id = "com.arris.sbc:id/dialog_description") 
+	public MobileElement message;
+	
+	@AndroidFindBy (id = "com.arris.sbc:id/btn_dialog_ble_ok") 
+	public MobileElement turnOnBT;
+	
+	@AndroidFindBy (id = "com.arris.sbc:id/btn_dialog_ble_cancel") 
+	public MobileElement cancel;
+	
+	public BlueToothTurnOnDialog()
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
 
+	public boolean clickTryAgainButton()
+	{
+		if(turnOnBT.isDisplayed())	{
+			click(turnOnBT);
+			utils.log().info("Clicked on Turn On BlueTooth Button");
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean clickCancelButton()
+	{
+		if(cancel.isDisplayed())	{
+			click(cancel);
+			utils.log().info("Clicked on Cancel Button");
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	public void enableBlueTooth()
 	{
 		try 
@@ -87,25 +121,13 @@ public class BlueToothPage extends ParentClass implements Page
 		}
 	}
 	
-	public void blueToothPairing() {
-		try {
-		ProcessBuilder pb3 = new ProcessBuilder("/opt/homebrew/bin/adb", "-s", "RZ8M3002DGL", "shell", "am", "start", "-a", "android.settings.BLUETOOTH_SETTINGS");
-		Process pc1 = pb3.start();
-		ProcessBuilder pb4 = new ProcessBuilder("/opt/homebrew/bin/adb", "-s", "RZ8M3002DGL", "shell", "input", "keyevent", "19");
-		Process pc2 = pb4.start();
-		System.out.println("KeyEvent 19 done");
-		ProcessBuilder pb5 = new ProcessBuilder("/opt/homebrew/bin/adb", "-s", "RZ8M3002DGL", "shell", "input", "keyevent", "23");
-		Process pc3 = pb5.start();
-		}catch(Exception e) {e.printStackTrace();}
-	}
-	
 	@Override
 	public boolean isAt() {
-		 if(parentPanel.isDisplayed()){
-	        	utils.log().info("Parent panel to allow or deny bluetooth accessibility is displayed");
+		 if(blueToothDisabledTitle.isDisplayed()){
+	        	utils.log().info("On YOUR BLUETOOTH IS DISABLED Page");
 	        	return true;
 	      }else{
-	        	utils.log().info("Parent panel to allow or deny bluetooth accessibility is not displayed");
+	        	utils.log().info("Not on YOUR BLUETOOTH IS DISABLED Page");
 	        	return false;}
 	}
 	

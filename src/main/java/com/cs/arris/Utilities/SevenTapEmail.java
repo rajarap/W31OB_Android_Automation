@@ -50,7 +50,7 @@ public class SevenTapEmail extends ParentClass implements Page {
 	}
 	
 	public void enterEmailAddress() {
-		utils.log().info("Entering email ids");
+		super.setConfigProperties();
 		if(super.getDriver().findElementById("com.google.android.gm:id/to").isDisplayed()) {
 			clear(super.getDriver().findElementById("com.google.android.gm:id/to"));
 			sendKeys(super.getDriver().findElementById("com.google.android.gm:id/to"), super.getProps().getProperty("emailid"));

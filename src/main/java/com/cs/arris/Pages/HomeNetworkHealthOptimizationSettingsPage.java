@@ -243,10 +243,10 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 				if(networkOptimizationToggleButtonEnabled.isDisplayed())
 					click(networkOptimizationToggleButtonEnabled);
 
-				try {
-					if(turnOffNetworkOptimizationTitle.isDisplayed() && turnOffButton.isDisplayed())
-						click(turnOffButton);
-				}catch(Exception e) {utils.log().info("Confirmation dialog to turn off network optimization is not displayed");}
+//				try {
+//					if(turnOffNetworkOptimizationTitle.isDisplayed() && turnOffButton.isDisplayed())
+//						click(turnOffButton);
+//				}catch(Exception e) {utils.log().info("Confirmation dialog to turn off network optimization is not displayed");}
 
 				utils.log().info("Network Optimization is disabled");
 				return true;
@@ -258,8 +258,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapLow()
 		{
-			int endX = 81;
-			int endY = 1041;
+			int endX = 84;
+			int endY = 1038;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
@@ -268,8 +268,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapMedium()
 		{
-			int endX = 506;
-			int endY = 1041;
+			int endX = 521;
+			int endY = 1038;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
@@ -279,8 +279,8 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapHigh()
 		{
-			int endX = 981;
-			int endY = 1041;
+			int endX = 987;
+			int endY = 1038;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();

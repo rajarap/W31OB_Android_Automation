@@ -33,6 +33,7 @@ com/cs/arris/Utilities/SerialComPortCommunicator.class
 com/cs/arris/Pages/AFFSHelpPage.class
 com/cs/arris/Pages/ErrorCode_0003_1003_Service_Is_Currently_Not_Available.class
 com/cs/arris/Pages/NetworkAddDeviceSelectOneDeviceOfHighestPriorityDialog.class
+com/cs/arris/Pages/BlueToothTurnOnDialog.class
 com/cs/arris/Pages/InstallAdditionalSatellitePage.class
 com/cs/arris/Pages/CurrentlyBlockedDevicesPage.class
 com/cs/arris/Base/ParentClass$1.class
@@ -57,6 +58,7 @@ com/cs/arris/Pages/AddDeviceNotificationsPage.class
 com/cs/arris/Reports/ExtentReport.class
 com/cs/arris/Pages/DebugLogsDialog.class
 com/cs/arris/Pages/FAQHelpPage.class
+com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootProceedPage.class
 com/cs/arris/Pages/ErrorCode_0015_1805_Something_Went_Wrong_Page.class
 com/cs/arris/Pages/Error_0005_1200_Bluetooth_Connection_Failed_Page.class
 com/cs/arris/Pages/Network5GHzWidebandModeInfoDialog.class
@@ -164,6 +166,7 @@ com/cs/arris/Pages/ConnectMaxRouterToInternetPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.class
 com/cs/arris/Pages/NetworkTimeZoneSettingsHelpPage.class
 com/cs/arris/Pages/ConnectMaxRouterToMobileDevicePage.class
+com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseNoChangesUpdatedDialog.class
 com/cs/arris/Pages/EditDeviceNameDialog.class
 com/cs/arris/Pages/NetworkWANIPConfigurationIPv4Page.class
@@ -220,6 +223,7 @@ com/cs/arris/Pages/AddDeviceStepsForActivationPage.class
 com/cs/arris/Pages/NetworkEditReserveLANIPDialog.class
 com/cs/arris/Pages/NetworkLANDHCPIPRangeEmptyOctetAlertDialog.class
 com/cs/arris/Pages/OptimizeYourNetworkPage.class
+com/cs/arris/Pages/InternetConnectionNotAvailable.class
 com/cs/arris/Pages/AppRatingDialog.class
 com/cs/arris/Pages/NetworkDevicePrioritySettingsAddDeviceHelpPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationSettingsPage.class

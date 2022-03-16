@@ -120,9 +120,10 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 //		}
 	
 	public boolean enableDevicePrioritySettings() {
+		if(disabledDevicePrioritySettingToggleButton.isDisplayed())
 			click(disabledDevicePrioritySettingToggleButton);
-			utils.log().info("Device Priority Settings is enabled");
-			return true;
+		utils.log().info("Device Priority Settings is enabled");
+		return true;
 	}
 	
 //	public boolean disableDevicePrioritySettings() {
@@ -133,9 +134,10 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 //	}
 //	
 	public boolean disableDevicePrioritySettings() {
+		if(enabledDevicePrioritySettingToggleButton.isDisplayed())
 			click(enabledDevicePrioritySettingToggleButton);
-			utils.log().info("Device Priority Settings is disabled");
-			return false;
+		utils.log().info("Device Priority Settings is disabled");
+		return false;
 	}
 	
 
@@ -226,21 +228,25 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean selectDevicesWithHighestPriority(int i) 
+	public boolean selectDevicesWithHighestPriority() 
 	{
-//		utils.log().info("                                   ");
-//		utils.log().info("***********************************");
-//		utils.log().info(" Devices Assigned Highest Priority ");
-//		utils.log().info("***********************************");
-
+		utils.log().info("                                   ");
+		utils.log().info("***********************************");
+		utils.log().info(" Devices Assigned Highest Priority ");
+		utils.log().info("***********************************");
+		
+		int size = super.getDriver().findElementsById("com.arris.sbcBeta:id/recyclerViewDevicePriority").size();
 		try 
 		{
+			for(int k = 1; k<=size ; k++) 
+			{
+
 				utils.log().info("                   ");
 				utils.log().info("Prioritized Device ");
 				utils.log().info("-------------------");
 
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver()
-					.findElementsByXPath("//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+i+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
+					.findElementsByXPath("//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
 
 				for (MobileElement e : entity) 
 				{
@@ -254,6 +260,7 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 						click(super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']"));
 					}		
 				}
+			}
 			return true;
 		}catch(Exception e){
 			utils.log().info("No Device found to prioritize");

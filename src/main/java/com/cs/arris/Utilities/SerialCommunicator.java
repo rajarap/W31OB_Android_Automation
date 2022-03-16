@@ -7,9 +7,9 @@ import jssc.SerialPortException;
 import jssc.SerialPortList;
 
 public class SerialCommunicator {
-	public String mainAP = "usbserial-412310";
-	public String satellite1 = "usbserial-412320";
-	public String satellite2 = "usbserial-412340";
+	public String mainAP = "/dev/tty.usbserial-142320";
+	public String satellite1 = "/dev/tty.usbserial-142330";
+	public String satellite2 = "/dev/tty.usbserial-142340";
 	public SerialPort serialPort;
 	
 	public static void main(String args[])
@@ -40,7 +40,7 @@ public class SerialCommunicator {
 	}
 	
 	public void resetMAXRouter() {
-		serialPort = new SerialPort("usbserial-142330");
+		serialPort = new SerialPort(satellite1);
 		try {
 		    serialPort.openPort();
 
@@ -49,9 +49,9 @@ public class SerialCommunicator {
 		                         SerialPort.STOPBITS_1,
 		                         SerialPort.PARITY_NONE);
 
-		    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN | SerialPort.FLOWCONTROL_RTSCTS_OUT);
+		  //  serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN | SerialPort.FLOWCONTROL_RTSCTS_OUT);
 
-		    serialPort.addEventListener(new PortReader(), SerialPort.MASK_RXCHAR);
+		 //   serialPort.addEventListener(new PortReader(), SerialPort.MASK_RXCHAR);
 
 		    serialPort.writeString("dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1");
 		}
