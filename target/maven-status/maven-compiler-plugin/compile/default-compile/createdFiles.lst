@@ -127,6 +127,7 @@ com/cs/arris/Pages/AmazonWiFiSimpleSetupDialog.class
 com/cs/arris/Pages/NetworkLANIPReservationHelpPage.class
 com/cs/arris/JsonMappers/Signin_TestData.class
 com/cs/arris/Pages/NetworkWANSettingsHelpPage.class
+com/cs/arris/Pages/BlueToothConnectionFailedPage.class
 com/cs/arris/Pages/SpeedTestPage.class
 com/cs/arris/Pages/AddDeviceFAQPage.class
 com/cs/arris/Pages/NetworkLANSubnetDHCPConfigurationHelpPage.class

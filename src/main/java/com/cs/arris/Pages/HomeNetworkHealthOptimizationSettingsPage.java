@@ -258,30 +258,33 @@ public class HomeNetworkHealthOptimizationSettingsPage extends ParentClass imple
 		
 		public void tapLow()
 		{
-			int endX = 72;
-			int endY = 1059;
+			int endX = 81;
+			int endY = 1041;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
+			utils.log().info("Tapped on Low Sensitivity");
 		}
 		
 		public void tapMedium()
 		{
-			int endX = 524;
-			int endY = 1059;
+			int endX = 506;
+			int endY = 1041;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
+			utils.log().info("Tapped on Menium Sensitivity");
 		}
 	 
 		
 		public void tapHigh()
 		{
-			int endX = 992;
-			int endY = 1059;
+			int endX = 981;
+			int endY = 1041;
 			PointOption p = new PointOption();
 			p.withCoordinates(endX, endY);
 			action.tap(p).perform();
+			utils.log().info("Tapped on High Sensitivity");
 		}
 	 
 	 

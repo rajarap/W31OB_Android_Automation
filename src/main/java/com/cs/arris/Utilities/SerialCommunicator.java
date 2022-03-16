@@ -12,7 +12,14 @@ public class SerialCommunicator {
 	public String satellite2 = "usbserial-412340";
 	public SerialPort serialPort;
 	
-	public void getSerialPorts() {
+	public static void main(String args[])
+	{
+		SerialCommunicator sc = new SerialCommunicator();
+		sc.getSerialPorts();
+		sc.resetMAXRouter();
+	}
+	
+	public  void getSerialPorts() {
 		// getting serial ports list into the array
 		String[] portNames = SerialPortList.getPortNames();
 		        
@@ -33,7 +40,7 @@ public class SerialCommunicator {
 	}
 	
 	public void resetMAXRouter() {
-		serialPort = new SerialPort("usbserial-142320");
+		serialPort = new SerialPort("usbserial-142330");
 		try {
 		    serialPort.openPort();
 

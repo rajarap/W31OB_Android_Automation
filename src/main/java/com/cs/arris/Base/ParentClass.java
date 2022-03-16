@@ -474,6 +474,13 @@ public class ParentClass
 		  wait.until(ExpectedConditions.visibilityOf(e));
 		  }
 	  
+	  public void waitFor(MobileElement e){
+		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+		  .withTimeout(Duration.ofSeconds(100))
+		  .pollingEvery(Duration.ofSeconds(5))
+		  .ignoring(NoSuchElementException.class);
+		  }
+	  
 	  public void clear(MobileElement e) {
 		  waitForVisibility(e);
 		  e.clear();
