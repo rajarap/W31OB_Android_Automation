@@ -7,7 +7,6 @@ com/cs/arris/Pages/FooterIconsPage.class
 com/cs/arris/Pages/WideBandModeAlertInfoDialog.class
 com/cs/arris/Pages/MaximumVerificationReachedPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.class
-com/cs/arris/Pages/BTSwipeDownPage.class
 com/cs/arris/Pages/GenerateEmailAndPasscode.class
 com/cs/arris/Pages/AddDeviceEstablishingConnectionPage.class
 com/cs/arris/Pages/BTPairingPanelPage.class
@@ -55,12 +54,14 @@ com/cs/arris/Pages/HomeNetowrkTurnOffNetworkOptimizationDialog.class
 com/cs/arris/Pages/CongratulationsPage.class
 com/cs/arris/Pages/AboutViewLicensesPage.class
 com/cs/arris/Pages/RebootYouRouterDialog.class
+com/cs/arris/Pages/BTUnPairingPage.class
 com/cs/arris/Pages/ErrorCode_0000_1506_Warranty_Support_Page.class
 com/cs/arris/Pages/AddDeviceNotificationsPage.class
 com/cs/arris/Reports/ExtentReport.class
 com/cs/arris/Pages/DebugLogsDialog.class
 com/cs/arris/Pages/FAQHelpPage.class
 com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootProceedPage.class
+com/cs/arris/Pages/BTSwipePage.class
 com/cs/arris/Pages/ErrorCode_0015_1805_Something_Went_Wrong_Page.class
 com/cs/arris/Pages/Error_0005_1200_Bluetooth_Connection_Failed_Page.class
 com/cs/arris/Pages/Network5GHzWidebandModeInfoDialog.class
@@ -112,6 +113,7 @@ com/cs/arris/Utilities/TestToProp.class
 com/cs/arris/Pages/AddDeviceSuccessPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimeHelpPage.class
 com/cs/arris/Pages/ParentalControlUserProfileAddRulePage.class
+com/cs/arris/Utilities/KillAndRelaunchApp.class
 com/cs/arris/Pages/AddSatelliteUpToDatePage.class
 com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.class
 com/cs/arris/Pages/AddSatelliteAddNewSatellitePage3.class
@@ -132,7 +134,6 @@ com/cs/arris/Pages/AmazonWiFiSimpleSetupDialog.class
 com/cs/arris/Pages/NetworkLANIPReservationHelpPage.class
 com/cs/arris/JsonMappers/Signin_TestData.class
 com/cs/arris/Pages/NetworkWANSettingsHelpPage.class
-com/cs/arris/Pages/BTSwipeDownPage$1.class
 com/cs/arris/Pages/BlueToothConnectionFailedPage.class
 com/cs/arris/Pages/SpeedTestPage.class
 com/cs/arris/Pages/AddDeviceFAQPage.class
@@ -189,6 +190,7 @@ com/cs/arris/Pages/ErrorCode_0000_1603_Failure_To_Configure_Your_Router_Page.cla
 com/cs/arris/Pages/HomeNetowrkISPServicePerformanceAndConnectionHealthPage.class
 com/cs/arris/Pages/AddDeviceSelectDevice1Page.class
 com/cs/arris/Pages/SettingsHelpPage.class
+com/cs/arris/Pages/BTSwipePage$1.class
 com/cs/arris/Utilities/TapSevenTimes.class
 com/cs/arris/Utilities/SevenTapEmail.class
 com/cs/arris/Pages/ErrorCode_0000_1015_Invalid_OTP_Page.class
@@ -238,6 +240,7 @@ com/cs/arris/Pages/CodeVerifiedPage.class
 com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingHelpPage.class
 com/cs/arris/Pages/MainDevice5GHzTabPage.class
 com/cs/arris/Pages/ParentalControlAddRuleAddInternetBlockingScheduleDialog.class
+com/cs/arris/Pages/BTUnPairingRouterPage.class
 com/cs/arris/Pages/BlueToothPage.class
 com/cs/arris/Utilities/SwipeActions.class
 com/cs/arris/Pages/ParentalControlAddDeviceHelpPage.class

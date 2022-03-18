@@ -54,6 +54,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationSatelliteSignalPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseNoChangesUpdatedDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SerialCommunicator.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTUnPairingPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPLeaseTimeAppliedSameChangesDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileHelpPage.java
@@ -75,6 +76,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlAddRuleHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/TestToProp.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ValidationCodePage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTUnPairingRouterPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANSettingsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/GetStartedPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANIPConfigurationIPv4Page.java
@@ -114,6 +116,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANIPReservationHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/EnterValidOTPPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/GenerateEmailAndPasscode.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTSwipePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlEditUserProfileNameDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkDNSConfigurationStaticAlertDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/FAQHelpPage.java
@@ -130,7 +133,6 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileAddRuleDatePickerDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.java
-/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTSwipeDownPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceCongratulationsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortForwardingPage.java
@@ -190,6 +192,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0000_1603_Failure_To_Configure_Your_Router_Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/SwipeOnElement.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetowrkSatellitePerformanceAndConnectionHealthPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/KillAndRelaunchApp.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkEnableGuestNetworkAlertDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/InternetConnectionNotAvailable.java

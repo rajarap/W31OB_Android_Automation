@@ -20,14 +20,14 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class BTSwipeDownPage extends ParentClass {
+public class BTSwipePage extends ParentClass {
 	public TestUtils utils = new TestUtils();
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Bluetooth']") // About
 	public MobileElement bluetooth;
 	
 		
-	public BTSwipeDownPage() {
+	public BTSwipePage() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
 

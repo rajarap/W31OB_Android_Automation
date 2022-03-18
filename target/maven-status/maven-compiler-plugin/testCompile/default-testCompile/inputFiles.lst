@@ -50,6 +50,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC52_Login_And_Verify_HomePage_Workflow.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC001_Test_SignUp_And_Onboard.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC009_Login_And_Test_Hamburger_Menu_Amazon_Feature.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC0012_Test_SignUp_And_Onboard_Satellite.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC01_EC_0001_1201_Disconnect_Bluetooth_On_Mobile_Workflow.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TestBluetooth.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC61_Login_And_Verify_ParentalControl_Workflow.java

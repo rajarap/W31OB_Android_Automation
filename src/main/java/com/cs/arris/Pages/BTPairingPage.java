@@ -1,6 +1,5 @@
 package com.cs.arris.Pages;
 
-import java.util.List;
 import org.openqa.selenium.support.PageFactory;
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Utilities.TestUtils;
@@ -14,23 +13,6 @@ public class BTPairingPage extends ParentClass {
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
 	public MobileElement maxRouter;
 	
-//	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.SemExpandableListView/android.widget.FrameLayout[8]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.TextView")
-//	public MobileElement broadSatellite1;
-//	
-//	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.SemExpandableListView/android.widget.FrameLayout[9]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.TextView")
-//	public MobileElement broadSatellite2;
-	
-	//MobileElement broadCastName = (MobileElement) super.getDriver().findElementByXPath("");
-	
-//	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SURFboard mAX‎']")
-//	public MobileElement broadCastName;
-	
-//	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Available devices, Header\"]/android.widget.TextView[@text='SURFboard mAX‎']")
-//	public MobileElement broadCastName;
-	
-//	@AndroidFindBy(xpath = "//*[@resource-id='android:id/title' and @text='SURFboard mAX‎']")
-//	public MobileElement broadCastName;
-	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@text='On']") 
 	public MobileElement bluetoothOn;
 	
@@ -42,6 +24,9 @@ public class BTPairingPage extends ParentClass {
 	
 	@AndroidFindBy(id = "android:id/button1") 
 	public MobileElement doneButton;
+	
+	@AndroidFindBy(id = "android:id/button2") 
+	public MobileElement detailsButton;
 	
 	
 	
@@ -81,7 +66,7 @@ public class BTPairingPage extends ParentClass {
 	}
 	
 	public boolean clickMAXRouter() {
-		if (maxRouter.isDisplayed()) {
+		if (maxRouter.getText().equals("SURFboard mAX")) {
 			click(maxRouter); 
 			utils.log().info("Clicked on broadcaster");
 			return true;
@@ -94,6 +79,16 @@ public class BTPairingPage extends ParentClass {
 		if (doneButton.isDisplayed()) {
 			click(doneButton); 
 			utils.log().info("Clicked on Done Button");
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean clickDetailsButton() {
+		if (detailsButton.isDisplayed()) {
+			click(detailsButton); 
+			utils.log().info("Clicked on Details Button");
 			return true;
 		} else {
 			return false;

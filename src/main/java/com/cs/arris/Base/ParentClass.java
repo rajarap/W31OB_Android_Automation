@@ -729,7 +729,7 @@ public class ParentClass
 		{
 			Random r = new Random();
 			int low = 100;
-			int high = 999;
+			int high = 9999;
 			int result = r.nextInt(high-low) + low;
 			randNum = String.valueOf(result);
 			String routerName = "arrisW31-"+ randNum;
