@@ -36,12 +36,12 @@ public class SerialComPortCommunicator {
 			
 		try {
 			SerialComManager scm = new SerialComManager();
-			long handle = scm.openComPort("/dev/tty.usbserial-142310", true, true, false);
+			long handle = scm.openComPort("/dev/tty.usbserial-142330", true, true, false);
 			scm.configureComPortData(handle, DATABITS.DB_8, STOPBITS.SB_1, PARITY.P_NONE, BAUDRATE.B115200, 0);
 			scm.configureComPortControl(handle, FLOWCONTROL.NONE, 'x', 'x', false, false);
 			System.out.println(scm.getPortName(handle));
 			try {
-				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_General.DeviceReset.ResetMode string FACTORY_RESET", 95);
+				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1", 59);
 			}catch(SerialComException e) {e.getStackTrace();}
 //			try {
 //				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1 ", 65);

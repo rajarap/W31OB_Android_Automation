@@ -608,8 +608,13 @@ public class ParentClass
 		{
 			((AndroidDriver) this.getDriver()).toggleWifi();
 		}
-
-		 
+		
+		public void activateApp()
+		{
+			getDriver().activateApp("com.arris.sbcBeta");
+		}
+		
+ 
 		 public void pause()
 		 {
 			 try {

@@ -33,6 +33,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceNotificationsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfilePage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTPairingPanelPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BlueToothConnectionFailedPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestHistoryPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SetUpYourWiFiManagementPage.java
@@ -129,6 +130,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlUserProfileAddRuleDatePickerDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/HomeNetworkHealthOptimizationConnectedDevicesPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsBridgeModeInfoDialog.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTSwipeDownPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddDeviceCongratulationsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SpeedTestHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortForwardingPage.java
@@ -159,11 +161,14 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatelliteInstallAdditionalSatelliteDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/Error_0000_1401_Downloading_Firmware_File_Failed_Page.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlPauseInternetforAllProfilesDialog.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTPairingPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/CongratulationsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANDHCPIPRangeEmptyOctetAlertDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkPortRuleEditFaliedAlertDialog.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTConnectionsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/RemoveDevicePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/MaximumVerificationReachedPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/BTSettingsPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/JsonMappers/SignUp_TestData.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkTimeZoneSettingsHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkTimeZoneSettingsPage.java

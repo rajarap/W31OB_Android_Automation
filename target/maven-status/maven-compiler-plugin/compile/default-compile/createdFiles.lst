@@ -7,8 +7,10 @@ com/cs/arris/Pages/FooterIconsPage.class
 com/cs/arris/Pages/WideBandModeAlertInfoDialog.class
 com/cs/arris/Pages/MaximumVerificationReachedPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.class
+com/cs/arris/Pages/BTSwipeDownPage.class
 com/cs/arris/Pages/GenerateEmailAndPasscode.class
 com/cs/arris/Pages/AddDeviceEstablishingConnectionPage.class
+com/cs/arris/Pages/BTPairingPanelPage.class
 com/cs/arris/Pages/AccessResourcesOnDevicePage.class
 com/cs/arris/Pages/EnterInValidOTPPage.class
 com/cs/arris/Pages/NotificationPage.class
@@ -123,12 +125,14 @@ com/cs/arris/Utilities/SwipeOnElement.class
 com/cs/arris/Pages/MainDevice24GHzTabPage.class
 com/cs/arris/Pages/AddDeviceCongratulationsPage.class
 com/cs/arris/Pages/MainDeviceEthernetTabPage.class
+com/cs/arris/Pages/BTConnectionsPage.class
 com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedToInternetPage.class
 com/cs/arris/Pages/BandSteeringModeAlertInfoDialog.class
 com/cs/arris/Pages/AmazonWiFiSimpleSetupDialog.class
 com/cs/arris/Pages/NetworkLANIPReservationHelpPage.class
 com/cs/arris/JsonMappers/Signin_TestData.class
 com/cs/arris/Pages/NetworkWANSettingsHelpPage.class
+com/cs/arris/Pages/BTSwipeDownPage$1.class
 com/cs/arris/Pages/BlueToothConnectionFailedPage.class
 com/cs/arris/Pages/SpeedTestPage.class
 com/cs/arris/Pages/AddDeviceFAQPage.class
@@ -174,9 +178,11 @@ com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.class
 com/cs/arris/Pages/Error_0001_1201_Bluetooth_Pairing_Failed_Page.class
 com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedPage.class
 com/cs/arris/Pages/ParentalControlUserProfileAddDevicePage.class
+com/cs/arris/Pages/BTPairingPage.class
 com/cs/arris/Pages/Network5GHzWidebandModeAlertDialog.class
 com/cs/arris/Pages/AddDeviceAccessCameraDialog.class
 com/cs/arris/Pages/ParentalControlUserProfileAddRuleDatePickerDialog.class
+com/cs/arris/Pages/BTSettingsPage.class
 com/cs/arris/Pages/SetupHomeNetworkPage.class
 com/cs/arris/Pages/NetworkPortRuleEditFaliedAlertDialog.class
 com/cs/arris/Pages/ErrorCode_0000_1603_Failure_To_Configure_Your_Router_Page.class

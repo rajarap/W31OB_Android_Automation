@@ -40,7 +40,6 @@ public class SevenTapEmail extends ParentClass implements Page {
 	
 		
 	public void clickSendButton() {
-		utils.log().info("Clicking on Send Button");
 		if (super.getDriver().findElementByXPath("//android.widget.TextView[@content-desc=\"Send\"]").isDisplayed()) {
 			click(super.getDriver().findElementByXPath("//android.widget.TextView[@content-desc=\"Send\"]")); 
 			utils.log().info("Clicked Send Button");
@@ -50,7 +49,6 @@ public class SevenTapEmail extends ParentClass implements Page {
 	}
 	
 	public void enterEmailAddress() {
-		super.setConfigProperties();
 		if(super.getDriver().findElementById("com.google.android.gm:id/to").isDisplayed()) {
 			clear(super.getDriver().findElementById("com.google.android.gm:id/to"));
 			sendKeys(super.getDriver().findElementById("com.google.android.gm:id/to"), super.getProps().getProperty("emailid"));

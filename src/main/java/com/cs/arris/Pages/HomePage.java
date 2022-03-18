@@ -328,7 +328,7 @@ public class HomePage extends ParentClass implements Page {
 
 	public void getSSIDName() {
 		String ssidname = ssidName.getText();
-		utils.log().info("You are connected to your router " + ssidname + " home network....Happy Surfing");
+		utils.log().info("You are connected to your router " + ssidname + " network");
 	}
 
 	public void clickOkButton() {

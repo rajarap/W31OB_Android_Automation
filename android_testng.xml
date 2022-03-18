@@ -9,7 +9,6 @@
 	<parameter name="platform" value="Android" />
 	<parameter name="device" value="Android" />
 
-
 	<test name="SignUp_And_Onboard_With_Valid_Invalid_OTP_And_Feature_Test">
 		<classes>
 			<class name="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" />
@@ -52,6 +51,21 @@
 
 
 
+
+	<test name="SignUp_And_Onboard_With_Valid_Invalid_OTP_And_Feature_Test">
+		<classes>
+			<class name="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" />
+		</classes>
+	</test> 
+
+
+
+
+	<test name="Connect_To_Wifi">
+		<classes>
+			<class name="com.cs.arris.Tests.TC067_Verify_Connect_To_Wifi" />
+		</classes>
+	</test>
 
 
 
@@ -116,9 +130,9 @@
 		</classes>
 	</test>
 	
-	<test name="Main_Device_Test">
+	<test name="Connect_To_Wifi">
 		<classes>
-			<class name="com.cs.arris.Tests.TC007_Login_And_Test_Main_Device_Page" />
+			<class name="com.cs.arris.Tests.TC067_Verify_Connect_To_Wifi" />
 		</classes>
 	</test>
 	
