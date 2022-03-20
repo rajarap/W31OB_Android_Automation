@@ -717,8 +717,8 @@ public class ParentClass
 		{
 			//Integer randomNumber = (int)(Math.random()*9000)+1000;
 			Random r = new Random();
-			int low = 10;
-			int high = 100;
+			int low = 100;
+			int high = 1000;
 			int result = r.nextInt(high-low) + low;
 			randNum = String.valueOf(result);
 			profileName = "profile"+ randNum;
@@ -913,6 +913,7 @@ public class ParentClass
 			return Integer.valueOf(allDevices[0]);
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public void swipeUserProfile(Direction dir) {
 		    Dimension size;
 			size = getDriver().manage().window().getSize();
@@ -920,13 +921,16 @@ public class ParentClass
 
 		    switch (dir) {
 		        case LEFT:
-		            action.press(PointOption.point(728, 1024)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(173, 1024)).release().perform();
+		            action.press(PointOption.point(915, 1030)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(190, 1030)).release().perform();
 
 		            break;
+			default:
+				break;
 		    }
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public void swipeAssocaitedDevices(Direction dir) {
 		    Dimension size;
 			size = getDriver().manage().window().getSize();
@@ -935,35 +939,33 @@ public class ParentClass
 
 		    switch (dir) {
 		        case LEFT:
-		            action.press(PointOption.point(913, 1027)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(202, 1027)).release().perform();
+		            action.press(PointOption.point(930, 1330)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(170, 1330)).release().perform();
 
 		            break;
+			default:
+				break;
 		    }
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public void swipeAssocaitedRules(Direction dir) {
 		    Dimension size;
 			size = getDriver().manage().window().getSize();
 			TouchAction action = new TouchAction(getDriver());
 
-		    int startX = 0;
-		    int endX = 0;
-		    int startY = 0;
-		    int endY = 0;
-
 		    switch (dir) {
 		        case LEFT:
-		            startY = (int) (size.height / 2);
-		            startX = (int) (size.width * 0.08);
-		            endX = (int) (size.width * 0.70);
-		            action.press(PointOption.point(880, 1340)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
-		                    .moveTo(PointOption.point(230, 1340)).release().perform();
+		            action.press(PointOption.point(828, 1700)).waitAction( WaitOptions.waitOptions(Duration.ofMillis(1300)))
+		                    .moveTo(PointOption.point(120, 1700)).release().perform();
 
 		            break;
+			default:
+				break;
 		    }
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public void swipeMinutes(Direction dir) {
 		    Dimension size;
 			size = getDriver().manage().window().getSize();
@@ -983,9 +985,12 @@ public class ParentClass
                     .moveTo(PointOption.point(530, 895)).release().perform();
 
 		            break;
+			default:
+				break;
 		    }
 		}
 		
+		@SuppressWarnings("rawtypes")
 		public void swipeConnectedDevices(Direction dir) {
 		    Dimension size;
 			size = getDriver().manage().window().getSize();

@@ -76,6 +76,7 @@ import com.cs.arris.Pages.HomeNetowrkTurnOffNetworkOptimizationDialog;
 import com.cs.arris.Pages.HomePage;
 import com.cs.arris.Pages.HomeSpeedTestHistoryPage;
 import com.cs.arris.Pages.InstallAdditionalSatellitePage;
+import com.cs.arris.Pages.InternetConnectionNotAvailable;
 import com.cs.arris.Pages.MainDeviceAllTabPage;
 import com.cs.arris.Pages.MaximumVerificationReachedPage;
 import com.cs.arris.Pages.NameYourNetwokSSIDPage;
@@ -125,6 +126,8 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 	String ssidpass;
 	String udid;
 	String logsEmail;
+	String localWifi;
+	String localWifiPwd;
 	
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
@@ -146,6 +149,9 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			  
 			  this.ssidpass = properties.getProperty("ssidpwd");
 			  utils.log().info("SSID Password : " + this.ssidpass);
+			  
+			  this.localWifi = properties.getProperty("localWifi");
+			  this.localWifiPwd = properties.getProperty("localWifiPwd");
 			  	  
 			  this.udid = properties.getProperty("udid");
 			  utils.log().info("UDID : " + this.udid);
@@ -186,23 +192,27 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		  try {
 			  new GetStartedPage().clickGetStartedButton();
 			  new GrantPermissionsPage().clickContinueButton();
-			  try {
-				  new DeviceLocationPage().clickOnlyThisTimeLink();
-			  }catch(Exception e) {}
-			  try {
-				  new DeviceLocationPage().clickAllow();
-				  super.pause(5);
-			  }catch(Exception e) {}
-			  try {
-				  new AccessResourcesOnDevicePage().clickAllowLink();
-			  }catch(Exception e) {}
-			  try {
-				  new AccessResourcesOnDevicePage().clickAllow();
-			  }catch(Exception e) {}
+			  new DeviceLocationPage().clickAllow();
+			  super.pause(5);
+			  new AccessResourcesOnDevicePage().clickAllow();
 			  new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
+			  super.pause(5);
+			  
+			  try {
+				  do {
+					  if(new InternetConnectionNotAvailable().isAt()) {
+						  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.localWifi, this.localWifiPwd, this.udid);
+						  super.pause(10);
+						  new InternetConnectionNotAvailable().clickTryAgainbutton();
+						  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+						  new SelectYourDevicePage2().clickNextButton();
+					  }
+				  }while(new SiginPage().signUpButton.isDisplayed());
+			  }catch(Exception e){}
+			  
 			  new SiginPage().clickSignUpButton();
 			  email = new SignupPage().getEmailAddress(); 
 			  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
@@ -736,16 +746,17 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					{
 						softspeedtest3.assertTrue(new SpeedTestPage().performSpeedTest());
 					}
+					softspeedtest3.assertTrue(new SpeedTestPage().clickBackButton());
 				}
 			  
-			  @Test(priority = 31, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
-				public void Verify_Speed_Test_Help_page() {
-					SoftAssert softspeedtest4 = new SoftAssert();
-					softspeedtest4.assertTrue(new SpeedTestPage().clickHelpButton());
-					softspeedtest4.assertTrue(new SpeedTestPage().getSpeedTestHelpPageObject().clickCloseButton());
-					softspeedtest4.assertTrue(new SpeedTestPage().clickBackButton());
-					softspeedtest4.assertAll();
-				}
+//			  @Test(priority = 31, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
+//				public void Verify_Speed_Test_Help_page() {
+//					SoftAssert softspeedtest4 = new SoftAssert();
+//					softspeedtest4.assertTrue(new SpeedTestPage().clickHelpButton());
+//					softspeedtest4.assertTrue(new SpeedTestPage().getSpeedTestHelpPageObject().clickCloseButton());
+//					softspeedtest4.assertTrue(new SpeedTestPage().clickBackButton());
+//					softspeedtest4.assertAll();
+//				}
 			  
 			  @Test(priority = 32, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
 				public void Verify_Home_Speed_Test_History_Page() {
@@ -1269,17 +1280,17 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 				
 				if(new ParentalControlWithProfilesPage().isAt()) {
-					for(int i = 1; i <= 3; i++)	{
+					for(int i = 1; i <= 4; i++)	{
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().clickAddProfilesLink());
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().enterProfileName());
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().clickCreateProfileButton());
 					}				
 				}
-//				utils.log().info("Deleting a User Profile");
-//				super.swipeUserProfile(Direction.LEFT);
-//				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
-//					click(new ParentalControlWithProfilesPage().deleteButton);
-//				}
+				utils.log().info("Deleting a User Profile");
+				super.swipeUserProfile(Direction.LEFT);
+				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+					click(new ParentalControlWithProfilesPage().deleteButton);
+				}
 //				if(new ParentalControlWithProfilesPage().isAt()) 
 //					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().verifyUserProfile());
 				
@@ -1297,19 +1308,19 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol4.assertAll();
 			}
 			
-			@Test(priority = 82, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
-			public void Verify_User_Profile_Help_Page() {
-				SoftAssert softcontrol5 = new SoftAssert();
-				softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickHelpIcon());
-				super.pause(3);
-				
-				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().isAt()){
-					//softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().verifyUIOnUserProfilePage());
-					softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().clickCloseButton());
-				}
-				
-				softcontrol5.assertAll();
-			}
+//			@Test(priority = 82, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
+//			public void Verify_User_Profile_Help_Page() {
+//				SoftAssert softcontrol5 = new SoftAssert();
+//				softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickHelpIcon());
+//				super.pause(3);
+//				
+//				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().isAt()){
+//					//softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().verifyUIOnUserProfilePage());
+//					softcontrol5.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().getParentalUserProfileHelpPageObject().clickCloseButton());
+//				}
+//				
+//				softcontrol5.assertAll();
+//			}
 			
 			@Test(priority = 83, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_User_Profile_Page"})
 			public void Verify_Edit_User_Profile_Name() {
@@ -1341,8 +1352,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 						if (new ParentalControlWithProfilesPage().getUserProfilePageObject()
 								.getParentalUserProfileAddDevicePageObject().alertTitle.isDisplayed()) {
-							utils.log()
-									.info("Alert dialog box with message - "
+							utils.log().info("Alert dialog box with message - "
 											+ new ParentalControlWithProfilesPage().getUserProfilePageObject()
 													.getParentalUserProfileAddDevicePageObject().description.getText()
 											+ " - is displayed");
@@ -1384,12 +1394,17 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyAssociatedDeviceList());
 //				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteAssociatedDevice());
 				
-//				utils.log().info("Deleting an Associated Device");
-//				super.swipeUp();
-//				super.swipeAssocaitedDevices(Direction.LEFT);
-//				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon.isDisplayed()) {
-//					click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon);}
+				utils.log().info("Deleting an Associated Device");
+				super.swipeUp();
+				super.swipeAssocaitedDevices(Direction.LEFT);
+				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon.isDisplayed()) {
+					click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon);}
 //				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
+				
+				try {
+					if(new ParentalControlWithProfilesPage().getAppRatingDialogObject().isAt())
+						softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getAppRatingDialogObject().clickRemindMeLaterLink());
+				}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 				
 				softcontrol9.assertAll();
 			}
@@ -1524,7 +1539,12 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				SoftAssert softcontrol19 = new SoftAssert();
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
 //				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyRulesAssociatedWithUser());
-				
+				utils.log().info("Deleting Rules Associated with Profile");
+				super.swipeUp();
+				super.swipeUserProfile(Direction.LEFT);
+				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+					click(new ParentalControlWithProfilesPage().deleteButton);
+				}
   
 				
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
@@ -2129,7 +2149,8 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().clickCloseButton());
 //									softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
 				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
-				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickBackButton());
+				super.pause(5);
+				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());
 				softnet35.assertAll();
 			}
 			
@@ -2286,141 +2307,141 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 				
 
-			@Test(priority = 164, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
-	
-			public void Verify_General_Settings_Port_Forwarding_Edit_Rules() 
-			{
-				SoftAssert softnet46 = new SoftAssert();
-				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt()) 
-				{
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickEditPortFowardingRuleIcon());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().selectUDP());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterIPAddress());
-					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-					try {
-						if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
-							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
-							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
-							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
-							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
-							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-						else
-							utils.log().info("All Port details are valid");
-						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-					}catch(Exception e) {utils.log().info("All Port details are valid");}
-					
-					super.pause(15);
-					try {
-					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt()) 
-						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.getPortRuleEditFailedDialogObject().clickOKButton());
-						}catch(Exception e) {utils.log().info("Port Rule Edit Failed Dialog did not appear");}
-				}
-				softnet46.assertAll();
-			}
-	
-			@Test(priority = 165, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
-			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Validations() 
-			{
-				SoftAssert softnet47 = new SoftAssert();
-				new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton();
-					if (new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject()
-							.getPortForwardingAddRulePageObject().isAt()) {
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterPortForwardingRuleName());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterInternalPortStart());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterInternalPortEnd());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyInternalPortStartLessThenPortEnd());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterExternalPortStart());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterExternalPortEnd());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyExternalPortStartLessThenPortEnd());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterValidIPAddress());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.verifyEnterInValidIPAddress());
-						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-								.clickSaveButton());
-						try {
-							if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().enterPortRuleName());
-							else if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().enterInternalPortStart());
-							else if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().enterInternalPortEnd());
-							else if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().enterExternalPortStart());
-							else if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().enterExternalPortEnd());
-							else
-								utils.log().info("All Port details are valid");
-							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().clickSaveButton());
-							super.pause(25);
-						} catch (Exception e) {
-							utils.log().info("All Port details are valid");
-						}
-
-						try {
-							if (new NetworkPage().getGeneralSettingsPageObject()
-									.getNetworkGeneralSettingsPortForwardingPageObject()
-									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
-								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-										.getNetworkGeneralSettingsPortForwardingPageObject()
-										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
-										.clickOKButton());
-							super.pause(25);
-						} catch (Exception e) {
-							utils.log().info("Port Rule Edit Failed Dialog did not appear");
-						}
-					}
-				softnet47.assertAll();
-			}
+//			@Test(priority = 164, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+//	
+//			public void Verify_General_Settings_Port_Forwarding_Edit_Rules() 
+//			{
+//				SoftAssert softnet46 = new SoftAssert();
+//				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt()) 
+//				{
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickEditPortFowardingRuleIcon());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().selectUDP());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterIPAddress());
+//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
+//					try {
+//						if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
+//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
+//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
+//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
+//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
+//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
+//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
+//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
+//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
+//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
+//						else
+//							utils.log().info("All Port details are valid");
+//						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
+//					}catch(Exception e) {utils.log().info("All Port details are valid");}
+//					
+//					super.pause(15);
+//					try {
+//					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt()) 
+//						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.getPortRuleEditFailedDialogObject().clickOKButton());
+//						}catch(Exception e) {utils.log().info("Port Rule Edit Failed Dialog did not appear");}
+//				}
+//				softnet46.assertAll();
+//			}
+//	
+//			@Test(priority = 165, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+//			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Validations() 
+//			{
+//				SoftAssert softnet47 = new SoftAssert();
+//				new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton();
+//					if (new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject()
+//							.getPortForwardingAddRulePageObject().isAt()) {
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterPortForwardingRuleName());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterInternalPortStart());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterInternalPortEnd());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyInternalPortStartLessThenPortEnd());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterExternalPortStart());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterExternalPortEnd());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyExternalPortStartLessThenPortEnd());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterValidIPAddress());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.verifyEnterInValidIPAddress());
+//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+//								.clickSaveButton());
+//						try {
+//							if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().enterPortRuleName());
+//							else if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().enterInternalPortStart());
+//							else if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().enterInternalPortEnd());
+//							else if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().enterExternalPortStart());
+//							else if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().enterExternalPortEnd());
+//							else
+//								utils.log().info("All Port details are valid");
+//							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().clickSaveButton());
+//							super.pause(25);
+//						} catch (Exception e) {
+//							utils.log().info("All Port details are valid");
+//						}
+//
+//						try {
+//							if (new NetworkPage().getGeneralSettingsPageObject()
+//									.getNetworkGeneralSettingsPortForwardingPageObject()
+//									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
+//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+//										.getNetworkGeneralSettingsPortForwardingPageObject()
+//										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
+//										.clickOKButton());
+//							super.pause(25);
+//						} catch (Exception e) {
+//							utils.log().info("Port Rule Edit Failed Dialog did not appear");
+//						}
+//					}
+//				softnet47.assertAll();
+//			}
 			
 			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
 			public void Verify_General_Settings_Port_Forwarding_Page() 
@@ -2762,7 +2783,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
 						new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().tapMedium();
 					
-					new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton();
+			//		new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton();
 					
 					softnetwork14.assertAll();
 			}
@@ -2797,7 +2818,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_Disabled_Network_Optimization_Settings() {
 				SoftAssert softnetwork16 = new SoftAssert();
 				
-				new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon();
+		//		new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon();
 					
 				if(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().isAt()) 
 					softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().disableHealthOptimization());
@@ -2813,241 +2834,457 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnetwork16.assertAll();
 			}
 			
-		   @Test(priority = 102, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-			public void Verify_Install_Left_Satellite() {
-			   utils.log().info("                            ");
-				utils.log().info("****************************");
-				utils.log().info("Test: Install Left Satellite");
-				utils.log().info("****************************");
-				
-				SoftAssert softsatellite1 = new SoftAssert();
-				
-				utils.log().info("Manually switch on and reest your first Satellite");
-				super.pause(60);
-		    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-		    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-		    	new BTSwipePage().clickBluetooth();
-		    	new BTPairingPage().switchOffBluetooth();
-		    	super.pause(5);
-		    	new BTPairingPage().switchOnBluetooth();
-		    	super.pause(10);
-		    	new BTPairingPage().clickMAXRouter();;
-				super.pause(5);
-				if(new BTPairingPanelPage().isAt()) {
-					new BTPairingPanelPage().clickOKButton();
-				}
-			
-	//			new HomePage().getFooterIconsPageObject().clickHomeButton();
-				try {
-					if (new HomePage().isAt())
-						softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
-
-					softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-					super.pause(5);
-					softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-					super.pause(60);
-				//	super.waitFor(null);
-					
-					try {
-						if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-							new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-							super.pause(10);
-							new AddSatelliteAddNewSatellitePage2().clickNextButton();}				
-					}catch(Exception e) {}
-					
-					try {
-						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-							new BlueToothPage().enableBlueTooth();
-							pause(5);
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(30);
-						}
-					}catch(Exception e) {}
-					
-					try {
-						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(23);
-						}
-					}catch(Exception e) {}
-					
-					softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-					softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-					softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-					super.pause(35);
-					try {
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-//							new BlueToothPage().enableBlueTooth();
-//							pause(5);
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(30);
-						}
-					} catch (Exception e) {
-					}
-
-					try {
-						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(23);
-						}
-					} catch (Exception e) {
-					}
-					
-					
-					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-					super.pause(75);
-					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-					super.pause(20);
-					softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-					super.pause(10);
-					try {
-						if (new AddSatelliteRegistrationFailedPage().isAt()) {
-							softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-						}
-					} catch (Exception e) {	}
-					super.pause(60);
-					softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-					super.pause(15);
-					softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
-				
-				softsatellite1.assertAll();
-			}catch(Exception e) {
-				  new TapSevenTimes().tapSeven();
-				  super.pause(3);
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(3);
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(3);
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(3);
-				  new SevenTapEmail().clickSendButton();
-				  new KillAndRelaunchApp().killApp();
-				  super.pause(3);
-				  new KillAndRelaunchApp().relaunchApp();
-				  super.pause(15);
-			}
-		}
-
-
-			
-			@Test(priority = 120, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-			public void Verify_Install_Right_Satellite() {
-				utils.log().info("                             ");
-				utils.log().info("*****************************");
-				utils.log().info("Test: Install Right Satellite ");
-				utils.log().info("*****************************");
-				
-				SoftAssert softsatellite2 = new SoftAssert();
-				utils.log().info("Manually switch on and reset your second Satellite");
-				super.pause(60);
-		    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-		    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-		    	new BTSwipePage().clickBluetooth();
-		    	new BTPairingPage().switchOffBluetooth();
-		    	super.pause(5);
-		    	new BTPairingPage().switchOnBluetooth();
-		    	super.pause(10);
-		    	new BTPairingPage().clickMAXRouter();;
-				super.pause(5);
-				if(new BTPairingPanelPage().isAt()) {
-					new BTPairingPanelPage().clickOKButton();
-				}
-
-				
-//				new HomePage().getFooterIconsPageObject().clickHomeButton();
-				try {
-
-					if (new HomePage().isAt())
-						softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
-
-					softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-					super.pause(5);
-					softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-					super.pause(30);
-					
+//		   @Test(priority = 102, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+//			public void Verify_Install_Left_Satellite() {
+//			   utils.log().info("                            ");
+//				utils.log().info("****************************");
+//				utils.log().info("Test: Install Left Satellite");
+//				utils.log().info("****************************");
+//				
+//				SoftAssert softsatellite1 = new SoftAssert();
+//				
+//				utils.log().info("Manually switch on and reest your first Satellite");
+//				super.pause(60);
+//		    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
+//		    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
+//		    	new BTSwipePage().clickBluetooth();
+//		    	new BTPairingPage().switchOffBluetooth();
+//		    	super.pause(5);
+//		    	new BTPairingPage().switchOnBluetooth();
+//		    	super.pause(10);
+//		    	new BTPairingPage().clickMAXRouter();;
+//				super.pause(5);
+//				if(new BTPairingPanelPage().isAt()) {
+//					new BTPairingPanelPage().clickOKButton();
+//				}
+//			
+//	//			new HomePage().getFooterIconsPageObject().clickHomeButton();
+//				try {
+//					if (new HomePage().isAt())
+//						softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
+//
+//					softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+//					super.pause(5);
+//	
 //					try {
-//						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//						super.pause(100);
-//						
-//						try {
-//							if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-//								new BlueToothPage().enableBlueTooth();
-//								pause(5);
-//								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//								super.pause(30);
-//							}
-//						}catch(Exception e) {}
-//						
-//						try {
-//							if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-//								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-//								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-//								super.pause(23);
-//							}
-//						}catch(Exception e) {}
+//						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+//						super.pause(60);
+//						if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+//							new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+//							super.pause(10);
+//							new AddSatelliteAddNewSatellitePage2().clickNextButton();}				
 //					}catch(Exception e) {}
-					
-					softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-					softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-					softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-					super.pause(60);
-					try {
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+//					
+//					try {
+//						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 //							new BlueToothPage().enableBlueTooth();
 //							pause(5);
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(30);
-						}
-					} catch (Exception e) {
+//							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+//							super.pause(30);
+//						}
+//					}catch(Exception e) {}
+//					
+//					try {
+//						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+//							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+//							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+//							super.pause(23);
+//						}
+//					}catch(Exception e) {}
+//
+//					try {
+//						softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+//						softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+//						softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+//						super.pause(35);
+//						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+////							new BlueToothPage().enableBlueTooth();
+////							pause(5);
+//							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+//							super.pause(30);
+//						}
+//						
+//						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+//							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+//							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+//							super.pause(23);
+//						}
+//					} catch (Exception e) {
+//					}
+//
+////					try {
+////						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+////							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+////							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+////							super.pause(23);
+////						}
+////					} catch (Exception e) {
+////					}
+//					
+//					
+//					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+//					super.pause(75);
+//					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+//					super.pause(20);
+//					softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+//					super.pause(10);
+//					try {
+//						if (new AddSatelliteRegistrationFailedPage().isAt()) {
+//							softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+//						}
+//					} catch (Exception e) {	}
+//					super.pause(60);
+//					softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+//					super.pause(15);
+//					softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+//				
+//				softsatellite1.assertAll();
+//			}catch(Exception e) {
+//				  new TapSevenTimes().tapSeven();
+//				  super.pause(3);
+//				  new SevenTapLogs().clickYesButton();
+//				  super.pause(3);
+//				  new SevenTapGmail().clickGmailIcon();
+//				  super.pause(3);
+//				  new SevenTapEmail().enterEmailAddress();
+//				  super.pause(3);
+//				  new SevenTapEmail().clickSendButton();
+//				  new KillAndRelaunchApp().killApp();
+//				  super.pause(3);
+//				  new KillAndRelaunchApp().relaunchApp();
+//				  super.pause(15);
+//			}
+//		}
+//
+//
+//			
+//			@Test(priority = 120, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+//			public void Verify_Install_Right_Satellite() {
+//				utils.log().info("                             ");
+//				utils.log().info("*****************************");
+//				utils.log().info("Test: Install Right Satellite ");
+//				utils.log().info("*****************************");
+//				
+//				SoftAssert softsatellite2 = new SoftAssert();
+//				utils.log().info("Manually switch on and reset your second Satellite");
+//				super.pause(60);
+//		    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
+//		    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
+//		    	new BTSwipePage().clickBluetooth();
+//		    	new BTPairingPage().switchOffBluetooth();
+//		    	super.pause(5);
+//		    	new BTPairingPage().switchOnBluetooth();
+//		    	super.pause(10);
+//		    	new BTPairingPage().clickMAXRouter();;
+//				super.pause(5);
+//				if(new BTPairingPanelPage().isAt()) {
+//					new BTPairingPanelPage().clickOKButton();
+//				}
+//
+//				
+////				new HomePage().getFooterIconsPageObject().clickHomeButton();
+//				try {
+//
+//					if (new HomePage().isAt())
+//						softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
+//
+//					softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+//					super.pause(5);
+//					softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+//					super.pause(30);
+//					
+////					try {
+////						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+////						super.pause(100);
+////						
+////						try {
+////							if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+////								new BlueToothPage().enableBlueTooth();
+////								pause(5);
+////								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+////								super.pause(30);
+////							}
+////						}catch(Exception e) {}
+////						
+////						try {
+////							if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+////								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+////								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+////								super.pause(23);
+////							}
+////						}catch(Exception e) {}
+////					}catch(Exception e) {}
+//					
+//
+//					try {
+//						softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+//						softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+//						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+//						super.pause(60);
+//						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+////							new BlueToothPage().enableBlueTooth();
+////							pause(5);
+//							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+//							super.pause(30);
+//						}
+//						
+//						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+//							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+//							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+//							super.pause(23);
+//						}
+//					} catch (Exception e) {}
+//
+//
+////					try {
+////						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+////							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+////							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+////							super.pause(23);
+////						}
+////					} catch (Exception e) {
+////					}
+//
+//					
+//					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+//					super.pause(75);
+//					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+//					super.pause(20);
+//					softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+//					super.pause(10);
+//					try {
+//						if (new AddSatelliteRegistrationFailedPage().isAt()) {
+//							softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+//						}
+//					} catch (Exception e) {	}
+//					super.pause(60);
+//					softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+//					super.pause(15);
+//					softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+//				
+//				softsatellite2.assertAll();
+//			}catch(Exception e) {
+//				  new TapSevenTimes().tapSeven();
+//				  super.pause(3);
+//				  new SevenTapLogs().clickYesButton();
+//				  super.pause(3);
+//				  new SevenTapGmail().clickGmailIcon();
+//				  super.pause(3);
+//				  new SevenTapEmail().enterEmailAddress();
+//				  super.pause(3);
+//				  new SevenTapEmail().clickSendButton();
+//				  new KillAndRelaunchApp().killApp();
+//				  super.pause(3);
+//				  new KillAndRelaunchApp().relaunchApp();
+//				  super.pause(15);
+//			}
+//		}
+			
+			   @Test(priority = 102, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+				public void Verify_Install_Left_Satellite() {
+				   utils.log().info("                            ");
+					utils.log().info("****************************");
+					utils.log().info("Test: Install Left Satellite");
+					utils.log().info("****************************");
+					
+					SoftAssert softsatellite1 = new SoftAssert();
+					
+					utils.log().info("Manually switch on and reest your first Satellite");
+					super.pause(60);
+			    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
+			    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
+			    	new BTSwipePage().clickBluetooth();
+			    	new BTPairingPage().switchOffBluetooth();
+			    	super.pause(5);
+			    	new BTPairingPage().switchOnBluetooth();
+			    	super.pause(10);
+			    	new BTPairingPage().clickMAXRouter();;
+					super.pause(5);
+					if(new BTPairingPanelPage().isAt()) {
+						new BTPairingPanelPage().clickOKButton();
 					}
-
+				
+//					new HomePage().getFooterIconsPageObject().clickHomeButton();
 					try {
-						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(23);
-						}
-					} catch (Exception e) {
+						if (new HomePage().isAt())
+							softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
+
+						softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+						super.pause(5);
+
+						try {
+							softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+							super.pause(60);
+							if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+								new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+								super.pause(10);
+								new AddSatelliteAddNewSatellitePage2().clickNextButton();}		
+							
+							try {
+								if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+									new BlueToothConnectionFailedPage().clickTryAgainbutton();
+									super.pause(100);
+								}
+							}catch(Exception e) {}
+							
+							try {
+								if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+									super.pause(23);
+								}
+							}catch(Exception e) {}
+							
+						}catch(Exception e) {}
+						
+
+
+						try {
+							softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+							softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+							softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+							super.pause(100);
+							
+							if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);
+							}
+							
+							if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);
+							}
+							
+							if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(25);
+							}
+						} catch (Exception e) {	}
+				
+						softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+						super.pause(75);
+						softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+						super.pause(20);
+						softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+						super.pause(10);
+						try {
+							if (new AddSatelliteRegistrationFailedPage().isAt()) {
+								softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+							}
+						} catch (Exception e) {	}
+						super.pause(45);
+						softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+						super.pause(15);
+						softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+					
+					softsatellite1.assertAll();
+				}catch(Exception e) {
+//					  new TapSevenTimes().tapSeven();
+//					  super.pause(3);
+//					  new SevenTapLogs().clickYesButton();
+//					  super.pause(3);
+//					  new SevenTapGmail().clickGmailIcon();
+//					  super.pause(3);
+//					  new SevenTapEmail().enterEmailAddress();
+//					  super.pause(3);
+//					  new SevenTapEmail().clickSendButton();
+					  new KillAndRelaunchApp().killApp();
+					  super.pause(3);
+					  new KillAndRelaunchApp().relaunchApp();
+					  super.pause(15);
+				}
+			}
+
+
+				
+				@Test(priority = 120, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+				public void Verify_Install_Right_Satellite() {
+					utils.log().info("                             ");
+					utils.log().info("*****************************");
+					utils.log().info("Test: Install Right Satellite ");
+					utils.log().info("*****************************");
+					
+					SoftAssert softsatellite2 = new SoftAssert();
+					utils.log().info("Manually switch on and reset your second Satellite");
+					super.pause(60);
+			    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
+			    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
+			    	new BTSwipePage().clickBluetooth();
+			    	new BTPairingPage().switchOffBluetooth();
+			    	super.pause(5);
+			    	new BTPairingPage().switchOnBluetooth();
+			    	super.pause(10);
+			    	new BTPairingPage().clickMAXRouter();;
+					super.pause(5);
+					if(new BTPairingPanelPage().isAt()) {
+						new BTPairingPanelPage().clickOKButton();
 					}
 
 					
-					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-					super.pause(75);
-					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-					super.pause(20);
-					softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-					super.pause(10);
+//					new HomePage().getFooterIconsPageObject().clickHomeButton();
 					try {
-						if (new AddSatelliteRegistrationFailedPage().isAt()) {
-							softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-						}
-					} catch (Exception e) {	}
-					super.pause(60);
-					softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-					super.pause(15);
-					softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
-				
-				softsatellite2.assertAll();
-			}catch(Exception e) {
-				  new TapSevenTimes().tapSeven();
-				  super.pause(3);
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(3);
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(3);
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(3);
-				  new SevenTapEmail().clickSendButton();
-				  new KillAndRelaunchApp().killApp();
-				  super.pause(3);
-				  new KillAndRelaunchApp().relaunchApp();
-				  super.pause(15);
+
+						if (new HomePage().isAt())
+							softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
+
+						softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+						super.pause(5);
+						softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+						super.pause(30);		
+
+						try {
+							softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
+							softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+							softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+							super.pause(60);
+							if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);
+							}
+							
+							if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(50);
+							}
+						} catch (Exception e) {}
+						
+						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+						super.pause(75);
+						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+						super.pause(20);
+						softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+						super.pause(10);
+						try {
+							if (new AddSatelliteRegistrationFailedPage().isAt()) {
+								softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+							}
+						} catch (Exception e) {	}
+						super.pause(60);
+						softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+						super.pause(15);
+						softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+					
+					softsatellite2.assertAll();
+				}catch(Exception e) {
+//					  new TapSevenTimes().tapSeven();
+//					  super.pause(3);
+//					  new SevenTapLogs().clickYesButton();
+//					  super.pause(3);
+//					  new SevenTapGmail().clickGmailIcon();
+//					  super.pause(3);
+//					  new SevenTapEmail().enterEmailAddress();
+//					  super.pause(3);
+//					  new SevenTapEmail().clickSendButton();
+					  new KillAndRelaunchApp().killApp();
+					  super.pause(3);
+					  new KillAndRelaunchApp().relaunchApp();
+					  super.pause(15);
+				}
 			}
-		}
 			
-		@Test(priority = 168)
+		@Test(priority = 169)
 		public void UnPair_W31_mAX_Router() 
 		{
 			new BTSwipePage().swipeDownOnce(Direction.DOWN);

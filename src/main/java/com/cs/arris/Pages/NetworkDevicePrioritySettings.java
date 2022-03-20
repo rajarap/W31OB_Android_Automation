@@ -238,13 +238,12 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 		int size = super.getDriver().findElementsById("com.arris.sbcBeta:id/recyclerViewDevicePriority").size();
 		try 
 		{
-			for(int k = 1; k<=size ; k++) 
+			utils.log().info("                   ");
+			utils.log().info("Prioritized Device ");
+			utils.log().info("-------------------");
+			
+			for(int k = 1; k<=2 ; k++) 
 			{
-
-				utils.log().info("                   ");
-				utils.log().info("Prioritized Device ");
-				utils.log().info("-------------------");
-
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver()
 					.findElementsByXPath("//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
 

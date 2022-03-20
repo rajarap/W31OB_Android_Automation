@@ -13,6 +13,15 @@ public class BTPairingPage extends ParentClass {
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
 	public MobileElement maxRouter;
 	
+//	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SURFboard mAX']") 
+//	public MobileElement maxRouter1;
+//	
+//	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SURFboard mAX']") 
+//	public MobileElement maxRouter2;
+//	
+//	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SURFboard mAX']") 
+//	public MobileElement maxRouter3;
+	
 	@AndroidFindBy(xpath = "//android.widget.Switch[@text='On']") 
 	public MobileElement bluetoothOn;
 	
@@ -74,6 +83,16 @@ public class BTPairingPage extends ParentClass {
 			return false;
 		}
 	}
+	
+//	public void clickMAXRouter2() {
+//			super.getDriver().findElementsByXPath("//android.widget.TextView[@text='SURFboard mAX']").get(2).click();
+//			utils.log().info("Clicked on broadcaster2");
+//	}
+//	
+//	public void clickMAXRouter3() {
+//		super.getDriver().findElementsByXPath("//android.widget.TextView[@text='SURFboard mAX']").get(3).click();
+//		utils.log().info("Clicked on broadcaster3");
+//	}
 	
 	public boolean clickDoneButton() {
 		if (doneButton.isDisplayed()) {

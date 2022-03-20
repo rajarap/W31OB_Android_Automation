@@ -128,6 +128,7 @@ public class TC005_Test_Disconnect_Wifi_On_Mobile_And_Onboard extends ParentClas
 				  new SelectYourDevicePage().clickNextButton();
 				  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 				  new SelectYourDevicePage2().clickNextButton();
+				  
 				  new SiginPage().clickSignUpButton();
 				  email = new SignupPage().getEmailAddress();  //userXXXX
 				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
