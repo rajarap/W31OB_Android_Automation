@@ -1283,17 +1283,17 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}catch(Exception e) {utils.log().info("App Rating Dialog did not appear");}
 				
 				if(new ParentalControlWithProfilesPage().isAt()) {
-					for(int i = 1; i <= 4; i++)	{
+					for(int i = 1; i <= 3; i++)	{
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().clickAddProfilesLink());
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().enterProfileName());
 						softcontrol3.assertTrue(new ParentalControlWithProfilesPage().getAddProfileDialogObject().clickCreateProfileButton());
 					}				
 				}
-				utils.log().info("Deleting a User Profile");
-				super.swipeUserProfile(Direction.LEFT);
-				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
-					click(new ParentalControlWithProfilesPage().deleteButton);
-				}
+//				utils.log().info("Deleting a User Profile");
+//				super.swipeUserProfile(Direction.LEFT);
+//				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+//					click(new ParentalControlWithProfilesPage().deleteButton);
+//				}
 //				if(new ParentalControlWithProfilesPage().isAt()) 
 //					softcontrol3.assertTrue(new ParentalControlWithProfilesPage().verifyUserProfile());
 				
@@ -1397,11 +1397,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyAssociatedDeviceList());
 //				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteAssociatedDevice());
 				
-				utils.log().info("Deleting an Associated Device");
-				super.swipeUp();
-				super.swipeAssocaitedDevices(Direction.LEFT);
-				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon.isDisplayed()) {
-					click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon);}
+//				utils.log().info("Deleting an Associated Device");
+//				super.swipeUp();
+//				super.swipeAssocaitedDevices(Direction.LEFT);
+//				if(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon.isDisplayed()) {
+//					click(new ParentalControlWithProfilesPage().getUserProfilePageObject().deleteDeviceIcon);}
 //				softcontrol9.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickDeviceListExpandButton());
 				
 				try {
@@ -1542,13 +1542,13 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				SoftAssert softcontrol19 = new SoftAssert();
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
 //				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().verifyRulesAssociatedWithUser());
-				utils.log().info("Deleting Rules Associated with Profile");
-				super.swipeUp();
-				super.swipeUserProfile(Direction.LEFT);
-				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
-					click(new ParentalControlWithProfilesPage().deleteButton);
-				}
-  
+//				utils.log().info("Deleting Rules Associated with Profile");
+//				super.swipeUp();
+//				super.swipeUserProfile(Direction.LEFT);
+//				if(new ParentalControlWithProfilesPage().deleteButton.isDisplayed()) {
+//					click(new ParentalControlWithProfilesPage().deleteButton);
+//				}
+//  
 				
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickRuleListExpandButton());
 				softcontrol19.assertTrue(new ParentalControlWithProfilesPage().getUserProfilePageObject().clickBackButton());
@@ -2133,9 +2133,9 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
 //					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
 					
-					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
-					super.pause(5);
+//					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
+//					super.pause(5);
 					
 				}
 				softnet34.assertAll();
