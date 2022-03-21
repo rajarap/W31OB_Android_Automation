@@ -15,13 +15,6 @@
 		</classes>
 	</test> 
 
-
-	<test name="SignUp_And_Onboard_Satellite_Test">
-		<classes>
-			<class name="com.cs.arris.Tests.TC0012_Test_SignUp_And_Onboard_Satellite" />
-		</classes>
-	</test> 
-
 </suite>
 
 

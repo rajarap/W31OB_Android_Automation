@@ -182,6 +182,7 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean verifyUIOnNetworkPrioritizedDevices() 
 	{
 		utils.log().info("                                                                                ");
