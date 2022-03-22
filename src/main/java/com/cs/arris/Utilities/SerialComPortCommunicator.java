@@ -41,7 +41,7 @@ public class SerialComPortCommunicator {
 			scm.configureComPortControl(handle, FLOWCONTROL.NONE, 'x', 'x', false, false);
 			System.out.println(scm.getPortName(handle));
 			try {
-				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1", 59);
+				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1", 100);
 			}catch(SerialComException e) {e.getStackTrace();}
 //			try {
 //				scm.writeString(handle, "dmcli eRT setv Device.X_ARRIS_COM_HNE.FactoryReset bool 1 ", 65);

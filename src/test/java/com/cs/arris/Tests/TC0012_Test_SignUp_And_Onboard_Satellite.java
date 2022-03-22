@@ -351,12 +351,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 				super.pause(20);
 				softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-				super.pause(120);
+				super.pause(150);
 				
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
 						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-						super.pause(120);
+						super.pause(150);
 					}
 				} catch (Exception e) {	}
 
