@@ -2840,7 +2840,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 			
 			   @Test(priority = 102, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//			   @Test(priority = 102)
 				public void Verify_Install_Left_Satellite() {
 				   utils.log().info("                            ");
 					utils.log().info("****************************");
@@ -2892,7 +2891,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									super.pause(23);
+									super.pause(30);
 								}
 							}catch(Exception e) {}
 							
@@ -2924,7 +2923,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									super.pause(25);
+									super.pause(30);
 								}
 							}catch(Exception e) {}
 							
@@ -2935,7 +2934,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 						super.pause(20);
 						softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-						super.pause(10);
+						super.pause(75);
 						
 						try {
 							if (new AddSatelliteRegistrationFailedPage().isAt()) {
@@ -2945,7 +2944,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						} catch (Exception e) {	}
 
 						softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-						super.pause(15);
+						super.pause(20);
 						softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
 					
 					softsatellite1.assertAll();
@@ -3027,7 +3026,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									super.pause(25);
+									super.pause(30);
 								}
 							}catch(Exception e) {}
 							
@@ -3038,7 +3037,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 						super.pause(20);
 						softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-						super.pause(10);
+						super.pause(75);
 						
 						try {
 							if (new AddSatelliteRegistrationFailedPage().isAt()) {
@@ -3049,7 +3048,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						
 
 						softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-						super.pause(15);
+						super.pause(20);
 						softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
 					
 					softsatellite2.assertAll();
@@ -3078,7 +3077,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 	    	new BTSwipePage().clickBluetooth();
 	    	new BTPairingPage().clickDetailsButton();
 	    	
-			for(int i = 1; i <= 2; i++) {
+			for(int i = 1; i <= 3; i++) {
 				super.pause(5);
 				new BTUnPairingPage().clickUnPairIcon();
 				super.pause(3);
