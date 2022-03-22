@@ -2934,7 +2934,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 						super.pause(20);
 						softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-						super.pause(75);
+						super.pause(100);
 						
 						try {
 							if (new AddSatelliteRegistrationFailedPage().isAt()) {
@@ -3037,7 +3037,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 						super.pause(20);
 						softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-						super.pause(75);
+						super.pause(100);
 						
 						try {
 							if (new AddSatelliteRegistrationFailedPage().isAt()) {
