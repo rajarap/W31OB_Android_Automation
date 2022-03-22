@@ -197,6 +197,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new UnPackYourBoxPage().clickNextButton();
 			  new PlugInMaxRouterPage().clickNextButton();
 			  super.pause(40);
+				try {
+					if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						new BlueToothConnectionFailedPage().clickTryAgainbutton();
+						super.pause(40);
+					}
+				}catch(Exception e) {}
 			  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
 			  super.pause(20);
 			  new ConnectMaxRouterToInternetPage().clickNextButton();
@@ -334,7 +340,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(30);
+							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
@@ -437,7 +443,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(30);
+							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
