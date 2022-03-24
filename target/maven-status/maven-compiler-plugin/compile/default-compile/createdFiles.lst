@@ -41,6 +41,7 @@ com/cs/arris/Base/ParentClass$1.class
 com/cs/arris/Pages/ParentalControlAddRuleHelpPage.class
 com/cs/arris/Pages/NetworkReserveLANIPDialog.class
 com/cs/arris/Pages/AddDeviceMaximumTwoDevicesDialog.class
+com/cs/arris/Pages/BTPairingScanPage.class
 com/cs/arris/Pages/DisableBlueToothPage.class
 com/cs/arris/Pages/ConnectToWifiUsingRouterSSID.class
 com/cs/arris/Pages/NetworkHelpPage.class
@@ -57,6 +58,7 @@ com/cs/arris/Pages/RebootYouRouterDialog.class
 com/cs/arris/Pages/BTUnPairingPage.class
 com/cs/arris/Pages/ErrorCode_0000_1506_Warranty_Support_Page.class
 com/cs/arris/Pages/AddDeviceNotificationsPage.class
+com/cs/arris/Pages/MultipleDevicesFoundPage.class
 com/cs/arris/Reports/ExtentReport.class
 com/cs/arris/Pages/DebugLogsDialog.class
 com/cs/arris/Pages/FAQHelpPage.class

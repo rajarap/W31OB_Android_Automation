@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4,489.929" tests="127" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/test-classes:/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/classes:/Users/rm2652/.m2/repository/io/appium/java-client/7.3.0/java-client-7.3.0.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/rm2652/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpclient/4.5.9/httpclient-4.5.9.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/Users/rm2652/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/rm2652/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/rm2652/.m2/repository/cglib/cglib/3.2.12/cglib-3.2.12.jar:/Users/rm2652/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/rm2652/.m2/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar:/Users/rm2652/.m2/repository/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar:/Users/rm2652/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/Users/rm2652/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/rm2652/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/rm2652/.m2/repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-jcl/5.1.8.RELEASE/spring-jcl-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-expression/5.1.8.RELEASE/spring-expression-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/aspectj/aspectjweaver/1.9.4/aspectjweaver-1.9.4.jar:/Users/rm2652/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/rm2652/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/rm2652/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/rm2652/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/Users/rm2652/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/rm2652/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/rm2652/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/rm2652/.m2/repository/org/apache/logging/log4j/log4j-core/2.14.1/log4j-core-2.14.1.jar:/Users/rm2652/.m2/repository/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar:/Users/rm2652/.m2/repository/com/aventstack/extentreports/4.1.2/extentreports-4.1.2.jar:/Users/rm2652/.m2/repository/org/freemarker/freemarker/2.3.29/freemarker-2.3.29.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar:/Users/rm2652/.m2/repository/org/mongodb/mongodb-driver/3.12.0/mongodb-driver-3.12.0.jar:/Users/rm2652/.m2/repository/org/mongodb/mongodb-driver-core/3.12.0/mongodb-driver-core-3.12.0.jar:/Users/rm2652/.m2/repository/org/mongodb/bson/3.12.0/bson-3.12.0.jar:/Users/rm2652/.m2/repository/io/github/bonigarcia/webdrivermanager/3.8.1/webdrivermanager-3.8.1.jar:/Users/rm2652/.m2/repository/org/rauschig/jarchivelib/1.0.0/jarchivelib-1.0.0.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/Users/rm2652/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/Users/rm2652/.m2/repository/org/uncommons/reportng/1.1.4/reportng-1.1.4.jar:/Users/rm2652/.m2/repository/velocity/velocity/1.4/velocity-1.4.jar:/Users/rm2652/.m2/repository/velocity/velocity-dep/1.4/velocity-dep-1.4.jar:/Users/rm2652/.m2/repository/com/google/inject/guice/5.0.1/guice-5.0.1.jar:/Users/rm2652/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/rm2652/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/rm2652/.m2/repository/com/google/guava/guava/30.1-jre/guava-30.1-jre.jar:/Users/rm2652/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/rm2652/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/rm2652/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/rm2652/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar:/Users/rm2652/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/rm2652/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/rm2652/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar:/Users/rm2652/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/rm2652/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/rm2652/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/rm2652/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/rm2652/.m2/repository/org/scream3r/jssc/2.8.0/jssc-2.8.0.jar:/Users/rm2652/.m2/repository/org/python/jython-standalone/2.7.1/jython-standalone-2.7.1.jar:/Users/rm2652/.m2/repository/org/bidib/com/serialpundit/sp-tty/1.0.4.1/sp-tty-1.0.4.1.jar:/Users/rm2652/.m2/repository/org/bidib/com/serialpundit/sp-core/1.0.4/sp-core-1.0.4.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/surefire/surefirebooter16855437977477657834.jar /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/surefire 2022-03-24T12-16-56_134-jvmRun1 surefire4590218972522337581tmp surefire_016778756268328125256tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/test-classes:/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/classes:/Users/rm2652/.m2/repository/io/appium/java-client/7.3.0/java-client-7.3.0.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/rm2652/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpclient/4.5.9/httpclient-4.5.9.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/Users/rm2652/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/rm2652/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/rm2652/.m2/repository/cglib/cglib/3.2.12/cglib-3.2.12.jar:/Users/rm2652/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/rm2652/.m2/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar:/Users/rm2652/.m2/repository/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar:/Users/rm2652/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/Users/rm2652/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/rm2652/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/rm2652/.m2/repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-jcl/5.1.8.RELEASE/spring-jcl-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/springframework/spring-expression/5.1.8.RELEASE/spring-expression-5.1.8.RELEASE.jar:/Users/rm2652/.m2/repository/org/aspectj/aspectjweaver/1.9.4/aspectjweaver-1.9.4.jar:/Users/rm2652/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/rm2652/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/rm2652/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/rm2652/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/Users/rm2652/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/rm2652/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/rm2652/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/rm2652/.m2/repository/org/apache/logging/log4j/log4j-core/2.14.1/log4j-core-2.14.1.jar:/Users/rm2652/.m2/repository/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar:/Users/rm2652/.m2/repository/com/aventstack/extentreports/4.1.2/extentreports-4.1.2.jar:/Users/rm2652/.m2/repository/org/freemarker/freemarker/2.3.29/freemarker-2.3.29.jar:/Users/rm2652/.m2/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar:/Users/rm2652/.m2/repository/org/mongodb/mongodb-driver/3.12.0/mongodb-driver-3.12.0.jar:/Users/rm2652/.m2/repository/org/mongodb/mongodb-driver-core/3.12.0/mongodb-driver-core-3.12.0.jar:/Users/rm2652/.m2/repository/org/mongodb/bson/3.12.0/bson-3.12.0.jar:/Users/rm2652/.m2/repository/io/github/bonigarcia/webdrivermanager/3.8.1/webdrivermanager-3.8.1.jar:/Users/rm2652/.m2/repository/org/rauschig/jarchivelib/1.0.0/jarchivelib-1.0.0.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/Users/rm2652/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/Users/rm2652/.m2/repository/org/uncommons/reportng/1.1.4/reportng-1.1.4.jar:/Users/rm2652/.m2/repository/velocity/velocity/1.4/velocity-1.4.jar:/Users/rm2652/.m2/repository/velocity/velocity-dep/1.4/velocity-dep-1.4.jar:/Users/rm2652/.m2/repository/com/google/inject/guice/5.0.1/guice-5.0.1.jar:/Users/rm2652/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/rm2652/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/rm2652/.m2/repository/com/google/guava/guava/30.1-jre/guava-30.1-jre.jar:/Users/rm2652/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/rm2652/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/rm2652/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/rm2652/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar:/Users/rm2652/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/rm2652/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/rm2652/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar:/Users/rm2652/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/rm2652/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/rm2652/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/rm2652/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/rm2652/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/rm2652/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/rm2652/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/rm2652/.m2/repository/org/scream3r/jssc/2.8.0/jssc-2.8.0.jar:/Users/rm2652/.m2/repository/org/python/jython-standalone/2.7.1/jython-standalone-2.7.1.jar:/Users/rm2652/.m2/repository/org/bidib/com/serialpundit/sp-tty/1.0.4.1/sp-tty-1.0.4.1.jar:/Users/rm2652/.m2/repository/org/bidib/com/serialpundit/sp-core/1.0.4/sp-core-1.0.4.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/rm2652"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-07-20"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/target/surefire/surefirebooter16855437977477657834.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="11.0.12+0"/>
+    <property name="user.name" value="rm2652"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="11.6"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/rm2652/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/7j/9c8z6wx527dd5m47mzxw409h0000gp/T/"/>
+    <property name="java.version" value="11.0.12"/>
+    <property name="user.dir" value="/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/rm2652/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="11.0.12+0"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="Verify_SignUp_And_Onboard" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="526.836"/>
+  <testcase name="Verify_Add_Device_Menu" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="157.158"/>
+  <testcase name="Verify_Device_Details_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.046"/>
+  <testcase name="Verify_Specifications_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.931"/>
+  <testcase name="Verify_Add_Additional_Device" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.437"/>
+  <testcase name="Verify_Notifications_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.045"/>
+  <testcase name="Verify_User_Guide_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.42"/>
+  <testcase name="Verify_FAQ_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="5.221"/>
+  <testcase name="Verify_Remove_Device_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="9.695"/>
+  <testcase name="Verify_Hamburger_Menu_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="15.195"/>
+  <testcase name="Verify_Hamburger_Menu_Settings_Sign_Out" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="6.426"/>
+  <testcase name="Verify_Hamburger_Menu_About_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.529"/>
+  <testcase name="Verify_Hamburger_Menu_About_License_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.888"/>
+  <testcase name="Verify_Hamburger_Get_Another_Max_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.61"/>
+  <testcase name="Verify_Hamburger_Surfboard_Help_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="4.648"/>
+  <testcase name="Verify_Hamburger_Surfboard_FAQ_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.425"/>
+  <testcase name="Verify_Hamburger_Surfboard_Self_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="5.981"/>
+  <testcase name="Verify_Hamburger_Surfboard_Chat_With_US_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.389"/>
+  <testcase name="Verify_Amazon_Features_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="33.753"/>
+  <testcase name="Verify_Get_Alexa_Skills_Drop_Down_Box" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.541"/>
+  <testcase name="Verify_Show_Password_Button" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.976"/>
+  <testcase name="Verify_Copy_Password" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1"/>
+  <testcase name="Verify_Amazon_Alexa_Skills_Link" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="20.25"/>
+  <testcase name="Verify_Enable_AFFS_Feature" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.314"/>
+  <testcase name="Verify_Speed_Test_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="80.7"/>
+  <testcase name="Verify_Perform_Speed_Test" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="349.647"/>
+  <testcase name="Verify_Home_Speed_Test_History_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="84.833"/>
+  <testcase name="Verify_Main_Device_UI_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="50.236"/>
+  <testcase name="Verify_LED_Settings_UI_On_All_Tab" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.223"/>
+  <testcase name="Verify_Decrease_LED_Settings_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.471"/>
+  <testcase name="Verify_Increase_LED_Settings_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.277"/>
+  <testcase name="Verify_Devices_Count_Validation_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.258"/>
+  <testcase name="Verify_Connected_Devices_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="30.522"/>
+  <testcase name="Verify_Main_Router_Details_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="6.717"/>
+  <testcase name="Verify_Edit_Main_Router_Name_On_All_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="9.415"/>
+  <testcase name="Verify_Main_Device_UI_On_5GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.16"/>
+  <testcase name="Verify_Devices_Count_Validation_On_5GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.227"/>
+  <testcase name="Verify_Connected_Devices_On_5GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.533"/>
+  <testcase name="Verify_Main_Device_UI_On_24GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.291"/>
+  <testcase name="Verify_Devices_Count_Validation_On_24GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.22"/>
+  <testcase name="Verify_Connected_Devices_On_24GHz_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.055"/>
+  <testcase name="Verify_Main_Device_UI_On_Ethernet_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.15"/>
+  <testcase name="Verify_Devices_Count_Validation_On_Ethernet_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.217"/>
+  <testcase name="Verify_Connected_Devices_On_Ethernet_Tab_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="18.201"/>
+  <testcase name="Verify_Devices_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="62.845"/>
+  <testcase name="Verify_Online_Devices_Details" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="136.279"/>
+  <testcase name="Verify_Offline_Devices_Details" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="93.463"/>
+  <testcase name="Verify_Devices_Signal_Strength_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="50.053"/>
+  <testcase name="Verify_Sorting_Devices_From_Strong_To_Weak" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="4.071"/>
+  <testcase name="Verify_Editing_Device_Name" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="36.688"/>
+  <testcase name="Verify_Parental_Control_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="30.48"/>
+  <testcase name="Verify_Add_Profile_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="12.381"/>
+  <testcase name="Verify_User_Profile_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.379"/>
+  <testcase name="Verify_Edit_User_Profile_Name" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="15.948">
+    <failure message="Can&apos;t locate an element by this strategy: By.chained({By.id: com.arris.sbcBeta:id/img_edit_profile_name})" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.id: com.arris.sbcBeta:id/img_edit_profile_name})
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Edit_User_Profile_Name(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1306)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@2be49c8c (tried for 1 second(s) with 500 milliseconds interval)
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Edit_User_Profile_Name(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1306)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.chained({By.id: com.arris.sbcBeta:id/img_edit_profile_name})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'css-mac-pro.arrs.arrisi.com', ip: 'fe80:0:0:0:8da:3411:cdb8:3812%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.6', java.version: '11.0.12'
+Driver info: driver.version: AndroidDriver
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Edit_User_Profile_Name(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1306)
+</failure>
+    <system-out><![CDATA[[INFO ] 2022-03-24 12:51:29.060 com.cs.arris.Base.ParentClass:446 - video path: videos/Android_ce071717bb59293c057e/2022-03-24-12-16-57/TC0011_Test_SignUp_Onboard_And_Test_SBC/Verify_User_Profile_Page.mp4
+[INFO ] 2022-03-24 12:51:30.059 com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC:169 - 
+****** starting test:Verify_Edit_User_Profile_Name******
+
+[INFO ] 2022-03-24 12:51:30.183 com.cs.arris.Pages.ParentalControlUserProfilePage:362 - Saved Existing User Name
+[ERROR] 2022-03-24 12:51:46.002 com.cs.arris.Listeners.TestListener:39 - org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.id: com.arris.sbcBeta:id/img_edit_profile_name})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at com.cs.arris.Pages.ParentalControlUserProfilePage.clickUserProfileNameEditButton(ParentalControlUserProfilePage.java:371)
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Edit_User_Profile_Name(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1306)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@2be49c8c (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 36 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.arris.sbcBeta:id/img_edit_profile_name})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'css-mac-pro.arrs.arrisi.com', ip: 'fe80:0:0:0:8da:3411:cdb8:3812%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.6', java.version: '11.0.12'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+
+]]></system-out>
+  </testcase>
+  <testcase name="Verify_Add_Device_To_User_Profile" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.748"/>
+  <testcase name="Verify_Devices_Associated_With_User_Profile" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="16.137"/>
+  <testcase name="Verify_Add_Rule_To_User_Profile" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.06"/>
+  <testcase name="Verify_Add_EveryDay_Schedule_To_Rule" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="5.866"/>
+  <testcase name="Verify_Select_Start_Time_For_EveryDay_Schedule" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.536"/>
+  <testcase name="Verify_Select_Stop_Time_For_EveryDay_Schedule" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.02"/>
+  <testcase name="Verify_Add_Custom_Schedule_To_Rule" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.942"/>
+  <testcase name="Verify_Add_Custom_Schedule_Select_DOW" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.294"/>
+  <testcase name="Verify_Add_Custom_Schedule_Select_Start_Time" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.102"/>
+  <testcase name="Verify_Add_Custom_Schedule_Select_Stop_Time" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="9.654"/>
+  <testcase name="Verify_Rules_Associated_With_User" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.84"/>
+  <testcase name="Verify_Pause_Internet_For_All_Users" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="6.993"/>
+  <testcase name="Verify_Currently_Blocked_Profiles" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.805"/>
+  <testcase name="Verify_Resume_Internet_For_All_Users" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="16.132"/>
+  <testcase name="Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="19.1">
+    <failure message="The following asserts failed:&#10;	expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: 
+The following asserts failed:
+	expected [true] but found [false]
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1579)
+</failure>
+    <system-out><![CDATA[[INFO ] 2022-03-24 12:53:40.966 com.cs.arris.Base.ParentClass:446 - video path: videos/Android_ce071717bb59293c057e/2022-03-24-12-16-57/TC0011_Test_SignUp_Onboard_And_Test_SBC/Verify_Resume_Internet_For_All_Users.mp4
+[INFO ] 2022-03-24 12:53:41.949 com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC:169 - 
+****** starting test:Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users******
+
+[INFO ] 2022-03-24 12:53:42.068 com.cs.arris.Pages.ParentalControlWithProfilesPage:790 - On Parental Control - Profiles Page
+[INFO ] 2022-03-24 12:53:42.348 com.cs.arris.Pages.ParentalControlWithProfilesPage:335 - Clicked Currently Blocked Tab on Parental Control Page
+[INFO ] 2022-03-24 12:53:43.690 com.cs.arris.Pages.ParentalControlCurrentlyBlockedPage:162 - On Parental Control - Currently Blocked Page
+[INFO ] 2022-03-24 12:53:59.004 com.cs.arris.Pages.ParentalControlCurrentlyBlockedPage:83 - Clicked on Profiles Button
+[INFO ] 2022-03-24 12:54:00.504 com.cs.arris.Pages.ParentalControlWithProfilesPage:302 - Clicked on Back Button
+[ERROR] 2022-03-24 12:54:01.049 com.cs.arris.Listeners.TestListener:39 - java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Currently_Blocked_Users_After_Resuming_Internet_For_All_Users(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:1579)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+]]></system-out>
+  </testcase>
+  <testcase name="Verify_Install_Left_Satellite" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="523.123"/>
+  <testcase name="Verify_Network_Health_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="75.309"/>
+  <testcase name="Verify_Network_Optimization_Settings_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.894"/>
+  <testcase name="Verify_Connected_Device_Signal_Strength_Sensitivity_Medium" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.162"/>
+  <testcase name="Verify_Satellite_Signal_Strength_Sensitivity_Medium" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="16.525"/>
+  <testcase name="Verify_Satellite_Link_Rate_Sensitivity_Medium" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.155"/>
+  <testcase name="Verify_ISP_Speed_Link_Rate_Sensitivity_Medium" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.178"/>
+  <testcase name="Verify_Connected_Device_Signal_Strength_Sensitivity_High" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.915"/>
+  <testcase name="Verify_Satellite_Signal_Strength_Sensitivity_High" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="15.941"/>
+  <testcase name="Verify_Satellite_Link_Rate_Sensitivity_High" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.088"/>
+  <testcase name="Verify_ISP_Speed_Link_Rate_Sensitivity_High" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.141"/>
+  <testcase name="Verify_Connected_Device_Signal_Strength_Sensitivity_Low" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="18.181"/>
+  <testcase name="Verify_Satellite_Signal_Strength_Sensitivity_Low" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="15.903"/>
+  <testcase name="Verify_Satellite_Link_Rate__Sensitivity_Low" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.082"/>
+  <testcase name="Verify_ISP_Speed_Link_Rate_Sensitivity_Low" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="18.186"/>
+  <testcase name="Verify_Disabled_Network_Optimization_Settings" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="31.489"/>
+  <testcase name="Verify_Install_Right_Satellite" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="430.872"/>
+  <testcase name="Verify_Network_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="30.626"/>
+  <testcase name="Verify_Newtork_Test_Connection_Speed_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="117.559"/>
+  <testcase name="Verify_WAN_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.674"/>
+  <testcase name="Verify_WAN_Settings_WAN_IP_Configuration_IPv4_DHCP_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="4.296"/>
+  <testcase name="Verify_WAN_Settings_WAN_IP_Configuration_IPv4_Static_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.955"/>
+  <testcase name="Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateful_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="6.079"/>
+  <testcase name="Verify_WAN_Settings_WAN_IP_Configuration_IPv6_Stateless_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="4.614"/>
+  <testcase name="Verify_WAN_Settings_WAN_IP_Configuration_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="19.847"/>
+  <testcase name="Verify_WAN_Settings_DNS_Configuration_IPv4_Automatic_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.582"/>
+  <testcase name="Verify_WAN_Settings_DNS_Configuration_IPv4_Static_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.975"/>
+  <testcase name="Verify_WAN_Settings_DNS_Configuration_IPv6_Automatic_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.583"/>
+  <testcase name="Verify_WAN_Settings_DNS_Configuration_IPv6_Static_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="2.687"/>
+  <testcase name="Verify_WAN_Settings_DNS_Configuration_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="19.642"/>
+  <testcase name="Verify_WAN_Settings_LAC_Alert_Dialog" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.63"/>
+  <testcase name="Verify_LAN_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="15.31"/>
+  <testcase name="Verify_LAN_Settings_LAN_IP_Reservation_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.775"/>
+  <testcase name="Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="5.137"/>
+  <testcase name="Verify_LAN_Settings_LAN_IP_Reservation_Rules" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.001"/>
+  <testcase name="Verify_LAN_Settings_LAN_IP_Reservation_Edit_Devices_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="3.219"/>
+  <testcase name="Verify_LAN_Settings_LAN_IP_Reservation_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.17"/>
+  <testcase name="Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="8.233"/>
+  <testcase name="Verify_Edit_LAN_Subnet_DHCP_Range_Configuration_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="46.684"/>
+  <testcase name="Edit_LAN_Subnet_Configuration_Octets" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="35.444"/>
+  <testcase name="Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.357"/>
+  <testcase name="Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.226"/>
+  <testcase name="Verify_LAN_Settings_LAN_DHCP_Set_Lease_Time_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="158.689"/>
+  <testcase name="Verify_LAN_Settings_LAN_DHCP_Set_Lease_Time_Help_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.996"/>
+  <testcase name="Verify_Device_Priority_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="44.805"/>
+  <testcase name="Verify_Device_Priority_Settings_Add_Device_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.273"/>
+  <testcase name="Verify_Device_Priority_Settings_Add_Device_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="11.421"/>
+  <testcase name="Verify_Device_Priority_Settings_Disable_Device_Prioritation" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="6.149">
+    <failure message="The following asserts failed:&#10;	expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: 
+The following asserts failed:
+	expected [true] but found [false]
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Device_Priority_Settings_Disable_Device_Prioritation(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:2131)
+</failure>
+    <system-out><![CDATA[[INFO ] 2022-03-24 13:26:27.141 com.cs.arris.Base.ParentClass:446 - video path: videos/Android_ce071717bb59293c057e/2022-03-24-12-16-57/TC0011_Test_SignUp_Onboard_And_Test_SBC/Verify_Device_Priority_Settings_Add_Device_Page.mp4
+[INFO ] 2022-03-24 13:26:28.163 com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC:169 - 
+****** starting test:Verify_Device_Priority_Settings_Disable_Device_Prioritation******
+
+[INFO ] 2022-03-24 13:26:28.405 com.cs.arris.Pages.NetworkDevicePrioritySettings:139 - Device Priority Settings is disabled
+[INFO ] 2022-03-24 13:26:33.672 com.cs.arris.Pages.NetworkDevicePrioritySettings:85 - Clicked on Back Button
+[ERROR] 2022-03-24 13:26:34.312 com.cs.arris.Listeners.TestListener:39 - java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC.Verify_Device_Priority_Settings_Disable_Device_Prioritation(TC0011_Test_SignUp_Onboard_And_Test_SBC.java:2131)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+]]></system-out>
+  </testcase>
+  <testcase name="Verify_Time_Zone_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.838"/>
+  <testcase name="Verify_General_Settings_UI_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="46.769"/>
+  <testcase name="Verify_General_Settings_UPnP_Settings" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="17.096"/>
+  <testcase name="Verify_General_Settings_IPv6_Enable_Settings" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.899"/>
+  <testcase name="Verify_General_Settings_Bridge_Mode_Settings" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="0.886"/>
+  <testcase name="Verify_General_Settings_Port_Forwarding_Settings" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="1.023"/>
+  <testcase name="Verify_General_Settings_Port_Forwarding_Add_Rules" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="57.289"/>
+  <testcase name="Verify_General_Settings_Port_Forwarding_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="16.546"/>
+  <testcase name="Verify_Extended_WiFi_Settings_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="7.147"/>
+  <testcase name="Verify_Guest_WiFi_Network_Page" classname="com.cs.arris.Tests.TC0011_Test_SignUp_Onboard_And_Test_SBC" time="129.925"/>
+</testsuite>

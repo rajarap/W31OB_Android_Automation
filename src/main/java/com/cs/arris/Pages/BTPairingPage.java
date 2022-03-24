@@ -1,5 +1,8 @@
 package com.cs.arris.Pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.support.PageFactory;
 import com.cs.arris.Base.ParentClass;
 import com.cs.arris.Utilities.TestUtils;
@@ -11,7 +14,14 @@ public class BTPairingPage extends ParentClass {
 	public TestUtils utils = new TestUtils();
 
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
-	public MobileElement maxRouter;
+	public MobileElement maxRouter1;
+	
+	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView")
+	public MobileElement maxRouter2;
+	
+	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView")
+	public MobileElement maxRouter3;
+
 	
 //	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SURFboard mAX']") 
 //	public MobileElement maxRouter1;
@@ -74,15 +84,86 @@ public class BTPairingPage extends ParentClass {
 		}
 	}
 	
-	public boolean clickMAXRouter() {
-		if (maxRouter.getText().equals("SURFboard mAX")) {
-			click(maxRouter); 
+	public void clickMAXRouter() {
+		super.pause(8);
+		if (maxRouter1.getText().equals("SURFboard mAX")) {
+			click(maxRouter1); 
 			utils.log().info("Clicked on broadcaster");
-			return true;
-		} else {
-			return false;
+		}else {
+	    	switchOffBluetooth();
+	    	super.pause(5);
+	    	switchOnBluetooth();
+	    	super.pause(10);
+			click(maxRouter1); 
+			utils.log().info("Clicked on broadcaster");
 		}
+
 	}
+	
+//	public void clickMAXRouter() {
+//		List<MobileElement> bleDevices = new ArrayList<MobileElement>();
+//		int deviceCount =  super.getDriver().findElementsById("com.android.settings:id/tw_expandable_listview").size();
+//		utils.log().info("Number of devices : " + deviceCount);
+//		
+//		for (int i = 1; i<=deviceCount; i++) {
+//			bleDevices.add((MobileElement) super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.SemExpandableListView/android.widget.FrameLayout["+i+"]"));
+//		}
+//		
+//		for(MobileElement e : bleDevices) {
+//			utils.log().info("Devices for Pairing : " + e.getText());
+//
+//		}
+//		
+//		if(deviceCount > 0) {
+//			String deviceName = "SURFboard mAX";
+//			
+//			for(MobileElement e : bleDevices) {
+//				if(e.getText().equalsIgnoreCase(deviceName))
+//					click(e);
+//			}
+//		}else {
+//			utils.log().info("The are no devices to pair");
+//		}
+		
+		
+		
+		
+		
+//		
+//		
+//		for(int i = 0; i <=5; i++) {
+//			bleDevices.add((MobileElement) super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout["+i+"]/android.widget.LinearLayout/android.widget.TextView"));
+//		}
+//
+//		
+//		utils.log().info("Number of devices : " + deviceCount);
+//		
+//		for (MobileElement e : bleDevices) {
+//			utils.log().info("Devices are : " + e.getText());
+//		}
+//		
+//		
+//		if(deviceCount > 0) {
+//			String deviceName = "SURFboard mAX";
+//			
+//			for(MobileElement e : bleDevices) {
+//				if(e.getText().equalsIgnoreCase(deviceName))
+//					click(e);
+//			}
+//		}else {
+//			utils.log().info("The are no devices to pair");
+//		}
+//	}
+		
+////		
+////		if (maxRouter.getText().equals("SURFboard mAX")) {
+////			click(maxRouter); 
+////			utils.log().info("Clicked on broadcaster");
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 	
 //	public void clickMAXRouter2() {
 //			super.getDriver().findElementsByXPath("//android.widget.TextView[@text='SURFboard mAX']").get(2).click();

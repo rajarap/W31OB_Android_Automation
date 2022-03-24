@@ -81,7 +81,7 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	//   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
+	   //super.getDriver().runAppInBackground(Duration.ofSeconds(10));
        try 
        {
     	   utils.log().info("Connecting to " + this.ssid + " network");

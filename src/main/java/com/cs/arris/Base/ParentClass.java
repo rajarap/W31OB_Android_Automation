@@ -52,8 +52,10 @@ import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.Status;
 import com.cs.arris.JsonMappers.Signin_TestData;
+import com.cs.arris.Pages.ConnectionToWifiNeededPage;
 import com.cs.arris.Reports.ExtentReport;
 import com.cs.arris.Utilities.Direction;
+import com.cs.arris.Utilities.SerialComPortCommunicator;
 import com.cs.arris.Utilities.SwipeActions;
 import com.cs.arris.Utilities.TestUtils;
 
@@ -478,6 +480,13 @@ public class ParentClass
 		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
 		  .withTimeout(Duration.ofSeconds(100))
 		  .pollingEvery(Duration.ofSeconds(5))
+		  .ignoring(NoSuchElementException.class);
+		  }
+	  
+	  public void waitForCongratulationsPage(MobileElement e){
+		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+		  .withTimeout(Duration.ofSeconds(1000))
+		  .pollingEvery(Duration.ofSeconds(10))
 		  .ignoring(NoSuchElementException.class);
 		  }
 	  

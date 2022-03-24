@@ -3,6 +3,9 @@ package com.cs.arris.Utilities;
 public class ResetMAXRouter 
 {
 	public static void main(String args[]) {
+		
+	//	SerialComPortCommunicator.getSerialPorts();
+		SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
 
 
 

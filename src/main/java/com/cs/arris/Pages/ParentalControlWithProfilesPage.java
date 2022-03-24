@@ -580,8 +580,10 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 				for (MobileElement e : entity) 
 				{
 					try {
-							utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getText());
-							click(super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']"));
+						utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getText());
+						//utils.log().info("Selecting a User profile ");
+						super.pause(2);
+						click(super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']"));
 					} catch (Exception exp) {
 						utils.log().info("User Profile Name is not displayed ");}
 				}
