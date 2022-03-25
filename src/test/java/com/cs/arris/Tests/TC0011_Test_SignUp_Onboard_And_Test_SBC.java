@@ -710,17 +710,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								new AppRatingDialog().clickRemindMeLaterLink();
 						}catch(Exception e){}
 					}
-					if(new SpeedTestPage().isAt())
-					{
-						softspeedtest2.assertTrue(new SpeedTestPage().verifyUIOnSpeedTestPage());
-					}
+//					if(new SpeedTestPage().isAt())
+//					{
+//						softspeedtest2.assertTrue(new SpeedTestPage().verifyUIOnSpeedTestPage());
+//					}
 			  }
 			  
 			  @Test(priority = 30, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
 				public void Verify_Perform_Speed_Test() {
 					SoftAssert softspeedtest3 = new SoftAssert();
-					for (int i = 0; i < 3; i++)
-					{
+					for (int i = 0; i < 3; i++)	{
 						softspeedtest3.assertTrue(new SpeedTestPage().performSpeedTest());
 					}
 					softspeedtest3.assertTrue(new SpeedTestPage().clickBackButton());

@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import java.lang.reflect.Method;
+import java.time.Duration;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
@@ -151,6 +153,15 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new DeviceLocationPage().clickAllow();
 			  super.pause(5);
 			  new AccessResourcesOnDevicePage().clickAllow();
+			  
+			  try {
+				  if(new InternetConnectionNotAvailable().isAt()) {
+					 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
+					super.pause(10);
+					new InternetConnectionNotAvailable().clickTryAgainbutton();
+				}
+			  }catch(Exception e){}
+			  
 			  new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
@@ -173,7 +184,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
 						super.pause(3);
 						new SignupPage().clickSignupButton();
+						super.pause(3);
 						new EnterValidOTPPage().enterInValidPassCode("123456");
+						super.pause(3);
 						 Assert.assertTrue(new EnterValidOTPPage().verifyInvalidPassCodeMessage());
 						 new EnterValidOTPPage().clickResendLink();
 						 new ResendOTPDialog().clickOKButton();
@@ -222,12 +235,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
 			  super.pause(3);
 			  new NetworkOptimizationDialog().clickOkButton();
-			  super.pause(20);
+			  super.pause(25);
 			  try {
 				  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 					  new NetworkOptimizationDialog2().clickOkButton();
 				  }catch(Exception e) {}
-			  super.pause(35);
+			  super.pause(50);
 			  new HomePage().getSSIDName();  
 
 		  }catch(Exception e) {
@@ -245,11 +258,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  }
 	  
 	  
-	   @Test(priority = 102, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+	   @Test(priority = 102)
 		public void Verify_Install_Left_Satellite() {
-		   utils.log().info("                            ");
+		   utils.log().info("                             ");
 			utils.log().info("****************************");
-			utils.log().info("Test: Install Left Satellite");
+			utils.log().info("Test: Install Satellite1    ");
 			utils.log().info("****************************");
 			
 			SoftAssert softsatellite1 = new SoftAssert();
@@ -257,7 +270,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //			utils.log().info("Manually switch on your first satellite");
 //			super.pause(10);
 			  try {
-					utils.log().info("Factory Resetting Satellite1");
+					utils.log().info("Factory Reset Satellite 1");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
 					super.pause(75);					    			  
 			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
@@ -285,7 +298,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 				try {
 					softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-					super.pause(60);
+					super.pause(30);
 					
 					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 						new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
@@ -372,7 +385,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new SevenTapEmail().enterEmailAddress();
 			  super.pause(3);
 			  new SevenTapEmail().clickSendButton();
-		}finally {
 			  new KillAndRelaunchApp().killApp();
 			  super.pause(3);
 			  new KillAndRelaunchApp().relaunchApp();
@@ -382,18 +394,18 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 
 		
-		@Test(priority = 120, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+		@Test(priority = 120)
 		public void Verify_Install_Right_Satellite() {
 			utils.log().info("                             ");
 			utils.log().info("*****************************");
-			utils.log().info("Test: Install Right Satellite ");
+			utils.log().info("Test: Install Satellite2     ");
 			utils.log().info("*****************************");
 			
 			SoftAssert softsatellite2 = new SoftAssert();
 //			utils.log().info("Manually switch on your second satellite");
 //			super.pause(60);
 			  try {
-					utils.log().info("Factory Resetting Satellite1");
+					utils.log().info("Factory Reset Satellite 2");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
 					super.pause(75);
 			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
@@ -452,8 +464,34 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					
 				} catch (Exception e) {}
 				
-				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-				super.pause(75);
+				try {
+					softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+					super.pause(100);
+					
+					try {
+						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(100);
+						}
+					}catch(Exception e) {}
+					
+					try {
+						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(100);
+						}
+					}catch(Exception e) {}
+					
+					try {
+						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionFailedTroubleShootButton.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(100);
+						}
+					}catch(Exception e) {}
+					
+				}catch (Exception e) {}
+				
 				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
 				super.pause(20);
 				softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
@@ -467,7 +505,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.pause(30);
 					}
 				} catch (Exception e) {	}
-				
+				//finalizing your setup
 
 				softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 				super.pause(20);
@@ -507,10 +545,20 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //			}
 //			new BTSwipePage().swipeUpOnce(Direction.UP);
 //		}
+		
+//		@Test(priority = 169)
+//		public void Uninstall_SBC_APP() 
+//		{
+//			try 
+//			   {
+//				   utils.log().info("Uninstalling SBC APP ");
+//			       ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "uninstall", "com.arris.sbcBeta");
+//			       Process pc2 = pb2.start();
+//			   } catch (Exception e) { e.printStackTrace(); }  
+//			
+//		}
 
 }
-
-
 
 
 

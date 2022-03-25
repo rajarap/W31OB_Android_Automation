@@ -174,6 +174,13 @@ public class ParentClass
 		utils.log().info("Appium server stopped");
 		System.gc();
 		
+		try 
+		   {
+			   utils.log().info("Uninstalling SBC APP ");
+		       ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "uninstall", "com.arris.sbcBeta");
+		       Process pc2 = pb2.start();
+		   } catch (Exception e) { e.printStackTrace(); }  
+		
 	}
 	
 	public AppiumDriverLocalService getAppiumServerDefault() {
