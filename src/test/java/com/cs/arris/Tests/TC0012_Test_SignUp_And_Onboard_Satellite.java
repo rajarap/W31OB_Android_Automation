@@ -69,6 +69,8 @@ import com.cs.arris.Utilities.SevenTapLogs;
 import com.cs.arris.Utilities.TapSevenTimes;
 import com.cs.arris.Utilities.TestUtils;
 
+import io.appium.java_client.android.AndroidDriver;
+
 
 public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 {
@@ -135,7 +137,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  try {
 				utils.log().info("Factory Resetting MainAP");
 				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(75);		  
+				super.pause(75);
+			    utils.log().info("Turning OFF Wifi..........");
+				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
+				super.pause(5);
+				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
+				utils.log().info("Wifi Turned ON");
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 //			utils.log().info("Pairing your Max router with your mobile");
@@ -154,13 +161,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  super.pause(5);
 			  new AccessResourcesOnDevicePage().clickAllow();
 			  
-			  try {
-				  if(new InternetConnectionNotAvailable().isAt()) {
-					 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
-					super.pause(10);
-					new InternetConnectionNotAvailable().clickTryAgainbutton();
-				}
-			  }catch(Exception e){}
+//			  try {
+//				  if(new InternetConnectionNotAvailable().isAt()) {
+//					 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
+//					super.pause(10);
+//					new InternetConnectionNotAvailable().clickTryAgainbutton();
+//				}
+//			  }catch(Exception e){}
 			  
 			  new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
