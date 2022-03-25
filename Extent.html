@@ -54,7 +54,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Mar 25, 2022 10:44:52 AM</span>
+			<span class='label blue darken-3 suite-start-time'>Mar 25, 2022 03:51:21 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -69,7 +69,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +122,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
                 </div>
             </div>
         </div>
@@ -143,17 +143,17 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_SignUp_And_Onboard</span>
-						<span class='test-time'>Mar 25, 2022 10:44:52 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Mar 25, 2022 03:51:21 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Mar 25, 2022 10:44:52 AM</span>
-	<span class='label end-time'>Mar 25, 2022 10:54:15 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 22s+615ms</span>
+	<span class='label start-time'>Mar 25, 2022 03:51:21 PM</span>
+	<span class='label end-time'>Mar 25, 2022 04:00:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 9m 24s+513ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -173,97 +173,19 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>10:54:15 AM</td>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>4:00:45 PM</td>
 				<td class='step-details'>
-						Test Passed
+						Test Failed
 					
 				</td>
 			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Install_Left_Satellite</span>
-						<span class='test-time'>Mar 25, 2022 10:54:22 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Mar 25, 2022 10:54:22 AM</span>
-	<span class='label end-time'>Mar 25, 2022 11:03:34 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 11s+773ms</span>
-</div>
-<div class='test-attributes'>
-	<div class='category-list'>
-		<span class='category label'>Android_Android</span>
-	</div>
-	<div class='author-list'>
-		<span class='author label'>PrabhuRajarathinam</span>
-	</div>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>11:03:34 AM</td>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>4:00:45 PM</td>
 				<td class='step-details'>
-						Test Passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify_Install_Right_Satellite</span>
-						<span class='test-time'>Mar 25, 2022 11:03:38 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Mar 25, 2022 11:03:38 AM</span>
-	<span class='label end-time'>Mar 25, 2022 11:12:18 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 40s+632ms</span>
-</div>
-<div class='test-attributes'>
-	<div class='category-list'>
-		<span class='category label'>Android_Android</span>
-	</div>
-	<div class='author-list'>
-		<span class='author label'>PrabhuRajarathinam</span>
-	</div>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>11:12:18 AM</td>
-				<td class='step-details'>
-						Test Passed
+						Test Failed
 					
 				</td>
 			</tr>
@@ -314,13 +236,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>Android_Android</span>
 						<span class='category-status right'>
-						<span class='label pass'>3</span>
+						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 3</span>
 							
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 						<div class='category-tests'>
@@ -334,19 +256,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 25, 2022 10:44:52 AM</td>
+										<td>Mar 25, 2022 03:51:21 PM</td>
 										<td class='linked' test-id='1'>Verify_SignUp_And_Onboard</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 25, 2022 10:54:22 AM</td>
-										<td class='linked' test-id='2'>Verify_Install_Left_Satellite</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 25, 2022 11:03:38 AM</td>
-										<td class='linked' test-id='3'>Verify_Install_Right_Satellite</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -384,13 +296,13 @@
 					<div class='author-heading'>
 						<span class='author-name'>PrabhuRajarathinam</span>
 						<span class='author-status right'>
-						<span class='label pass'>3</span>
+						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='author-content hide'>
 						<div class='author-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 3</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 						<div class='author-tests'>
@@ -404,19 +316,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 25, 2022 10:44:52 AM</td>
+										<td>Mar 25, 2022 03:51:21 PM</td>
 										<td class='linked' test-id='1'>Verify_SignUp_And_Onboard</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 25, 2022 10:54:22 AM</td>
-										<td class='linked' test-id='2'>Verify_Install_Left_Satellite</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 25, 2022 11:03:38 AM</td>
-										<td class='linked' test-id='3'>Verify_Install_Right_Satellite</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -440,7 +342,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -452,19 +354,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 25, 2022 10:44:52 AM</div>
+					<div class='panel-lead'>Mar 25, 2022 03:51:21 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 25, 2022 11:12:21 AM</div>
+			 		<div class='panel-lead'>Mar 25, 2022 04:00:45 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 27m 28s+758ms</div>
+					<div class='panel-lead'>0h 9m 24s+743ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -481,11 +383,11 @@
 						</tr>
 						<tr>
 							<td>Android_Android</td>
-							<td>3</td>
 							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -499,14 +401,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 3,
-				passParent: 3,
-				failParent: 0,
+                parentCount: 1,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -531,7 +433,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Verify_SignUp_And_Onboard":562.615,"Verify_Install_Left_Satellite":551.773,"Verify_Install_Right_Satellite":520.632
+			        "Verify_SignUp_And_Onboard":564.513
 			};
 		</script>
 	
