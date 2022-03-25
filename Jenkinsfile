@@ -133,15 +133,11 @@ pipeline
     {
     	always
     	{
-    	        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
-                {
-    				echo '=====Publish QA ReportNG Report====='
-                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, 
-                    reportDir: '/target/surefire-reports/html', reportFiles: 'index.html', 
-                    reportName: 'W31 Android Onboarding BOBA', reportTitles: 'Arris SURFboard App'])
+    			echo '=====Publish QA ReportNG Report====='
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, 
+                reportName: 'W31 Android Onboarding BOBA', reportTitles: 'Arris SURFboard App'])
 
-                    zip archive: true, dir: '/Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/target/surefire-reports/html', zipFile: 'W31_Android_Onboarding_BOBA_'+env.BUILD_NUMBER+'.zip'
-                }
+                zip archive: true, dir: '/Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/target/surefire-reports/html', zipFile: 'W31_Android_Onboarding_BOBA_'+env.BUILD_NUMBER+'.zip'
     	}
     	
         success
