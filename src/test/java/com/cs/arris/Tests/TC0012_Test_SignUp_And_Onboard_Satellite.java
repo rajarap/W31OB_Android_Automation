@@ -244,6 +244,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  super.pause(15);
 			  try {
 				  if(new ConnectionToWifiNeededPage().continueButton.isDisplayed())
+					  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 					  new ConnectionToWifiNeededPage().clickContinue();
 			  }catch(Exception e) {}
 			  super.pause(15);
@@ -272,7 +273,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new SevenTapEmail().enterEmailAddress();
 			  super.pause(3);
 			  new SevenTapEmail().clickSendButton();
+			  getDriver().quit();
 			  new KillAndRelaunchApp().killApp();
+
 		  }
 	  }
 	  
