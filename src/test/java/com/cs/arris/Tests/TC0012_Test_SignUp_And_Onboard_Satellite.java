@@ -136,96 +136,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				utils.log().info("Factory Resetting MainAP");
 				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
 				super.pause(75);
-//			    utils.log().info("Turning OFF Wifi");
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-//				super.pause(5);
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-//				utils.log().info("Turning ON Wifi");
-//				super.pause(5);
-//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
-//				super.pause(30);
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
-//			utils.log().info("Pairing your Max router with your mobile");
-//	    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-//	    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-//	    	new BTSwipePage().clickBluetooth();
-//			new BTPairingPage().clickMAXRouter();
-//			if(new BTPairingPanelPage().isAt()) {
-//				new BTPairingPanelPage().clickOKButton();
-//			}
-		  
-//		  try {
-//			  new GetStartedPage().clickGetStartedButton();
-//			  new GrantPermissionsPage().clickContinueButton();
-//			  new DeviceLocationPage().clickAllow();
-//			  super.pause(3);
-//			  new AccessResourcesOnDevicePage().clickAllow();
-//			  
-//			  try {
-//					if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-//						new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//						super.pause(100);
-//					}
-//					
-//					if(new InternetConnectionNotAvailable().isAt()) {
-//						 new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
-//						super.pause(30);
-//						new InternetConnectionNotAvailable().clickTryAgainbutton();
-//					}				
-//				}catch(Exception e) {}
-//			  
-//			  new SelectYourDevicePage().selectSurfboardMaxOption();
-//			  new SelectYourDevicePage().clickNextButton();
-//			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
-//			  new SelectYourDevicePage2().clickNextButton();
-//			  super.pause(5);  
-//			  new SiginPage().clickSignUpButton();
-//			  email = new SignupPage().getEmailAddress(); 
-//			  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
-//			  new SignupPage().enterFirstName(firstName);
-//			  new SignupPage().enterLastName(lastName);
-//			  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
-//			  super.pause(5);
-//			  
-//			  if(new TermsAndConditionsPage().isAt()) {
-//				for(int i=1; i<=17; i++) {
-//					super.swipeUp();
-//				}
-//				  super.pause(3);
-//					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
-//						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
-//						super.pause(3);
-//						new SignupPage().clickSignupButton();
-//						super.pause(3);
-//						new EnterValidOTPPage().enterInValidPassCode("123456");
-//						super.pause(3);
-//						 Assert.assertTrue(new EnterValidOTPPage().verifyInvalidPassCodeMessage());
-//						 new EnterValidOTPPage().clickResendLink();
-//						 new ResendOTPDialog().clickOKButton();
-//						 super.pause(15);
-//						 new EnterValidOTPPage().clearOtpTextBox();
-//						new EnterValidOTPPage().enterValidPassCode(email);
-//						super.pause(3);
-//						new CodeVerifiedPage().getCodeVerifiedText();
-//						new CodeVerifiedPage().clickNextButton();
-//					}
-//				}
-//			  super.pause(3);
-//			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
-//			  new SetupHomeNetworkPage().clickNextButton();
-//			  new UnPackYourBoxPage().clickNextButton();
-//			  new PlugInMaxRouterPage().clickNextButton();
-//			  super.pause(40);
-//			  
-//			  try {
-//				  if(new MultipleDevicesFoundPage().isAt()){
-//					  utils.log().info("Multiple devices found. Switch off all other mAX Routers, except the mainAP Router");
-//					  super.pause(20);
-//					  new MultipleDevicesFoundPage().clickTryAgaineButton();
-//					  super.pause(15);
-//				  }
-//			  }catch(Exception e) {}
+
 			  
 		  try {
 			  new GetStartedPage().clickGetStartedButton();
@@ -307,15 +220,15 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new HomePage().getSSIDName();  
 
 		  }catch(Exception e) {
-			  new TapSevenTimes().tapSeven();
-			  super.pause(3);
-			  new SevenTapLogs().clickYesButton();
-			  super.pause(3);
-			  new SevenTapGmail().clickGmailIcon();
-			  super.pause(3);
-			  new SevenTapEmail().enterEmailAddress();
-			  super.pause(3);
-			  new SevenTapEmail().clickSendButton();
+//			  new TapSevenTimes().tapSeven();
+//			  super.pause(3);
+//			  new SevenTapLogs().clickYesButton();
+//			  super.pause(3);
+//			  new SevenTapGmail().clickGmailIcon();
+//			  super.pause(3);
+//			  new SevenTapEmail().enterEmailAddress();
+//			  super.pause(3);
+//			  new SevenTapEmail().clickSendButton();
 			  new KillAndRelaunchApp().killApp();
 		  }
 	  }
@@ -336,8 +249,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					utils.log().info("Factory Reset Satellite 1");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
 					super.pause(75);	
-					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-					super.pause(10);
+
 			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
 
 			try {
@@ -352,8 +264,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					super.pause(30);
 					
 					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-						new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-						super.pause(10);
+
 						new AddSatelliteAddNewSatellitePage2().clickNextButton();}		
 					
 					try {
@@ -379,7 +290,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 					softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 					softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-					super.pause(100);
+					super.pause(30);
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -406,23 +317,26 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				} catch (Exception e) {}
 		
 				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-				super.pause(75);
+
+				waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().successfullyConnectedToInternetTitle);
 				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-				super.pause(20);
+
+				waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 				softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-//				super.waitForCongratulationsPage(new AddSatelliteCongratulationsPage().congratulationsTitle);  //wait for 1000 sec polling every 10 sec
+
 				super.pause(30);
 				
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
 						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-//						super.waitForCongratulationsPage(new AddSatelliteCongratulationsPage().congratulationsTitle); 
-						super.pause(30);
+						waitForVisibility(new AddSatelliteCongratulationsPage().congratulationsTitle); 
+
 					}
 				} catch (Exception e) {	}
 
 				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-				super.pause(30);
+
+				waitForVisibility(new HomePage().ssidName);
 				softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
 			
 			softsatellite1.assertAll();
@@ -459,8 +373,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					utils.log().info("Factory Reset Satellite 2");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
 					super.pause(75);
-					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-					super.pause(10);
 			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
 
 			try {
@@ -531,21 +443,26 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					
 				}catch (Exception e) {}
 				
+				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+
+				waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().successfullyConnectedToInternetTitle);
 				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-				super.pause(20);
+
+				waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 				softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
 				super.pause(30);
 				
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
 						softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-						super.pause(30);
+						waitForVisibility(new AddSatelliteCongratulationsPage().congratulationsTitle); 
+
 					}
 				} catch (Exception e) {	}
-				//finalizing your setup
 
 				softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-				super.pause(20);
+
+				waitForVisibility(new HomePage().ssidName);
 				softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
 			
 			softsatellite2.assertAll();
@@ -566,274 +483,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		}
 	}
 			
-//		@Test(priority = 169)
-//		public void UnPair_W31_mAX_Router() 
-//		{
-//	    	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-//	    	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-//	    	new BTSwipePage().clickBluetooth();
-//	    	new BTPairingPage().clickDetailsButton();
-//	    	
-//			for(int i = 1; i <= 2; i++) {
-//				super.pause(5);
-//				new BTUnPairingPage().clickUnPairIcon();
-//				super.pause(3);
-//				new BTUnPairingRouterPage().clickUnPairOption();
-//			}
-//			new BTSwipePage().swipeUpOnce(Direction.UP);
-//		}
-		
-//		@Test(priority = 169)
-//		public void Uninstall_SBC_APP() 
-//		{
-//			try 
-//			   {
-//				   utils.log().info("Uninstalling SBC APP ");
-//			       ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "uninstall", "com.arris.sbcBeta");
-//			       Process pc2 = pb2.start();
-//			   } catch (Exception e) { e.printStackTrace(); }  
-//			
-//		}
-
 }
 
 
-
-
-
-
-
-
-//@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//	public void Verify_Install_Left_Satellite() {
-//		utils.log().info("                            ");
-//		utils.log().info("****************************");
-//		utils.log().info("Test: Install Left Satellite");
-//		utils.log().info("****************************");
-//		
-//		SoftAssert softsatellite1 = new SoftAssert();
-//		
-//		utils.log().info("Manually switch on and reest your first Satellite");
-//		super.pause(60);
-// 	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-// 	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-// 	new BTSwipePage().clickBluetooth();
-// 	new BTPairingPage().switchOffBluetooth();
-// 	super.pause(5);
-// 	new BTPairingPage().switchOnBluetooth();
-// 	super.pause(10);
-// 	new BTPairingPage().clickMAXRouter();;
-//		super.pause(5);
-//		if(new BTPairingPanelPage().isAt()) {
-//			new BTPairingPanelPage().clickOKButton();
-//		}
-//	
-////			new HomePage().getFooterIconsPageObject().clickHomeButton();
-//		try {
-//			if (new HomePage().isAt())
-//				softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
-//
-//			softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-//			super.pause(5);
-//			softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-//			super.pause(60);
-//		//	super.waitFor(null);
-//			
-//			try {
-//				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-//					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-//					super.pause(10);
-//					new AddSatelliteAddNewSatellitePage2().clickNextButton();}				
-//			}catch(Exception e) {}
-//			
-//			try {
-//				if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-//					new BlueToothPage().enableBlueTooth();
-//					pause(5);
-//					new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//					super.pause(30);
-//				}
-//			}catch(Exception e) {}
-//			
-//			try {
-//				if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-//					new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-//					new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-//					super.pause(23);
-//				}
-//			}catch(Exception e) {}
-//			
-//			softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-//			softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-//			softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//			super.pause(35);
-//			try {
-//				if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-////					new BlueToothPage().enableBlueTooth();
-////					pause(5);
-//					new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//					super.pause(30);
-//				}
-//			} catch (Exception e) {
-//			}
-//
-//			try {
-//				if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-//					new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-//					new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-//					super.pause(23);
-//				}
-//			} catch (Exception e) {
-//			}
-//			
-//			
-//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-//			super.pause(75);
-//			softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-//			super.pause(20);
-//			softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-//			super.pause(10);
-//			try {
-//				if (new AddSatelliteRegistrationFailedPage().isAt()) {
-//					softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-//				}
-//			} catch (Exception e) {	}
-//			super.pause(60);
-//			softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-//			super.pause(15);
-//			softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
-//		
-//		softsatellite1.assertAll();
-//	}catch(Exception e) {
-//		  new TapSevenTimes().tapSeven();
-//		  super.pause(3);
-//		  new SevenTapLogs().clickYesButton();
-//		  super.pause(3);
-//		  new SevenTapGmail().clickGmailIcon();
-//		  super.pause(3);
-//		  new SevenTapEmail().enterEmailAddress();
-//		  super.pause(3);
-//		  new SevenTapEmail().clickSendButton();
-//		  new KillAndRelaunchApp().killApp();
-//		  super.pause(3);
-//		  new KillAndRelaunchApp().relaunchApp();
-//		  super.pause(15);
-//	}
-//}
-//
-//
-//	
-//	@Test(priority = 3, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//	public void Verify_Install_Right_Satellite() {
-//		utils.log().info("                             ");
-//		utils.log().info("*****************************");
-//		utils.log().info("Test: Install Right Satellite ");
-//		utils.log().info("*****************************");
-//		
-//		SoftAssert softsatellite2 = new SoftAssert();
-//		utils.log().info("Manually switch on and reset your second Satellite");
-//		super.pause(60);
-// 	new BTSwipePage().swipeDownOnce(Direction.DOWN);
-// 	new BTSwipePage().swipeDownTwice(Direction.DOWN);
-// 	new BTSwipePage().clickBluetooth();
-// 	new BTPairingPage().switchOffBluetooth();
-// 	super.pause(5);
-// 	new BTPairingPage().switchOnBluetooth();
-// 	super.pause(10);
-// 	new BTPairingPage().clickMAXRouter();;
-//		super.pause(5);
-//		if(new BTPairingPanelPage().isAt()) {
-//			new BTPairingPanelPage().clickOKButton();
-//		}
-//
-//		
-////		new HomePage().getFooterIconsPageObject().clickHomeButton();
-//		try {
-//
-//			if (new HomePage().isAt())
-//				softsatellite2.assertTrue(new HomePage().clickRightSatelliteImage());
-//
-//			softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
-//			super.pause(5);
-//			softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-//			super.pause(30);
-//			
-////			try {
-////				softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-////				super.pause(100);
-////				
-////				try {
-////					if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-////						new BlueToothPage().enableBlueTooth();
-////						pause(5);
-////						new BlueToothConnectionFailedPage().clickTryAgainbutton();
-////						super.pause(30);
-////					}
-////				}catch(Exception e) {}
-////				
-////				try {
-////					if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-////						new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-////						new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-////						super.pause(23);
-////					}
-////				}catch(Exception e) {}
-////			}catch(Exception e) {}
-//			
-//			softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-//			softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
-//			softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//			super.pause(60);
-//			try {
-//				if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
-////					new BlueToothPage().enableBlueTooth();
-////					pause(5);
-//					new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//					super.pause(30);
-//				}
-//			} catch (Exception e) {
-//			}
-//
-//			try {
-//				if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
-//					new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-//					new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-//					super.pause(23);
-//				}
-//			} catch (Exception e) {
-//			}
-//
-//			
-//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-//			super.pause(75);
-//			softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-//			super.pause(20);
-//			softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-//			super.pause(10);
-//			try {
-//				if (new AddSatelliteRegistrationFailedPage().isAt()) {
-//					softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
-//				}
-//			} catch (Exception e) {	}
-//			super.pause(60);
-//			softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-//			super.pause(15);
-//			softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
-//		
-//		softsatellite2.assertAll();
-//	}catch(Exception e) {
-//		  new TapSevenTimes().tapSeven();
-//		  super.pause(3);
-//		  new SevenTapLogs().clickYesButton();
-//		  super.pause(3);
-//		  new SevenTapGmail().clickGmailIcon();
-//		  super.pause(3);
-//		  new SevenTapEmail().enterEmailAddress();
-//		  super.pause(3);
-//		  new SevenTapEmail().clickSendButton();
-//		  new KillAndRelaunchApp().killApp();
-//		  super.pause(3);
-//		  new KillAndRelaunchApp().relaunchApp();
-//		  super.pause(15);
-//	}
-//}
