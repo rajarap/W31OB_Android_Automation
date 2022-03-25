@@ -1,12 +1,8 @@
 package com.cs.arris.Pages;
 
-import java.io.IOException;
+
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-import javax.naming.Context;
-
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.support.PageFactory;
 
 import com.cs.arris.Base.ParentClass;
@@ -14,11 +10,8 @@ import com.cs.arris.Interface.Page;
 import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 public class ConnectionToWifiNeededPage extends ParentClass implements Page
 {
@@ -51,7 +44,6 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 	
 	public void turnOnRouterWifi(String ssid, String pwd, String udid)
 	{
-		super.pause(3);
 		this.ssid = ssid;
 		this.pwd = pwd;
 		this.udid = udid;
@@ -65,12 +57,10 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
            super.pause(3);
            ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "input", "keyevent", "3");
            Process pc2 = pb2.start();
-       } catch (Exception e) 
-       {
-         e.printStackTrace();
-       }  
-       utils.log().info("Activating App running in Background");
+       } catch (Exception e) {e.printStackTrace(); }  
+       
        super.pause(3);
+       utils.log().info("Activating App running in Background");
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	

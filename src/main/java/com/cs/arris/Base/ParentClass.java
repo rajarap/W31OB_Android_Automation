@@ -270,7 +270,7 @@ public class ParentClass
 				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, getProps().getProperty("timeout"));
 				driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
 				setDriver(driver);
-				getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//				getDriver().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 				utils.log().info("Android Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
@@ -290,7 +290,7 @@ public class ParentClass
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.BROWSER_NAME, "Chrome");
 				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
-				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+				getDriver().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}

@@ -53,13 +53,15 @@ public class SelectYourDevicePage2 extends ParentClass implements Page
 //	public MobileElement selectYourDevicePlayStoreLink;	
 
 
-	@AndroidFindAll({
-		@AndroidBy (id = "com.arris.sbcBeta:id/btn_selection_next"),
-		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_selection_next']"),
-		@AndroidBy (xpath = "//android.widget.Button[@text='NEXT"),
-		@AndroidBy (xpath = "//android.widget.Button[@bounds='[119,1925][961,2042]']"),
-		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button")
-	})
+//	@AndroidFindAll({
+//		@AndroidBy (id = "com.arris.sbcBeta:id/btn_selection_next"),
+//		@AndroidBy (xpath = "//android.widget.Button[@resource-id='com.arris.sbcBeta:id/btn_selection_next']"),
+//		@AndroidBy (xpath = "//android.widget.Button[@text='NEXT"),
+//		@AndroidBy (xpath = "//android.widget.Button[@bounds='[119,1925][961,2042]']"),
+//		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button")
+//	})
+	
+	@AndroidFindBy(id = "com.arris.sbcBeta:id/btn_selection_next")
 	public MobileElement selectYourDeviceNextButton;
 	
 	public SelectYourDevicePage2()
