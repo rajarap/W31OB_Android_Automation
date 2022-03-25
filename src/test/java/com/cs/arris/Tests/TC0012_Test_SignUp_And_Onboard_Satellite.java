@@ -131,18 +131,18 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-//		  	utils.log().info("Manually switch on your mAX MainAP Router");
-//		  	super.pause(10);
+		  	utils.log().info("Manually switch on your mAX MainAP Router if not switched on");
+		  	super.pause(20);
 		  
 		  try {
 				utils.log().info("Factory Resetting MainAP");
 				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
 				super.pause(75);
-			    utils.log().info("Turning OFF Wifi..........");
+			    utils.log().info("Turning OFF Wifi");
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
 				super.pause(5);
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-				utils.log().info("Wifi Turned ON");
+				utils.log().info("Turning ON Wifi");
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 //			utils.log().info("Pairing your Max router with your mobile");
@@ -161,14 +161,27 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  super.pause(5);
 			  new AccessResourcesOnDevicePage().clickAllow();
 			  
-//			  try {
-//				  if(new InternetConnectionNotAvailable().isAt()) {
-//					 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
-//					super.pause(10);
-//					new InternetConnectionNotAvailable().clickTryAgainbutton();
-//				}
-//			  }catch(Exception e){}
+			  try {
+					if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						new BlueToothConnectionFailedPage().clickTryAgainbutton();
+						super.pause(100);
+					}
+					
+					if(new InternetConnectionNotAvailable().isAt()) {
+						 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
+						super.pause(10);
+						new InternetConnectionNotAvailable().clickTryAgainbutton();
+					}				
+				}catch(Exception e) {}
 			  
+//			  try {
+//			  if(new InternetConnectionNotAvailable().isAt()) {
+//				 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
+//				super.pause(10);
+//				new InternetConnectionNotAvailable().clickTryAgainbutton();
+//			}
+//		  }catch(Exception e){}
+
 			  new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
@@ -211,12 +224,16 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new UnPackYourBoxPage().clickNextButton();
 			  new PlugInMaxRouterPage().clickNextButton();
 			  super.pause(40);
-//			  try {
-//				  if(new MultipleDevicesFoundPage().isAt()){
-//					  new MultipleDevicesFoundPage().clickTryAgaineButton();
-//					  super.pause(10);
-//				  }
-//			  }catch(Exception e) {}
+			  
+			  try {
+				  if(new MultipleDevicesFoundPage().isAt()){
+					  utils.log().info("Multiple devices found. Switch off all other mAX Routers, except the mainAP Router");
+					  super.pause(20);
+					  new MultipleDevicesFoundPage().clickTryAgaineButton();
+					  super.pause(15);
+				  }
+			  }catch(Exception e) {}
+			  
 			  new ConnectMaxRouterToMobileDevicePage().clickNextButton(); //Successfully connected
 			  super.pause(40);
 			  new ConnectMaxRouterToInternetPage().clickNextButton();
