@@ -59,6 +59,7 @@ pipeline
                   	sh """  
                       	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                   		/Users/rm2652/Library/Android/sdk/platform-tools/adb uninstall com.arris.sbcBeta
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
@@ -88,6 +89,7 @@ pipeline
                   	sh """  
                       	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                   		/Users/rm2652/Library/Android/sdk/platform-tools/adb uninstall com.arris.sbcBeta
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
@@ -117,6 +119,7 @@ pipeline
                 	sh """
                        	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
+                   		/Users/rm2652/Library/Android/sdk/platform-tools/adb uninstall com.arris.sbcBeta
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                		 """       
@@ -130,13 +133,17 @@ pipeline
     {
     	always
     	{
-    			echo '=====Publish QA ReportNG Report====='
+    	        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+                {
+    				echo '=====Publish QA ReportNG Report====='
                     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, 
                     reportDir: '/target/surefire-reports/html', reportFiles: 'index.html', 
                     reportName: 'W31 Android Onboarding BOBA', reportTitles: 'Arris SURFboard App'])
 
                     zip archive: true, dir: '/Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/target/surefire-reports/html', zipFile: 'W31_Android_Onboarding_BOBA_'+env.BUILD_NUMBER+'.zip'
+                }
     	}
+    	
         success
         {
             echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - SUCCESS '                

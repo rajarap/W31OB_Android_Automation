@@ -131,7 +131,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-		  	utils.log().info("Manually switch on your mAX MainAP Router if not switched on");
+		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
 		  	super.pause(20);
 		  
 		  try {
@@ -169,19 +169,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					
 					if(new InternetConnectionNotAvailable().isAt()) {
 						 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
-						super.pause(10);
+						super.pause(30);
 						new InternetConnectionNotAvailable().clickTryAgainbutton();
 					}				
 				}catch(Exception e) {}
 			  
-//			  try {
-//			  if(new InternetConnectionNotAvailable().isAt()) {
-//				 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
-//				super.pause(10);
-//				new InternetConnectionNotAvailable().clickTryAgainbutton();
-//			}
-//		  }catch(Exception e){}
-
 			  new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
