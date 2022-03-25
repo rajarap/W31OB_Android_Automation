@@ -143,6 +143,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				super.pause(5);
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
 				utils.log().info("Turning ON Wifi");
+				super.pause(5);
+				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+				super.pause(30);
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 //			utils.log().info("Pairing your Max router with your mobile");
@@ -158,7 +161,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new GetStartedPage().clickGetStartedButton();
 			  new GrantPermissionsPage().clickContinueButton();
 			  new DeviceLocationPage().clickAllow();
-			  super.pause(5);
+			  super.pause(3);
 			  new AccessResourcesOnDevicePage().clickAllow();
 			  
 			  try {
@@ -168,7 +171,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}
 					
 					if(new InternetConnectionNotAvailable().isAt()) {
-						 new ConnectionToWifiNeededPage().turnOnWifi(this.localWifi, this.localWifiPwd, this.udid);
+						 new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
 						super.pause(30);
 						new InternetConnectionNotAvailable().clickTryAgainbutton();
 					}				

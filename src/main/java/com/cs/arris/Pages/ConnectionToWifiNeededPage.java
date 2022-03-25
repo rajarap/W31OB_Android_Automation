@@ -74,7 +74,7 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	
-	public void turnOnWifi(String ssid, String pwd, String udid)
+	public void turnOnLocalWifi(String ssid, String pwd, String udid)
 	{
 		super.pause(3);
 		this.ssid = ssid;
