@@ -256,7 +256,7 @@ public class ParentClass
 			
 			//set the DesiredCapabilites of the device
 			desiredCapabilities = new DesiredCapabilities();
-			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, getPlatformName());
+			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, getPlatformName());//
 			desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, getDeviceName());
 			
 			if(getPlatformName().equalsIgnoreCase("Android"))
@@ -267,10 +267,11 @@ public class ParentClass
 				desiredCapabilities.setCapability(MobileCapabilityType.VERSION, getProps().getProperty("androidVersion"));
 				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("androidAppLocation"));
 				desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, getProps().getProperty("timeout"));
+//				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, getProps().getProperty("timeout"));
+				desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 900);
 				driver = new AndroidDriver<MobileElement>(url, desiredCapabilities);
 				setDriver(driver);
-//				getDriver().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+				getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				utils.log().info("Android Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
