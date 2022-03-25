@@ -94,9 +94,9 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        {
          e.printStackTrace();
        }  
- //      utils.log().info("Activating App running in Background");
+       utils.log().info("Activating App running in Background");
        super.pause(3);
- //      super.getDriver().activateApp("com.arris.sbcBeta");
+       super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	
 	public void clickContinue()
