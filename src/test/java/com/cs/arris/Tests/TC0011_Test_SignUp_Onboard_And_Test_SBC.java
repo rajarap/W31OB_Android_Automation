@@ -176,11 +176,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
 //		  	super.pause(20);
 //		  
-//		  try {
-//				utils.log().info("Factory Resetting MainAP");
-//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-//				super.pause(75);
-//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+		  try {
+				utils.log().info("Factory Resetting MainAP");
+				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+				super.pause(75);
+		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 
 			  
@@ -2816,14 +2816,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 					SoftAssert softsatellite1 = new SoftAssert();
 					
-					utils.log().info("Manually switch on your first satellite");
-					super.pause(100);
-//					  try {
-//							utils.log().info("Factory Reset Satellite 1");
-//							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
-//							super.pause(75);	
-		//
-//					  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
+//					utils.log().info("Manually switch on your first satellite");
+//					super.pause(100);
+					  try {
+							utils.log().info("Factory Reset Satellite 1");
+							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
+							super.pause(75);	
+
+					  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
 
 					try {
 						if (new HomePage().isAt())
@@ -2834,12 +2834,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
 						super.pause(30);
 						 //Please connect to continue with satellite install
-						try {
-							if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-								super.pause(100);
-							}
-						}catch(Exception e) {}
+						
+						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+						super.pause(100);
+						
+//						try {
+//							if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+//								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+//								super.pause(100);
+//							}
+//						}catch(Exception e) {}
 						
 							try {
 								if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -2921,6 +2925,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 
 
+
 				
 				@Test(priority = 120)
 				public void Verify_Install_Right_Satellite() {
@@ -2930,13 +2935,13 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("*****************************");
 					
 					SoftAssert softsatellite2 = new SoftAssert();
-					utils.log().info("Manually switch on your second satellite");
-					super.pause(100);
-//					  try {
-//							utils.log().info("Factory Reset Satellite 2");
-//							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
-//							super.pause(75);
-//					  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
+//					utils.log().info("Manually switch on your second satellite");
+//					super.pause(100);
+					  try {
+							utils.log().info("Factory Reset Satellite 2");
+							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
+							super.pause(75);
+					  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
 
 					try {
 
@@ -3033,6 +3038,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //					  new KillAndRelaunchApp().killApp();
 //					  new KillAndRelaunchApp().relaunchApp();
 				}
-			}		
-}
+			}
+		}
 
