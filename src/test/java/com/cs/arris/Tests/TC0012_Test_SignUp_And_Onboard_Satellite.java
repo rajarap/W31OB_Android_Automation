@@ -130,24 +130,24 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
-		  	super.pause(20);
+//		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
+//		  	super.pause(20);
 		  
-//		  try {
-//				utils.log().info("Factory Resetting MainAP");
-//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-//				super.pause(75);
-//			    utils.log().info("Turning OFF Wifi");
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-//				super.pause(10);
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-//				utils.log().info("Turning ON Wifi");
-////				super.pause(5);
-////				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
-//				super.pause(30);
-//				utils.log().info("Check if wifi is connected to Arris-Guest");
-//				super.pause(30);
-//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+		  try {
+				utils.log().info("Factory Resetting MainAP");
+				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+				super.pause(75);
+			    utils.log().info("Turning OFF Wifi");
+				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
+				super.pause(10);
+				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
+				utils.log().info("Turning ON Wifi");
+//				super.pause(5);
+//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+				super.pause(30);
+				utils.log().info("Check if wifi is connected to Arris-Guest");
+				super.pause(30);
+		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 
 			  
@@ -195,6 +195,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new SetupHomeNetworkPage().clickNextButton();
 			  new UnPackYourBoxPage().clickNextButton();
 			  new PlugInMaxRouterPage().clickNextButton();
+			  super.pause(40);
 			  new ConnectMaxRouterToMobileDevicePage().clickNextButton(); //Successfully connected
 			  new ConnectMaxRouterToInternetPage().clickNextButton();
 			  new SystemFirmwareUpdatePage().clickNextButton();
@@ -208,6 +209,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 					  new ConnectionToWifiNeededPage().clickContinue();}
 			  }catch(Exception e) {}
+			  super.pause(5);
 			  new CongratulationsPage().clickContinueButton();
 			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
 			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
@@ -250,14 +252,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			SoftAssert softsatellite1 = new SoftAssert();
 			
-			utils.log().info("Manually switch on your first satellite");
-			super.pause(100);
-//			  try {
-//					utils.log().info("Factory Reset Satellite 1");
-//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
-//					super.pause(75);	
-//
-//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
+//			utils.log().info("Manually switch on your first satellite");
+//			super.pause(100);
+			  try {
+					utils.log().info("Factory Reset Satellite 1");
+					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
+					super.pause(75);	
+
+			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
 
 			try {
 				if (new HomePage().isAt())
@@ -374,13 +376,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			utils.log().info("*****************************");
 			
 			SoftAssert softsatellite2 = new SoftAssert();
-			utils.log().info("Manually switch on your second satellite");
-			super.pause(100);
-//			  try {
-//					utils.log().info("Factory Reset Satellite 2");
-//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
-//					super.pause(75);
-//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
+//			utils.log().info("Manually switch on your second satellite");
+//			super.pause(100);
+			  try {
+					utils.log().info("Factory Reset Satellite 2");
+					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
+					super.pause(75);
+			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
 
 			try {
 
