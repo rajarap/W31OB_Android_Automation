@@ -130,24 +130,24 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-//		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
-//		  	super.pause(20);
+		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
+		  	super.pause(20);
 		  
-		  try {
-				utils.log().info("Factory Resetting MainAP");
-				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(75);
-			    utils.log().info("Turning OFF Wifi");
-				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-				super.pause(10);
-				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-				utils.log().info("Turning ON Wifi");
-//				super.pause(5);
-//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
-				super.pause(30);
-				utils.log().info("Check if wifi is connected to Arris-Guest");
-				super.pause(30);
-		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+//		  try {
+//				utils.log().info("Factory Resetting MainAP");
+//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+//				super.pause(75);
+//			    utils.log().info("Turning OFF Wifi");
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
+//				super.pause(10);
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
+//				utils.log().info("Turning ON Wifi");
+////				super.pause(5);
+////				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+//				super.pause(30);
+//				utils.log().info("Check if wifi is connected to Arris-Guest");
+//				super.pause(30);
+//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 
 			  
@@ -220,16 +220,22 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new HomePage().getSSIDName();  
 
 		  }catch(Exception e) {
-//			  new TapSevenTimes().tapSeven();
-//			  super.pause(5);
-//			  new SevenTapLogs().clickYesButton();
-//			  super.pause(5);
-//			  new SevenTapGmail().clickGmailIcon();
-//			  super.pause(5);
-//			  new SevenTapEmail().enterEmailAddress();
-//			  super.pause(5);
-//			  new SevenTapEmail().clickSendButton();
-//			  super.pause(5);
+			  new TapSevenTimes().tapSeven();
+			  super.pause(5);
+			  if(new SevenTapLogs().isAt()) {
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(5);
+			  }
+			  if(new SevenTapGmail().isAt()) {
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(5);
+			  }
+			  if(new SevenTapEmail().isAt()) {
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(5);
+				  new SevenTapEmail().clickSendButton();
+				  super.pause(5);
+			  }
 			  new KillAndRelaunchApp().killApp();
 		  }
 	  }
@@ -336,17 +342,23 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			softsatellite1.assertAll();
 			
-		}catch(Exception e) {
-			  new TapSevenTimes().tapSeven();
-			  super.pause(5);
-			  new SevenTapLogs().clickYesButton();
-			  super.pause(5);
-			  new SevenTapGmail().clickGmailIcon();
-			  super.pause(5);
-			  new SevenTapEmail().enterEmailAddress();
-			  super.pause(5);
-			  new SevenTapEmail().clickSendButton();
-			  super.pause(5);
+			  }catch(Exception e) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(5);
+				  if(new SevenTapLogs().isAt()) {
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+				  }
+				  if(new SevenTapGmail().isAt()) {
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+				  }
+				  if(new SevenTapEmail().isAt()) {
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
+				  }
 			  new KillAndRelaunchApp().killApp();
 			  new KillAndRelaunchApp().relaunchApp();
 		}
@@ -451,17 +463,23 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
 			
 			softsatellite2.assertAll();
-		}catch(Exception e) {
-			  new TapSevenTimes().tapSeven();
-			  super.pause(5);
-			  new SevenTapLogs().clickYesButton();
-			  super.pause(5);
-			  new SevenTapGmail().clickGmailIcon();
-			  super.pause(5);
-			  new SevenTapEmail().enterEmailAddress();
-			  super.pause(5);
-			  new SevenTapEmail().clickSendButton();
-			  super.pause(5);
+			  }catch(Exception e) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(5);
+				  if(new SevenTapLogs().isAt()) {
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+				  }
+				  if(new SevenTapGmail().isAt()) {
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+				  }
+				  if(new SevenTapEmail().isAt()) {
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
+				  }
 			  new KillAndRelaunchApp().killApp();
 			  new KillAndRelaunchApp().relaunchApp();
 		}
