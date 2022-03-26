@@ -262,7 +262,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				 //Please connect to continue with satellite install
 				
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-				super.pause(100);
+				super.pause(30);
 				
 //				try {
 //					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
@@ -290,7 +290,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-				super.pause(30);
+				super.pause(75);
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -335,18 +335,18 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			softsatellite1.assertAll();
 			
 		}catch(Exception e) {
-//			  new TapSevenTimes().tapSeven();
-//			  super.pause(5);
-//			  new SevenTapLogs().clickYesButton();
-//			  super.pause(5);
-//			  new SevenTapGmail().clickGmailIcon();
-//			  super.pause(5);
-//			  new SevenTapEmail().enterEmailAddress();
-//			  super.pause(5);
-//			  new SevenTapEmail().clickSendButton();
-//			  super.pause(5);
-//			  new KillAndRelaunchApp().killApp();
-//			  new KillAndRelaunchApp().relaunchApp();
+			  new TapSevenTimes().tapSeven();
+			  super.pause(5);
+			  new SevenTapLogs().clickYesButton();
+			  super.pause(5);
+			  new SevenTapGmail().clickGmailIcon();
+			  super.pause(5);
+			  new SevenTapEmail().enterEmailAddress();
+			  super.pause(5);
+			  new SevenTapEmail().clickSendButton();
+			  super.pause(5);
+			  new KillAndRelaunchApp().killApp();
+			  new KillAndRelaunchApp().relaunchApp();
 		}
 	}
 
@@ -379,7 +379,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-				super.pause(30);
+				super.pause(75);
 				
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -450,18 +450,18 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			softsatellite2.assertAll();
 		}catch(Exception e) {
-//			  new TapSevenTimes().tapSeven();
-//			  super.pause(5);
-//			  new SevenTapLogs().clickYesButton();
-//			  super.pause(5);
-//			  new SevenTapGmail().clickGmailIcon();
-//			  super.pause(5);
-//			  new SevenTapEmail().enterEmailAddress();
-//			  super.pause(5);
-//			  new SevenTapEmail().clickSendButton();
-//			  super.pause(5);
-//			  new KillAndRelaunchApp().killApp();
-//			  new KillAndRelaunchApp().relaunchApp();
+			  new TapSevenTimes().tapSeven();
+			  super.pause(5);
+			  new SevenTapLogs().clickYesButton();
+			  super.pause(5);
+			  new SevenTapGmail().clickGmailIcon();
+			  super.pause(5);
+			  new SevenTapEmail().enterEmailAddress();
+			  super.pause(5);
+			  new SevenTapEmail().clickSendButton();
+			  super.pause(5);
+			  new KillAndRelaunchApp().killApp();
+			  new KillAndRelaunchApp().relaunchApp();
 		}
 	}
 }
