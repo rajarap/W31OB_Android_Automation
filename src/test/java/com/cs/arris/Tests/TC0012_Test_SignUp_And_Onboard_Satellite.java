@@ -270,7 +270,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				 //Please connect to continue with satellite install
 				
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-				super.pause(30);
+				super.pause(100);
 				
 //				try {
 //					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
