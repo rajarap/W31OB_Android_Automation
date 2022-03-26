@@ -130,14 +130,22 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  @Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
-//		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
-//		  	super.pause(20);
+		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
+		  	super.pause(20);
 //		  
-		  try {
-				utils.log().info("Factory Resetting MainAP");
-				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(75);
-		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+//		  try {
+//				utils.log().info("Factory Resetting MainAP");
+//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+//				super.pause(75);
+//			    utils.log().info("Turning OFF Wifi");
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
+//				super.pause(5);
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
+//				utils.log().info("Turning ON Wifi");
+////				super.pause(5);
+////				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+//				super.pause(30);
+//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 
 			  
