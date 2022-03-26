@@ -142,11 +142,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				super.pause(10);
 				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
 				utils.log().info("Turning ON Wifi");
-//				super.pause(5);
-//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+				super.pause(5);
+				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
 				super.pause(30);
-				utils.log().info("Check if wifi is connected to Arris-Guest");
-				super.pause(30);
+//				utils.log().info("Check if wifi is connected to Arris-Guest");
+//				super.pause(30);
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		     	
 
