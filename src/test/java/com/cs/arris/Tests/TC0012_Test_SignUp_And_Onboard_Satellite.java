@@ -127,7 +127,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  }
 	  
   
-	  @Test(priority = 1)
+	  @SuppressWarnings("rawtypes")
+	@Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
 //		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
@@ -336,7 +337,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
 					}
 				} catch (Exception e) {	}
-				super.pause(35);
+				super.pause(55);
 				//Finalizing your setup
 				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 				super.pause(20);
@@ -459,7 +460,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}
 				} catch (Exception e) {	}
 				//Finalizing your setup
-				super.pause(35);
+				super.pause(55);
 				softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
 				super.pause(30);
 				softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
