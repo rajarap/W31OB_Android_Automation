@@ -359,6 +359,38 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //				  }
 //			  new KillAndRelaunchApp().killApp();
 //			  new KillAndRelaunchApp().relaunchApp();
+				  
+				  if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						new BlueToothConnectionFailedPage().clickTryAgainbutton();
+						super.pause(100);}
+				  
+				  try {
+						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(100);
+						}
+					}catch(Exception e1) {}
+				  
+				    softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+					super.pause(75);
+					softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+					super.pause(15);
+					softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+					super.pause(15);
+					//Registering device
+					try {
+						if (new AddSatelliteRegistrationFailedPage().isAt()) {
+							softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+						}
+					} catch (Exception e1) {	}
+					super.pause(55);
+					//Finalizing your setup
+					softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+					super.pause(20);
+					softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+				
+				softsatellite1.assertAll();
 		}
 	}
 
@@ -374,11 +406,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			SoftAssert softsatellite2 = new SoftAssert();
 			utils.log().info("Manually switch on your second satellite");
 			super.pause(45);
-//			  try {
-//					utils.log().info("Factory Reset Satellite 2");
-//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
-//					super.pause(75);
-//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
+			  try {
+					utils.log().info("Factory Reset Satellite 2");
+					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
+					super.pause(75);
+			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
 
 			try {
 

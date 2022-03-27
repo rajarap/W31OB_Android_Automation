@@ -337,8 +337,9 @@ public class ParentClass
 		  try {
 				utils.log().info("Factory Resetting MainAP");
 				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				pause(50);
+				pause(60);
 				new ConnectionToWifiNeededPage().restartAndroidDevice();
+				pause(60);
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		  
 	  }
