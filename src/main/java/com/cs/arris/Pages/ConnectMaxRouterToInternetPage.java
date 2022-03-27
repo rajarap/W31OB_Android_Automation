@@ -38,8 +38,9 @@ public class ConnectMaxRouterToInternetPage extends ParentClass implements Page
 	
 	public void clickNextButton()
 	{
-		utils.log().info("Successfully Connected to Internet Page - Clicked on Next Button");
+		
 		click(nextButton);
+		utils.log().info("Successfully Connected to Internet Page - Clicked on Next Button");
 	}
 
 	@Override
