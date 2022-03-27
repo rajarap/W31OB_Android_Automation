@@ -232,8 +232,8 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
-//			factoryReset();
-//			rebootDevice();
+			factoryReset();
+			rebootDevice();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
