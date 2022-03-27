@@ -63,6 +63,7 @@ com/cs/arris/Reports/ExtentReport.class
 com/cs/arris/Pages/DebugLogsDialog.class
 com/cs/arris/Pages/FAQHelpPage.class
 com/cs/arris/Pages/BlueToothConnectionFailedTroubleShootProceedPage.class
+com/cs/arris/Pages/ForgetNetworkPasswordPage.class
 com/cs/arris/Pages/BTSwipePage.class
 com/cs/arris/Pages/ErrorCode_0015_1805_Something_Went_Wrong_Page.class
 com/cs/arris/Pages/Error_0005_1200_Bluetooth_Connection_Failed_Page.class
@@ -179,6 +180,7 @@ com/cs/arris/Pages/EditDeviceNameDialog.class
 com/cs/arris/Pages/NetworkWANIPConfigurationIPv4Page.class
 com/cs/arris/Pages/AddDeviceHomePageSpecificationDetailsPage.class
 com/cs/arris/Pages/Error_0001_1201_Bluetooth_Pairing_Failed_Page.class
+com/cs/arris/Pages/ForgetNetworkSettings.class
 com/cs/arris/Pages/AddSatelliteSuccessfullyConnectedPage.class
 com/cs/arris/Pages/ParentalControlUserProfileAddDevicePage.class
 com/cs/arris/Pages/BTPairingPage.class
@@ -204,6 +206,7 @@ com/cs/arris/Base/ParentClass.class
 com/cs/arris/Pages/AddDeviceChooseInternetServiceProviderPage.class
 com/cs/arris/Utilities/Direction.class
 com/cs/arris/Utilities/ValidOTP.class
+com/cs/arris/Pages/ForgetNetworkWifiPage.class
 com/cs/arris/Pages/ErrorCode_0002_1304_Internet_Connection_Not_Available_Page.class
 com/cs/arris/Utilities/GetOTPFromNada.class
 com/cs/arris/Pages/NetworkWANIPConfigurationIPv6Page.class
@@ -221,6 +224,7 @@ com/cs/arris/Pages/AddDeviceUserGuidePage.class
 com/cs/arris/Pages/HomePage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimeAppliedChangesDialog.class
 com/cs/arris/Pages/PlugInMaxRouterPage.class
+com/cs/arris/Pages/ForgetNetworkConnectionsPage.class
 com/cs/arris/Pages/NetworkPage.class
 com/cs/arris/Pages/AddDeviceLetsStartWithDeviceConnectionPage.class
 com/cs/arris/Pages/NetworkLANDHCPLeaseTimePage.class

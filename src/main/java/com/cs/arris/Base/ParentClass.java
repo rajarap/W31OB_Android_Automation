@@ -174,13 +174,6 @@ public class ParentClass
 		utils.log().info("Appium server stopped");
 		System.gc();
 		
-//		try 
-//		   {
-//			   utils.log().info("Uninstalling SBC APP ");
-//		       ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "uninstall", "com.arris.sbcBeta");
-//		       Process pc2 = pb2.start();
-//		   } catch (Exception e) { e.printStackTrace(); }  
-		
 	}
 	
 	public AppiumDriverLocalService getAppiumServerDefault() {
@@ -236,9 +229,6 @@ public class ParentClass
 		this.pltName = platform;
 		this.dvcName = device;
 		
-//		this.pltName = "Android";
-//		this.dvcName = "Android";
-		
 		try
 		{
 			setConfigProperties();
@@ -291,7 +281,7 @@ public class ParentClass
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.BROWSER_NAME, "Chrome");
 				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
-				getDriver().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+				getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
@@ -621,6 +611,7 @@ public class ParentClass
 		}
 	  
 
+		@SuppressWarnings("rawtypes")
 		public void toggleWiFI()
 		{
 			((AndroidDriver) this.getDriver()).toggleWifi();

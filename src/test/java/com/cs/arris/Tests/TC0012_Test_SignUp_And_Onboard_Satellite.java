@@ -39,6 +39,10 @@ import com.cs.arris.Pages.ConnectionToWifiNeededPage;
 import com.cs.arris.Pages.DeviceLocationPage;
 import com.cs.arris.Pages.EnterValidOTPPage;
 import com.cs.arris.Pages.ErrorCode_0000_1506_Warranty_Support_Page;
+import com.cs.arris.Pages.ForgetNetworkConnectionsPage;
+import com.cs.arris.Pages.ForgetNetworkPasswordPage;
+import com.cs.arris.Pages.ForgetNetworkSettings;
+import com.cs.arris.Pages.ForgetNetworkWifiPage;
 import com.cs.arris.Pages.GetStartedPage;
 import com.cs.arris.Pages.GrantPermissionsPage;
 import com.cs.arris.Pages.HomePage;
@@ -127,7 +131,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  }
 	  
   
-	  @SuppressWarnings("rawtypes")
+	@SuppressWarnings("rawtypes")
 	@Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
@@ -136,15 +140,18 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  
 		  try {
 				utils.log().info("Factory Resetting MainAP");
-				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(75);
-			    utils.log().info("Turning OFF Wifi");
-				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-				super.pause(10);
-				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-				utils.log().info("Turning ON Wifi");
-				super.pause(5);
-				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+//				super.pause(75);
+
+				
+				
+//			    utils.log().info("Turning OFF Wifi");
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
+//				super.pause(10);
+//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
+//				utils.log().info("Turning ON Wifi");
+//				super.pause(5);
+//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
 				super.pause(30);
 //				utils.log().info("Check if wifi is connected to Arris-Guest");
 //				super.pause(30);
@@ -223,6 +230,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new HomePage().getSSIDName();  
 
 		  }catch(Exception e) {
+			  super.pause(20);
 			  new TapSevenTimes().tapSeven();
 			  super.pause(5);
 			  if(new SevenTapLogs().isAt()) {
@@ -253,14 +261,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			SoftAssert softsatellite1 = new SoftAssert();
 			
-//			utils.log().info("Manually switch on your first satellite");
-//			super.pause(100);
-			  try {
-					utils.log().info("Factory Reset Satellite 1");
-					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
-					super.pause(75);	
-
-			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
+			utils.log().info("Manually switch on your first satellite");
+			super.pause(20);
+//			  try {
+//					utils.log().info("Factory Reset Satellite 1");
+//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
+//					super.pause(75);	
+//
+//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
 
 			try {
 				if (new HomePage().isAt())
