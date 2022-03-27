@@ -22,7 +22,7 @@ public class TC067_Verify_Connect_To_Wifi extends ParentClass
 	  @Test(priority = 1)
 	  public void factory_reset()
 	  {
-		  new ConnectionToWifiNeededPage().turnOnLocalWifi("Arris-Guest", "ARRS!Gu3st", "ce071717bb59293c057e");
+//		  new ConnectionToWifiNeededPage().turnOnLocalWifi("Arris-Guest", "ARRS!Gu3st", "ce071717bb59293c057e");
 		  
 	  }
 }

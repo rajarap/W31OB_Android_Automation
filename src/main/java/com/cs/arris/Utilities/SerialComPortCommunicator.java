@@ -55,7 +55,6 @@ public class SerialComPortCommunicator {
 	
 	public static void restartAndroidDevice()
 	{
-		System.out.println("Restarting Android Device");
        try 
        {
     	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "reboot");

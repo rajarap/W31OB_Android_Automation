@@ -232,8 +232,8 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
-			factoryReset();
-			rebootDevice();
+//			factoryReset();
+//			rebootDevice();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
@@ -345,7 +345,7 @@ public class ParentClass
 	  
 	  public void rebootDevice() {
 		  try {
-			  utils.log().info("Restarting Android Device");
+			    utils.log().info("Restarting Android Device");
 				SerialComPortCommunicator.restartAndroidDevice();
 				pause(75);
 		  }catch(Exception e) {utils.log().info("Issue in rebooting device");}

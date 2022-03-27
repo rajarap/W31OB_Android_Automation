@@ -65,14 +65,14 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	
-	public void turnOnLocalWifi(String ssid, String pwd, String udid)
+	public void connectToLocalWifi(String ssid, String pwd, String udid)
 	{
 		super.pause(3);
 		this.ssid = ssid;
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	   //super.getDriver().runAppInBackground(Duration.ofSeconds(10));
+	   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
        try 
        {
     	   utils.log().info("Connecting to " + this.ssid + " network");
@@ -85,21 +85,22 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        {
          e.printStackTrace();
        }  
+       super.pause(3);
        utils.log().info("Activating App running in Background");
        super.pause(3);
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	
-	public void restartAndroidDevice()
-	{
-		utils.log().info("Restarting Android Device");
-       try 
-       {
-    	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "reboot");
-           Process pc1 = pb1.start();
-       } catch (Exception e) {e.printStackTrace();}  
-
-	}
+//	public void restartAndroidDevice()
+//	{
+//		utils.log().info("Restarting Android Device");
+//       try 
+//       {
+//    	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "reboot");
+//           Process pc1 = pb1.start();
+//       } catch (Exception e) {e.printStackTrace();}  
+//
+//	}
 	
 	public void clickContinue()
 	{

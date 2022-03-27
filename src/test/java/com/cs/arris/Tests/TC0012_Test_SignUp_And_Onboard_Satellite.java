@@ -139,7 +139,16 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new DeviceLocationPage().clickAllow();
 			  super.pause(2);
 			  new AccessResourcesOnDevicePage().clickAllow();
-			  new SelectYourDevicePage().selectSurfboardMaxOption();
+			  
+			  try {
+				  if(new InternetConnectionNotAvailable().internetConnectionNotAvailableTitle.isDisplayed()) {
+					  new ConnectionToWifiNeededPage().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+					  new InternetConnectionNotAvailable().clickTryAgainbutton();
+				  super.pause(5);}
+			  }catch(Exception e) {utils.log().info("Internet Connection is Available");} 
+
+			  
+			   new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
 			  new SelectYourDevicePage2().clickNextButton();
@@ -202,7 +211,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  new NetworkOptimizationDialog2().clickOkButton();
 				  }catch(Exception e) {}
 			  new HomePage().getSSIDName();  
-
 		  }catch(Exception e) {
 //			  super.pause(20);
 //			  new TapSevenTimes().tapSeven();
@@ -282,19 +290,19 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-//				super.pause(30);
+				super.pause(30);
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//							super.pause(100);
+							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-//							super.pause(100);
+							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
@@ -307,21 +315,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}catch(Exception e) {}
 		
 				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-//				super.pause(75);
+				super.pause(75);
 				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-//				super.pause(15);
+				super.pause(15);
 				softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-//				super.pause(15);
+				super.pause(15);
 				//Registering device
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
 						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
 					}
 				} catch (Exception e) {	}
-//				super.pause(35);
+				super.pause(35);
 				//Finalizing your setup
 				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
-//				super.pause(20);
+				super.pause(20);
 				softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
 			
 			softsatellite1.assertAll();
