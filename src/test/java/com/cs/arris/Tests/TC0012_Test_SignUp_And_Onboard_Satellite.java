@@ -129,19 +129,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  {
 		   utils.log().info("\n" + "****** starting test:" + m.getName() + "******" + "\n");
 	  }
-	  
-//	  @Test(priority = 2)
-//	  public void Factorty_Reset_And_Device_Reboot()
-//	  {
-//		  try {
-//				utils.log().info("Factory Resetting MainAP");
-//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-//				super.pause(50);
-//				new ConnectionToWifiNeededPage().restartAndroidDevice();
-//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
-//		  
-//	  }
-
   
 	@Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
@@ -248,14 +235,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			SoftAssert softsatellite1 = new SoftAssert();
 			
-			utils.log().info("Manually switch on your first satellite");
-			super.pause(45);
-//			  try {
-//					utils.log().info("Factory Reset Satellite 1");
-//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
-//					super.pause(75);	
-//
-//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
+//			utils.log().info("Manually switch on your first satellite");
+//			super.pause(45);
+			  try {
+					utils.log().info("Factory Reset Satellite 1");
+					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
+					super.pause(75);	
+
+			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 1");}
 
 			try {
 				if (new HomePage().isAt())
@@ -264,16 +251,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
 				
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-				super.pause(30);
+				super.pause(20);
 				 //Please connect to continue with satellite install
-				
-//				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-//				super.pause(100);
 				
 				try {
 					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-						super.pause(100);
+						super.pause(30);
 					}
 				}catch(Exception e) {}
 				
@@ -404,8 +388,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			utils.log().info("*****************************");
 			
 			SoftAssert softsatellite2 = new SoftAssert();
-			utils.log().info("Manually switch on your second satellite");
-			super.pause(45);
+//			utils.log().info("Manually switch on your second satellite");
+//			super.pause(45);
 			  try {
 					utils.log().info("Factory Reset Satellite 2");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
@@ -420,22 +404,23 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 				softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
 				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+				
 				softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-				super.pause(75);
+				super.pause(25);
 				
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 					
@@ -443,7 +428,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 
@@ -455,14 +440,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 					
@@ -470,7 +455,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionFailedTroubleShootButton.isDisplayed()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-							super.pause(100);
+							super.pause(40);
 						}
 					}catch(Exception e) {}
 				}catch (Exception e) {}
