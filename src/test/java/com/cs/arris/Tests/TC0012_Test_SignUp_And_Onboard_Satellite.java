@@ -131,7 +131,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  }
 	  
   
-	@SuppressWarnings("rawtypes")
 	@Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
@@ -141,8 +140,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  try {
 				utils.log().info("Factory Resetting MainAP");
 				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				new ConnectionToWifiNeededPage().restartAndroidDevice();
 				super.pause(50);
+				new ConnectionToWifiNeededPage().restartAndroidDevice();
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
 		   		  
 		  try {
