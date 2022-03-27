@@ -290,7 +290,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-				super.pause(30);
+				super.pause(100);
 					
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -379,7 +379,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 				softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 				softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-				super.pause(30);
+				super.pause(100);
 				
 					try {
 						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
