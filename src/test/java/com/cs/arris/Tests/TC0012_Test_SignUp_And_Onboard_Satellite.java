@@ -212,23 +212,22 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  }catch(Exception e) {}
 			  new HomePage().getSSIDName();  
 		  }catch(Exception e) {
-//			  super.pause(20);
-//			  new TapSevenTimes().tapSeven();
-//			  super.pause(5);
-//			  if(new SevenTapLogs().isAt()) {
-//				  new SevenTapLogs().clickYesButton();
-//				  super.pause(5);
-//			  }
-//			  if(new SevenTapGmail().isAt()) {
-//				  new SevenTapGmail().clickGmailIcon();
-//				  super.pause(5);
-//			  }
-//			  if(new SevenTapEmail().isAt()) {
-//				  new SevenTapEmail().enterEmailAddress();
-//				  super.pause(5);
-//				  new SevenTapEmail().clickSendButton();
-//				  super.pause(5);
-//			  }
+			  new TapSevenTimes().tapSeven();
+			  super.pause(5);
+			  if(new SevenTapLogs().isAt()) {
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(5);
+			  }
+			  if(new SevenTapGmail().isAt()) {
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(5);
+			  }
+			  if(new SevenTapEmail().isAt()) {
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(5);
+				  new SevenTapEmail().clickSendButton();
+				  super.pause(5);
+			  }
 			  new KillAndRelaunchApp().killApp();
 		  }
 	  }
@@ -262,7 +261,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				 //Please connect to continue with satellite install
 				
 				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-				super.pause(75);
+				super.pause(100);
 				
 //				try {
 //					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
@@ -345,8 +344,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //			  super.pause(5);
 //			  new SevenTapEmail().clickSendButton();
 //			  super.pause(5);
-//			  new KillAndRelaunchApp().killApp();
-//			  new KillAndRelaunchApp().relaunchApp();
+			  new KillAndRelaunchApp().killApp();
+			  new KillAndRelaunchApp().relaunchApp();
 		}
 	}
 
