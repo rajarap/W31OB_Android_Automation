@@ -90,6 +90,19 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	
+	public void restartAndroidDevice()
+	{
+		super.pause(3);
+		utils.log().info("Restarting Android Device");
+       try 
+       {
+    	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "reboot");
+           Process pc1 = pb1.start();
+           super.pause(40);
+       } catch (Exception e) {e.printStackTrace();}  
+
+	}
+	
 	public void clickContinue()
 	{
 		click(continueButton);

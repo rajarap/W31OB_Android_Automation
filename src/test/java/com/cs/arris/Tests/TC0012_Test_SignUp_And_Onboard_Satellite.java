@@ -140,25 +140,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  
 		  try {
 				utils.log().info("Factory Resetting MainAP");
-//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-//				super.pause(75);
-
-				
-				
-//			    utils.log().info("Turning OFF Wifi");
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-//				super.pause(10);
-//				((AndroidDriver) super.getDriver()).toggleWifi(); //trun On wifi
-//				utils.log().info("Turning ON Wifi");
-//				super.pause(5);
-//				new ConnectionToWifiNeededPage().turnOnLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
-				super.pause(30);
-//				utils.log().info("Check if wifi is connected to Arris-Guest");
-//				super.pause(30);
+				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+				new ConnectionToWifiNeededPage().restartAndroidDevice();
+				super.pause(50);
 		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
-		     	
-
-			  
+		   		  
 		  try {
 			  new GetStartedPage().clickGetStartedButton();
 			  new GrantPermissionsPage().clickContinueButton();
@@ -230,23 +216,23 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new HomePage().getSSIDName();  
 
 		  }catch(Exception e) {
-			  super.pause(20);
-			  new TapSevenTimes().tapSeven();
-			  super.pause(5);
-			  if(new SevenTapLogs().isAt()) {
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(5);
-			  }
-			  if(new SevenTapGmail().isAt()) {
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(5);
-			  }
-			  if(new SevenTapEmail().isAt()) {
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(5);
-				  new SevenTapEmail().clickSendButton();
-				  super.pause(5);
-			  }
+//			  super.pause(20);
+//			  new TapSevenTimes().tapSeven();
+//			  super.pause(5);
+//			  if(new SevenTapLogs().isAt()) {
+//				  new SevenTapLogs().clickYesButton();
+//				  super.pause(5);
+//			  }
+//			  if(new SevenTapGmail().isAt()) {
+//				  new SevenTapGmail().clickGmailIcon();
+//				  super.pause(5);
+//			  }
+//			  if(new SevenTapEmail().isAt()) {
+//				  new SevenTapEmail().enterEmailAddress();
+//				  super.pause(5);
+//				  new SevenTapEmail().clickSendButton();
+//				  super.pause(5);
+//			  }
 			  new KillAndRelaunchApp().killApp();
 		  }
 	  }
@@ -262,7 +248,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			SoftAssert softsatellite1 = new SoftAssert();
 			
 			utils.log().info("Manually switch on your first satellite");
-			super.pause(20);
+			super.pause(45);
 //			  try {
 //					utils.log().info("Factory Reset Satellite 1");
 //					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
@@ -280,15 +266,15 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				super.pause(30);
 				 //Please connect to continue with satellite install
 				
-				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-				super.pause(100);
+//				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+//				super.pause(100);
 				
-//				try {
-//					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-//						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-//						super.pause(100);
-//					}
-//				}catch(Exception e) {}
+				try {
+					if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+						super.pause(100);
+					}
+				}catch(Exception e) {}
 				
 					try {
 						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -354,24 +340,24 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			softsatellite1.assertAll();
 			
 			  }catch(Exception e) {
-				  new TapSevenTimes().tapSeven();
-				  super.pause(5);
-				  if(new SevenTapLogs().isAt()) {
-					  new SevenTapLogs().clickYesButton();
-					  super.pause(5);
-				  }
-				  if(new SevenTapGmail().isAt()) {
-					  new SevenTapGmail().clickGmailIcon();
-					  super.pause(5);
-				  }
-				  if(new SevenTapEmail().isAt()) {
-					  new SevenTapEmail().enterEmailAddress();
-					  super.pause(5);
-					  new SevenTapEmail().clickSendButton();
-					  super.pause(5);
-				  }
-			  new KillAndRelaunchApp().killApp();
-			  new KillAndRelaunchApp().relaunchApp();
+//				  new TapSevenTimes().tapSeven();
+//				  super.pause(5);
+//				  if(new SevenTapLogs().isAt()) {
+//					  new SevenTapLogs().clickYesButton();
+//					  super.pause(5);
+//				  }
+//				  if(new SevenTapGmail().isAt()) {
+//					  new SevenTapGmail().clickGmailIcon();
+//					  super.pause(5);
+//				  }
+//				  if(new SevenTapEmail().isAt()) {
+//					  new SevenTapEmail().enterEmailAddress();
+//					  super.pause(5);
+//					  new SevenTapEmail().clickSendButton();
+//					  super.pause(5);
+//				  }
+//			  new KillAndRelaunchApp().killApp();
+//			  new KillAndRelaunchApp().relaunchApp();
 		}
 	}
 
@@ -385,13 +371,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			utils.log().info("*****************************");
 			
 			SoftAssert softsatellite2 = new SoftAssert();
-//			utils.log().info("Manually switch on your second satellite");
-//			super.pause(100);
-			  try {
-					utils.log().info("Factory Reset Satellite 2");
-					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
-					super.pause(75);
-			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
+			utils.log().info("Manually switch on your second satellite");
+			super.pause(45);
+//			  try {
+//					utils.log().info("Factory Reset Satellite 2");
+//					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
+//					super.pause(75);
+//			  }catch(Exception e) {utils.log().info("Unable to Factory reset satellite 2");}
 
 			try {
 
