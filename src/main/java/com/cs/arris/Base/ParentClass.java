@@ -283,7 +283,7 @@ public class ParentClass
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
 				desiredCapabilities.setCapability(IOSMobileCapabilityType.BROWSER_NAME, "Chrome");
 				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
-				getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}

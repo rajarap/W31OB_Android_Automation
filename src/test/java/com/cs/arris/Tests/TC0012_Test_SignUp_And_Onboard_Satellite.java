@@ -234,15 +234,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	
 	   @Test(priority = 102)
 		public void Verify_Install_Left_Satellite() {
-		   utils.log().info("                             ");
+		    utils.log().info("                            ");
 			utils.log().info("****************************");
 			utils.log().info("Test: Install Satellite1    ");
 			utils.log().info("****************************");
 			
 			SoftAssert softsatellite1 = new SoftAssert();
-			
-//			utils.log().info("Manually switch on your first satellite");
-//			super.pause(100);
+
 			  try {
 					utils.log().info("Factory Reset Satellite 1");
 					SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
