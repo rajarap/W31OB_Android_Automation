@@ -130,20 +130,20 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		   utils.log().info("\n" + "****** starting test:" + m.getName() + "******" + "\n");
 	  }
 	  
-	  @Test(priority = 2)
-	  public void Factorty_Reset_And_Device_Reboot()
-	  {
-		  try {
-				utils.log().info("Factory Resetting MainAP");
-				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(50);
-				new ConnectionToWifiNeededPage().restartAndroidDevice();
-		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
-		  
-	  }
+//	  @Test(priority = 2)
+//	  public void Factorty_Reset_And_Device_Reboot()
+//	  {
+//		  try {
+//				utils.log().info("Factory Resetting MainAP");
+//				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+//				super.pause(50);
+//				new ConnectionToWifiNeededPage().restartAndroidDevice();
+//		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+//		  
+//	  }
 
   
-	@Test(priority = 2)
+	@Test(priority = 1)
 	  public void Verify_SignUp_And_Onboard()
 	  {
 		  try {

@@ -232,6 +232,7 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
+			resetAndReboot();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
@@ -330,6 +331,16 @@ public class ParentClass
 			}
 			setProps(properties);
 			utils.log().info("Config.properties object is set to Thread Local");
+	  }
+	  
+	  public void resetAndReboot() {
+		  try {
+				utils.log().info("Factory Resetting MainAP");
+				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
+				pause(50);
+				new ConnectionToWifiNeededPage().restartAndroidDevice();
+		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
+		  
 	  }
 	  
 	  public void loadTestData(String filePath)
