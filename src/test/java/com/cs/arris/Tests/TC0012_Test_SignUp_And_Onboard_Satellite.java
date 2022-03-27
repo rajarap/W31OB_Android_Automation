@@ -142,7 +142,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  
 			  try {
 				  if(new InternetConnectionNotAvailable().internetConnectionNotAvailableTitle.isDisplayed()) {
-					  new ConnectionToWifiNeededPage().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+					  new InternetConnectionNotAvailable().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
 					  new InternetConnectionNotAvailable().clickTryAgainbutton();
 				  super.pause(5);}
 			  }catch(Exception e) {utils.log().info("Internet Connection is Available");} 
