@@ -347,7 +347,7 @@ public class ParentClass
 		  try {
 			    utils.log().info("Restarting Android Device");
 				SerialComPortCommunicator.restartAndroidDevice();
-				pause(75);
+				pause(90);
 		  }catch(Exception e) {utils.log().info("Issue in rebooting device");}
 		  
 	  }

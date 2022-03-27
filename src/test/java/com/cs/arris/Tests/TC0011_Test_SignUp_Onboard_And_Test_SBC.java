@@ -170,102 +170,108 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 	  }
 	  
   
-	  @Test(priority = 1)
-	  public void Verify_SignUp_And_Onboard()
-	  {
-//		  	utils.log().info("Switch on your mAX MainAP Router if not switched on");
-//		  	super.pause(20);
-//		  
-		  try {
-				utils.log().info("Factory Resetting MainAP");
-				SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142330");
-				super.pause(75);
-		  }catch(Exception e) {utils.log().info("Issue in MainAP router Wifi or in Factory reset of MainAP");}
-		     	
+		@Test(priority = 1)
+		  public void Verify_SignUp_And_Onboard()
+		  {
+			  try {
+				  new GetStartedPage().clickGetStartedButton();
+				  new GrantPermissionsPage().clickContinueButton();
+				  new DeviceLocationPage().clickAllow();
+				  super.pause(2);
+				  new AccessResourcesOnDevicePage().clickAllow();
+				  
+				  try {
+					  if(new InternetConnectionNotAvailable().internetConnectionNotAvailableTitle.isDisplayed()) {
+//						  new InternetConnectionNotAvailable().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+						  new InternetConnectionNotAvailable().clickTryAgainbutton();
+					  super.pause(5);}
+				  }catch(Exception e) {utils.log().info("Internet Connection is Available");} 
 
+				  
+				   new SelectYourDevicePage().selectSurfboardMaxOption();
+				  new SelectYourDevicePage().clickNextButton();
+				  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
+				  new SelectYourDevicePage2().clickNextButton();
+				  new SiginPage().clickSignUpButton();
+				  email = new SignupPage().getEmailAddress(); 
+				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
+				  new SignupPage().enterFirstName(firstName);
+				  new SignupPage().enterLastName(lastName);
+				  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
+				  super.pause(5);
 			  
-		  try {
-			  new GetStartedPage().clickGetStartedButton();
-			  new GrantPermissionsPage().clickContinueButton();
-			  new DeviceLocationPage().clickAllow();
-			  super.pause(2);
-			  new AccessResourcesOnDevicePage().clickAllow();
-			  new SelectYourDevicePage().selectSurfboardMaxOption();
-			  new SelectYourDevicePage().clickNextButton();
-			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();
-			  new SelectYourDevicePage2().clickNextButton();
-			  new SiginPage().clickSignUpButton();
-			  email = new SignupPage().getEmailAddress(); 
-			  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
-			  new SignupPage().enterFirstName(firstName);
-			  new SignupPage().enterLastName(lastName);
-			  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
-			  super.pause(5);
-			  
-			  if(new TermsAndConditionsPage().isAt()) 
-			  {
-				for(int i=1; i<=17; i++) {
-					super.swipeUp();
-				}
-
-					if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
-						new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
-						super.pause(3);
-						new SignupPage().clickSignupButton();
-						new EnterValidOTPPage().enterInValidPassCode("123456");
-						 Assert.assertTrue(new EnterValidOTPPage().verifyInvalidPassCodeMessage());
-						 new EnterValidOTPPage().clickResendLink();
-						 new ResendOTPDialog().clickOKButton();
-						 super.pause(15);
-						 new EnterValidOTPPage().clearOtpTextBox();
-						new EnterValidOTPPage().enterValidPassCode(email);
-						super.pause(3);
-						new CodeVerifiedPage().getCodeVerifiedText();
-						new CodeVerifiedPage().clickNextButton();
+				  if(new TermsAndConditionsPage().isAt()) 
+				  {
+					for(int i=1; i<=17; i++) {
+						super.swipeUp();
 					}
-				}
-			  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
-			  new SetupHomeNetworkPage().clickNextButton();
-			  new UnPackYourBoxPage().clickNextButton();
-			  new PlugInMaxRouterPage().clickNextButton();
-			  new ConnectMaxRouterToMobileDevicePage().clickNextButton(); //Successfully connected
-			  new ConnectMaxRouterToInternetPage().clickNextButton();
-			  new SystemFirmwareUpdatePage().clickNextButton();
-			  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
-			  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
-			  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
-			  new NameYourNetwokSSIDPage().clickNextButton();
-			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-			  try {
-				  if(new ConnectionToWifiNeededPage().continueButton.isDisplayed()) {
-					  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-					  new ConnectionToWifiNeededPage().clickContinue();}
-			  }catch(Exception e) {}
-			  new CongratulationsPage().clickContinueButton();
-			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
-			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
-			  new NetworkOptimizationDialog().clickOkButton();
-			  super.pause(50);
-			  try {
-				  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
-					  new NetworkOptimizationDialog2().clickOkButton();
-				  }catch(Exception e) {}
-			  new HomePage().getSSIDName();  
 
-		  }catch(Exception e) {
-//			  new TapSevenTimes().tapSeven();
-//			  super.pause(5);
-//			  new SevenTapLogs().clickYesButton();
-//			  super.pause(5);
-//			  new SevenTapGmail().clickGmailIcon();
-//			  super.pause(5);
-//			  new SevenTapEmail().enterEmailAddress();
-//			  super.pause(5);
-//			  new SevenTapEmail().clickSendButton();
-//			  super.pause(5);
-			  new KillAndRelaunchApp().killApp();
+						if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
+							new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
+							super.pause(3);
+							new SignupPage().clickSignupButton();
+							new EnterValidOTPPage().enterInValidPassCode("123456");
+							 Assert.assertTrue(new EnterValidOTPPage().verifyInvalidPassCodeMessage());
+							 new EnterValidOTPPage().clickResendLink();
+							 new ResendOTPDialog().clickOKButton();
+							 super.pause(15);
+							 new EnterValidOTPPage().clearOtpTextBox();
+							new EnterValidOTPPage().enterValidPassCode(email);
+							super.pause(3);
+							new CodeVerifiedPage().getCodeVerifiedText();
+							new CodeVerifiedPage().clickNextButton();
+						}
+					}
+				  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
+				  new SetupHomeNetworkPage().clickNextButton();
+				  new UnPackYourBoxPage().clickNextButton();
+				  new PlugInMaxRouterPage().clickNextButton();
+				  super.pause(40);
+				  new ConnectMaxRouterToMobileDevicePage().clickNextButton(); //Successfully connected
+				  new ConnectMaxRouterToInternetPage().clickNextButton();
+				  new SystemFirmwareUpdatePage().clickNextButton();
+				  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
+				  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
+				  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
+				  new NameYourNetwokSSIDPage().clickNextButton();
+				  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+				  try {
+					  if(new ConnectionToWifiNeededPage().continueButton.isDisplayed()) {
+						  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+						  new ConnectionToWifiNeededPage().clickContinue();}
+				  }catch(Exception e) {}
+				  super.pause(5);
+				  new CongratulationsPage().clickContinueButton();
+				  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
+				  new InstallAdditionalSatellitePage().clickInstallLaterButton();
+				  new NetworkOptimizationDialog().clickOkButton();
+				  super.pause(50);
+				  try {
+					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
+						  new NetworkOptimizationDialog2().clickOkButton();
+					  }catch(Exception e) {}
+				  new HomePage().getSSIDName();  
+			  }catch(Exception e) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(5);
+				  if(new SevenTapLogs().isAt()) {
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+				  }
+				  if(new SevenTapGmail().isAt()) {
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+				  }
+				  if(new SevenTapEmail().isAt()) {
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
+				  }
+				  new KillAndRelaunchApp().killApp();
+			  }
 		  }
-	  }
+		
 	  
 	  
 		@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
@@ -2864,7 +2870,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 						softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 						softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-						super.pause(30);
+						super.pause(100);
 							
 							try {
 								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
@@ -2919,8 +2925,8 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //					  super.pause(5);
 //					  new SevenTapEmail().clickSendButton();
 //					  super.pause(5);
-//					  new KillAndRelaunchApp().killApp();
-//					  new KillAndRelaunchApp().relaunchApp();
+					  new KillAndRelaunchApp().killApp();
+					  new KillAndRelaunchApp().relaunchApp();
 				}
 			}
 
@@ -2954,7 +2960,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 						softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
-						super.pause(30);
+						super.pause(100);
 						
 							try {
 								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
