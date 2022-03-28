@@ -2268,7 +2268,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
 								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
 								.clickSaveButton());
-						super.pause(8);
+						super.pause(5);
 						try {
 							if (new NetworkPage().getGeneralSettingsPageObject()
 									.getNetworkGeneralSettingsPortForwardingPageObject()
@@ -2442,10 +2442,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 		
-			@Test(priority = 147, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Extended_WiFi_Settings_Page() 
 			{
 				SoftAssert softnet50 = new SoftAssert();
+				new HomePage().getFooterIconsPageObject().clickNetworkButton();
 				softnet50.assertTrue(new NetworkPage().clickExtendedWifiSettingsExpandButton());
 				
 				softnet50.assertTrue(new NetworkPage().enable5GHzWidebandMode());
@@ -2467,11 +2468,11 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet50.assertAll();
 			}
 			
-			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Guest_WiFi_Network_Page() 
 			{
 				SoftAssert softnet49 = new SoftAssert();
-				new HomePage().getFooterIconsPageObject().clickNetworkButton();
+				
 				softnet49.assertTrue(new NetworkPage().enableGuestWifiNetwork());
 				
 				try {
@@ -2907,16 +2908,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softsatellite1.assertAll();
 					
 				}catch(Exception e) {
-					  new TapSevenTimes().tapSeven();
-					  super.pause(5);
-					  new SevenTapLogs().clickYesButton();
-					  super.pause(5);
-					  new SevenTapGmail().clickGmailIcon();
-					  super.pause(5);
-					  new SevenTapEmail().enterEmailAddress();
-					  super.pause(5);
-					  new SevenTapEmail().clickSendButton();
-					  super.pause(5);
+//					  new TapSevenTimes().tapSeven();
+//					  super.pause(5);
+//					  new SevenTapLogs().clickYesButton();
+//					  super.pause(5);
+//					  new SevenTapGmail().clickGmailIcon();
+//					  super.pause(5);
+//					  new SevenTapEmail().enterEmailAddress();
+//					  super.pause(5);
+//					  new SevenTapEmail().clickSendButton();
+//					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
@@ -3017,16 +3018,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 					softsatellite2.assertAll();
 				}catch(Exception e) {
-					  new TapSevenTimes().tapSeven();
-					  super.pause(5);
-					  new SevenTapLogs().clickYesButton();
-					  super.pause(5);
-					  new SevenTapGmail().clickGmailIcon();
-					  super.pause(5);
-					  new SevenTapEmail().enterEmailAddress();
-					  super.pause(5);
-					  new SevenTapEmail().clickSendButton();
-					  super.pause(5);
+//					  new TapSevenTimes().tapSeven();
+//					  super.pause(5);
+//					  new SevenTapLogs().clickYesButton();
+//					  super.pause(5);
+//					  new SevenTapGmail().clickGmailIcon();
+//					  super.pause(5);
+//					  new SevenTapEmail().enterEmailAddress();
+//					  super.pause(5);
+//					  new SevenTapEmail().clickSendButton();
+//					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
