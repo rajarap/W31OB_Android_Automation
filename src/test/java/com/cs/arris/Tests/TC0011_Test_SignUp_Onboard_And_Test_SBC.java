@@ -2816,7 +2816,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 						   
 			   @Test(priority = 164)
-			   public void Verify_Install_Left_Satellite() {
+				public void Verify_Install_Left_Satellite() {
 				    utils.log().info("                            ");
 					utils.log().info("****************************");
 					utils.log().info("Test: Install Satellite1    ");
@@ -2844,14 +2844,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
 								super.pause(100);
-								if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 									super.pause(100);
@@ -2866,21 +2866,21 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 								super.pause(100);
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 									super.pause(100);
@@ -2908,16 +2908,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softsatellite1.assertAll();
 					
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
@@ -2951,21 +2951,21 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 								super.pause(100);
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 									super.pause(100);
@@ -2977,21 +2977,21 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 								super.pause(75);
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
 								}
 							}catch(Exception e) {}
 							
 							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionFailedTroubleShootButton.isDisplayed()) {
+								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 									super.pause(100);
@@ -3018,16 +3018,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 					softsatellite2.assertAll();
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}

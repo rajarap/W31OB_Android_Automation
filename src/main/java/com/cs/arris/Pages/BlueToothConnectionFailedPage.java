@@ -14,7 +14,7 @@ public class BlueToothConnectionFailedPage extends ParentClass implements Page
 	TestUtils utils = new TestUtils();
 
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_text") 
-	public MobileElement bluetoothConnectionFailed;
+	public MobileElement bluetoothConnectionFailedTitle;
 	
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_description_text") 
 	public MobileElement bluetoothConnectionMessage;
@@ -43,7 +43,7 @@ public class BlueToothConnectionFailedPage extends ParentClass implements Page
 	
 	@Override
 	public boolean isAt() {
-		 if(bluetoothConnectionFailed.isDisplayed()){
+		 if(bluetoothConnectionFailedTitle.isDisplayed()){
 	        	utils.log().info("BLUETOOTH CONNECTION FAILED Page is displayed");
 	        	return true;
 	      }else{

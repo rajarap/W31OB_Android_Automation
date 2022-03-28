@@ -255,14 +255,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
 						super.pause(100);
-						if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if(new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 							super.pause(100);
@@ -277,21 +277,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 						super.pause(100);
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 							super.pause(100);
@@ -364,21 +364,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 						super.pause(100);
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionMessage.isDisplayed()) {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 							super.pause(100);
@@ -390,21 +390,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 						super.pause(75);
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
+						if (new BlueToothConnectionFailedPage().isAt()) {
 							new BlueToothConnectionFailedPage().clickTryAgainbutton();
 							super.pause(100);
 						}
 					}catch(Exception e) {}
 					
 					try {
-						if (new BlueToothConnectionFailedTroubleShootPage().bluetoothConnectionFailedTroubleShootButton.isDisplayed()) {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 							super.pause(100);
