@@ -2467,7 +2467,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet50.assertAll();
 			}
 			
-			@Test(priority = 168, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Guest_WiFi_Network_Page() 
 			{
 				SoftAssert softnet49 = new SoftAssert();
@@ -2815,16 +2815,14 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 						   
 			   @Test(priority = 164)
-				public void Verify_Install_Left_Satellite() {
-				   utils.log().info("                             ");
+			   public void Verify_Install_Left_Satellite() {
+				    utils.log().info("                            ");
 					utils.log().info("****************************");
 					utils.log().info("Test: Install Satellite1    ");
 					utils.log().info("****************************");
 					
 					SoftAssert softsatellite1 = new SoftAssert();
-					
-//					utils.log().info("Manually switch on your first satellite");
-//					super.pause(100);
+
 					  try {
 							utils.log().info("Factory Reset Satellite 1");
 							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142340");
@@ -2842,17 +2840,9 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						super.pause(30);
 						 //Please connect to continue with satellite install
 						
-						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-						super.pause(100);
-						
-//						try {
-//							if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-//								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
-//								super.pause(100);
-//							}
-//						}catch(Exception e) {}
-						
 							try {
+								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
+								super.pause(100);
 								if(new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
@@ -2871,6 +2861,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 						softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 
+							
 							try {
 								softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 								super.pause(100);
@@ -2916,16 +2907,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softsatellite1.assertAll();
 					
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
@@ -2939,8 +2930,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("*****************************");
 					
 					SoftAssert softsatellite2 = new SoftAssert();
-//					utils.log().info("Manually switch on your second satellite");
-//					super.pause(100);
 					  try {
 							utils.log().info("Factory Reset Satellite 2");
 							SerialComPortCommunicator.resetMAXRouter("/dev/tty.usbserial-142310");
@@ -2958,7 +2947,6 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
 						softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
 
-						
 							try {
 								softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 								super.pause(100);
@@ -2984,9 +2972,10 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							}catch(Exception e) {}
 
 						
-						try {
-							softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-							super.pause(75);
+						try {	
+							try {
+								softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+								super.pause(75);
 								if (new BlueToothConnectionFailedPage().bluetoothConnectionFailed.isDisplayed()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
 									super.pause(100);
@@ -3007,6 +2996,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									super.pause(100);
 								}
 							}catch(Exception e) {}
+						}catch (Exception e) {}
 						
 //						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
@@ -3027,16 +3017,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 					softsatellite2.assertAll();
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
