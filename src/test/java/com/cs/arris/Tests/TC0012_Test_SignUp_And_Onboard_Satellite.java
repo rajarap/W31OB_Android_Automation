@@ -22,6 +22,7 @@ import com.cs.arris.Pages.AddSatelliteSuccessfullyConnectedPage;
 import com.cs.arris.Pages.AddSatelliteSuccessfullyConnectedToInternetPage;
 import com.cs.arris.Pages.AddSatelliteUnpackYourSatellitePage;
 import com.cs.arris.Pages.AddSatelliteUpToDatePage;
+import com.cs.arris.Pages.AttentionPage;
 import com.cs.arris.Pages.BTPairingPage;
 import com.cs.arris.Pages.BTPairingPanelPage;
 import com.cs.arris.Pages.BTPairingScanPage;
@@ -135,14 +136,35 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  {
 		  try {
 			  new GetStartedPage().clickGetStartedButton();
+			  try {
+				  if(new AttentionPage().isAt()) {
+					  new AttentionPage().clickOKButton();
+				  }
+			  }catch(Exception e) {}
+
 			  new GrantPermissionsPage().clickContinueButton();
+			  try {
+				  if(new AttentionPage().isAt()) {
+					  new AttentionPage().clickOKButton();
+				  }
+			  }catch(Exception e) {}
 			  new DeviceLocationPage().clickAllow();
+			  try {
+				  if(new AttentionPage().isAt()) {
+					  new AttentionPage().clickOKButton();
+				  }
+			  }catch(Exception e) {}
 			  super.pause(2);
 			  new AccessResourcesOnDevicePage().clickAllow();
+			  try {
+				  if(new AttentionPage().isAt()) {
+					  new AttentionPage().clickOKButton();
+				  }
+			  }catch(Exception e) {}
 			  
 			  try {
-				  if(new InternetConnectionNotAvailable().internetConnectionNotAvailableTitle.isDisplayed()) {
-//					  new InternetConnectionNotAvailable().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
+				  if(new InternetConnectionNotAvailable().isAt()) {
+					  new InternetConnectionNotAvailable().connectToLocalWifi(this.localWifi, this.localWifiPwd, this.udid);
 					  new InternetConnectionNotAvailable().clickTryAgainbutton();
 				  super.pause(5);}
 			  }catch(Exception e) {utils.log().info("Internet Connection is Available");} 
