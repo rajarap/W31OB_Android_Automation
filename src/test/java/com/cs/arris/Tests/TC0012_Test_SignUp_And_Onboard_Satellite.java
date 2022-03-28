@@ -135,6 +135,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  public void Verify_SignUp_And_Onboard()
 	  {
 		  try {
+			  try {
+				  if(new AttentionPage().isAt()) {
+					  new AttentionPage().clickOKButton();
+				  }
+			  }catch(Exception e) {}
 			  new GetStartedPage().clickGetStartedButton();
 			  try {
 				  if(new AttentionPage().isAt()) {
@@ -277,10 +282,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
 						super.pause(100);
-						if (new BlueToothConnectionFailedPage().isAt()) {
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
-						}
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);}
+							}catch(Exception e) {}
 					}catch(Exception e) {}
 					
 					try {
@@ -299,10 +305,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 						super.pause(100);
-						if (new BlueToothConnectionFailedPage().isAt()) {
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
-						}
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);}
+							}catch(Exception e) {}
 					}catch(Exception e) {}
 					
 					try {
@@ -386,10 +393,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
 						super.pause(100);
-						if (new BlueToothConnectionFailedPage().isAt()) {
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
-						}
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);}
+							}catch(Exception e) {}
 					}catch(Exception e) {}
 					
 					try {
@@ -412,10 +420,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
 						super.pause(75);
-						if (new BlueToothConnectionFailedPage().isAt()) {
-							new BlueToothConnectionFailedPage().clickTryAgainbutton();
-							super.pause(100);
-						}
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);}
+							}catch(Exception e) {}
 					}catch(Exception e) {}
 					
 					try {
