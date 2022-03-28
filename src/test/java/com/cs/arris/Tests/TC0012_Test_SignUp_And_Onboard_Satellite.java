@@ -226,7 +226,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  }
 	  }
 	
-	   @Test(priority = 102)
+	   @Test(priority = 164)
 		public void Verify_Install_Left_Satellite() {
 		    utils.log().info("                            ");
 			utils.log().info("****************************");
@@ -338,7 +338,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 
 		
-		@Test(priority = 120)
+		@Test(priority = 165)
 		public void Verify_Install_Right_Satellite() {
 			utils.log().info("                             ");
 			utils.log().info("*****************************");
