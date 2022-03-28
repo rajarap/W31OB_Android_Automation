@@ -135,37 +135,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  public void Verify_SignUp_And_Onboard()
 	  {
 		  try {
-			  try {
-				  if(new AttentionPage().isAt()) {
-					  new AttentionPage().clickOKButton();
-				  }
-			  }catch(Exception e) {}
 			  new GetStartedPage().clickGetStartedButton();
-			  try {
-				  if(new AttentionPage().isAt()) {
-					  new AttentionPage().clickOKButton();
-				  }
-			  }catch(Exception e) {}
-
 			  new GrantPermissionsPage().clickContinueButton();
-			  try {
-				  if(new AttentionPage().isAt()) {
-					  new AttentionPage().clickOKButton();
-				  }
-			  }catch(Exception e) {}
 			  new DeviceLocationPage().clickAllow();
-			  try {
-				  if(new AttentionPage().isAt()) {
-					  new AttentionPage().clickOKButton();
-				  }
-			  }catch(Exception e) {}
 			  super.pause(2);
 			  new AccessResourcesOnDevicePage().clickAllow();
-			  try {
-				  if(new AttentionPage().isAt()) {
-					  new AttentionPage().clickOKButton();
-				  }
-			  }catch(Exception e) {}
 			  
 			  try {
 				  if(new InternetConnectionNotAvailable().isAt()) {
@@ -174,7 +148,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  super.pause(5);}
 			  }catch(Exception e) {utils.log().info("Internet Connection is Available");} 
 
-			  
 			   new SelectYourDevicePage().selectSurfboardMaxOption();
 			  new SelectYourDevicePage().clickNextButton();
 			  new SelectYourDevicePage2().selectMaxProAX11000RadioButton();

@@ -44,10 +44,10 @@ public class BlueToothConnectionFailedPage extends ParentClass implements Page
 	@Override
 	public boolean isAt() {
 		 if(bluetoothConnectionFailedTitle.isDisplayed()){
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED Page is displayed");
+	        	//utils.log().info("BLUETOOTH CONNECTION FAILED Page is displayed");
 	        	return true;
 	      }else{
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED Page is not displayed");
+	        	//utils.log().info("BLUETOOTH CONNECTION FAILED Page is not displayed");
 	        	return false;}
 	}
 	

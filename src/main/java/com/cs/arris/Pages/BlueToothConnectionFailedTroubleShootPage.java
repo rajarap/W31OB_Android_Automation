@@ -44,10 +44,10 @@ public class BlueToothConnectionFailedTroubleShootPage extends ParentClass imple
 	@Override
 	public boolean isAt() {
 		 if(bluetoothConnectionFailedTroubleShootTitle.isDisplayed()){
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is displayed");
+	        	//utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is displayed");
 	        	return true;
 	      }else{
-	        	utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is not displayed");
+	        	//utils.log().info("BLUETOOTH CONNECTION FAILED TROUBLESHOOT Page is not displayed");
 	        	return false;}
 	}
 	
