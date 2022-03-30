@@ -236,17 +236,19 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 		utils.log().info(" Devices Assigned Highest Priority ");
 		utils.log().info("***********************************");
 		
-		int size = super.getDriver().findElementsById("com.arris.sbcBeta:id/recyclerViewDevicePriority").size();
+		int size = super.getDriver().findElementsByXPath("//androidx.recyclerview.widget.RecyclerView[@resource-id='com.arris.sbcBeta:id/recyclerViewDevicePriority']").size();
+				
+				//"com.arris.sbcBeta:id/recyclerViewDevicePriority")
 		try 
 		{
 			utils.log().info("                   ");
 			utils.log().info("Prioritized Device ");
 			utils.log().info("-------------------");
 			
-			for(int k = 1; k<=2 ; k++) 
+			for(int k = 1; k <=size ; k++) 
 			{
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver()
-					.findElementsByXPath("//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
+					.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
 
 				for (MobileElement e : entity) 
 				{

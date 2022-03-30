@@ -74,10 +74,10 @@ public class InternetConnectionNotAvailable extends ParentClass implements Page
 	@Override
 	public boolean isAt() {
 		 if(internetConnectionNotAvailableTitle.isDisplayed()){
-	        	utils.log().info("On INTERNET CONNECTION NOT AVAILABLE Page");
+	        	//utils.log().info("On INTERNET CONNECTION NOT AVAILABLE Page");
 	        	return true;
 	      }else{
-	        	utils.log().info("Not on INTERNET CONNECTION NOT AVAILABLE Page");
+	        	//utils.log().info("Not on INTERNET CONNECTION NOT AVAILABLE Page");
 	        	return false;}
 	}
 	

@@ -8,6 +8,8 @@ import com.cs.arris.Interface.Page;
 import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -16,13 +18,22 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class AttentionPage extends ParentClass implements Page {
 	public TestUtils utils = new TestUtils();
 
-	@AndroidFindBy(id = "android:id/topPanel") // About
+	@AndroidFindAll({
+		@AndroidBy (id = "android:id/alertTitle"),
+		@AndroidBy (xpath = "//android.widget.TextView[@text='Attention']"), 
+		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='android:id/alertTitle']"), 
+		@AndroidBy (xpath = "//android.widget.TextView[@bounds='[64,1257][1016,1328]']"),
+		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
+	})
 	public MobileElement attentionTitle;
 
-	@AndroidFindBy(id = "android:id/message") // About
-	public MobileElement attentionMessage;
-
-	@AndroidFindBy(id = "android:id/button1")
+	@AndroidFindAll({
+		@AndroidBy (id = "android:id/button1"),
+		@AndroidBy (xpath = "//android.widget.Button[@text='OK']"), 
+		@AndroidBy (xpath = "//android.widget.Button[@resource-id='android:id/button1']"), 
+		@AndroidBy (xpath = "//android.widget.Button[@bounds='[64,1991][1016,2086]']"),
+		@AndroidBy (xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.Button")
+	})
 	public MobileElement okButton;
 	
 	public AttentionPage() {
@@ -39,9 +50,11 @@ public class AttentionPage extends ParentClass implements Page {
 //		}
 //	}
 	
+	@SuppressWarnings("unchecked")
 	public boolean clickOKButton() {
-		if (super.androidDriver.findElementById("android:id/topPanel").isDisplayed()) {
-			super.androidDriver.findElementById("android:id/button1").click();
+		androidDriver = (AndroidDriver<MobileElement>) super.getDriver();
+		if (androidDriver.findElementByXPath("//android.widget.Button[@text='OK']").isDisplayed()) {
+			androidDriver.findElementByXPath("//android.widget.Button[@text='OK']").click();
 			utils.log().info("Clicked OK Button");
 			return true;
 		} else {
@@ -51,7 +64,7 @@ public class AttentionPage extends ParentClass implements Page {
 
 	@Override
 	public boolean isAt() {
-		if (super.androidDriver.findElementById("android:id/topPanel").isDisplayed()) {
+		if (super.androidDriver.findElementByXPath("//android.widget.TextView[@text='Attention']").isDisplayed()) {
 			utils.log().info("On Attention Page");
 			return true;
 		} else {

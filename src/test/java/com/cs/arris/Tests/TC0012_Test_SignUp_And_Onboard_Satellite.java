@@ -241,7 +241,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 	  }
 	
 	   @Test(priority = 164)
-		public void Verify_Install_Left_Satellite() {
+		public void Verify_Install_Left_Satellite() throws Exception {
 		    utils.log().info("                            ");
 			utils.log().info("****************************");
 			utils.log().info("Test: Install Satellite1    ");
@@ -258,11 +258,11 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 			try {
 				if (new HomePage().isAt())
-					softsatellite1.assertTrue(new HomePage().clickLeftSatelliteImage());
+					new HomePage().clickLeftSatelliteImage();
 
-				softsatellite1.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+				new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
 				
-				softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
+				new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network
 				super.pause(30);
 				 //Please connect to continue with satellite install
 				
@@ -285,12 +285,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}catch(Exception e) {}
 
 				
-				softsatellite1.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-				softsatellite1.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+				new AddSatelliteUnpackYourSatellitePage().clickNextButton();
+				new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 
 					
 					try {
-						softsatellite1.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+						new AddSatellitePlugInYourSatellitePage().clickNextButton();
 						super.pause(100);
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
@@ -313,24 +313,32 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							super.pause(100);
 						}
 					}catch(Exception e) {}
-		
-				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-				super.pause(100);
-				softsatellite1.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
-				super.pause(15);
-				softsatellite1.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
-				super.pause(15);
+					
+					try {
+						new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+						super.pause(100);
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(100);}
+							}catch(Exception e) {}
+					}catch(Exception e) {}
+					
+					new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
+					super.pause(15);
+					new AddSatelliteUpToDatePage().clickNextButton();
+					super.pause(15);
 				//Registering device
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
-						softsatellite1.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton());
+						new AddSatelliteRegistrationFailedPage().clickContinueButton();
 					}
 				} catch (Exception e) {	}
 				super.pause(35);
 				//Finalizing your setup
-				softsatellite1.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+				new AddSatelliteCongratulationsPage().clickContinueButton();
 				super.pause(20);
-				softsatellite1.assertTrue(new HomePage().verifyLeftRouterDetails());
+				new HomePage().verifyLeftRouterDetails();
 			
 			softsatellite1.assertAll();
 			
@@ -353,7 +361,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 		
 		@Test(priority = 165)
-		public void Verify_Install_Right_Satellite() {
+		public void Verify_Install_Right_Satellite() throws Exception {
 			utils.log().info("                             ");
 			utils.log().info("*****************************");
 			utils.log().info("Test: Install Satellite2     ");
@@ -369,17 +377,17 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			try {
 
 				if (new HomePage().isAt()) {
-					softsatellite2.assertTrue(new HomePage().clickNavigationButton());
-					softsatellite2.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton());}
+					new HomePage().clickNavigationButton();
+					new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();}
 
-				softsatellite2.assertTrue(new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton());
+				new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
 				
-				softsatellite2.assertTrue(new AddSatelliteAddNewSatellitePage1().clickNextButton()); // Each satellite expands your network
-				softsatellite2.assertTrue(new AddSatelliteUnpackYourSatellitePage().clickNextButton());
-				softsatellite2.assertTrue(new AddSatellitePlaceYourSatellitePage().clickSkipButton());
+				new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network
+				new AddSatelliteUnpackYourSatellitePage().clickNextButton();
+				new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 
 					try {
-						softsatellite2.assertTrue(new AddSatellitePlugInYourSatellitePage().clickNextButton());
+						new AddSatellitePlugInYourSatellitePage().clickNextButton();
 						super.pause(100);
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
@@ -406,7 +414,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				
 				try {	
 					try {
-						softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
+						new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 						super.pause(100);
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
@@ -432,21 +440,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				}catch (Exception e) {}
 				
 //				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedPage().clickNextButton());
-				softsatellite2.assertTrue(new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton());
+				new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
 				super.pause(15);
-				softsatellite2.assertTrue(new AddSatelliteUpToDatePage().clickNextButton());
+				new AddSatelliteUpToDatePage().clickNextButton();
 				super.pause(15);
 				//Registering your device
 				try {
 					if (new AddSatelliteRegistrationFailedPage().isAt()) {
-						softsatellite2.assertTrue(new AddSatelliteRegistrationFailedPage().clickContinueButton()); 
+						new AddSatelliteRegistrationFailedPage().clickContinueButton(); 
 					}
 				} catch (Exception e) {	}
 				//Finalizing your setup
 				super.pause(35);
-				softsatellite2.assertTrue(new AddSatelliteCongratulationsPage().clickContinueButton());
+				new AddSatelliteCongratulationsPage().clickContinueButton();
 				super.pause(30);
-				softsatellite2.assertTrue(new HomePage().verifyRightRouterDetails());
+				new HomePage().verifyRightRouterDetails();
 			
 			softsatellite2.assertAll();
 		}catch(Exception e) {

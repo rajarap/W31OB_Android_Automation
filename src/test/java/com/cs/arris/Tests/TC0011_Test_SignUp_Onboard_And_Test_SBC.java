@@ -174,23 +174,15 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		@Test(priority = 1)
 		  public void Verify_SignUp_And_Onboard()
 		  {
-			  try {
+			  try {	
+				  super.pause(10);
 				  try {
-					  if(new AttentionPage().isAt())
+					  new GetStartedPage().clickGetStartedButton();
+					  if(new AttentionPage().isAt()) {
 						  new AttentionPage().clickOKButton();
-				  }catch(Exception e) {}
-				  
-				  new GetStartedPage().clickGetStartedButton();
-				  
-				  try {
-					  if(new AttentionPage().isAt())
-						  new AttentionPage().clickOKButton();
-				  }catch(Exception e) {}
+					  }
+				  }catch(Exception e) {} 
 				  new GrantPermissionsPage().clickContinueButton();
-				  try {
-					  if(new AttentionPage().isAt())
-						  new AttentionPage().clickOKButton();
-				  }catch(Exception e) {}
 				  new DeviceLocationPage().clickAllow();
 				  super.pause(2);
 				  new AccessResourcesOnDevicePage().clickAllow();
@@ -2106,34 +2098,35 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet74.assertAll();
 //			}
 			
-//			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_Device_Priority_Settings_Added_Device_Page() 
-//			{
-//				SoftAssert softnet34 = new SoftAssert();
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
-//				{
-////					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().verifyUIOnNetworkPrioritizedDevices());
-//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
-////					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
-//					
-////					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-////						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
-////					super.pause(5);
-//					
-//				}
-//				softnet34.assertAll();
-//			}
+			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+			public void Verify_Device_Priority_Settings_Added_Device_Page() 
+			{
+				SoftAssert softnet34 = new SoftAssert();
+				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+				{
+//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().verifyUIOnNetworkPrioritizedDevices());
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
+//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
+					
+					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
+					super.pause(5);
+					
+				}
+				softnet34.assertAll();
+			}
 			
 			@Test(priority = 134, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Device_Priority_Settings_Disable_Device_Prioritation() 
 			{
 				SoftAssert softnet35 = new SoftAssert();
-//				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-//				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickHelpButton());
-//				
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().isAt())
-//					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().clickCloseButton());
-//									softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
+				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
+				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickHelpButton());
+				
+				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().isAt()) {
+					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().clickCloseButton());
+					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickBackButton());}
+				
 				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
 				super.pause(5);
 				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());
@@ -2285,7 +2278,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
 										.getNetworkGeneralSettingsPortForwardingPageObject()
 										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
-										.clickOKButton());
+										.clickCloseButton());
 						} catch (Exception e) {
 							// utils.log().info("Port Rule Edit Failed Dialog did not appear");
 						}
@@ -2814,7 +2807,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				
 				if(new HomeNetowrkTurnOffNetworkOptimizationDialog().isAt())
 					new HomeNetowrkTurnOffNetworkOptimizationDialog().clickTurnOffButton();
-				
+				super.pause(5);
 				new HomePage().getFooterIconsPageObject().clickHomeButton();
 							
 //				softnetwork16.assertTrue(new HomePage().getNetworkOtptimizationPageObject().getOptimizationSettinsPageObject().clickBackButton());
@@ -2824,8 +2817,8 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 						   
-			   @Test(priority = 164)
-				public void Verify_Install_Left_Satellite() {
+			  @Test(priority = 164)
+				public void Verify_Install_Left_Satellite() throws Exception {
 				    utils.log().info("                            ");
 					utils.log().info("****************************");
 					utils.log().info("Test: Install Satellite1    ");
@@ -2851,7 +2844,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						 //Please connect to continue with satellite install
 						
 							try {
-								new AddSatelliteAddNewSatellitePage2().clickNextButton();
+								softsatellite1.assertTrue(new AddSatelliteAddNewSatellitePage2().clickNextButton());
 								super.pause(100);
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
@@ -2897,13 +2890,21 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									super.pause(100);
 								}
 							}catch(Exception e) {}
-				
-						new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-						super.pause(100);
-						new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
-						super.pause(15);
-						new AddSatelliteUpToDatePage().clickNextButton();
-						super.pause(15);
+							
+							try {
+								new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+								super.pause(100);
+								try {
+									if (new BlueToothConnectionFailedPage().isAt()) {
+										new BlueToothConnectionFailedPage().clickTryAgainbutton();
+										super.pause(100);}
+									}catch(Exception e) {}
+							}catch(Exception e) {}
+							
+							new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
+							super.pause(15);
+							new AddSatelliteUpToDatePage().clickNextButton();
+							super.pause(15);
 						//Registering device
 						try {
 							if (new AddSatelliteRegistrationFailedPage().isAt()) {
@@ -2919,16 +2920,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softsatellite1.assertAll();
 					
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
@@ -2937,7 +2938,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 				
 				@Test(priority = 165)
-				public void Verify_Install_Right_Satellite() {
+				public void Verify_Install_Right_Satellite() throws Exception {
 					utils.log().info("                             ");
 					utils.log().info("*****************************");
 					utils.log().info("Test: Install Satellite2     ");
@@ -2957,6 +2958,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();}
 
 						new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
+						
 						new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network
 						new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 						new AddSatellitePlaceYourSatellitePage().clickSkipButton();
@@ -2969,9 +2971,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
 										super.pause(100);}
 									}catch(Exception e) {}
-							}catch(Exception e) {
-								
-							}
+							}catch(Exception e) {}
 							
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
@@ -3035,16 +3035,16 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 					softsatellite2.assertAll();
 				}catch(Exception e) {
-//					  new TapSevenTimes().tapSeven();
-//					  super.pause(5);
-//					  new SevenTapLogs().clickYesButton();
-//					  super.pause(5);
-//					  new SevenTapGmail().clickGmailIcon();
-//					  super.pause(5);
-//					  new SevenTapEmail().enterEmailAddress();
-//					  super.pause(5);
-//					  new SevenTapEmail().clickSendButton();
-//					  super.pause(5);
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				}
