@@ -175,13 +175,7 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		  public void Verify_SignUp_And_Onboard()
 		  {
 			  try {	
-				  super.pause(10);
-				  try {
-					  new GetStartedPage().clickGetStartedButton();
-					  if(new AttentionPage().isAt()) {
-						  new AttentionPage().clickOKButton();
-					  }
-				  }catch(Exception e) {} 
+				  new GetStartedPage().clickGetStartedButton();
 				  new GrantPermissionsPage().clickContinueButton();
 				  new DeviceLocationPage().clickAllow();
 				  super.pause(2);
