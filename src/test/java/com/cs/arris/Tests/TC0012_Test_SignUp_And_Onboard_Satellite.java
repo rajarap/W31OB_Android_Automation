@@ -372,13 +372,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							if(! new BTSwipePage().arrisGuest.getText().startsWith("arrisW31-")) {
 								new BTSwipePage().swipeUpOnce(Direction.UP);
 								new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
-								new BTSwipePage().swipeUpOnce(Direction.UP);
 							}
-							
-							if(new BTSwipePage().arrisGuest.getText().startsWith("arrisW31-")) {
-								new BTSwipePage().swipeUpOnce(Direction.UP);
-							}
-								
+
 							
 							
 //							}else {
@@ -390,7 +385,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //							    super.pause(3);
 //							    super.getDriver().activateApp("com.arris.sbcBeta");
 //							}
-
+							new BTSwipePage().swipeUpOnce(Direction.UP);
 							new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network
 						
 							if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
