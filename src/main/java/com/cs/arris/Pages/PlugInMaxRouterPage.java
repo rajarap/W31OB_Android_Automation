@@ -43,9 +43,16 @@ public class PlugInMaxRouterPage extends ParentClass implements Page
 	}
 	
 	@Override
-	public boolean isAt() {
-		super.pause();
-		return true;
+	public boolean isAt() 
+	{
+		if (plugInYourMaxRouterText.isDisplayed()) 
+		{
+			utils.log().info("On LET'S SET UP YOUR HOME NETWORK Page");
+			return true;
+		} else {
+			utils.log().info("Not on LET'S SET UP YOUR HOME NETWORK Page");
+			return false;
+		}
 	}
 	
 }

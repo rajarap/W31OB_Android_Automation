@@ -487,7 +487,7 @@ public class ParentClass
 	  
 	  public void waitForVisibility(MobileElement e){
 		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
-		  .withTimeout(Duration.ofSeconds(100))
+		  .withTimeout(Duration.ofSeconds(120))
 		  .pollingEvery(Duration.ofSeconds(5))
 		  .ignoring(NoSuchElementException.class);
 

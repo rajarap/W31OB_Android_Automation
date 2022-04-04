@@ -44,9 +44,16 @@ public class UnPackYourBoxPage extends ParentClass implements Page
 	}
 	
 	@Override
-	public boolean isAt() {
-		super.pause();
-		return true;
+	public boolean isAt() 
+	{
+		if (letsUnpackYouBoxText.isDisplayed()) 
+		{
+			utils.log().info("On LET'S UNPACK YOUR BOX Page");
+			return true;
+		} else {
+			utils.log().info("Not on LET'S UNPACK YOUR BOX Page");
+			return false;
+		}
 	}
 	
 }

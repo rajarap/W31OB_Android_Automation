@@ -43,9 +43,16 @@ public TestUtils utils = new TestUtils();
 	}
 
 	@Override
-	public boolean isAt() {
-		super.pause();
-		return true;
+	public boolean isAt() 
+	{
+		if (successfullyConnectedText.isDisplayed()) 
+		{
+			utils.log().info("On SUCCESSFULLY CONNECTED Page");
+			return true;
+		} else {
+			utils.log().info("Not on SUCCESSFULLY CONNECTED Page");
+			return false;
+		}
 	}
 	
 }

@@ -256,4 +256,5 @@ com/cs/arris/Pages/ParentalControlAddDeviceHelpPage.class
 com/cs/arris/Pages/MainDevicePage.class
 com/cs/arris/Utilities/EmailTest.class
 com/cs/arris/Pages/NetworkGeneralSettingsPage.class
+com/cs/arris/Pages/RemoteAccessUnavailableTroubleShootPage.class
 com/cs/arris/Pages/AddSatelliteRegistrationFailedPage.class

@@ -44,9 +44,16 @@ public class ConnectMaxRouterToInternetPage extends ParentClass implements Page
 	}
 
 	@Override
-	public boolean isAt() {
-		super.pause();
-		return true;
+	public boolean isAt() 
+	{
+		if (successfullyConnectedToInternetText.isDisplayed()) 
+		{
+			utils.log().info("On SUCCESSFULLY CONNECTED TO THE INTERNET Page");
+			return true;
+		} else {
+			utils.log().info("Not on SUCCESSFULLY CONNECTED TO THE INTERNET Page");
+			return false;
+		}
 	}
 	
 }
