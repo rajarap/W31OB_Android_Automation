@@ -23,8 +23,11 @@ import io.appium.java_client.touch.offset.PointOption;
 public class BTSwipePage extends ParentClass {
 	public TestUtils utils = new TestUtils();
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Bluetooth']") // About
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Bluetooth']") 
 	public MobileElement bluetooth;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Arris-Guest']") 
+	public MobileElement arrisGuest;
 	
 		
 	public BTSwipePage() {

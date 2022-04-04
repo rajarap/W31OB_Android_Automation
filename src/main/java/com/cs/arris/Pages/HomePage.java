@@ -221,14 +221,22 @@ public class HomePage extends ParentClass implements Page {
 	
 	//RAT
 	
-	@AndroidFindBy (xpath = "//XCUIElementTypeStaticText[@name=\"Mesh_Home_Screen_Label_Error\"]")
+	@AndroidFindAll({
+		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/error_warning_message']"), 
+		@AndroidBy (xpath = "//android.widget.Button[@bounds='[51,224][1029,277]']"),
+		@AndroidBy (id = "com.arris.sbcBeta:id/error_warning_message") 
+	})
 	public MobileElement remoteAccessNotAvailableLink; 
 		
-	@AndroidFindBy (xpath = "//XCUIElementTypeButton[@name=\"Mesh_Home_Screen_Button_More\"]")
-	public MobileElement moreLink; 
+	@AndroidFindAll({
+		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/more_information']"), 
+		@AndroidBy (xpath = "//android.widget.Button[@bounds='[51,291][1029,348]']"),
+		@AndroidBy (id = "com.arris.sbcBeta:id/more_information") 
+	})
+	public MobileElement moreLink;
 		
-	@AndroidFindBy (xpath = "//XCUIElementTypeCell[@name=\"Wi-Fi\"]")
-	public MobileElement wifiLink;
+//	@AndroidFindBy (xpath = "//XCUIElementTypeCell[@name=\"Wi-Fi\"]")
+//	public MobileElement wifiLink;
 	
 	//After adding additional satellites
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/imgLeftRouter")
@@ -334,6 +342,22 @@ public class HomePage extends ParentClass implements Page {
 	public void clickOkButton() {
 		click(okButton);
 		utils.log().info("Network Optimization Dialog2 - Clicked on OK Button");
+	}
+	
+	public void clickMoreLink()
+	{
+		if(moreLink.isDisplayed()) {
+			click(moreLink);
+			utils.log().info("Remote Access is currently unvailable... Clicked on More Link ");
+		} else {
+			utils.log().info("Remote Access is currently available");	
+		}
+	}
+	
+	public void ConnectToMaxRouter(String ssidName, String ssidpass, String udid)
+	{
+		  new ConnectionToWifiNeededPage().turnOnRouterWifi(ssidName, ssidpass, udid);
+		  super.pause(15);
 	}
 	
 

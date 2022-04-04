@@ -42,6 +42,10 @@ public class AddSatelliteAddNewSatellitePage2 extends ParentClass implements Pag
 	public AddSatelliteAddNewSatellitePage2() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
+	
+	public void checkConnectionToMAXRouter() {
+		
+	}
 
 	public boolean clickNextButton() {
 		if (nextButton.isDisplayed()) {

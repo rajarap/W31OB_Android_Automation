@@ -5,6 +5,7 @@ com/cs/arris/Pages/ParentalControlAlertDialog.class
 com/cs/arris/Pages/HomeNetowrkDevicesWifiClientConnectionHealthPage.class
 com/cs/arris/Pages/FooterIconsPage.class
 com/cs/arris/Pages/WideBandModeAlertInfoDialog.class
+com/cs/arris/Utilities/Send7TapLogEmail.class
 com/cs/arris/Pages/MaximumVerificationReachedPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationPage.class
 com/cs/arris/Pages/GenerateEmailAndPasscode.class
@@ -238,10 +239,12 @@ com/cs/arris/Pages/NetworkEditReserveLANIPDialog.class
 com/cs/arris/Pages/NetworkLANDHCPIPRangeEmptyOctetAlertDialog.class
 com/cs/arris/Pages/OptimizeYourNetworkPage.class
 com/cs/arris/Pages/InternetConnectionNotAvailable.class
+com/cs/arris/Utilities/Send7TapLogEmail$1.class
 com/cs/arris/Pages/AppRatingDialog.class
 com/cs/arris/Pages/NetworkDevicePrioritySettingsAddDeviceHelpPage.class
 com/cs/arris/Pages/HomeNetworkHealthOptimizationSettingsPage.class
 com/cs/arris/Pages/ResendOTPDialog.class
+com/cs/arris/Pages/AttentionPage.class
 com/cs/arris/Pages/CodeVerifiedPage.class
 com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingHelpPage.class
 com/cs/arris/Pages/MainDevice5GHzTabPage.class

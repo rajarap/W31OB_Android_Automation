@@ -87,6 +87,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SelectYourDevicePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/SettingsHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkWANDNSConfigurationHelpPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Utilities/Send7TapLogEmail.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/Network5GHzWidebandModeInfoDialog.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ErrorCode_0002_1002_Internet_Connection_Not_Available_On_Mobile_Device.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/TurnOnBluetoothDialog.java
@@ -202,6 +203,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/ParentalControlHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/InternetConnectionNotAvailable.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkLANSubnetDHCPConfigurationHelpPage.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AttentionPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/NetworkGeneralSettingsPortFowardingAddRulePage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/DevicesHelpPage.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/main/java/com/cs/arris/Pages/AddSatellitePlaceYourSatellitePage.java
