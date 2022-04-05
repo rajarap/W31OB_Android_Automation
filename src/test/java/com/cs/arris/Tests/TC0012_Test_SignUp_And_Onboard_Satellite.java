@@ -393,31 +393,30 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 //		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
 //		  					super.pause(5);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
-		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  					}
 		  			}catch(Exception e) {
 		  				  new AddSatelliteAddNewSatellitePage2().clickCancelButton();
-						  Assert.fail("Satellite 1 Onboarding - Failed at last step ");
+						  Assert.fail("Satellite 1 Onboarding - Failed at please connect to your network SSID} ");
 		  			}
 		  			
 		  			try {
+		  				super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
 							new AddSatelliteUnpackYourSatellitePage().clickNextButton();
-							super.waitForVisibility(new AddSatellitePlaceYourSatellitePage().skipButton);
 		  				}
 		  			}catch(Exception e) {}
 						
 		  			try {
+		  				super.waitForVisibility(new AddSatellitePlaceYourSatellitePage().skipButton);
 		  				if(new AddSatellitePlaceYourSatellitePage().isAt()) {
 		  					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
-							super.waitForVisibility(new AddSatellitePlugInYourSatellitePage().nextButton);
 		  				}
 		  			}catch(Exception e) {}
 					
 					try {
+						super.waitForVisibility(new AddSatellitePlugInYourSatellitePage().nextButton);
 						if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 							new AddSatellitePlugInYourSatellitePage().clickNextButton();
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 							
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
@@ -438,6 +437,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 									super.pause(120);
 								}
 							}catch(Exception e) {}		
+							
 						}
 					}catch(Exception e) {
 						 super.pause(120);
@@ -458,9 +458,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}
 					
 					try {
+						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
@@ -502,9 +502,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					
 				  
 					try {
+						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
-							super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
@@ -545,6 +545,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}
 				  
 					try {
+						super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 						if(new AddSatelliteUpToDatePage().isAt()) {
 							new AddSatelliteUpToDatePage().clickNextButton();
 							super.waitForVisibility(new AddSatelliteRegistrationFailedPage().continueButton);
@@ -570,12 +571,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					try {
 						if(new AddSatelliteRegistrationFailedPage().isAt()) {
 							new AddSatelliteRegistrationFailedPage().clickContinueButton();
-							super.waitForVisibility(new AddSatelliteCongratulationsPage().continueButton);
 						}
 					} catch (Exception e13) {	}
 
 				  
 					try {
+						super.waitForVisibility(new AddSatelliteCongratulationsPage().continueButton);
 						if(new AddSatelliteCongratulationsPage().isAt()) {
 							new AddSatelliteCongratulationsPage().clickContinueButton();
 							super.pause(20);
