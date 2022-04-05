@@ -48,7 +48,7 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
+	   super.getDriver().runAppInBackground(Duration.ofSeconds(15));
        try 
        {
     	   utils.log().info("Connecting to " + this.ssid + " network");
@@ -59,9 +59,9 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
            Process pc2 = pb2.start();
        } catch (Exception e) {e.printStackTrace(); }  
        
-       super.pause(3);
+       super.pause(5);
        utils.log().info("Activating App running in Background");
-       super.pause(3);
+       super.pause(5);
        super.getDriver().activateApp("com.arris.sbcBeta");
 	}
 	

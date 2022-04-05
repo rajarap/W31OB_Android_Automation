@@ -184,8 +184,43 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  if(new PlugInMaxRouterPage().isAt()) {
 					  new PlugInMaxRouterPage().clickNextButton();
 					  super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
+					  
+					  try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+							}catch(Exception e5) {}
+						
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);
+							}
+						}catch(Exception e7) {}
+				
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e8) {}
 				  }
-			  }catch(Exception e9) {}
+			  }catch(Exception e9) {
+				  super.pause(120);
+				  new TapSevenTimes().tapSeven();
+				  super.pause(5);
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(5);
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(5);
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(5);
+				  new SevenTapEmail().clickSendButton();
+				  super.pause(5);
+				  Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
+				  new KillAndRelaunchApp().killApp();
+			  }
 			  
 			  try {
 				  if(new ConnectMaxRouterToMobileDevicePage().isAt()) {
@@ -225,7 +260,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  super.pause(5);
 				  new SevenTapEmail().clickSendButton();
 				  super.pause(5);
-				  Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
+				  Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure2");
 				  new KillAndRelaunchApp().killApp();
 			  }
 			  
@@ -347,15 +382,16 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage1().clickNextButton();
-		  					super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
+		  					super.pause(35);
+		  				//	super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
 		  					}
 			  		}catch(Exception e) {}
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-		  					super.pause(5);
-		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
-		  					super.pause(5);
+		  					super.pause(35);
+//		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
+//		  					super.pause(5);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  					}
@@ -566,7 +602,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertAll();
 
 			  }catch(Exception e1) {
-				  Assert.fail("Satellite 1 Onboarding - Satellite 1 onboarding failed");
+				  Assert.fail("Satellite 1 Onboarding - failed");
 				  new KillAndRelaunchApp().killApp();
 				  new KillAndRelaunchApp().relaunchApp();
 			}
@@ -641,14 +677,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						  Assert.fail("Satellite 2 Onboarding - Unable to add Satellite 2 as previously configured satellite still exists ");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
+						Assert.fail("Satellite 2 Onboarding - Unable to add Satellite 2 as previously configured satellite still exists ");
 					}
-					
-					
-					
-								
+
 					new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 					
@@ -691,8 +722,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
 						  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
 					}
 						
 					try {
@@ -743,8 +772,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
-							  new KillAndRelaunchApp().killApp();
-							  new KillAndRelaunchApp().relaunchApp();
 					}
 			  
 					try {
@@ -785,8 +812,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
 						  Assert.fail("Satellite 2 Onboarding - Unable to connect your Satellite 2 to the Internet");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
 					}
 
 					try {
@@ -813,8 +838,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
 						  Assert.fail("Satellite 2 Onboarding - Unable to update firware on Satellite 2 ");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
 					}
 				
 				//Registering your device
@@ -843,8 +866,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
 						  Assert.fail("Satellite 2 Onboarding - Failed at last step ");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
 					}
 				
 					new HomePage().verifyRightRouterDetails();
@@ -852,9 +873,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					softsatellite2.assertAll();
 					
 			  }catch(Exception e14) {
-				  Assert.fail("Satellite 2 Onboarding - Satellite 2 onboarding failed");
-				  new KillAndRelaunchApp().killApp();
-				  new KillAndRelaunchApp().relaunchApp();
+				  Assert.fail("Satellite 2 Onboarding - failed");
 			  }
 	  }
 		
