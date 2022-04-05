@@ -353,12 +353,16 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-		  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+		  					super.pause(5);
+		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
 		  					super.pause(5);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  					}
-		  			}catch(Exception e) {}
+		  			}catch(Exception e) {
+		  				  new AddSatelliteAddNewSatellitePage2().clickCancelButton();
+						  Assert.fail("Satellite 1 Onboarding - Failed at last step ");
+		  			}
 		  			
 		  			try {
 		  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
