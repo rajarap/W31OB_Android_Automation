@@ -382,14 +382,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage1().clickNextButton();
-		  					super.pause(35);
+		  					super.pause(60);
 		  				//	super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
 		  					}
 			  		}catch(Exception e) {}
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-		  					super.pause(35);
+		  					//super.pause(35);
 //		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
 //		  					super.pause(5);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
