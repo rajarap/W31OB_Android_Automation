@@ -315,7 +315,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  super.pause(5);
 			  new SevenTapEmail().clickSendButton();
 			  super.pause(5);
-			  Assert.fail("Main AP Onboarding - Unable to onboard your Max Router ");
+			  Assert.fail("Main AP Onboarding - Unable to onboard your Main Max Router ");
 			  new KillAndRelaunchApp().killApp();
 		  }
 	  }
@@ -354,6 +354,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 		  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+		  					super.pause(5);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  					}
@@ -520,6 +521,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
+						  Assert.fail("Satellite 1 Onboarding - Unable to update firware on Satellite 2 ");
+						  new KillAndRelaunchApp().killApp();
+						  new KillAndRelaunchApp().relaunchApp();
 					}
 					
 					//Registering your device
@@ -548,6 +552,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
+						  Assert.fail("Satellite 1 Onboarding - Failed at last step ");
+						  new KillAndRelaunchApp().killApp();
+						  new KillAndRelaunchApp().relaunchApp();
 					}
 
 					new HomePage().verifyLeftRouterDetails();
@@ -555,6 +562,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertAll();
 
 			  }catch(Exception e1) {
+				  Assert.fail("Satellite 1 Onboarding - Satellite 1 onboarding failed");
 				  new KillAndRelaunchApp().killApp();
 				  new KillAndRelaunchApp().relaunchApp();
 			}
@@ -576,7 +584,10 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			performFactoryReset("Satellite2", "/dev/tty.usbserial-142310");
 			  
 			  try {
-				  	super.pause(10);
+				  	  super.pause(10);
+					  new KillAndRelaunchApp().killApp();
+					  new KillAndRelaunchApp().relaunchApp();
+					  super.pause(10);
 				  						  
 					  try {
 						  if(new HomePage().banner.isDisplayed()){
@@ -797,6 +808,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
+						  Assert.fail("Satellite 2 Onboarding - Unable to update firware on Satellite 2 ");
+						  new KillAndRelaunchApp().killApp();
+						  new KillAndRelaunchApp().relaunchApp();
 					}
 				
 				//Registering your device
@@ -824,7 +838,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
-						  
+						  Assert.fail("Satellite 2 Onboarding - Failed at last step ");
+						  new KillAndRelaunchApp().killApp();
+						  new KillAndRelaunchApp().relaunchApp();
 					}
 				
 					new HomePage().verifyRightRouterDetails();
@@ -832,6 +848,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					softsatellite2.assertAll();
 					
 			  }catch(Exception e14) {
+				  Assert.fail("Satellite 2 Onboarding - Satellite 2 onboarding failed");
 				  new KillAndRelaunchApp().killApp();
 				  new KillAndRelaunchApp().relaunchApp();
 			  }
