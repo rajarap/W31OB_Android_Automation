@@ -226,7 +226,7 @@ public class HomePage extends ParentClass implements Page {
 		@AndroidBy (xpath = "//android.widget.Button[@bounds='[51,224][1029,277]']"),
 		@AndroidBy (id = "com.arris.sbcBeta:id/error_warning_message") 
 	})
-	public MobileElement remoteAccessNotAvailableLink; 
+	public MobileElement banner; 
 		
 	@AndroidFindAll({
 		@AndroidBy (xpath = "//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/more_information']"), 
@@ -703,7 +703,7 @@ public class HomePage extends ParentClass implements Page {
 	public boolean ratExists() {
 		if(cloudIcon.isDisplayed()) {
 			utils.log().info("Home Page - Cloud Icon is displayed");
-			if(remoteAccessNotAvailableLink.isDisplayed()) 
+			if(banner.isDisplayed()) 
 				utils.log().info("Home Page - Remote access to your Network is currently unavailable Link is displayed");
 			utils.log().info("Home Page - Clicked in More... Link");
 			return true;

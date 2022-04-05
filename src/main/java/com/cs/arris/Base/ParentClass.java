@@ -746,7 +746,7 @@ public class ParentClass
 			//Integer randomNumber = (int)(Math.random()*9000)+1000;
 			Random r = new Random();
 			int low = 100;
-			int high = 1000;
+			int high = 99999;
 			int result = r.nextInt(high-low) + low;
 			randNum = String.valueOf(result);
 			profileName = "profile"+ randNum;
@@ -757,7 +757,7 @@ public class ParentClass
 		{
 			Random r = new Random();
 			int low = 100;
-			int high = 9999;
+			int high = 99999;
 			int result = r.nextInt(high-low) + low;
 			randNum = String.valueOf(result);
 			String routerName = "arrisW31-"+ randNum;
@@ -892,7 +892,7 @@ public class ParentClass
 		{
 			Random r = new Random();
 			int low = 1;
-			int high = 9999;
+			int high = 99999;
 			
 			int result = r.nextInt(high-low) + low;
 			String temp = String.valueOf(result);
