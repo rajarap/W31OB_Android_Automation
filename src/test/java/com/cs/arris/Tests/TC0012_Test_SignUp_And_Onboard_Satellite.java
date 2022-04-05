@@ -334,6 +334,13 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			performFactoryReset("Satellite1", "/dev/tty.usbserial-142340");
 			  
 			  try {
+				  
+				  try {
+					  if(new HomePage().banner.isDisplayed()){
+						  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
+					  }else {utils.log().info("Remote access to your network is currently available");}
+					 }catch(Exception e) {}
+				  
 		  			new HomePage().clickLeftSatelliteImage();
 		  			new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
 		  			
@@ -569,7 +576,14 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			performFactoryReset("Satellite2", "/dev/tty.usbserial-142310");
 			  
 			  try {
-				  super.pause(10);
+				  	super.pause(10);
+				  						  
+					  try {
+						  if(new HomePage().banner.isDisplayed()){
+							  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
+						  }else {utils.log().info("Remote access to your network is currently available");}
+						 }catch(Exception e) {}
+					  
 					new HomePage().clickNavigationButton();
 					new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();
 					new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
