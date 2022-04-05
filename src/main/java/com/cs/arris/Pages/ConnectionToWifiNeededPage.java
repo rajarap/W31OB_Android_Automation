@@ -110,8 +110,13 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 	
 	@Override
 	public boolean isAt() {
-		super.pause();
-		return true;
+		if (continueButton.isDisplayed()) {
+			utils.log().info("On Connection Needed Page");
+			return true;
+		} else {
+			utils.log().info("Not on Connection Needed Page");
+			return false;
+		}
 	}
 
 }
