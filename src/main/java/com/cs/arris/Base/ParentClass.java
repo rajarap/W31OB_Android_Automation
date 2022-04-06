@@ -232,8 +232,8 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
-			factoryReset();
-			rebootDevice();
+//			factoryReset();
+//			rebootDevice();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
@@ -494,9 +494,9 @@ public class ParentClass
 		  wait.until(ExpectedConditions.visibilityOf(e));
 		  }
 	  
-	  public void waitFor(MobileElement e){
+	  public void waitFor(){
 		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
-		  .withTimeout(Duration.ofSeconds(100))
+		  .withTimeout(Duration.ofSeconds(120))
 		  .pollingEvery(Duration.ofSeconds(5))
 		  .ignoring(NoSuchElementException.class);
 		  }

@@ -20,4 +20,15 @@ public class TapSevenTimes extends ParentClass{
 			action.tap(p).release().perform();
 		}
 	}
+	
+	public void tapTen() {
+		int x = 630;
+		int y = 1200;
+		PointOption p = new PointOption();
+		p.withCoordinates(x, y);
+		//utils.log().info("Tapping 7 times");
+		for(int i=0; i <= 10; i++) {
+			action.tap(p).release().perform();
+		}
+	}
 }

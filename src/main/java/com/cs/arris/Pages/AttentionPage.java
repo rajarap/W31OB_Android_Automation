@@ -39,23 +39,11 @@ public class AttentionPage extends ParentClass implements Page {
 	public AttentionPage() {
 		PageFactory.initElements(new AppiumFieldDecorator(super.getDriver()), this);
 	}
-
-//	public boolean clickOKButton() {
-//		if (okButton.isDisplayed()) {
-//			click(okButton); 
-//			utils.log().info("Clicked OK Button");
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
 	
-	@SuppressWarnings("unchecked")
 	public boolean clickOKButton() {
-		androidDriver = (AndroidDriver<MobileElement>) super.getDriver();
-		if (androidDriver.findElementByXPath("//android.widget.Button[@text='OK']").isDisplayed()) {
-			androidDriver.findElementByXPath("//android.widget.Button[@text='OK']").click();
-			utils.log().info("Clicked OK Button");
+		if (okButton.isDisplayed()) {
+			click(okButton);
+			utils.log().info("Clicked OK Button on Attention Dialog");
 			return true;
 		} else {
 			return false;
@@ -64,7 +52,7 @@ public class AttentionPage extends ParentClass implements Page {
 
 	@Override
 	public boolean isAt() {
-		if (super.androidDriver.findElementByXPath("//android.widget.TextView[@text='Attention']").isDisplayed()) {
+		if (attentionTitle.isDisplayed()) {
 			utils.log().info("On Attention Page");
 			return true;
 		} else {
