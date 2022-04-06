@@ -182,134 +182,145 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new SetupHomeNetworkPage().clickNextButton();
 			  new UnPackYourBoxPage().clickNextButton();
 			  
-			  try {
-				  if(new PlugInMaxRouterPage().isAt()) {
-					  new PlugInMaxRouterPage().clickNextButton();
-					  waitFor();
-					  
-					  try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);}
-							}catch(Exception e5) {}
-						
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						}catch(Exception e7) {}
-				
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								super.pause(120);
-							}
-						}catch(Exception e8) {}
-				  }
-			  }catch(Exception e9) {
-				  super.pause(120);
-				  new TapSevenTimes().tapSeven();
-				  super.pause(5);
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(5);
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(5);
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(5);
-				  new SevenTapEmail().clickSendButton();
-				  super.pause(5);
-				  Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
-				  new KillAndRelaunchApp().killApp();
-			  }
-			  
-			  try {
-				  super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
-				  if(new ConnectMaxRouterToMobileDevicePage().isAt()) {
-					  new ConnectMaxRouterToMobileDevicePage().clickNextButton();
-					  waitFor();
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);}
-							}catch(Exception e5) {}
-						
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						}catch(Exception e7) {}
-				
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								super.pause(120);
-							}
-						}catch(Exception e8) {}
+				try {
+					if (new PlugInMaxRouterPage().isAt()) {
+						new PlugInMaxRouterPage().clickNextButton();
 					}
-			  }catch(Exception e9) {
-				  super.pause(120);
-				  new TapSevenTimes().tapSeven();
-				  super.pause(5);
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(5);
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(5);
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(5);
-				  new SevenTapEmail().clickSendButton();
-				  super.pause(5);
-				  Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure2");
-				  new KillAndRelaunchApp().killApp();
-			  }
-			  
-			  try {
-				  super.waitForVisibility(new ConnectMaxRouterToInternetPage().nextButton);
-				  if(new ConnectMaxRouterToInternetPage().isAt()) {
-					  new ConnectMaxRouterToInternetPage().clickNextButton();
-					  waitFor();
 
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);}
-							}catch(Exception e5) {}
-						
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						}catch(Exception e7) {}
-				
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								super.pause(120);
-							}
-						}catch(Exception e8) {}
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e5) {
 					}
-			  }catch(Exception e9) {
-				  super.pause(120);
-				  new TapSevenTimes().tapSeven();
-				  super.pause(5);
-				  new SevenTapLogs().clickYesButton();
-				  super.pause(5);
-				  new SevenTapGmail().clickGmailIcon();
-				  super.pause(5);
-				  new SevenTapEmail().enterEmailAddress();
-				  super.pause(5);
-				  new SevenTapEmail().clickSendButton();
-				  super.pause(5);
-				  Assert.fail("Main AP Onboarding - Unable to connect you Max Router to the Internet");
-				  new KillAndRelaunchApp().killApp();
-			  }
-			  
+
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e7) {
+					}
+
+					try {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(120);
+						}
+					} catch (Exception e8) {
+					}
+				} catch (Exception e9) {
+					super.pause(120);
+					new TapSevenTimes().tapSeven();
+					super.pause(5);
+					new SevenTapLogs().clickYesButton();
+					super.pause(5);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(5);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(5);
+					new SevenTapEmail().clickSendButton();
+					super.pause(5);
+					Assert.fail(
+							"Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
+					new KillAndRelaunchApp().killApp();
+				}
+
+				try {
+					super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
+					if (new ConnectMaxRouterToMobileDevicePage().isAt()) {
+						new ConnectMaxRouterToMobileDevicePage().clickNextButton();
+					}
+
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e5) {
+					}
+
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e7) {
+					}
+
+					try {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(120);
+						}
+					} catch (Exception e8) {
+					}
+				} catch (Exception e9) {
+					super.pause(120);
+					new TapSevenTimes().tapSeven();
+					super.pause(5);
+					new SevenTapLogs().clickYesButton();
+					super.pause(5);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(5);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(5);
+					new SevenTapEmail().clickSendButton();
+					super.pause(5);
+					Assert.fail(
+							"Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure2");
+					new KillAndRelaunchApp().killApp();
+				}
+				
+				try {
+					super.waitForVisibility(new ConnectMaxRouterToInternetPage().nextButton);
+					if (new ConnectMaxRouterToInternetPage().isAt()) {
+						new ConnectMaxRouterToInternetPage().clickNextButton();
+					}
+
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e5) {
+					}
+
+					try {
+						if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+							super.pause(120);
+						}
+					} catch (Exception e7) {
+					}
+
+					try {
+						if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+							new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+							new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+							super.pause(120);
+						}
+					} catch (Exception e8) {
+					}
+				} catch (Exception e9) {
+					super.pause(120);
+					new TapSevenTimes().tapSeven();
+					super.pause(5);
+					new SevenTapLogs().clickYesButton();
+					super.pause(5);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(5);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(5);
+					new SevenTapEmail().clickSendButton();
+					super.pause(5);
+					Assert.fail("Main AP Onboarding - Unable to connect you Max Router to the Internet");
+					new KillAndRelaunchApp().killApp();
+				}
+
 			  super.waitForVisibility(new SystemFirmwareUpdatePage().nextButton);
 			  new SystemFirmwareUpdatePage().clickNextButton();
 			  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
@@ -318,14 +329,16 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  new NameYourNetwokSSIDPage().clickNextButton();
 			  super.pause(35);
 			  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-			  super.pause(35);
+			  super.pause(15);
 			  try {
 				  if(new ConnectionToWifiNeededPage().isAt()) {
 					  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 					  new ConnectionToWifiNeededPage().clickContinue();
 					  super.pause(35);
 					  }
-			  }catch(Exception e) {}
+			  }catch(Exception e) {
+				  
+			  }
 			  new CongratulationsPage().clickContinueButton();
 			  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
 			  new InstallAdditionalSatellitePage().clickInstallLaterButton();
@@ -343,6 +356,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				 }catch(Exception e) {}
 			  
 			  new HomePage().getSSIDName();  
+			  
 		  }catch(Exception e) {
 			  super.pause(120);
 			  new TapSevenTimes().tapSeven();
@@ -383,98 +397,65 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  
 		  			new HomePage().clickLeftSatelliteImage();
 		  			new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
-		  			waitFor();
+		  			super.pause(25);
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage1().clickNextButton();
-		  					super.pause(40);
+		  					super.pause(50);
 		  					}
 			  		}catch(Exception e) {}
 		  			
 		  			try {
-		  				super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-		  					//super.pause(35);
-//		  					new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
-		  					new TapSevenTimes().tapTen();
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
-		  					}
+		  				}
 		  			}catch(Exception e) {
-		  				  new AddSatelliteAddNewSatellitePage2().clickCancelButton();
-						  Assert.fail("Satellite 1 Onboarding - Failed at please connect to your network SSID} ");
+		  				Assert.fail("Satellite 1 Onboarding - Failed to connect to the MainAP SSID ");
 		  			}
-		  			
 		  			
 		  			try {
 		  				super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
 							new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 		  				}
-		  			}catch(Exception e) {
-						  new TapSevenTimes().tapSeven();
-						  super.pause(5);
-						  new SevenTapLogs().clickYesButton();
-						  super.pause(5);
-						  new SevenTapGmail().clickGmailIcon();
-						  super.pause(5);
-						  new SevenTapEmail().enterEmailAddress();
-						  super.pause(5);
-						  new SevenTapEmail().clickSendButton();
-						  super.pause(5);
-						  Assert.fail("Satellite 1 Onboarding - Issue on Unpack your satellite page");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
-		  			}
+		  			}catch(Exception e) {}
 						
 		  			try {
 		  				super.waitForVisibility(new AddSatellitePlaceYourSatellitePage().skipButton);
 		  				if(new AddSatellitePlaceYourSatellitePage().isAt()) {
 		  					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 		  				}
-		  			}catch(Exception e) {
-						  new TapSevenTimes().tapSeven();
-						  super.pause(5);
-						  new SevenTapLogs().clickYesButton();
-						  super.pause(5);
-						  new SevenTapGmail().clickGmailIcon();
-						  super.pause(5);
-						  new SevenTapEmail().enterEmailAddress();
-						  super.pause(5);
-						  new SevenTapEmail().clickSendButton();
-						  super.pause(5);
-						  Assert.fail("Satellite 1 Onboarding - Issue on place your satellite page");
-						  new KillAndRelaunchApp().killApp();
-						  new KillAndRelaunchApp().relaunchApp();
-		  			}
+		  			}catch(Exception e) {}
+		  			
+		  			
 					
 					try {
 						super.waitForVisibility(new AddSatellitePlugInYourSatellitePage().nextButton);
 						if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 							new AddSatellitePlugInYourSatellitePage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}	
 						}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e) {}
+						
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e) {}		
+
 					}catch(Exception e) {
 						 super.pause(120);
 						  new TapSevenTimes().tapSeven();
@@ -490,36 +471,35 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  Assert.fail("Satellite 1 Onboarding - Unable to plug in your mAX Router and connect to your Mobile Device due to blue tooth connection failure");
 						  new KillAndRelaunchApp().killApp();
 						  new KillAndRelaunchApp().relaunchApp();
-						  
 					}
 					
 					try {
 						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
+
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e5) {}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+									new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);
+							}
+						}catch(Exception e7) {}
+					
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+								}
+						}catch(Exception e8) {}
+						
 					}catch (Exception e9) {
 						 super.pause(120);
 						  new TapSevenTimes().tapSeven();
@@ -542,29 +522,29 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
+						
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);
+							}
+						}catch(Exception e7) {}
+					
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e8) {}
+						
 					}catch(Exception e) {
 						 super.pause(120);
 						  new TapSevenTimes().tapSeven();
@@ -577,7 +557,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
-						  Assert.fail("Satellite 1 Onboarding - Unable to connect Satellite 1 to the Internet");
+						  Assert.fail("Satellite 1 Onboarding - Unable to connect your Satellite 1 to the Internet");
 						  new KillAndRelaunchApp().killApp();
 						  new KillAndRelaunchApp().relaunchApp();
 					}
@@ -610,7 +590,20 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						if(new AddSatelliteRegistrationFailedPage().isAt()) {
 							new AddSatelliteRegistrationFailedPage().clickContinueButton();
 						}
-					} catch (Exception e13) {	}
+					}catch(Exception e13) {
+						 super.pause(120);
+						  new TapSevenTimes().tapSeven();
+						  super.pause(5);
+						  new SevenTapLogs().clickYesButton();
+						  super.pause(5);
+						  new SevenTapGmail().clickGmailIcon();
+						  super.pause(5);
+						  new SevenTapEmail().enterEmailAddress();
+						  super.pause(5);
+						  new SevenTapEmail().clickSendButton();
+						  super.pause(5);
+						  Assert.fail("Satellite 1 Onboarding - Failure to add Satellite ");
+					}
 
 				  
 					try {
@@ -641,7 +634,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				softsatellite1.assertAll();
 
 			  }catch(Exception e1) {
-				  Assert.fail("Satellite 1 Onboarding - failed");
+				  Assert.fail("Satellite 1 Onboarding - Failed");
 				  new KillAndRelaunchApp().killApp();
 				  new KillAndRelaunchApp().relaunchApp();
 			}
@@ -662,51 +655,48 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			
 			performFactoryReset("Satellite2", "/dev/tty.usbserial-142310");
 			  
-			  try {
-				  	  super.pause(10);
-					  new KillAndRelaunchApp().killApp();
-					  new KillAndRelaunchApp().relaunchApp();
-					  super.pause(10);
-				  						  
-					  try {
-						  if(new HomePage().banner.isDisplayed()){
-							  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
-						  }else {utils.log().info("Remote access to your network is currently available");}
-						 }catch(Exception e) {}
+			 try {
+				 super.pause(10);
+				 new KillAndRelaunchApp().killApp();
+				 new KillAndRelaunchApp().relaunchApp();
+				 super.pause(10);
+
+		  
+				try {
+					if(new HomePage().banner.isDisplayed()){
+						  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
+					  }else {utils.log().info("Remote access to your network is currently available");}
+				 }catch(Exception e) {}
 					  
 					new HomePage().clickNavigationButton();
 					new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();
 					new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
-					waitFor();
+					super.pause(25);
 					
 					try {
-						if(new AddSatelliteAddNewSatellitePage1().isAt()) 
-						{
+						if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 							new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network	
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
-
 						}
+
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+							}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+							}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e) {}
 							
 					}catch(Exception e) {
 						super.pause(120);
@@ -720,39 +710,37 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						Assert.fail("Satellite 2 Onboarding - Unable to add Satellite 2 due to bluetooth connection error ");
+						Assert.fail("Satellite 2 Onboarding - Unable to add Satellite 2 as previously configured satellite still exists ");
 					}
-
+					
+					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 					new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 					
 					try {
-						if(new AddSatellitePlugInYourSatellitePage().isAt()) 
-						{
+						if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 							new AddSatellitePlugInYourSatellitePage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
+						
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+							}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+							}catch(Exception e) {}
+							
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e) {}
 							
 					}catch(Exception e) {
 						super.pause(120);
@@ -766,37 +754,39 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
+						  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to bluetooth connection failure");
 					}
 						
 					try {
 						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
-					}catch (Exception e9) {
+						
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+							new BlueToothConnectionFailedPage().clickTryAgainbutton();
+									super.pause(120);
+								}
+							}catch(Exception e5) {}
+					
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);
+							}
+						}catch(Exception e7) {}
+												
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e8) {}
+
+					}catch (Exception e9) 
+					{
 							 super.pause(120);
 							  new TapSevenTimes().tapSeven();
 							  super.pause(5);
@@ -808,37 +798,35 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							  super.pause(5);
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
-							  Assert.fail("Satellite 2 Onboarding - Unable to connect your Satellite 2 to the Internet");
+							  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to bluetooth connection failure");
 					}
 			  
 					try {
 						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
-							waitFor();
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-									}
-								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
+
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e) {}
+								
+						try {
+							if (new BlueToothConnectionFailedPage().isAt()) {
+								new BlueToothConnectionFailedPage().clickTryAgainbutton();
+								super.pause(120);}
+						}catch(Exception e) {}
+								
+						try {
+							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
+								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
+								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+								super.pause(120);
+							}
+						}catch(Exception e8) {}
+
 					}catch(Exception e) {
 						 super.pause(120);
 						  new TapSevenTimes().tapSeven();
@@ -851,37 +839,19 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
-						  Assert.fail("Satellite 2 Onboarding - Unable to update firware on Satellite 2");
+						  Assert.fail("Satellite 2 Onboarding - Unable to connect your Satellite 2 to the Internet");
 					}
 
 					try {
 						super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
-						if(new AddSatelliteUpToDatePage().isAt()) 
-						{
+						if(new AddSatelliteUpToDatePage().isAt()) {
 							new AddSatelliteUpToDatePage().clickNextButton();
-							waitFor();
-							
+
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-									}
+									super.pause(120);}
 								}catch(Exception e) {}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();
-								}
-							}catch(Exception e7) {}
-					
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									waitFor();
-								}
-							}catch(Exception e8) {}
 						}
 					}catch(Exception e) {
 						 super.pause(120);
@@ -895,7 +865,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
-						  Assert.fail("Satellite 2 Onboarding - Issue on Registration Failed page ");
+						  Assert.fail("Satellite 2 Onboarding - Unable to update firmware on Satellite 2 ");
 					}
 				
 				//Registering your device
@@ -903,9 +873,21 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						super.waitForVisibility(new AddSatelliteRegistrationFailedPage().continueButton);
 						if (new AddSatelliteRegistrationFailedPage().isAt()) {
 							new AddSatelliteRegistrationFailedPage().clickContinueButton(); 
-							//super.waitForVisibility(new AddSatelliteCongratulationsPage().continueButton);
 						}
-					} catch (Exception e13) {}	
+					}catch(Exception e) {
+						 super.pause(120);
+						  new TapSevenTimes().tapSeven();
+						  super.pause(5);
+						  new SevenTapLogs().clickYesButton();
+						  super.pause(5);
+						  new SevenTapGmail().clickGmailIcon();
+						  super.pause(5);
+						  new SevenTapEmail().enterEmailAddress();
+						  super.pause(5);
+						  new SevenTapEmail().clickSendButton();
+						  super.pause(5);
+						  Assert.fail("Satellite 2 Onboarding - Failure to add Satellite ");
+					}	
 				
 					try {
 						super.waitForVisibility(new AddSatelliteCongratulationsPage().continueButton);

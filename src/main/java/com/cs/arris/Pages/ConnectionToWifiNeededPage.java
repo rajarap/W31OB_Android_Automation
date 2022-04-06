@@ -48,13 +48,13 @@ public class ConnectionToWifiNeededPage extends ParentClass implements Page
 		this.pwd = pwd;
 		this.udid = udid;
 		utils.log().info("Running App in the Background");
-	   super.getDriver().runAppInBackground(Duration.ofSeconds(15));
+	   super.getDriver().runAppInBackground(Duration.ofSeconds(10));
        try 
        {
     	   utils.log().info("Connecting to " + this.ssid + " network");
     	   ProcessBuilder pb1 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "am", "start", "-n", "com.steinwurf.adbjoinwifi/.MainActivity", "-e", "ssid", this.ssid, "-e", "password_type", "WPA", "-e", "password", this.pwd);
            Process pc1 = pb1.start();
-           super.pause(3);
+           super.pause(10);
            ProcessBuilder pb2 = new ProcessBuilder("/Users/rm2652/Library/Android/sdk/platform-tools/adb", "-s", this.udid, "shell", "input", "keyevent", "3");
            Process pc2 = pb2.start();
        } catch (Exception e) {e.printStackTrace(); }  

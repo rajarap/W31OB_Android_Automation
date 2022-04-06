@@ -2494,15 +2494,26 @@ public class TC0011_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			
 			
 			@Test(priority = 148, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-			public void Verify_Network_Health_Page() {
-			utils.log().info("                             ");
-			utils.log().info("*****************************");
-			utils.log().info("Test: Network Health Feature ");
-			utils.log().info("*****************************");
+			public void Verify_Network_Health_Page() 
+			{
+				utils.log().info("                             ");
+				utils.log().info("*****************************");
+				utils.log().info("Test: Network Health Feature ");
+				utils.log().info("*****************************");
+				
 				SoftAssert softnetwork1 = new SoftAssert();
 				new HomePage().getFooterIconsPageObject().clickHomeButton();
 				super.pause(10);
-				softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
+				
+				 try {
+					  if(new HomePage().banner.isDisplayed()){
+						  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
+					  }else {
+						  utils.log().info("Remote access to your network is currently available");
+					}
+				}catch(Exception e) {}
+
+				 softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
 					if (new HomePage().getSkipTutorialPageObject().isAt())
 						softnetwork1.assertTrue(new HomePage().getSkipTutorialPageObject().clickSkipText());
 

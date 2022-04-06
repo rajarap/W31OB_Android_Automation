@@ -494,20 +494,19 @@ public class ParentClass
 		  wait.until(ExpectedConditions.visibilityOf(e));
 		  }
 	  
-	  public void waitFor(){
-		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+	  public void waitFor120(){
+		  Wait<WebDriver> wait120 = new FluentWait<WebDriver>(getDriver())
 		  .withTimeout(Duration.ofSeconds(120))
-		  .pollingEvery(Duration.ofSeconds(5))
-		  .ignoring(NoSuchElementException.class);
+		  .pollingEvery(Duration.ofSeconds(5));
 		  }
 	  
-	  public void waitForCongratulationsPage(MobileElement e){
-		  Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
-		  .withTimeout(Duration.ofSeconds(1000))
-		  .pollingEvery(Duration.ofSeconds(10))
-		  .ignoring(NoSuchElementException.class);
+	  public void waitFor60(){
+		  Wait<WebDriver> wait60 = new FluentWait<WebDriver>(getDriver())
+		  .withTimeout(Duration.ofSeconds(120))
+		  .pollingEvery(Duration.ofSeconds(5));
 		  }
 	  
+ 
 	  public void clear(MobileElement e) {
 		  waitForVisibility(e);
 		  e.clear();
