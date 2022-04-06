@@ -383,6 +383,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  
 		  			new HomePage().clickLeftSatelliteImage();
 		  			new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
+		  			waitFor();
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
@@ -676,6 +677,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					new HomePage().clickNavigationButton();
 					new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();
 					new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
+					waitFor();
 					
 					try {
 						if(new AddSatelliteAddNewSatellitePage1().isAt()) 
@@ -794,8 +796,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 								}
 							}catch(Exception e8) {}
 						}
-					}catch (Exception e9) 
-					{
+					}catch (Exception e9) {
 							 super.pause(120);
 							  new TapSevenTimes().tapSeven();
 							  super.pause(5);
@@ -819,7 +820,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
+									waitFor();
+									}
 								}catch(Exception e) {}
 							
 							try {
@@ -862,7 +864,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 							try {
 								if (new BlueToothConnectionFailedPage().isAt()) {
 									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									waitFor();}
+									waitFor();
+									}
 								}catch(Exception e) {}
 							
 							try {
