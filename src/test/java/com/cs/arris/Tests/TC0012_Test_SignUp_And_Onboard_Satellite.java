@@ -223,8 +223,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					super.pause(5);
 					new SevenTapEmail().clickSendButton();
 					super.pause(5);
-					Assert.fail(
-							"Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
+					Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
 					new KillAndRelaunchApp().killApp();
 				}
 
@@ -395,28 +394,27 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  }else {utils.log().info("Remote access to your network is currently available");}
 					 }catch(Exception e) {}
 				  
-		  			new HomePage().clickLeftSatelliteImage();
+				  	new HomePage().clickLeftSatelliteImage();
 		  			new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
-		  			super.waitForVisibility(new AddSatelliteAddNewSatellitePage1().nextButton);
-		  			
+				  
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage1().clickNextButton();
-		  					super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
+		  					super.pause(35);
 		  					}
 			  		}catch(Exception e) {}
 		  			
+  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
-		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				}
 		  			}catch(Exception e) {
 		  				Assert.fail("Satellite 1 Onboarding - Failed to connect to the MainAP SSID ");
 		  			}
 		  			
 		  			try {
-		  				
+		  				super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
 							new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 		  				}
