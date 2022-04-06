@@ -397,25 +397,26 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				  
 		  			new HomePage().clickLeftSatelliteImage();
 		  			new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
-		  			super.pause(25);
+		  			super.waitForVisibility(new AddSatelliteAddNewSatellitePage1().nextButton);
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage1().clickNextButton();
-		  					super.pause(50);
+		  					super.waitForVisibility(new AddSatelliteAddNewSatellitePage2().nextButton);
 		  					}
 			  		}catch(Exception e) {}
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
+		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				}
 		  			}catch(Exception e) {
 		  				Assert.fail("Satellite 1 Onboarding - Failed to connect to the MainAP SSID ");
 		  			}
 		  			
 		  			try {
-		  				super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
+		  				
 		  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
 							new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 		  				}
@@ -427,8 +428,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 		  				}
 		  			}catch(Exception e) {}
-		  			
-		  			
 					
 					try {
 						super.waitForVisibility(new AddSatellitePlugInYourSatellitePage().nextButton);
