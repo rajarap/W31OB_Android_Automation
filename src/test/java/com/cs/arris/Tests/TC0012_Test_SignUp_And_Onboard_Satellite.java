@@ -406,11 +406,12 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
 		  					utils.log().info("Turning OFF Wifi..........");
 		  					((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-		  					super.pause(5);
+		  					super.pause(10);
 		  					utils.log().info("Turning ON Wifi.........");
 		  					((AndroidDriver) super.getDriver()).toggleWifi(); 
-		  					super.pause(5);
+		  					super.pause(10);
 		  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+		  					super.pause(10);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				}
@@ -437,7 +438,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						  super.pause(5);
 						  new SevenTapEmail().clickSendButton();
 						  super.pause(5);
-						  Assert.fail("Satellite 1 Onboarding - Failed to connect to the MainAP SSID");
+						  Assert.fail("Satellite 1 Onboarding - Failed at Unpack your satellite");
 						  new KillAndRelaunchApp().killApp();
 						  new KillAndRelaunchApp().relaunchApp();
 		  			}
@@ -447,32 +448,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  					new AddSatellitePlaceYourSatellitePage().clickSkipButton();
 							super.waitForVisibility(new AddSatellitePlugInYourSatellitePage().nextButton);
 		  				}
-							
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									super.pause(120);
-								}
-							} catch (Exception e5) {
-							}
-
-							try {
-								if (new BlueToothConnectionFailedPage().isAt()) {
-									new BlueToothConnectionFailedPage().clickTryAgainbutton();
-									super.pause(120);
-								}
-							} catch (Exception e7) {
-							}
-
-							try {
-								if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-									new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-									new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-									super.pause(120);
-								}
-							} catch (Exception e8) {
-							}
-
 		  			}catch(Exception e) {
 		  				super.pause(20);
 		  				 new TapSevenTimes().tapSeven();
@@ -491,10 +466,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			}
 					
 					try {
-
 						if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 							new AddSatellitePlugInYourSatellitePage().clickNextButton();
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+							super.pause(70);
 						}
 							
 							try {
@@ -541,9 +515,10 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					}
 					
 					try {
+						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
+							super.pause(120);
 						}
 							
 							try {
@@ -590,6 +565,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					
 				  
 					try {
+						super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 						if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 							new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
 							super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
@@ -701,6 +677,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  try {
 			  	  super.pause(10);
 				  new KillAndRelaunchApp().killApp();
+				  super.pause(5);
 				  new KillAndRelaunchApp().relaunchApp();
 				  super.pause(10);
 			  						  
@@ -717,34 +694,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				try {
 					if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 						new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network	
-						super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
-					}
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						} catch (Exception e5) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						} catch (Exception e7) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								super.pause(120);
-							}
-						} catch (Exception e8) {
-						}
-						
+					}					
 				}catch(Exception e) {
 					super.pause(120);
 					new TapSevenTimes().tapSeven();
@@ -766,6 +716,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				try {
 					if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 						new AddSatellitePlugInYourSatellitePage().clickNextButton();
+						super.pause(120);
 					}
 
 						try {
@@ -795,7 +746,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 
 						
 				}catch(Exception e) {
-					super.pause(120);
 					new TapSevenTimes().tapSeven();
 					super.pause(5);
 					new SevenTapLogs().clickYesButton();
@@ -813,6 +763,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 					if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 						new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+						super.pause(120);
 					}
 
 						try {
@@ -841,7 +792,6 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						}
 				}catch (Exception e9) 
 				{
-						 super.pause(120);
 						  new TapSevenTimes().tapSeven();
 						  super.pause(5);
 						  new SevenTapLogs().clickYesButton();
@@ -859,35 +809,9 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 					if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 						new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
+						super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 					}
-
-						try {
-							if(new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						} catch (Exception e5) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								super.pause(120);
-							}
-						} catch (Exception e7) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								super.pause(120);
-							}
-						} catch (Exception e8) {
-						}
-
 				}catch(Exception e) {
-					 super.pause(120);
 					  new TapSevenTimes().tapSeven();
 					  super.pause(5);
 					  new SevenTapLogs().clickYesButton();
@@ -902,12 +826,10 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 				}
 
 				try {
-					super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
 					if(new AddSatelliteUpToDatePage().isAt()) {
 						new AddSatelliteUpToDatePage().clickNextButton();
 						super.waitForVisibility(new AddSatelliteRegistrationFailedPage().continueButton);}
 				}catch(Exception e) {
-					 super.pause(120);
 					  new TapSevenTimes().tapSeven();
 					  super.pause(5);
 					  new SevenTapLogs().clickYesButton();
@@ -918,7 +840,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  super.pause(5);
 					  new SevenTapEmail().clickSendButton();
 					  super.pause(5);
-					  Assert.fail("Satellite 2 Onboarding - Unable to update firware on Satellite 2 ");
+					  Assert.fail("Satellite 2 Onboarding - Unable to update firmware on Satellite 2 ");
 				}
 			
 			//Registering your device
@@ -927,7 +849,19 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 						new AddSatelliteRegistrationFailedPage().clickContinueButton(); 
 						super.waitForVisibility(new AddSatelliteCongratulationsPage().continueButton);
 					}
-				} catch (Exception e13) {}	
+				} catch (Exception e13) {
+					  new TapSevenTimes().tapSeven();
+					  super.pause(5);
+					  new SevenTapLogs().clickYesButton();
+					  super.pause(5);
+					  new SevenTapGmail().clickGmailIcon();
+					  super.pause(5);
+					  new SevenTapEmail().enterEmailAddress();
+					  super.pause(5);
+					  new SevenTapEmail().clickSendButton();
+					  super.pause(5);
+					  Assert.fail("Satellite 2 Onboarding - Failure to add Satellite  ");
+				}	
 			
 				try {
 					if(new AddSatelliteCongratulationsPage().isAt()) {
@@ -946,7 +880,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  super.pause(5);
 					  new SevenTapEmail().clickSendButton();
 					  super.pause(5);
-					  Assert.fail("Satellite 2 Onboarding - Failed at last step ");
+					  Assert.fail("Satellite 2 Onboarding - Failed on Congratulations Page ");
 				}
 			
 				new HomePage().verifyRightRouterDetails();
