@@ -37,7 +37,7 @@
 						<version>2.22.2</version>
 						<configuration>
 							<suiteXmlFiles>
-								<suiteXmlFile>android_testng_suites.xml</suiteXmlFile>
+								<suiteXmlFile>android_ST_testng.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</plugin>

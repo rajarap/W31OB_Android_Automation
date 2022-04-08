@@ -408,17 +408,17 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  					
 		  					utils.log().info("Turning OFF Wifi..........");
 		  					((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-		  					super.pause(10);
+		  					super.pause(5);
 		  					utils.log().info("Turning ON Wifi.........");
 		  					((AndroidDriver) super.getDriver()).toggleWifi(); 
-		  					super.pause(10);
+		  					super.pause(5);
 		  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-		  					super.pause(10);
+		  					super.pause(120);
 		  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 		  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 		  				}
 		  			}catch(Exception e) {
-						  Assert.fail("Satellite 1 Onboarding - Failed to connect to the MainAP SSID");
+						  Assert.fail("Satellite 1 Onboarding - Connected to MainAP - No internet is available on MainAP SSID");
 						  new KillAndRelaunchApp().killApp();
 						  new KillAndRelaunchApp().relaunchApp();
 		  			}
