@@ -385,6 +385,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			SoftAssert softsatellite1 = new SoftAssert();
 			
 			performFactoryReset("Satellite1", "/dev/tty.usbserial-142310");
+			
 			try {
 				  try {
 					  if(new HomePage().banner.isDisplayed()){
@@ -897,7 +898,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 			  try {
 					utils.log().info("Factory Reset : " + satelliteName);
 					SerialComPortCommunicator.resetMAXRouter(usbserial);
-					super.pause(75);	
+					super.pause(60);	
 			  }catch(Exception e) {utils.log().info("Unable to Factory reset on : " + satelliteName);}
 		}
 		

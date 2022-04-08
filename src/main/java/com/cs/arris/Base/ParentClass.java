@@ -232,6 +232,8 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
+			factoryReset();
+			rebootDevice();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
@@ -265,26 +267,6 @@ public class ParentClass
 				utils.log().info("Android Driver is set to the Thread Local context " + getDriver().getPlatformName());
 				utils.log().info(getPlatformName() + " driver initialized: "); 
 			}
-			if(getPlatformName().equalsIgnoreCase("iOS"))
-			{
-				utils.log().info("Setting " + getPlatformName() + " driver capabilities");
-				desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-				desiredCapabilities.setCapability(MobileCapabilityType.SUPPORTS_ALERTS, true);				
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.PLATFORM_NAME, getProps().getProperty("iOSPlatformName"));
-				desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, getProps().getProperty("iOSPlatformVersion"));
-				desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, getProps().getProperty("iOSAutomationName"));
-				desiredCapabilities.setCapability(MobileCapabilityType.UDID, getProps().getProperty("iOSUDID"));
-				desiredCapabilities.setCapability(MobileCapabilityType.APP, getProps().getProperty("iOSAppLocation"));
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, getProps().getProperty("iOSBundleId"));
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID, getProps().getProperty("xcodeOrgId"));
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.UPDATE_WDA_BUNDLEID, getProps().getProperty("updatedWDABundleId"));
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getProps().getProperty("xcodeSigningId"));	
-				desiredCapabilities.setCapability(IOSMobileCapabilityType.BROWSER_NAME, "Chrome");
-				setDriver(new IOSDriver<MobileElement>(url, desiredCapabilities));
-				getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-				utils.log().info("iOS Driver is set to the Thread Local context " + getDriver().getPlatformName());
-				utils.log().info(getPlatformName() + " driver initialized: "); 
-			}
 		}catch (Exception e) 
 		{
 		  utils.log().fatal("Unable to initialize " + getPlatformName() + " driver...... ABORTING !!!\n" + e.toString());
@@ -296,8 +278,6 @@ public class ParentClass
 		@BeforeTest
 		public void beforeTest()
 		{
-			factoryReset();
-			rebootDevice();
 			launchApp();
 		}
 	
