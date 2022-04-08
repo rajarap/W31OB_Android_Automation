@@ -2582,7 +2582,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 		
-			@Test(priority = 164, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Extended_WiFi_Settings_Page() 
 			{
 				SoftAssert softnet50 = new SoftAssert();
@@ -2608,7 +2608,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet50.assertAll();
 			}
 			
-			@Test(priority = 165, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Guest_WiFi_Network_Page() 
 			{
 				SoftAssert softnet49 = new SoftAssert();
