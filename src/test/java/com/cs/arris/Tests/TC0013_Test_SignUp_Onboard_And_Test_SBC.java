@@ -2309,10 +2309,12 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet38 .assertAll();
 //			}
 			
-			@Test(priority = 138, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_General_Settings_UI_Page() 
 			{
 				SoftAssert softnet39 = new SoftAssert();
+				new HomePage().getFooterIconsPageObject().clickNetworkButton();
+				new NetworkPage().clickNetworkSettingsExpandButton();
 				new NetworkPage().clickGeneralSettings();
 				try{
 					if(new NetworkPage().getAppRatingPageObject().isAt())
@@ -2328,7 +2330,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet39.assertAll();
 			}
 			
-			@Test(priority = 139, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 168, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_UPnP_Settings() 
 			{
 				SoftAssert softnet40 = new SoftAssert();
@@ -2348,7 +2350,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet40.assertAll();
 			}
 			
-			@Test(priority = 140, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 169, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_IPv6_Enable_Settings() 
 			{
 				SoftAssert softnet39 = new SoftAssert();
@@ -2358,7 +2360,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet39.assertAll();
 			}
 			
-			@Test(priority = 141, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
+			@Test(priority = 170, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
 			public void Verify_General_Settings_Bridge_Mode_Settings() 
 			{
 				SoftAssert softnet42 = new SoftAssert();
@@ -2368,64 +2370,64 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet42.assertAll();
 			}
 			
-//			@Test(priority = 142, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
-//			public void Verify_General_Settings_Port_Forwarding_Settings() 
-//			{
-//				SoftAssert softnet43 = new SoftAssert();
-//				new NetworkPage().getGeneralSettingsPageObject().clickPortForwardingink();
-//				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt())
-//					softnet43.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().verifyUIOnPortForwardingPage());
-//				softnet43.assertAll();
-//			}
-//			
-//			@Test(priority = 143, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
-//			public void Verify_General_Settings_Port_Forwarding_Add_Rules() 
-//			{
-//				SoftAssert softnet45 = new SoftAssert();
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterPortRuleName());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.selectTCP());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterInternalPortStart());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterInternalPortEnd());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterExternalPortStart());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterExternalPortEnd());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.enterIPAddress());
-//						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.clickSaveButton());
-//						super.pause(5);
-//						try {
-//							if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
-//								softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
-//										.clickCloseButton());
-//						} catch (Exception e) {
-//							// utils.log().info("Port Rule Edit Failed Dialog did not appear");
-//						}
-//
-//				softnet45.assertAll();
-//			}
+			@Test(priority = 171, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_UI_Page"})
+			public void Verify_General_Settings_Port_Forwarding_Settings() 
+			{
+				SoftAssert softnet43 = new SoftAssert();
+				new NetworkPage().getGeneralSettingsPageObject().clickPortForwardingink();
+				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt())
+					softnet43.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().verifyUIOnPortForwardingPage());
+				softnet43.assertAll();
+			}
+			
+			@Test(priority = 143, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Settings"})
+			public void Verify_General_Settings_Port_Forwarding_Add_Rules() 
+			{
+				SoftAssert softnet45 = new SoftAssert();
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterPortRuleName());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.selectTCP());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterInternalPortStart());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterInternalPortEnd());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterExternalPortStart());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterExternalPortEnd());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.enterIPAddress());
+						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
+								.clickSaveButton());
+						super.pause(5);
+						try {
+							if (new NetworkPage().getGeneralSettingsPageObject()
+									.getNetworkGeneralSettingsPortForwardingPageObject()
+									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
+								softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
+										.getNetworkGeneralSettingsPortForwardingPageObject()
+										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
+										.clickCloseButton());
+						} catch (Exception e) {
+							// utils.log().info("Port Rule Edit Failed Dialog did not appear");
+						}
+
+				softnet45.assertAll();
+			}
 				
 
-//			@Test(priority = 144, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
+//			@Test(priority = 172, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
 //	
 //			public void Verify_General_Settings_Port_Forwarding_Edit_Rules() 
 //			{
@@ -2467,7 +2469,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet46.assertAll();
 //			}
 //	
-//			@Test(priority = 145, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
+//			@Test(priority = 173, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
 //			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Validations() 
 //			{
 //				SoftAssert softnet47 = new SoftAssert();
@@ -2561,7 +2563,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //				softnet47.assertAll();
 //			}
 			
-			@Test(priority = 146, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+			@Test(priority = 174, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_General_Settings_Page() 
 			{
 				SoftAssert softnet48 = new SoftAssert();
@@ -2582,11 +2584,10 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 		
-			@Test(priority = 166, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 175, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Extended_WiFi_Settings_Page() 
 			{
 				SoftAssert softnet50 = new SoftAssert();
-				new HomePage().getFooterIconsPageObject().clickNetworkButton();
 				softnet50.assertTrue(new NetworkPage().clickExtendedWifiSettingsExpandButton());
 				
 				softnet50.assertTrue(new NetworkPage().enable5GHzWidebandMode());
@@ -2608,7 +2609,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet50.assertAll();
 			}
 			
-			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
+			@Test(priority = 176, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Guest_WiFi_Network_Page() 
 			{
 				SoftAssert softnet49 = new SoftAssert();

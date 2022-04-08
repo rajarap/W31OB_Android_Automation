@@ -54,7 +54,8 @@ pipeline
             {
                 echo '===== Automated Test Started ====='
                 
-          	                  
+          	    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+				{
                   	sh """  
                       	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
@@ -62,6 +63,7 @@ pipeline
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
+                }
                 
                 echo '=====Automated Test Completed====='
             }
@@ -82,6 +84,8 @@ pipeline
             {
                 echo '===== Automated Test Started ====='
                 
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+				{
                   	sh """  
                       	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
@@ -89,7 +93,7 @@ pipeline
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
                 		"""   
-                
+                }
                 echo '=====Automated Test Completed====='
             }
         }
@@ -109,14 +113,16 @@ pipeline
             {
                 echo '===== Automated Test Started ====='
                 
-
+				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+				{
                 	sh """
                        	cp -f /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk /Users/rm2652/Documents/jenkins/pipeline/build/artifacts/android/
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb devices
                    		/Users/rm2652/Library/Android/sdk/platform-tools/adb uninstall com.arris.sbcBeta
                         /Users/rm2652/Library/Android/sdk/platform-tools/adb install -r --no-incremental /Users/rm2652/.jenkins/jobs/${FROM_JOB_NAME}/builds/${FROM_BUILD_NUMBER}/archive/ArrisSURFboardCentral/app/build/outputs/apk/staging/debug/app-staging-debug.apk
                    		mvn -f /Users/rm2652/.jenkins/workspace/Arris_Android_QA_Automation_W31_BOBA/pom.xml test -PAndroid
-               		 """       
+               		 """      
+               	} 
 
                 echo '=====Automated Test Completed====='
             }
@@ -133,18 +139,18 @@ pipeline
     	
         success
         {
-            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - SUCCESS '                
+            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - COMPLETED '                
             emailext body: '''${SCRIPT, template="groovy-html.template"}''',
-            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' -  SUCCESS',
+            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' -  COMPLETED',
             mimeType: 'text/html',
             to: "${ANDROID_RECP}"
         }
 
         failure
         {
-            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - FAILED ' 
+            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - COMPLETED ' 
             emailext body: '''${SCRIPT, template="groovy-html.template"}''', 
-            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - FAILED',
+            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - COMPLETED',
             mimeType: 'text/html',
             attachLog: true, 
             to: "${ANDROID_RECP}"
@@ -152,9 +158,9 @@ pipeline
 
         unstable
         {
-            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - UNSTABLE ' 
+            echo 'Jenkins job ' + env.JOB_NAME + ' ' + env.BUILD_NUMBER +' '+ env.BUILD_TIMESTAMP + ' - COMPLETED ' 
             emailext body: '''${SCRIPT, template="groovy-html.template"}''', 
-            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - UNSTABLE',
+            subject: 'Job \'${JOB_NAME}\' - (${BUILD_NUMBER}) - \'${BUILD_TIMESTAMP}\' - COMPLETED',
             mimeType: 'text/html',
             attachLog: true, 
             to: "${ANDROID_RECP}"
