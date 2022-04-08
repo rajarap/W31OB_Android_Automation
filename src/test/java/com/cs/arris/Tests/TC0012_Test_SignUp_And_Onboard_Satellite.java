@@ -404,6 +404,7 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 		  			
 		  			try {
 		  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
+		  					
 		  					utils.log().info("Turning OFF Wifi..........");
 		  					((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
 		  					super.pause(10);

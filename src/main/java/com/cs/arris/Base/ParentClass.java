@@ -232,8 +232,6 @@ public class ParentClass
 		try
 		{
 			setConfigProperties();
-			factoryReset();
-			rebootDevice();
 			setDateTime(utils.dateTime());
 			setPlatformName(this.pltName);
 			setDeviceName(this.dvcName);
@@ -298,6 +296,8 @@ public class ParentClass
 		@BeforeTest
 		public void beforeTest()
 		{
+			factoryReset();
+			rebootDevice();
 			launchApp();
 		}
 	
