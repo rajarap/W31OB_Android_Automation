@@ -231,8 +231,17 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  new UnPackYourBoxPage().clickNextButton();
 				  
 					try {
-						if (new MultipleDevicesFoundPage().isAt()) 
-							Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
+						try {
+							if (new MultipleDevicesFoundPage().isAt()) {
+								utils.log().info("Main AP Onboarding - Multiple devices found");
+								super.pause(25);
+								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 25 seconds to click TryAgain button");
+								new MultipleDevicesFoundPage().clickTryAgaineButton();
+							}
+						} catch (Exception e4) {
+							Assert.fail("Main AP Onboarding - Multiple devices found. Cannot proceed with Onboarding.");
+						}
+						
 						
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
