@@ -7,8 +7,6 @@ import com.cs.arris.Interface.Page;
 import com.cs.arris.Utilities.TestUtils;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -40,6 +38,7 @@ public class MultipleDevicesFoundPage extends ParentClass implements Page
 	public void clickTryAgaineButton()
 	{
 		utils.log().info("Multiple Devices Found Page - Clicked on Try Again Button");
+		click(tryAgain);
 	}
 	
 	
