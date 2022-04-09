@@ -133,15 +133,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 	String localWifi;
 	String localWifiPwd;
 	
-	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-	public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-	public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
-	
+
 	 @BeforeClass
 	 public void beforeClass() throws Exception 
 	 {
@@ -284,7 +276,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 							}
 						} catch (Exception e5) {
 						}
@@ -292,7 +284,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 							}
 						} catch (Exception e7) {
 						}
@@ -301,7 +293,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 							}
 						} catch (Exception e8) {
 						}
@@ -331,7 +323,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 								super.pause(120);
 							}
 						} catch (Exception e5) {
@@ -340,7 +332,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 								super.pause(120);
 							}
 						} catch (Exception e7) {
@@ -350,7 +342,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
 								super.pause(120);
 							}
 						} catch (Exception e8) {
@@ -377,7 +369,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
 				  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
 				  new NameYourNetwokSSIDPage().clickNextButton();
-				  utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 35 seconds for device to connect with the router SSID");
+				  utils.log().info("Waiting for 35 seconds for device to connect with the router SSID");
 				  super.pause(35);
 				  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 				  super.pause(15);
@@ -385,7 +377,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new ConnectionToWifiNeededPage().isAt()) {
 						  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 						  new ConnectionToWifiNeededPage().clickContinue();
-						  utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 35 seconds for device to connect with the router SSID");
+						  utils.log().info("Waiting for 35 seconds for device to connect with the router SSID");
 						  super.pause(35);
 						  }
 				  }catch(Exception e) {
@@ -399,7 +391,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 50 seconds for the homescreen to stabilize");
+				  utils.log().info("Waiting for 50 seconds for the homescreen to stabilize");
 				  super.pause(50);
 				  
 				  
@@ -1306,7 +1298,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_Online_Devices_Details() 
 			{
 				SoftAssert softdevices3 = new SoftAssert();
-				utils.log().info(ANSI_BLACK_BACKGROUND + "Getting the count of devices currently online");
+				utils.log().info("Getting the count of devices currently online");
 				softdevices3.assertTrue(new DevicesPage().verifyOnlineDeviceDetails());
 				softdevices3.assertAll();
 			}
@@ -1325,7 +1317,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			{
 				SoftAssert softdevices5 = new SoftAssert();
 //				softdevices5.assertTrue(new DevicesPage().clickOfflineTab());
-				utils.log().info(ANSI_BLACK_BACKGROUND + "Getting the count of devices currently offline");
+				utils.log().info("Getting the count of devices currently offline");
 				softdevices5.assertTrue(new DevicesPage().verifyOfflineDeviceDetails());
 				softdevices5.assertTrue(new DevicesPage().clickBackButton());
 				softdevices5.assertAll();
@@ -2650,8 +2642,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						if(new NetworkPage().getEnableGuestNetworkAlertDialogObject().isAt())
 							softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkAlertDialogObject().clickOkButton());
 						}
-						utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 80 seconds to create guest wifi connection");
-						super.pause(80);
+						utils.log().info("Waiting for 120 seconds to create guest wifi connection");
+						super.pause(120);
 					}catch(Exception e) {utils.log().info("Enable Guest Network Page did not appear");}
 				softnet49.assertAll();
 			}
@@ -3026,7 +3018,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  					((AndroidDriver) super.getDriver()).toggleWifi(); 
 				  					super.pause(5);
 				  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-				  					utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with mainAP network SSID");
+				  					utils.log().info("Waiting for 120 seconds to establish connection with mainAP network SSID");
 				  					super.pause(120);
 				  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
 				  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
@@ -3097,14 +3089,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 									new AddSatellitePlugInYourSatellitePage().clickNextButton();
-									utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 70 seconds to establish connection with bluetooth");
+									utils.log().info("Waiting for 70 seconds to establish connection with bluetooth");
 									super.pause(70);
 								}
 									
 									try {
 										if (new BlueToothConnectionFailedPage().isAt()) {
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
-											utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds for your device to establish bluetooth connection with the satellite");
+											utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection with the satellite");
 											super.pause(120);
 										}
 									} catch (Exception e5) {
@@ -3149,7 +3141,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 								if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 									new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-									utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish wifi connection with internet");
+									utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 									super.pause(120);
 								}
 									
@@ -3349,14 +3341,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 								new AddSatellitePlugInYourSatellitePage().clickNextButton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+								utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 								super.pause(120);
 							}
 
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e5) {
@@ -3365,7 +3357,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e7) {
@@ -3375,7 +3367,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 										new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 										new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e8) {
@@ -3400,14 +3392,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 							if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 								new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-								utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with Wifi");
+								utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
 								super.pause(120);
 							}
 
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e5) {
@@ -3416,7 +3408,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e7) {
@@ -3426,7 +3418,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 										new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 										new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-										utils.log().info(ANSI_BLACK_BACKGROUND + "Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
 								} catch (Exception e8) {
