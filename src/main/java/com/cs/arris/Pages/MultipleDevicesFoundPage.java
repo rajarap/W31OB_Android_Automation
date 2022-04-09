@@ -21,9 +21,11 @@ public class MultipleDevicesFoundPage extends ParentClass implements Page
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/title_text")
 	public MobileElement multipleDevicesFoundTitle;
 	
+	//It appears that 2 or more routers are turned on at the same time. Unplug one of your mAX devices to prevent confusion during setup.
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_description_text")
 	public MobileElement multipleDevicesFoundSubTitle;
 
+	//0013-1203
 	@AndroidFindBy (id = "com.arris.sbcBeta:id/tv_error_code_text")
 	public MobileElement errorCode;
 
