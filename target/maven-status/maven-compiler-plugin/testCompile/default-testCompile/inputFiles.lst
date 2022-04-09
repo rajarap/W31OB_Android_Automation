@@ -11,6 +11,7 @@
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC03_Verify_Invalid_OTP_Test.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/AccessResourcesOnDevicePageTest.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/GrantPermissionPageTest.java
+/Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC0013_Test_SignUp_Onboard_And_Test_SBC.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC004_Test_Disconnect_BlueTooth_On_Mobile_And_Onboard.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Workflows/TC02_EC_0002_1002_Disconnect_Wifi_On_Mobile_Workflow.java
 /Users/rm2652/Documents/SBC_Android-CICD-Main4-Current/sbc-android-cicd/src/test/java/com/cs/arris/Tests/TC0011_Test_SignUp_Onboard_And_Test_SBC.java
