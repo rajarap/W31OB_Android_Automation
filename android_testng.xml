@@ -49,7 +49,7 @@
 		</classes>
 	</test>
 
-
+<listener class-name="com.cs.arris.Listeners.AnnotationTransformer" />
 
 
 

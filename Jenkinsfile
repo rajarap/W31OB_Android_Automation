@@ -24,10 +24,7 @@ pipeline
       string description: 'Contains the Job name', name: 'FROM_JOB_NAME'
       string description: 'Contains the Build Number', name: 'FROM_BUILD_NUMBER'
     } 
-    
-    options {
-    ansiColor('xterm')
-  	}
+
 
     stages
     {

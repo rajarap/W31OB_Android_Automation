@@ -131,8 +131,8 @@ public class ParentClass
 	public List<String> selectedProfileNames = new ArrayList<String>();
 	public List<String> deviceNames = new ArrayList<String>();
 	public List<String> lanIPRuleName = new ArrayList<String>();
-
 	
+		
 	private static final String ESCAPE_PROPERTY = "org.uncommons.reportng.escape-output";
 	
 

@@ -391,7 +391,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info("Waiting for 50 seconds for the homescreen to stabilize");
+				  utils.log().info("Waiting for 50 seconds for the Wifi connection to stabilize on the homepage");
 				  super.pause(50);
 				  
 				  
@@ -590,7 +590,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome7.assertAll();
 		}
 		
-		@Test(priority = 8, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 8, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu"  })
 		public void Verify_User_Guide_Page() {
 			SoftAssert softhome8 = new SoftAssert();
 			if(new AddDeviceHomePage().isAt())
@@ -3087,8 +3087,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							try {
 								if(new AddSatellitePlugInYourSatellitePage().isAt()) {
 									new AddSatellitePlugInYourSatellitePage().clickNextButton();
-									utils.log().info("Waiting for 70 seconds to establish connection with bluetooth");
-									super.pause(70);
+									utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+									super.pause(120);
 								}
 									
 									try {
