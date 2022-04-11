@@ -769,8 +769,8 @@ public class ParentClass
 		public String generateInternalPortStart()
 		{
 			Random r = new Random();
-			int low = 1001;
-			int high = 15000;
+			int low = 10;
+			int high = 1500;
 			int result = r.nextInt(high-low) + low;
 			return String.valueOf(result);
 		}
@@ -778,8 +778,8 @@ public class ParentClass
 		public String generateInternalPortEnd()
 		{
 			Random r = new Random();
-			int low = 15001;
-			int high = 30000;
+			int low = 1501;
+			int high = 3000;
 			int result = r.nextInt(high-low) + low;
 			return String.valueOf(result);
 		}
@@ -787,8 +787,8 @@ public class ParentClass
 		public String generateExternalPortStart()
 		{
 			Random r = new Random();
-			int low = 30001;
-			int high = 45000;
+			int low = 3001;
+			int high = 4500;
 			int result = r.nextInt(high-low) + low;
 			return String.valueOf(result);
 		}
@@ -796,8 +796,8 @@ public class ParentClass
 		public String generateExternalPortEnd()
 		{
 			Random r = new Random();
-			int low = 46000;
-			int high = 64000;
+			int low = 4600;
+			int high = 6400;
 			int result = r.nextInt(high-low) + low;
 			return String.valueOf(result);
 		}
