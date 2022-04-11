@@ -3100,7 +3100,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									try {
 										if (new BlueToothConnectionFailedPage().isAt()) {
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
-											utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection with the satellite");
+											utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection");
 											super.pause(120);
 										}
 									} catch (Exception e5) {
@@ -3109,6 +3109,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									try {
 										if (new BlueToothConnectionFailedPage().isAt()) {
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
+											utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection");
 											super.pause(120);
 										}
 									} catch (Exception e7) {
@@ -3118,6 +3119,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 										if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 											new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 											new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
+											utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection");
 											super.pause(120);
 										}
 									} catch (Exception e8) {
@@ -3142,7 +3144,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							}
 							
 							try {
-								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+//								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 								if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 									new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 									utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
@@ -3152,6 +3154,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									try {
 										if (new BlueToothConnectionFailedPage().isAt()) {
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
+											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+											super.pause(120);
+										}
+										
+										if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+											new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+											utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 											super.pause(120);
 										}
 									} catch (Exception e5) {
@@ -3160,6 +3169,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									try {
 										if (new BlueToothConnectionFailedPage().isAt()) {
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
+											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+											super.pause(120);
+										}
+										
+										if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+											new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+											utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 											super.pause(120);
 										}
 									} catch (Exception e7) {
@@ -3171,17 +3187,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 											new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 											super.pause(120);
 										}
-									} catch (Exception e8) {
-									}
-									
-									try {
-										super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+										
 										if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 											new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-											utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
-											super.pause(120);}
-										} catch (Exception e10) {
+											utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+											super.pause(120);
 										}
+									} catch (Exception e8) {
+									}
 									
 							}catch (Exception e9) {
 								 super.pause(120);
@@ -3202,7 +3215,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							
 						  
 							try {
-								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
+//								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 								if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 									new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
 									super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
@@ -3381,7 +3394,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
-										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection");
 										super.pause(120);
 									}
 								} catch (Exception e7) {
@@ -3391,7 +3404,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
 										new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 										new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+										utils.log().info("Waiting for 120 seconds for your device to establish bluetooth connection");
 										super.pause(120);
 									}
 								} catch (Exception e8) {
@@ -3415,7 +3428,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						}
 							
 						try {
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+						//	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 							if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 								new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 								utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
@@ -3428,6 +3441,12 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
+									
+									if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+										new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+										utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+										super.pause(120);
+									}
 								} catch (Exception e5) {
 								}
 
@@ -3435,6 +3454,12 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									if (new BlueToothConnectionFailedPage().isAt()) {
 										new BlueToothConnectionFailedPage().clickTryAgainbutton();
 										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+										super.pause(120);
+									}
+									
+									if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+										new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+										utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 										super.pause(120);
 									}
 								} catch (Exception e7) {
@@ -3447,17 +3472,15 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 										utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 										super.pause(120);
 									}
+									
+									if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+										new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+										utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+										super.pause(120);
+									}
 								} catch (Exception e8) {
 								}
 								
-								try {
-									super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
-									if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
-										new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-										utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
-										super.pause(120);}
-									} catch (Exception e10) {
-									}
 						}catch (Exception e9) 
 						{
 								  new TapSevenTimes().tapSeven();
@@ -3476,7 +3499,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						}
 				  
 						try {
-							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
+//							super.waitForVisibility(new AddSatelliteSuccessfullyConnectedToInternetPage().nextButton);
 							if(new AddSatelliteSuccessfullyConnectedToInternetPage().isAt()) {
 								new AddSatelliteSuccessfullyConnectedToInternetPage().clickNextButton();
 								super.waitForVisibility(new AddSatelliteUpToDatePage().nextButton);
@@ -3592,6 +3615,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  return true;
 					  } 
 				}
+
 
 }
 
