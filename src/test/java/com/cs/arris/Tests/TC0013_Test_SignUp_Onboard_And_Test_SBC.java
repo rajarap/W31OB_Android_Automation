@@ -392,8 +392,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info("Waiting for 60 seconds for the Wifi connection to stabilize on the homepage");
-				  super.pause(60);
+				  utils.log().info("Waiting for 30 seconds for the Wifi connection to stabilize on the homepage");
+				  super.pause(30);
 				  
 				  
 				  try {
@@ -2421,7 +2421,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
 								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
 								.clickSaveButton());
-						super.pause(5);
+						super.pause(15);
 						
 						try {
 							if (new NetworkPage().getGeneralSettingsPageObject()
@@ -3533,7 +3533,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  try {
 							utils.log().info("Factory Reset : " + satelliteName);
 							SerialComPortCommunicator.resetMAXRouter(usbserial);
-							utils.log().info("Waiting for 60 seconds perform the Factory reset");
+							utils.log().info("Waiting for 60 seconds to perform the Factory reset");
 							super.pause(60);	
 					  }catch(Exception e) {utils.log().info("Unable to Factory reset on : " + satelliteName);}
 				}
