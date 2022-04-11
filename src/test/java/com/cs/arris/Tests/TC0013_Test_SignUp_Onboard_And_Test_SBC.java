@@ -3017,10 +3017,10 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  					
 				  					utils.log().info("Turning OFF Wifi..........");
 				  					((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
-				  					super.pause(5);
+				  					super.pause(10);
 				  					utils.log().info("Turning ON Wifi.........");
 				  					((AndroidDriver) super.getDriver()).toggleWifi(); 
-				  					super.pause(5);
+				  					super.pause(10);
 				  					new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
 				  					utils.log().info("Waiting for 120 seconds to establish connection with mainAP network SSID");
 				  					super.pause(120);
@@ -3234,6 +3234,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								  new SevenTapEmail().clickSendButton();
 								  super.pause(5);
 								  Assert.fail("Satellite 1 Onboarding - Unable to update firmware on Satellite 1 ");
+								  new KillAndRelaunchApp().killApp();
+								  new KillAndRelaunchApp().relaunchApp();
 							}
 							
 							//Registering your device
@@ -3255,6 +3257,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								  new SevenTapEmail().clickSendButton();
 								  super.pause(5);
 								  Assert.fail("Satellite 1 Onboarding - Failure to add Satellite ");
+								  new KillAndRelaunchApp().killApp();
+								  new KillAndRelaunchApp().relaunchApp();
 							}
 
 						  
@@ -3276,6 +3280,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								  new SevenTapEmail().clickSendButton();
 								  super.pause(5);
 								  Assert.fail("Satellite 1 Onboarding - Failed at last step ");
+								  new KillAndRelaunchApp().killApp();
+								  new KillAndRelaunchApp().relaunchApp();
 							}
 
 							new HomePage().verifyLeftRouterDetails();
@@ -3284,6 +3290,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					
 			  }catch(Exception e14) {
 				  Assert.fail("Satellite 1 Onboarding - failed");
+				  new KillAndRelaunchApp().killApp();
+				  new KillAndRelaunchApp().relaunchApp();
 			  }
 		}
 
@@ -3319,12 +3327,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						new HomePage().clickNavigationButton();
 						new HomePage().getHamburgerMenuPageObject().clickAddSatelliteButton();
 						new AddSatelliteInstallAdditionalSatelliteDialog().clickInstallSatelliteButton();
-						
+						super.pause(30);
 						try {
 							if(new AddSatelliteAddNewSatellitePage1().isAt()) {
 								new AddSatelliteAddNewSatellitePage1().clickNextButton(); // Each satellite expands your network	
 							}					
 						}catch(Exception e) {
+							new AddSatelliteAddNewSatellitePage1().clickCancelButton();
 							super.pause(120);
 							new TapSevenTimes().tapSeven();
 							super.pause(5);
@@ -3337,6 +3346,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							new SevenTapEmail().clickSendButton();
 							super.pause(5);
 							Assert.fail("Satellite 2 Onboarding - Unable to add Satellite 2 as previously configured satellite still exists ");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}
 
 						new AddSatelliteUnpackYourSatellitePage().clickNextButton();
@@ -3390,6 +3401,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							new SevenTapEmail().clickSendButton();
 							super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}
 							
 						try {
@@ -3440,6 +3453,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								  new SevenTapEmail().clickSendButton();
 								  super.pause(5);
 								  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
+								  new KillAndRelaunchApp().killApp();
+								  new KillAndRelaunchApp().relaunchApp();
 						}
 				  
 						try {
@@ -3460,6 +3475,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Unable to connect your Satellite 2 to the Internet");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}
 
 						try {
@@ -3478,6 +3495,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Unable to update firmware on Satellite 2 ");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}
 					
 					//Registering your device
@@ -3498,6 +3517,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Failure to add Satellite  ");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}	
 					
 						try {
@@ -3518,6 +3539,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							  new SevenTapEmail().clickSendButton();
 							  super.pause(5);
 							  Assert.fail("Satellite 2 Onboarding - Failed on Congratulations Page ");
+							  new KillAndRelaunchApp().killApp();
+							  new KillAndRelaunchApp().relaunchApp();
 						}
 					
 						new HomePage().verifyRightRouterDetails();
@@ -3526,6 +3549,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						
 				  }catch(Exception e14) {
 					  Assert.fail("Satellite 2 Onboarding - failed");
+					  new KillAndRelaunchApp().killApp();
+					  new KillAndRelaunchApp().relaunchApp();
 				  }
 			  }
 				
