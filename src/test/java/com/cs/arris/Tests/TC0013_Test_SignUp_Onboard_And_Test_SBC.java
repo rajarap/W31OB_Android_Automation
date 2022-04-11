@@ -392,7 +392,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info("Waiting for 30 seconds for the Wifi connection to stabilize on the homepage");
+				  utils.log().info("Waiting for 60 seconds for the Wifi connection to stabilize on the homepage");
 				  super.pause(30);
 				  
 				  
@@ -3174,6 +3174,15 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									} catch (Exception e8) {
 									}
 									
+									try {
+										super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+										if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+											new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+											utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
+											super.pause(120);}
+										} catch (Exception e10) {
+										}
+									
 							}catch (Exception e9) {
 								 super.pause(120);
 								  new TapSevenTimes().tapSeven();
@@ -3440,6 +3449,15 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 									}
 								} catch (Exception e8) {
 								}
+								
+								try {
+									super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+									if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
+										new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
+										utils.log().info("Waiting for 120 seconds to establish connection with Wifi");
+										super.pause(120);}
+									} catch (Exception e10) {
+									}
 						}catch (Exception e9) 
 						{
 								  new TapSevenTimes().tapSeven();
