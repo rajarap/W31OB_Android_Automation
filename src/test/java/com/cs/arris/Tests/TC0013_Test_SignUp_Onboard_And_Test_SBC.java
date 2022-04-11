@@ -387,12 +387,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  new SetUpYourWiFiManagementPage().clickskipTutorialButton();
 				  new InstallAdditionalSatellitePage().clickInstallLaterButton();
 				  new NetworkOptimizationDialog().clickOkButton();
+				  super.pause(10);
 				  try {
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info("Waiting for 50 seconds for the Wifi connection to stabilize on the homepage");
-				  super.pause(50);
+				  utils.log().info("Waiting for 60 seconds for the Wifi connection to stabilize on the homepage");
+				  super.pause(60);
 				  
 				  
 				  try {
@@ -618,7 +619,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			softhome9.assertAll();
 		}
 		
-		@Test(priority = 10, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		@Test(priority = 10, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
 		public void Verify_Remove_Device_Page() {
 			SoftAssert softhome10 = new SoftAssert();
 			try {
@@ -658,7 +659,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("Test: Hamburger Menu - Settings, About and Help Menu Options ");
 					utils.log().info("*************************************************************");
 					SoftAssert softburger3 = new SoftAssert();
-	//				new HomePage().getFooterIconsPageObject().clickHomeButton();
+					new HomePage().getFooterIconsPageObject().clickHomeButton();
 					softburger3.assertTrue(new HomePage().clickNavigationButton());
 					softburger3.assertTrue(new HomePage().getHamburgerMenuPageObject().clickSettingsButton());
 					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAt())
