@@ -517,7 +517,7 @@ public class DeviceSignalStrengthLeaderBoardPage extends ParentClass implements 
 
 				for (MobileElement e : entity) 
 					try {
-							click(e.findElementById("com.arris.sbcBeta:id/txtDeviceName"));
+							click(super.getDriver().findElementById("com.arris.sbcBeta:id/txtDeviceName"));
 					} catch (Exception exp) {
 						utils.log().info("Device Name is not available/displayed");
 					}

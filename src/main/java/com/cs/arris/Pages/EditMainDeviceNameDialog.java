@@ -120,10 +120,10 @@ public class EditMainDeviceNameDialog extends ParentClass implements Page
 			super.editedMainDeviceName = editedName;
 			super.clear(enterDeviceName);
 			super.sendKeys(enterDeviceName, editedName);
-			utils.log().info("Changed Main Router name from " + deviceOrgName1 + " to " + editedName);
+			utils.log().info("Changed name from " + deviceOrgName1 + " to " + editedName);
 			return true;
 		} catch (Exception e) {
-			utils.log().info("Edit Router name text box is not displayed");
+			utils.log().info("Edit name text box is not displayed");
 			return false;
 		}
 	}

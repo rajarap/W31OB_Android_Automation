@@ -1372,6 +1372,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			@Test(priority = 78, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Devices_Signal_Strength_UI_Page"})
 			public void Verify_Editing_Device_Name() {
 				SoftAssert softsignal6= new SoftAssert();
+				super.pause(5);
 				softsignal6.assertTrue(new DeviceSignalStrengthLeaderBoardPage().clickDeviceName(1));
 				softsignal6.assertTrue(new MainDeviceAllTabPage().getEditMainDeviceNameDialogObject().editMainDeviceName());
 				softsignal6.assertTrue(new MainDeviceAllTabPage().getEditMainDeviceNameDialogObject().clickSaveButton());
