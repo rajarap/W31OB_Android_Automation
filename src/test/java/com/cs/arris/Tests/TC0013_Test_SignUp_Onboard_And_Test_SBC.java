@@ -3014,8 +3014,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  		}catch(Exception e) {}
 				  			
 				  			try {
-				  				if(new AddSatelliteAddNewSatellitePage2().isAt()) {
-				  					
+				  				if(new AddSatelliteAddNewSatellitePage2().isAt()) 
+				  				{
 				  					utils.log().info("Turning OFF Wifi..........");
 				  					((AndroidDriver) super.getDriver()).toggleWifi(); //trun off wifi
 				  					super.pause(10);
@@ -3148,7 +3148,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 								if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 									new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
-									utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+									utils.log().info("Waiting for 120 seconds to connect you max router to the internet");
 									super.pause(120);
 								}
 									

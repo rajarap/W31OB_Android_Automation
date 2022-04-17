@@ -482,7 +482,7 @@ public class ParentClass
 	  
 	  public void waitFor60(){
 		  Wait<WebDriver> wait60 = new FluentWait<WebDriver>(getDriver())
-		  .withTimeout(Duration.ofSeconds(120))
+		  .withTimeout(Duration.ofSeconds(60))
 		  .pollingEvery(Duration.ofSeconds(5));
 		  }
 	  
