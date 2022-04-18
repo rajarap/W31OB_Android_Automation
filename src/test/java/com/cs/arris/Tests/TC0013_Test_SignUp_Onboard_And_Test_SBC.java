@@ -178,7 +178,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 		  public void Verify_SignUp_And_Onboard()
 		  {
 			  try {
-				  super.pause(10);
 			      new GetStartedPage().clickGetStartedButton();
 				  new GrantPermissionsPage().clickContinueButton();
 			  	  new DeviceLocationPage().clickAllow();
@@ -2984,7 +2983,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			}
 			
 						   
-			  @Test(priority = 164)
+			  @Test(priority = 164, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 			  public void Verify_Install_Left_Satellite() 
 			  {
 				    utils.log().info("                            ");
@@ -3324,7 +3323,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 
 				
-				@Test(priority = 165)
+				@Test(priority = 165, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 				public void Verify_Install_Right_Satellite()
 				{
 					utils.log().info("                             ");
