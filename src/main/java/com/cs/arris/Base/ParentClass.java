@@ -875,8 +875,7 @@ public class ParentClass
 			
 			int result = r.nextInt(high-low) + low;
 			String temp = String.valueOf(result);
-			utils.log().info("Mail-Id :" + "user" + temp + "@mail7.io");
-			writeToProperties( "user" + temp);
+			utils.log().info("Mail-Id :" + "user" + temp + "@mailinator.com");
 			mail7EmailId= "user"+ temp;
 		}
 		
