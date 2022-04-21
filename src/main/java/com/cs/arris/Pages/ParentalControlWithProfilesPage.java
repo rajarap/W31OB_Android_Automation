@@ -564,14 +564,15 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean clickOnUserProfile() {
 		utils.log().info("*****************************************");
 		utils.log().info(" Selecting a User Profile from the list  ");
 		utils.log().info("*****************************************");
-		int count = super.generateRandomNumber13();
+		//int count = super.generateRandomNumber13();
 
 		try {
-			for (int i = count ; i <= count; i++) {
+			for (int i = 1 ; i <= 1; i++) {
 				utils.log().info("User Profile : " + i);
 				utils.log().info("-------------------");
 				List<MobileElement> entity = (List<MobileElement>) super.getDriver().findElementsByXPath(
@@ -582,8 +583,8 @@ public class ParentalControlWithProfilesPage extends ParentClass implements Page
 					try {
 						utils.log().info("Clicking on User profile Name : " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").getText());
 						//utils.log().info("Selecting a User profile ");
-						super.pause(2);
-						click(super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']"));
+						super.pause(5);
+						super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/profile_name']").click();
 					} catch (Exception exp) {
 						utils.log().info("User Profile Name is not displayed ");}
 				}

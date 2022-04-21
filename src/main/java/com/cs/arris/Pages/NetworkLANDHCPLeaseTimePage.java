@@ -361,7 +361,7 @@ public class NetworkLANDHCPLeaseTimePage extends ParentClass implements Page {
 		// First select the Forever option in the Test
 		if(disabledLeaseTimeTextBox.isDisplayed() && !(disabledLeaseTimeTextBox.isEnabled()))
 			utils.log().info("Lease Time Text Box is disabled for this TimeUnit. Default Lease Time set for Forever TimeUnit is : " + disabledLeaseTimeTextBox.getText());
-		this.clickSaveLeaseTimeButton();
+		//this.clickSaveLeaseTimeButton();
 		//NetworkLANDHCPLeaseTimeAppliedChangesDialog - Click OK button
 		return true;
 	}
