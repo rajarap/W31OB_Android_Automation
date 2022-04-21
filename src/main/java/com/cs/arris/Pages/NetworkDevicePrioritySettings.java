@@ -257,10 +257,13 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 				
 					if (super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/deviceName']").isDisplayed())
 						utils.log().info("Device Name: " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/deviceName']").getText());
+					
+					super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").click();
 
-					if (super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").isDisplayed()) {			
-						super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").click();
-					}		
+//					if (super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").isDisplayed()) {	
+//					super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").click();
+//						
+//					}		
 				}
 			}
 			return true;
