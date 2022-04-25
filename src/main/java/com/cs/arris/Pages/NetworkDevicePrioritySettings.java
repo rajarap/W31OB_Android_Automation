@@ -273,7 +273,7 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean selectDevicesWithMediumPriority() 
+	public boolean selectDevicesWithHighPriority() 
 	{
 		try {
 			for (int k = 2; k <= 2; k++) 
