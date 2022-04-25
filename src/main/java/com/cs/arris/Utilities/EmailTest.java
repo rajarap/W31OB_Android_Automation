@@ -19,6 +19,8 @@ public class EmailTest extends ParentClass{
 	public static WebDriver driver;
 	public String content;
 	public String otpCode;
+	
+	//mail7.io
 		
 //		public String getValidOTP(String emailId) 
 //		{
@@ -48,6 +50,7 @@ public class EmailTest extends ParentClass{
 //			return otpCode;
 //		}
 		
+	//mailinator
 		public String getValidOTP(String emailId) 
 		{
 			utils.log().info("Get Valid OTP for : " + emailId);

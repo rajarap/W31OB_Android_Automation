@@ -225,22 +225,26 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						if (new PlugInMaxRouterPage().isAt()) {
 							new PlugInMaxRouterPage().clickNextButton();
 						}
+						
+						try {
+							if(new MultipleDevicesFoundPage().isAt()) {
+								Assert.fail("Main AP Onboarding - Multiple devices were found");
+							}
+						} catch (Exception e5) {}
 
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
 								super.pause(120);
 							}
-						} catch (Exception e5) {
-						}
+						} catch (Exception e5) {}
 
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
 								super.pause(120);
 							}
-						} catch (Exception e7) {
-						}
+						} catch (Exception e7) {}
 
 						try {
 							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
@@ -248,8 +252,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 								super.pause(120);
 							}
-						} catch (Exception e8) {
-						}
+						} catch (Exception e8) {}
 					} catch (Exception e9) {
 						super.pause(120);
 						new TapSevenTimes().tapSeven();
@@ -262,7 +265,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure1");
+						Assert.fail("Main AP Onboarding - Either multiple devices were found or blue tooth connection failed");
 						new KillAndRelaunchApp().killApp();
 					}
 
@@ -275,16 +278,30 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+								super.pause(120);
 							}
+							super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
+							if (new ConnectMaxRouterToMobileDevicePage().isAt()) {
+								new ConnectMaxRouterToMobileDevicePage().clickNextButton();
+							utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+							super.pause(120);
+                        	}
 						} catch (Exception e5) {
 						}
 
 						try {
 							if (new BlueToothConnectionFailedPage().isAt()) {
 								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
+								super.pause(120);
 							}
+							super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
+							if (new ConnectMaxRouterToMobileDevicePage().isAt()) {
+								new ConnectMaxRouterToMobileDevicePage().clickNextButton();
+							utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+							super.pause(120);
+                        	}
 						} catch (Exception e7) {
 						}
 
@@ -293,7 +310,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
 								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
 								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
+								super.pause(120);
 							}
+							super.waitForVisibility(new ConnectMaxRouterToMobileDevicePage().nextButton);
+							if (new ConnectMaxRouterToMobileDevicePage().isAt()) {
+								new ConnectMaxRouterToMobileDevicePage().clickNextButton();
+							utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
+							super.pause(120);
+                        	}
 						} catch (Exception e8) {
 						}
 					} catch (Exception e9) {
@@ -308,8 +332,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						Assert.fail(
-								"Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure2");
+						Assert.fail("Main AP Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure2");
 						new KillAndRelaunchApp().killApp();
 					}
 					
@@ -317,34 +340,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						super.waitForVisibility(new ConnectMaxRouterToInternetPage().nextButton);
 						if (new ConnectMaxRouterToInternetPage().isAt()) {
 							new ConnectMaxRouterToInternetPage().clickNextButton();
-						}
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
-								super.pause(120);
-							}
-						} catch (Exception e5) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedPage().isAt()) {
-								new BlueToothConnectionFailedPage().clickTryAgainbutton();
-								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
-								super.pause(120);
-							}
-						} catch (Exception e7) {
-						}
-
-						try {
-							if (new BlueToothConnectionFailedTroubleShootPage().isAt()) {
-								new BlueToothConnectionFailedTroubleShootPage().clickTroubleShootButton();
-								new BlueToothConnectionFailedTroubleShootProceedPage().clickProceedbutton();
-								utils.log().info("Waiting for 120 seconds for device to establish bluetooth connection with the router");
-								super.pause(120);
-							}
-						} catch (Exception e8) {
 						}
 					} catch (Exception e9) {
 						super.pause(120);
@@ -392,7 +387,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
 				  utils.log().info("Waiting for 60 seconds for the Wifi connection to stabilize on the homepage");
-				  super.pause(30);
+				  super.pause(60);
 				  
 				  
 				  try {
@@ -437,67 +432,377 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				if(new HomePage().getHamburgerMenuPageObject().isAt()) {
 					softhome2.assertTrue(new HomePage().getHamburgerMenuPageObject().verifyUIOnHamburgerMenuPage());
 					softhome2.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAddDeviceButton());
-				}
-
-				if (new AddDeviceSelectDevice1Page().isAt()) {
-					softhome2.assertTrue(new AddDeviceSelectDevice1Page().selectISPCableRadioButton());
-					softhome2.assertTrue(new AddDeviceSelectDevice1Page().clickNextButton());
-				}
-
-				if (new AddDeviceSelectDevice2Page().isAt()) {
-					softhome2.assertTrue(new AddDeviceSelectDevice2Page().selectT25RadioButton());
-					softhome2.assertTrue(new AddDeviceSelectDevice2Page().clickNextButton());
 					super.pause(5);
 				}
+				
+				try {
+					if (new AddDeviceSelectDevice1Page().isAt()) {
+						softhome2.assertTrue(new AddDeviceSelectDevice1Page().selectISPCableRadioButton());
+						softhome2.assertTrue(new AddDeviceSelectDevice1Page().clickNextButton());
+						super.pause(5);
+					}
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed when selecting a device");
+				}
 
-				if (new AddDeviceStepsForActivationPage().isAt())
-					softhome2.assertTrue(new AddDeviceStepsForActivationPage().clickStartButton());
-				super.pause(5);
+				try
+				{
+					if (new AddDeviceSelectDevice2Page().isAt()) {
+						softhome2.assertTrue(new AddDeviceSelectDevice2Page().selectT25RadioButton());
+						softhome2.assertTrue(new AddDeviceSelectDevice2Page().clickNextButton());
+						super.pause(5);
+					}
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed when selecting a device on  SELECT YOUR DEVICE BELOW Page");
+					
+				}
 
-				if (new AddDeviceLetsStartWithDeviceConnectionPage().isAt())
-					softhome2.assertTrue(new AddDeviceLetsStartWithDeviceConnectionPage().clickNextButton());
-				super.pause(5);
+				try {
+					if (new AddDeviceStepsForActivationPage().isAt())
+						softhome2.assertTrue(new AddDeviceStepsForActivationPage().clickStartButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on STEPS FOR ACTIVATION - LET'S START Page");
+				}
 
-				if (new AddDeviceChooseInternetServiceProviderPage().isAt())
-					softhome2.assertTrue(new AddDeviceChooseInternetServiceProviderPage().clickNextButton());
-				super.pause(5);
-
-				if (new AddDeviceActivateYourDeviceWithServiceProviderPage().isAt())
-					softhome2.assertTrue(new AddDeviceActivateYourDeviceWithServiceProviderPage().clickSkipButton());
-				super.pause(5);
-
-				if (new AddDeviceEstablishingConnectionPage().isAt())
-					softhome2.assertTrue(new AddDeviceEstablishingConnectionPage().clickOnlineButton());
-				super.pause(5);
-
-				if (new AddDeviceSuccessPage().isAt())
-					softhome2.assertTrue(new AddDeviceSuccessPage().clickNextButton());
-				super.pause(5);
-
-				if (new AddDeviceScanBarCodePage().isAt())
-					softhome2.assertTrue(new AddDeviceScanBarCodePage().clickScanButton());
-				super.pause(5);
-
-				if (new AddDeviceAccessCameraDialog().isAt())
-					softhome2.assertTrue(new AddDeviceAccessCameraDialog().clickEnterManuallyButton());
-				super.pause(5);
-
-				if (new AddDeviceEnterMACAddressManuallyPage().isAt()) {
-					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterSerialNumber());
-					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
-					softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
-					super.pause(15);
+				try {
+					if (new AddDeviceLetsStartWithDeviceConnectionPage().isAt())
+						softhome2.assertTrue(new AddDeviceLetsStartWithDeviceConnectionPage().clickNextButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on LET'S START WITH DEVICE CONNECTION Page");
 				}
 				
+				try {
+					if (new AddDeviceChooseInternetServiceProviderPage().isAt())
+						softhome2.assertTrue(new AddDeviceChooseInternetServiceProviderPage().clickNextButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on CHOOSE YOUR INTERNET SERVICE PROVIDER Page");
+				}
+
+				try
+				{
+					if (new AddDeviceActivateYourDeviceWithServiceProviderPage().isAt())
+						softhome2.assertTrue(new AddDeviceActivateYourDeviceWithServiceProviderPage().clickSkipButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on ACTIVATE YOUR DEVICE WITH SERVICE PROVIDER Page");
+				}
+
+				try
+				{
+					if (new AddDeviceEstablishingConnectionPage().isAt())
+						softhome2.assertTrue(new AddDeviceEstablishingConnectionPage().clickOnlineButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on ESTABLISHING CONNECTION Page");
+				}
+
+				try
+				{
+					if (new AddDeviceSuccessPage().isAt())
+						softhome2.assertTrue(new AddDeviceSuccessPage().clickNextButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on SUCCESS Page");
+				}
+
+				try
+				{
+					if (new AddDeviceScanBarCodePage().isAt())
+						softhome2.assertTrue(new AddDeviceScanBarCodePage().clickScanButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on SCAN BAR CODE TO CONTINUE Page");
+				}
+
+				try {
+					if (new AddDeviceAccessCameraDialog().isAt())
+						softhome2.assertTrue(new AddDeviceAccessCameraDialog().clickEnterManuallyButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on APPLICATION WOULD LIKE TO ACCESS THE CAMERA Page");
+				}
+
+				try
+				{
+					if (new AddDeviceEnterMACAddressManuallyPage().isAt()) {
+						softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterSerialNumber());
+						softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().enterMACAddress());
+						softhome2.assertTrue(new AddDeviceEnterMACAddressManuallyPage().clickNextButton());
+						super.pause(15);
+					}
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on ENTER S/N AND HFC MAC ADDRESS MANUALLY IN UPPERCASE Page");
+				}
+
 				try {
 					if(new AddDeviceRegistrationFailedPage().continueButton.isDisplayed())
 						new AddDeviceRegistrationFailedPage().clickContinueButton();
 					super.pause(3);
-				}catch(Exception e) {}
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on REGISTRATION OF YOUR DEVICE FAILED Page");
+				}
+				
+				try {
+					if (new AddDeviceCongratulationsPage().isAt())
+						softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
+					super.pause(5);
+				} catch (Exception e) {
+					new TapSevenTimes().tapSeven();
+					super.pause(3);
+					new SevenTapLogs().clickYesButton();
+					super.pause(3);
+					new SevenTapGmail().clickGmailIcon();
+					super.pause(3);
+					new SevenTapEmail().enterEmailAddress();
+					super.pause(3);
+					new SevenTapEmail().clickSendButton();
+					super.pause(3);
+					Assert.fail("Add Device - Failed on CONGRATULATIONS Page");
+				}
 
-				if (new AddDeviceCongratulationsPage().isAt())
-					softhome2.assertTrue(new AddDeviceCongratulationsPage().clickContinueButton());
+			} catch (Exception e) {
+				new KillAndRelaunchApp().killApp();
 				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+			}
+			
+			softhome2.assertAll();
+		}
+
+		@Test(priority = 4, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		public void Verify_Device_Details_Page() {
+			SoftAssert softhome4 = new SoftAssert();
+			try {
+				softhome4.assertTrue(new AddDeviceHomePage().clickDeviceDetailsText());
+				if(new AddDeviceHomePage().getDeviceDetailsPageObject().isAt()) {
+					softhome4.assertTrue(new AddDeviceHomePage().getDeviceDetailsPageObject().verifyDeviceDetailsUI());
+					softhome4.assertTrue(new AddDeviceHomePage().getDeviceDetailsPageObject().clickCloseButton());
+				}
+				
+				softhome4.assertAll();
+			} catch (Exception e) {
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+				Assert.fail("Add Device - Failed on Device Details Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+			}
+			
+			
+		}
+		
+		@Test(priority = 5, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		public void Verify_Specifications_Page() {
+			SoftAssert softhome5 = new SoftAssert();
+			try {
+				softhome5.assertTrue(new AddDeviceHomePage().clickSpecificationsImage());
+				super.pause(5);
+				if(new AddDeviceHomePage().getDeviceSpecificationsPageObject().isAt())
+					softhome5.assertTrue(new AddDeviceHomePage().getDeviceSpecificationsPageObject().clickBackButton());
+			
+				softhome5.assertAll();
+			} catch (Exception e) {
+				Assert.fail("Add Device - Failed on Specifications Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+			}
+				
+		}
+		
+		@Test(priority = 6, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		public void Verify_Add_Additional_Device() {
+			SoftAssert softhome6 = new SoftAssert();
+			try {
+				
+				if(new AddDeviceHomePage().isAt())
+					softhome6.assertTrue(new AddDeviceHomePage().clickNavigationButton());
+					
+				if(new AddDeviceHomePage().getHamburgerMenuObject().isAt())
+					softhome6.assertTrue(new AddDeviceHomePage().getHamburgerMenuObject().clickAddDeviceButton());
+					
+				if(new AddDeviceHomePage().getMaxTwoDevicesDialogObject().isAt())
+					softhome6.assertTrue(new AddDeviceHomePage().getMaxTwoDevicesDialogObject().clickOkButton());
+				
+				softhome6.assertAll();
+				
+			} catch (Exception e) {
+				Assert.fail("Add Device - Failed on Adding additional device Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+			}
+
+		}
+		
+		@Test(priority = 7, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
+		public void Verify_Notifications_Page() {
+			SoftAssert softhome7 = new SoftAssert();
+			
+			try {
+				if(new AddDeviceHomePage().isAt())
+					softhome7.assertTrue(new AddDeviceHomePage().clickNotificationsIcon());
+				
+				if(new AddDeviceHomePage().getNotificationsPageObject().isAt())
+					softhome7.assertTrue(new AddDeviceHomePage().getNotificationsPageObject().clickBackButton());
+				
+				softhome7.assertAll();
 				
 			} catch (Exception e) {
 				new TapSevenTimes().tapSeven();
@@ -509,113 +814,84 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				new SevenTapEmail().enterEmailAddress();
 				super.pause(3);
 				new SevenTapEmail().clickSendButton();
-				new KillAndRelaunchApp().killApp();
 				super.pause(3);
+				Assert.fail("Add Device - Failed on Notifications Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
 				new KillAndRelaunchApp().relaunchApp();
 				super.pause(15);
 			}
-			
-			softhome2.assertAll();
-		}
-		
-//		@Test(priority = 2, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-//		public void Verify_Cable_Modem_Tab() {
-//			SoftAssert softhome0 = new SoftAssert();
-//			if(new AddDeviceHomePage().isAt())
-//				softhome0.assertTrue(new AddDeviceHomePage().verifyUIOnHomePage());
-//			
-//			softhome0.assertAll();
-//		}
-//		
-//		@Test(priority = 3, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-//		public void Verify_Max_Router_Tab() {
-//			SoftAssert softhome3 = new SoftAssert();
-//			softhome3.assertTrue(new AddDeviceHomePage().clickMaxRouterTab());
-//			softhome3.assertTrue(new AddDeviceHomePage().getHomePageObject().verifyUIOnHomePage());
-//			softhome3.assertTrue(new AddDeviceHomePage().clickCableModemTab());
-//			
-//			softhome3.assertAll();
-//		}
-		
-		
-		
-		
-		@Test(priority = 4, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-		public void Verify_Device_Details_Page() {
-			SoftAssert softhome4 = new SoftAssert();
-			softhome4.assertTrue(new AddDeviceHomePage().clickDeviceDetailsText());
-			if(new AddDeviceHomePage().getDeviceDetailsPageObject().isAt()) {
-				softhome4.assertTrue(new AddDeviceHomePage().getDeviceDetailsPageObject().verifyDeviceDetailsUI());
-				softhome4.assertTrue(new AddDeviceHomePage().getDeviceDetailsPageObject().clickCloseButton());
-			}
-			
-			softhome4.assertAll();
-		}
-		
-		@Test(priority = 5, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-		public void Verify_Specifications_Page() {
-			SoftAssert softhome5 = new SoftAssert();
-			softhome5.assertTrue(new AddDeviceHomePage().clickSpecificationsImage());
-			super.pause(5);
-			if(new AddDeviceHomePage().getDeviceSpecificationsPageObject().isAt())
-				softhome5.assertTrue(new AddDeviceHomePage().getDeviceSpecificationsPageObject().clickBackButton());
-			
-			softhome5.assertAll();
-		}
-		
-		@Test(priority = 6, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-		public void Verify_Add_Additional_Device() {
-			SoftAssert softhome6 = new SoftAssert();
-			if(new AddDeviceHomePage().isAt())
-				softhome6.assertTrue(new AddDeviceHomePage().clickNavigationButton());
-				
-			if(new AddDeviceHomePage().getHamburgerMenuObject().isAt())
-				softhome6.assertTrue(new AddDeviceHomePage().getHamburgerMenuObject().clickAddDeviceButton());
-				
-			if(new AddDeviceHomePage().getMaxTwoDevicesDialogObject().isAt())
-				softhome6.assertTrue(new AddDeviceHomePage().getMaxTwoDevicesDialogObject().clickOkButton());
-			
-			softhome6.assertAll();
-		}
-		
-		@Test(priority = 7, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
-		public void Verify_Notifications_Page() {
-			SoftAssert softhome7 = new SoftAssert();
-			if(new AddDeviceHomePage().isAt())
-				softhome7.assertTrue(new AddDeviceHomePage().clickNotificationsIcon());
-			
-			if(new AddDeviceHomePage().getNotificationsPageObject().isAt())
-				softhome7.assertTrue(new AddDeviceHomePage().getNotificationsPageObject().clickBackButton());
-			
-			softhome7.assertAll();
+
 		}
 		
 		@Test(priority = 8, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu"  })
 		public void Verify_User_Guide_Page() {
 			SoftAssert softhome8 = new SoftAssert();
-			if(new AddDeviceHomePage().isAt())
-				softhome8.assertTrue(new AddDeviceHomePage().getAddDeviceFooterIconsPageObject().clickUserGuideButton());
-			super.pause(5);
-
-			if(new AddDeviceHomePage().getUserGuidePageObject().isAt())
-				super.swipeUp();
-				softhome8.assertTrue(new AddDeviceHomePage().getUserGuidePageObject().clickBackButton());
 			
-			softhome8.assertAll();
+			try {
+				if(new AddDeviceHomePage().isAt())
+					softhome8.assertTrue(new AddDeviceHomePage().getAddDeviceFooterIconsPageObject().clickUserGuideButton());
+				super.pause(5);
+
+				if(new AddDeviceHomePage().getUserGuidePageObject().isAt())
+					super.swipeUp();
+					softhome8.assertTrue(new AddDeviceHomePage().getUserGuidePageObject().clickBackButton());
+				
+				softhome8.assertAll();
+				
+			} catch (Exception e) {
+				Assert.fail("Add Device - Failed on UserGuide Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+			}
+			
 		}
 		
 		@Test(priority = 9, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Add_Device_Menu" })
 		public void Verify_FAQ_Page() {
 			SoftAssert softhome9 = new SoftAssert();
-			if(new AddDeviceHomePage().isAt())
-				softhome9.assertTrue(new AddDeviceHomePage().getAddDeviceFooterIconsPageObject().clickFAQButton());
-			super.pause(3);
-			
-			if(new AddDeviceHomePage().getFAQPageObject().isAt())
-				super.swipeUp();
-				softhome9.assertTrue(new AddDeviceHomePage().getUserGuidePageObject().clickBackButton());
-			
-			softhome9.assertAll();
+			try {
+				
+				if(new AddDeviceHomePage().isAt())
+					softhome9.assertTrue(new AddDeviceHomePage().getAddDeviceFooterIconsPageObject().clickFAQButton());
+				super.pause(5);
+				
+				if(new AddDeviceHomePage().getFAQPageObject().isAt())
+					super.swipeUp();
+					softhome9.assertTrue(new AddDeviceHomePage().getUserGuidePageObject().clickBackButton());
+				
+				softhome9.assertAll();
+				
+			} catch (Exception e) {
+				Assert.fail("Add Device - Failed on FAQ Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
+				new TapSevenTimes().tapSeven();
+				super.pause(3);
+				new SevenTapLogs().clickYesButton();
+				super.pause(3);
+				new SevenTapGmail().clickGmailIcon();
+				super.pause(3);
+				new SevenTapEmail().enterEmailAddress();
+				super.pause(3);
+				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+			}
+
 		}
 		
 		@Test(priority = 10, dependsOnMethods = { "Verify_SignUp_And_Onboard"})
@@ -631,8 +907,9 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				if (new AddDeviceHomePage().getRemoveDevicePageObject().isAt()) {
 					softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().selectDeviceToRemove());
 					softhome10.assertTrue(new AddDeviceHomePage().getRemoveDevicePageObject().clickNextButton());
-					super.pause(3);
+					super.pause(5);
 				}
+				softhome10.assertAll();
 			} catch (Exception e) {
 				new TapSevenTimes().tapSeven();
 				super.pause(3);
@@ -643,9 +920,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				new SevenTapEmail().enterEmailAddress();
 				super.pause(3);
 				new SevenTapEmail().clickSendButton();
+				super.pause(3);
+				Assert.fail("Remove Device - Failed on Remove Device Page");
+				new KillAndRelaunchApp().killApp();
+				super.pause(5);
+				new KillAndRelaunchApp().relaunchApp();
+				super.pause(15);
 			}
-
-			softhome10.assertAll();
 		}
 		
 		
@@ -667,7 +948,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softburger3.assertAll();
 				}
 				
-				@Test(priority = 12, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+				@Test(priority = 12, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Hamburger_Menu_Settings_UI_Page" })
 				public void Verify_Hamburger_Menu_Settings_Sign_Out() {
 					SoftAssert softburger4 = new SoftAssert();
 					String userEmail = new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getUserEmailAddress();
@@ -678,31 +959,16 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							softburger4.assertTrue(new SiginPage().clickSigninButton());
 							super.pause(5);	}
 					}catch(Exception e) {}
+					
 					softburger4.assertAll();
 				}
-				
-//				@Test(priority = 13, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//				public void Verify_Hamburger_Menu_Settings_Help_Page() {
-//					SoftAssert softburger5 = new SoftAssert();
-////					softburger5.assertTrue(new HomePage().clickNavigationButton());
-////					if(new HomePage().getHamburgerMenuPageObject().isAt()) {
-//					softburger5.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickHelpIcon());
-//					softburger5.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getSettingsHelpPageObject().clickCloseButton());
-//					softburger5.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
-//					
-//					softburger5.assertAll();
-//				}
-				
-
+						
 				@Test(priority = 14, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 				public void Verify_Hamburger_Menu_About_UI_Page() {
 					SoftAssert softburger6 = new SoftAssert();
 					softburger6.assertTrue(new HomePage().clickNavigationButton());
 					if(new HomePage().getHamburgerMenuPageObject().isAt()) 
 						softburger6.assertTrue(new HomePage().getHamburgerMenuPageObject().clickAboutAppButton());
-					
-//					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAtAboutPage())
-//						softburger6.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().verifyUIOnAboutPage());
 					
 					softburger6.assertAll();
 				}
@@ -714,7 +980,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					super.pause(8);
 					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getLicensesPageObject().isAt())
 					{
-						//softburger7.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getLicensesPageObject().verifyUIOnLicensesPage());
 						softburger7.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getLicensesPageObject().clickCloseButton());
 					}
 					softburger7.assertAll();
@@ -730,25 +995,12 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softburger8.assertAll();
 				}
 				
-//				@Test(priority = 17, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//				public void Verify_Hamburger_About_Help_Page() {
-//					SoftAssert softburger9 = new SoftAssert();
-//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickHelpIcon());
-//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getAboutHelpPageObject().clickCloseButton());
-//					softburger9.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickBackButton());
-//					
-//					softburger9.assertAll();
-//				}
-				
 				@Test(priority = 18, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 				public void Verify_Hamburger_Surfboard_Help_UI_Page() {
 					SoftAssert softburger10 = new SoftAssert();
 					softburger10.assertTrue(new HomePage().clickNavigationButton());
 					if(new HomePage().getHamburgerMenuPageObject().isAt()) 
 						softburger10.assertTrue(new HomePage().getHamburgerMenuPageObject().clickHelpMenuButton());
-					
-//					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().isAtHelpPage())
-//						softburger10.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().verifyUIOnHelpPage());
 					
 					softburger10.assertAll();
 				}
@@ -759,9 +1011,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softburger11.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().clickFAQButton());
 					super.pause(5);
 					if(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getFAQHelpPageObject().isAt()) {
-						//softburger11.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getFAQHelpPageObject().verifyUIOnFAQHelpPage());
-						softburger11.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getFAQHelpPageObject().clickBackButton());}
-					
+						softburger11.assertTrue(new HomePage().getHamburgerMenuPageObject().getSettingAboutHelpPageObject().getFAQHelpPageObject().clickBackButton());
+						}
 					softburger11.assertAll();
 				}
 				
@@ -818,13 +1069,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					if(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickCopyPasswordOKButton());
 				}
 				
-//				@Test(priority = 26, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
-//				public void Verify_Amazon_Alexa_Skills_Link() {
-//					SoftAssert softfeatures7 = new SoftAssert();
-//					softfeatures7.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickAlexaSkillsLink());
-//				}
+				@Test(priority = 26, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+				public void Verify_Amazon_Alexa_Skills_Link() {
+					SoftAssert softfeatures7 = new SoftAssert();
+					softfeatures7.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickAlexaSkillsLink());
+				}
 				
-//				@Test(priority = 27, , dependsOnMethods = { "Verify_SignUp_And_Onboard" })
+//				@Test(priority = 27, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 //				public void Verify_Please_Tap_Here_Link() {
 //					SoftAssert softfeatures6 = new SoftAssert();
 //					softfeatures6.assertTrue(new HomePage().getHamburgerMenuPageObject().getAmazonFeaturesPageObject().clickPleaseTapHereLink());
@@ -857,10 +1108,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								new AppRatingDialog().clickRemindMeLaterLink();
 						}catch(Exception e){}
 					}
-//					if(new SpeedTestPage().isAt())
-//					{
-//						softspeedtest2.assertTrue(new SpeedTestPage().verifyUIOnSpeedTestPage());
-//					}
 			  }
 			  
 			  @Test(priority = 30, dependsOnMethods = { "Verify_SignUp_And_Onboard", "Verify_Speed_Test_Page"})
@@ -894,8 +1141,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				}
 		
 		
-		
-		
 		  @Test(priority = 33, dependsOnMethods = { "Verify_SignUp_And_Onboard" })
 			public void Verify_Main_Device_UI_On_All_Tab_Page() {
 				utils.log().info("                    ");
@@ -903,7 +1148,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("Test: Main Device   ");
 				utils.log().info("********************");
 				SoftAssert softmain2 = new SoftAssert();
-	//			new HomePage().getFooterIconsPageObject().clickHomeButton();
+				new HomePage().getFooterIconsPageObject().clickHomeButton();
 				softmain2.assertTrue(new HomePage().clickMainDeviceImage());
 				softmain2.assertTrue(new MainDeviceAllTabPage().verifyUIOnMainDevicePage());		
 				softmain2.assertAll();
@@ -1720,7 +1965,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				SoftAssert softcontrol23 = new SoftAssert();
 				if(new ParentalControlWithProfilesPage().isAt())
 					softcontrol23.assertTrue(new ParentalControlWithProfilesPage().clickCurrentlyBlockedTab());
-				
+				super.pause(15);
 				if(new ParentalControlWithProfilesPage().getParentalControlCurrentlyBlockedTabPageObject().isAt()) {
 					softcontrol23.assertTrue(new ParentalControlWithProfilesPage().getParentalControlCurrentlyBlockedTabPageObject().verifyNoBlockedProfileMessages());
 					softcontrol23.assertTrue(new ParentalControlWithProfilesPage().getParentalControlCurrentlyBlockedTabPageObject().clickProfilesTab());
@@ -1728,26 +1973,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softcontrol23.assertTrue(new ParentalControlWithProfilesPage().clickBackButton());
 				softcontrol23.assertAll();
 			}
-			
-//			@Test(priority = 101, dependsOnMethods = {"Verify_SignUp_And_Onboard" , "Verify_Parental_Control_UI_Page"})
-//			public void Verify_Parental_Control_Help_Page() {
-//				SoftAssert softcontrol24 = new SoftAssert();
-//				if(new ParentalControlWithProfilesPage().isAt())
-//					softcontrol24.assertTrue(new ParentalControlWithProfilesPage().clickHelpIcon());
-//				super.pause(3);
-//					
-//				if(new ParentalControlWithProfilesPage().getParentalHelpPageObject().isAt()) {
-//				//	softcontrol24.assertTrue(new ParentalControlWithProfilesPage().getParentalHelpPageObject().verifyUIOnParentalControlOverviewHelpPage());
-//					softcontrol24.assertTrue(new ParentalControlWithProfilesPage().getParentalHelpPageObject().clickCloseButton());
-//					super.pause(3);
-//				}
-//				softcontrol24.assertTrue(new ParentalControlWithProfilesPage().clickBackButton());
-//
-//				softcontrol24.assertAll();
-//			}	
-						
 
-			
 			@Test(priority = 101, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Network_UI_Page() {
 				utils.log().info("                     ");
@@ -1756,17 +1982,9 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("*********************");
 				SoftAssert softnet2 = new SoftAssert();
 				softnet2.assertTrue(new HomePage().getFooterIconsPageObject().clickNetworkButton());
-			//	softnet2.assertTrue(new NetworkPage().verifyUIOnNetworkPage());
 				softnet2.assertAll();
 			}
 
-//			@Test(priority = 104, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_Newtork_Help_Page() {
-//				SoftAssert softnet3 = new SoftAssert();
-//				softnet3.assertTrue(new NetworkPage().clickHelpButton());
-//				softnet3.assertTrue(new NetworkPage().getNetworkHelpPageObject().clickCloseButton());
-//				softnet3.assertAll();
-//			}
 
 			@Test(priority = 102, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_Newtork_Test_Connection_Speed_Page() {
@@ -1792,15 +2010,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 					softnet5.assertAll();
 			}
-
-//			@Test(priority = 104, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_WAN_Settings_Help_Page() {
-//				SoftAssert softnet6 = new SoftAssert();
-//				softnet6.assertTrue(new NetworkPage().getWANSettingsPageObject().clickHelpButton());
-//				if (new NetworkPage().getWANSettingsPageObject().getNetworkWanSettingsHelpPageObject().isAt())
-//					softnet6.assertTrue(new NetworkPage().getWANSettingsPageObject().getNetworkWanSettingsHelpPageObject().clickCloseButton());
-//				softnet6.assertAll();
-//			}
 
 			@Test(priority = 105, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_WAN_Settings_WAN_IP_Configuration_IPv4_DHCP_UI_Page() {
@@ -1923,9 +2132,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						if(new NetworkPage().getAppRatingPageObject().isAt())
 							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
 					}catch(Exception e) {
-//						utils.log().info("App Rating Dialog did not appear");
+						utils.log().info("App Rating Dialog did not appear");
 						}
-		//			softnet18.assertTrue(new NetworkPage().getLANSettingsPageObject().verifyUIOnLANSettingsPage());
 				}
 				softnet18.assertAll();
 			}
@@ -1947,24 +2155,16 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().clickAddReservationButton();
 				if(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().isAt())
 				{
-				//	softnet20.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().verifyUIOnReserveLANIP());
 					softnet20.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().enterRuleName());
 					softnet20.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().enterIPAddress());
 					softnet20.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().selectADevice(1));
 					softnet20.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLANIPReservationDialogObject().clickSaveButton());
+					super.pause(5);
 					softnet20.assertAll();
 				}
 			}
-			
-			@Test(priority = 119, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page"})
-			public void Verify_LAN_Settings_LAN_IP_Reservation_Rules() 
-			{
-				SoftAssert softnet21 = new SoftAssert();
-//				softnet21.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().verifyRulesOnLAPIPReservationPage());
-				softnet21.assertAll();
-			}
-			
-			@Test(priority = 120, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Rules"})
+				
+			@Test(priority = 120, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Add_Reservation_Page"})
 			public void Verify_LAN_Settings_LAN_IP_Reservation_Edit_Devices_Page() 
 			{
 				SoftAssert softnet22 = new SoftAssert();
@@ -1975,22 +2175,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet22.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getEditLANIPReservationDialogObject().editRuleName());
 					softnet22.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getEditLANIPReservationDialogObject().editIPAddress());
 					softnet22.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getEditLANIPReservationDialogObject().clickSaveButton());
+					super.pause(5);
+					softnet22.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().clickBackButton());
 				}
 				softnet22.assertAll();
 
 			}
-
-			@Test(priority = 121, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_LAN_IP_Reservation_Page"})
-			public void Verify_LAN_Settings_LAN_IP_Reservation_Help_Page() {
-				SoftAssert softnet23 = new SoftAssert();
-//				softnet23.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().clickHelpButton());
-//				if (new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLanIPReservationHelpPageObject().isAt()) {
-//					softnet23.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().getLanIPReservationHelpPageObject().clickCloseButton());
-					softnet23.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANIPReservationPageObject().clickBackButton());
-//				}
-				softnet23.assertAll();
-			}
-			
+		
 			@Test(priority = 122, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_LAN_Settings_UI_Page"})
 			public void Verify_LAN_Settings_LAN_Subnet_DHCP_Range_Configuration_Page() 
 			{
@@ -2080,21 +2271,9 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_LAN_Settings_LAN_DHCP_Lease_Time_UI_Page() 
 			{
 				SoftAssert softnet28 = new SoftAssert();
-//				//remove this if above test are uncommented
-//					new NetworkPage().clickNetworkSettingsExpandButton();
-//					new NetworkPage().clickLANSettings();
-//					try{
-//						if(new NetworkPage().getAppRatingPageObject().isAt())
-//							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-//					}catch(Exception e) {
-//						utils.log().info("App Rating Dialog did not appear");
-//					}
-//				//remove this if above test are uncommented
-				
 					if(new NetworkPage().getLANSettingsPageObject().isAt())
 						softnet28.assertTrue(new NetworkPage().getLANSettingsPageObject().clickDHCPLeaseTimeLink());
 					if(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().isAt())
-		//				softnet28.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().verifyUIOnLANLeaseTimePage());
 					softnet28.assertAll();
 			}
 			
@@ -2136,8 +2315,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				if(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getEditTimeUnitPageObject().isAt())
 					softnet29.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getEditTimeUnitPageObject().clickForeverRadioButton());
 				softnet29.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().verifyLeaseTimeWithForeverTimeUnit());
-//				if(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getLeaseTimeAppliedChangesDialogObject().isAt())
-//					softnet29.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getLeaseTimeAppliedChangesDialogObject().clickOKButton());
 				
 				softnet29.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().clickTimeUnitButton());
 				if(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getEditTimeUnitPageObject().isAt())
@@ -2153,9 +2330,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_LAN_Settings_LAN_DHCP_Set_Lease_Time_Help_Page() 
 			{
 				SoftAssert softnet30 = new SoftAssert();
-//				softnet30.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().clickHelpButton());
-//				if(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getLANDHCPLeaseTimeHelpPageObject().isAt())
-//					softnet30.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().getLANDHCPLeaseTimeHelpPageObject().clickCloseButton());
 					softnet30.assertTrue(new NetworkPage().getLANSettingsPageObject().getNetworkLANDHCPLeaseTimePageObject().clickBackButton());
 					try{
 						if(new NetworkPage().getAppRatingPageObject().isAt())
@@ -2167,137 +2341,77 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet30.assertAll();
 			}
 			
-//			@Test(priority = 129, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_Device_Priority_Settings_UI_Page() 
-//			{
-//				SoftAssert softnet31 = new SoftAssert();
-//				super.swipeUp();
-//				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
-//				super.pause(3);
-//				try{
-//					if(new NetworkPage().getAppRatingPageObject().isAt())
-//						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-//				}catch(Exception e) {
-//					utils.log().info("App Rating Dialog did not appear");
-//				}
-//				
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
-//				{
-//					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
-//					super.pause(10);
-//
-//					try{
-//						if(new NetworkPage().getAppRatingPageObject().isAt())
-//							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-//					}catch(Exception e) {
-////						utils.log().info("App Rating Dialog did not appear");
-//					}
-////					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().verifyUIOnDevicePrioritySettingsPage());
-//					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-//				}
-//				softnet31.assertAll();
-//			}
-//			
-////			@Test(priority = 130, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
-////			public void Verify_Device_Priority_Settings_Add_Device_UI_Page() 
-////			{
-////				SoftAssert softnet32 = new SoftAssert();
-////				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().isAt()) {
-////					softnet32.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().verifyUIOnAddDevicePage());
-////					softnet32.assertAll();
-////				}
-////			}
-////			
-//			@Test(priority = 131, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_Device_Priority_Settings_Add_Device_Page() 
-//			{
-//				SoftAssert softnet33 = new SoftAssert();
-////				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().verifyDeviceListForPrioritization());
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-//				
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().isAt())
-//					softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().clickOKButton());
-//				
-////				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickBackButton());
-//				
-////				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-////				super.pause(5);
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-//				super.pause(3);
-//				
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-//				super.pause(2);
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
-//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-//				super.pause(3);
-//
-//				softnet33.assertAll();
-//			}
-//			
-////			@Test(priority = 132, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_Add_Device_Page"})
-////			public void Verify_Device_Priority_Settings_Add_Device() 
-////			{
-////				SoftAssert softnet74 = new SoftAssert();
-////				softnet74.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-////				super.pause(5);
-////				softnet74.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
-////				softnet74.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-////				super.pause(30);
-//	//
-////				softnet74.assertAll();
-////			}
-//			
-//			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-//			public void Verify_Device_Priority_Settings_Added_Device_Page() 
-//			{
-//				SoftAssert softnet34 = new SoftAssert();
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
-//				{
-//////				softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().verifyUIOnNetworkPrioritizedDevices());
-//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
-////					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority(2));
-//					
-//					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
-//					super.pause(5);
-//					
-//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());
-//					softnet34.assertAll();
-//					
-//				}
+			@Test(priority = 129, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+			public void Verify_Device_Priority_Settings_UI_Page() 
+			{
+				SoftAssert softnet31 = new SoftAssert();
+				super.swipeUp();
+				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
+				super.pause(3);
+				try{
+					if(new NetworkPage().getAppRatingPageObject().isAt())
+						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
+				}catch(Exception e) {
+					utils.log().info("App Rating Dialog did not appear");
+				}
+				
+				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+				{
+					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
+					super.pause(10);
+
+					try{
+						if(new NetworkPage().getAppRatingPageObject().isAt())
+							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
+					}catch(Exception e) {
+						utils.log().info("App Rating Dialog did not appear");
+					}
+					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
+				}
+				softnet31.assertAll();
+			}
+		
+			@Test(priority = 131, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+			public void Verify_Device_Priority_Settings_Add_Device_Page() 
+			{
+				SoftAssert softnet33 = new SoftAssert();
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+				
+				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().isAt())
+					softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().clickOKButton());
+
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+				super.pause(3);
+				
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
+				super.pause(2);
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
+				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+				super.pause(3);
+
+				softnet33.assertAll();
+			}
+			
+		
+			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+			public void Verify_Device_Priority_Settings_Added_Device_Page() 
+			{
+				SoftAssert softnet34 = new SoftAssert();
+				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+				{
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
+					
+					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
+					super.pause(5);
+					
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
+					
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());				
+				}
 //				softnet34.assertAll();
-//			}
-////			
-////			@Test(priority = 134, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-////			public void Verify_Device_Priority_Settings_Disable_Device_Prioritation() 
-////			{
-////				SoftAssert softnet35 = new SoftAssert();
-//////				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-//////				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickHelpButton());
-//////				
-//////				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().isAt()) {
-//////					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getAddDevicePriorityHelpPageObject().clickCloseButton());
-//////					softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickBackButton());}
-////				
-////				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
-////				super.pause(5);
-////				softnet35.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());
-////				softnet35.assertAll();
-////			}
-////			
-////			@Test(priority = 135, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Device_Priority_Settings_UI_Page"})
-////			public void Verify_Device_Priority_Settings_Help_Page() 
-////			{
-////				SoftAssert softnet36 = new SoftAssert();
-////				softnet36.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickHelpButton());
-////				
-////				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getDevicePriorityHelpPageObject().isAt())
-////					softnet36.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getDevicePriorityHelpPageObject().clickCloseButton());
-////				
-////				softnet36.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());
-////				softnet36.assertAll();
-////			}
+			}
 			
 			@Test(priority = 136, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Time_Zone_Settings_UI_Page() 
@@ -2313,17 +2427,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				softnet37.assertAll();
 			}
 			
-//			@Test(priority = 137, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Time_Zone_Settings_UI_Page"})
-//			public void Verify_Time_Zone_Settings_Help_Page() 
-//			{
-//				SoftAssert softnet38 = new SoftAssert();
-//				softnet38 .assertTrue(new NetworkPage().getTimeZoneSettingsPageObject().clickHelpButton());
-//				if (new NetworkPage().getTimeZoneSettingsPageObject().getTimeZoneHelpPageObject().isAt())
-//					softnet38 .assertTrue(new NetworkPage().getTimeZoneSettingsPageObject().getTimeZoneHelpPageObject().clickCloseButton());
-//				softnet38 .assertTrue(new NetworkPage().getTimeZoneSettingsPageObject().clickBackButton());
-//				softnet38 .assertAll();
-//			}
-			
+	
 			@Test(priority = 167, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_General_Settings_UI_Page() 
 			{
@@ -2425,7 +2529,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softnet45.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
 								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
 								.clickSaveButton());
-						super.pause(15);
+						super.pause(20);
 						
 						try {
 							if (new NetworkPage().getGeneralSettingsPageObject()
@@ -2444,153 +2548,11 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 
 				softnet45.assertAll();
 			}
-				
-
-//			@Test(priority = 172, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
-//	
-//			public void Verify_General_Settings_Port_Forwarding_Edit_Rules() 
-//			{
-//				SoftAssert softnet46 = new SoftAssert();
-//				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().isAt()) 
-//				{
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickEditPortFowardingRuleIcon());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().selectUDP());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterIPAddress());
-//					softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-//					try {
-//						if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
-//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterPortRuleName());
-//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
-//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortStart());
-//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
-//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterInternalPortEnd());
-//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
-//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortStart());
-//						else if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
-//							softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().enterExternalPortEnd());
-//						else
-//							utils.log().info("All Port details are valid");
-//						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().clickSaveButton());
-//					}catch(Exception e) {utils.log().info("All Port details are valid");}
-//					
-//					super.pause(15);
-//					try {
-//					if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt()) 
-//						softnet46.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.getPortRuleEditFailedDialogObject().clickOKButton());
-//						}catch(Exception e) {utils.log().info("Port Rule Edit Failed Dialog did not appear");}
-//				}
-//				softnet46.assertAll();
-//			}
-//	
-//			@Test(priority = 173, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_General_Settings_Port_Forwarding_Add_Rules"})
-//			public void Verify_General_Settings_Port_Forwarding_Add_Rule_Settings_Validations() 
-//			{
-//				SoftAssert softnet47 = new SoftAssert();
-//				new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickAddRuleButton();
-//					if (new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject()
-//							.getPortForwardingAddRulePageObject().isAt()) {
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterPortForwardingRuleName());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterInternalPortStart());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterInternalPortEnd());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyInternalPortStartLessThenPortEnd());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterExternalPortStart());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterExternalPortEnd());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyExternalPortStartLessThenPortEnd());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterValidIPAddress());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.verifyEnterInValidIPAddress());
-//						softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//								.getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingAddRulePageObject()
-//								.clickSaveButton());
-//						try {
-//							if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().portNameDialogError.isDisplayed())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().enterPortRuleName());
-//							else if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().internalPortStartError.isDisplayed())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().enterInternalPortStart());
-//							else if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().internalPortEndError.isDisplayed())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().enterInternalPortEnd());
-//							else if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().externalPortStartError.isDisplayed())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().enterExternalPortStart());
-//							else if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().externalPortEndError.isDisplayed())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().enterExternalPortEnd());
-//							else
-//								utils.log().info("All Port details are valid");
-//							softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().clickSaveButton());
-//							super.pause(25);
-//						} catch (Exception e) {
-//							utils.log().info("All Port details are valid");
-//						}
-//
-//						try {
-//							if (new NetworkPage().getGeneralSettingsPageObject()
-//									.getNetworkGeneralSettingsPortForwardingPageObject()
-//									.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject().isAt())
-//								softnet47.assertTrue(new NetworkPage().getGeneralSettingsPageObject()
-//										.getNetworkGeneralSettingsPortForwardingPageObject()
-//										.getPortForwardingAddRulePageObject().getPortRuleEditFailedDialogObject()
-//										.clickOKButton());
-//							super.pause(25);
-//						} catch (Exception e) {
-//							utils.log().info("Port Rule Edit Failed Dialog did not appear");
-//						}
-//					}
-//				softnet47.assertAll();
-//			}
 			
 			@Test(priority = 174, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 			public void Verify_General_Settings_Page() 
 			{
 				SoftAssert softnet48 = new SoftAssert();
-//				softnet48.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickHelpButton());
-//				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingHelpPageObject().isAt())
-//					softnet48.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().getPortForwardingHelpPageObject().clickCloseButton());
-				
-//				softnet48.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsPortForwardingPageObject().clickBackButton());
 				try{
 					if(new NetworkPage().getAppRatingPageObject().isAt())
 						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
@@ -2642,7 +2604,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				
 				try {
 					if(new NetworkPage().getEnableGuestNetworkDialogObject().isAt()) {
-//						softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkDialogObject().verifyUIOnGuestNetworkPage());
 						softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkDialogObject().validateGuestNetworkPage());
 						softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkDialogObject().enterGuestNetworkName());
 						softnet49.assertTrue(new NetworkPage().getEnableGuestNetworkDialogObject().enterGuestNetworkPassword());
@@ -2674,12 +2635,37 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					  if(new HomePage().banner.isDisplayed()){
 						  new HomePage().ConnectToMaxRouter(this.ssidName, this.ssidpass, this.udid);
 					  }else {
-						  utils.log().info("Remote access to your network is currently available");
+						  utils.log().info("Access to your network is currently available");
 					}
 				}catch(Exception e) {}
-
-				 softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
-				 super.pause(5);
+				 
+				 try {
+					 if(new HomePage().tapToTurnOnNetworkHealth.isDisplayed()) {
+						 softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
+						 super.pause(5);
+					 }else {
+						 utils.log().info("Network Health Link is not displayed. Re-launching the app");
+						  new KillAndRelaunchApp().killApp();
+						  new KillAndRelaunchApp().relaunchApp();
+						  
+						  if(new HomePage().tapToTurnOnNetworkHealth.isDisplayed())
+							  softnetwork1.assertTrue(new HomePage().clickTapHereToTurnON());
+						  super.pause(5);
+					 }
+		  			}catch(Exception e) {
+		  				 new TapSevenTimes().tapSeven();
+						  super.pause(5);
+						  new SevenTapLogs().clickYesButton();
+						  super.pause(5);
+						  new SevenTapGmail().clickGmailIcon();
+						  super.pause(5);
+						  new SevenTapEmail().enterEmailAddress();
+						  super.pause(5);
+						  new SevenTapEmail().clickSendButton();
+						  super.pause(5);
+						  Assert.fail("Network Health - Tap to Turn ON Network Health link did not appear on the HomePage");
+		  			}
+				 
 					if (new HomePage().getSkipTutorialPageObject().isAt())
 						softnetwork1.assertTrue(new HomePage().getSkipTutorialPageObject().clickSkipText());
 
@@ -2687,8 +2673,11 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().verifyNetworkOptimizationPageUI());
 						softnetwork1.assertTrue(new HomePage().getNetworkOtptimizationPageObject().clickOptimizationIcon());
 					}
-				softnetwork1.assertAll();
+					
+					softnetwork1.assertAll();
+					
 			}
+
 			
 			@Test(priority = 149, dependsOnMethods = { "Verify_Network_Health_Page" })
 			public void Verify_Network_Optimization_Settings_Page() {
@@ -2997,6 +2986,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("****************************");
 					
 					SoftAssert softsatellite1 = new SoftAssert();
+					
+					new HomePage().getFooterIconsPageObject().clickHomeButton();
 					
 					performFactoryReset("Satellite1", "/dev/tty.usbserial-142310");
 					
@@ -3346,7 +3337,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						  new KillAndRelaunchApp().killApp();
 						  super.pause(5);
 						  new KillAndRelaunchApp().relaunchApp();
-						  super.pause(10);
+						  super.pause(20);
 					  						  
 						  try {
 							  if(new HomePage().banner.isDisplayed()){
@@ -3435,7 +3426,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							  new KillAndRelaunchApp().relaunchApp();
 						}
 							
-													try {
+							try {
 								super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 								if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 									new AddSatelliteSuccessfullyConnectedPage().clickNextButton();

@@ -383,32 +383,13 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 					super.getDriver().context(context);
 			}
 			utils.log().info("Switched to WEBVIEW");
-
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//			String webURL = driver.getCurrentUrl();// http://shop.surfboard.com
-//			try {
-//				if (webURL.equalsIgnoreCase("http://shop.surfboard.com")) {
-//					driver.getPageSource();
-//					if (driver.findElement(By.xpath("//android.view.View[@content-desc='Vertical Categories']")).isDisplayed() && driver.findElement(By.xpath(
-//											"//android.view.View[@content-desc=' SIGN IN']/android.widget.TextView[2]]")).isDisplayed())
-//						utils.log().info("On shop.surfboard.com web page");
-//					else
-//						utils.log().info("shop.surfboard.com web page is not displayed");
-//				}
-//			} catch (Exception e) {
-//				utils.log().info("Unable to fetch Self Help Web Page objects");
-//			}
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
-			
-//			if (driver != null)
-//				driver.quit();
-			
 			return true;
 		} catch (Exception e) {
-			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			//((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			super.getDriver().activateApp("com.arris.sbcBeta");
 			return true;
 		}
 	}
@@ -425,36 +406,15 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 				if (context.contains("WEBVIEW"))
 					super.getDriver().context(context);
 			}
-			utils.log().info("Switched to WEBVIEW");
-
-			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//			String webURL = driver.getCurrentUrl(); // arris.secure.force.com/consumers
-//			try {
-//				if (webURL.contains("arris.secure.force.com/consumers/")) {
-//					driver.getPageSource();
-//					driver.findElement(By.id("onetrust-close-btn-container")).click();
-//					driver.findElement(By.id("closeButton")).click();
-//					if (driver.findElement(By.xpath("//android.view.View[@content-desc='ARRIS Horizontal Logo']/android.widget.Image")).isDisplayed())
-//						utils.log().info("On arris.secure.force.com/consumers web page");
-//					else
-//						utils.log().info("arris.secure.force.com/consumers web page is not displayed");
-//				}
-//			} catch (Exception e) {
-//				utils.log().info("Unable to fetch Self Help Web Page objects");
-//			}
-			
+			utils.log().info("Switched to WEBVIEW");		
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
-
-//			if (driver != null)
-//				driver.quit();
-
 			return true;
 		} catch (Exception e) {
-			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			//((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			super.getDriver().activateApp("com.arris.sbcBeta");
 			return true;
 		}
 	}
@@ -472,37 +432,14 @@ public class SettingsAboutHelpPage extends ParentClass implements Page {
 					super.getDriver().context(context);
 			}
 			utils.log().info("Switched to WEBVIEW");
-
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//			String webURL = driver.getCurrentUrl();
-//			// www5.nohold.net/Arris/ukp.aspx?pid=15&login=1&alt1=app&alt2=mAX+Pro+W31&model=mAX+Pro+W31&donelr=1
-//			if (webURL.contains(
-//					"www5.nohold.net/Arris/ukp.aspx?pid=15&login=1&alt1=app&alt2=mAX+Pro+W31&model=mAX+Pro+W31&donelr=1")) {
-//				driver.getPageSource();
-//				if (driver
-//						.findElement(
-//								By.xpath("//android.view.View[@content-desc='Change Product']/android.widget.TextView"))
-//						.isDisplayed()
-//						&& driver
-//								.findElement(By
-//										.xpath("//android.view.View[@content-desc='Feedback']/android.widget.TextView"))
-//								.isDisplayed())
-//					utils.log().info("On www5.nohold.net/Arris/ukp.aspx web page");
-//				else
-//					utils.log().info("www5.nohold.net/Arris/ukp.aspx web page is not displayed");
-//			}
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
-
-//			if (driver != null)
-//				driver.quit();
-
 			return true;
 		} catch (Exception e) {
-			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			//((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			super.getDriver().activateApp("com.arris.sbcBeta");
 			return true;
 		}
 	}

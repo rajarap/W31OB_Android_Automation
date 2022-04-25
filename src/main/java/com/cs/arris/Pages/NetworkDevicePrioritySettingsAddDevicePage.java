@@ -155,6 +155,7 @@ public class NetworkDevicePrioritySettingsAddDevicePage extends ParentClass impl
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public boolean selectDeviceFromList() {
 		utils.log().info("                                     ");
 		utils.log().info("*************************************");
@@ -171,21 +172,20 @@ public class NetworkDevicePrioritySettingsAddDevicePage extends ParentClass impl
 				utils.log().info("------------------------");
 
 				List<MobileElement> entity = (List<MobileElement>) 
-						super.getDriver().findElementsByXPath("//androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[" + i + "]");
+				super.getDriver().findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["+i+"]");
 
 					for (MobileElement e : entity) 
 					{
-						if (e.findElementByXPath("//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/device_image']").isDisplayed())
+						if (super.getDriver().findElementByXPath("//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/device_image']").isDisplayed())
 							utils.log().info("Device Image is displayed");
 
-						if ((e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed()))
+						if ((super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").isDisplayed()))
 							utils.log().info("Device Name : " + e.findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/device_name']").getText() + " is displayed");
 
-						if (e.findElementByXPath("//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/device_select']").isDisplayed())
+						if (super.getDriver().findElementByXPath("//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/device_select']").isDisplayed())
 							utils.log().info("Checkbox is displayed");
-						
-						if (e.findElementByXPath("//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/device_select']").isDisplayed())
-							click(e.findElementByXPath("//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/device_select']"));
+
+							click(super.getDriver().findElementByXPath("//android.widget.CheckBox[@resource-id='com.arris.sbcBeta:id/device_select']"));
 							utils.log().info("Clicked on checkbox");
 					}
 			}

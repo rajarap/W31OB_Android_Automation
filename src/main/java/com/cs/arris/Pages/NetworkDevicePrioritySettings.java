@@ -236,34 +236,34 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 		utils.log().info(" Devices Assigned Highest Priority ");
 		utils.log().info("***********************************");
 		
-//		int size = super.getDriver().findElementsByXPath("//androidx.recyclerview.widget.RecyclerView[@resource-id='com.arris.sbcBeta:id/recyclerViewDevicePriority']").size();
-				
-				//"com.arris.sbcBeta:id/recyclerViewDevicePriority")
-		try 
-		{
-			utils.log().info("                   ");
-			utils.log().info("Prioritized Device ");
-			utils.log().info("-------------------");
-			
-			for(int k = 1; k <=2 ; k++) 
+		try {
+			for (int k = 1; k <= 2; k++) 
 			{
-				List<MobileElement> entity = (List<MobileElement>) super.getDriver()
+				utils.log().info("Prioritized Device  : " + k);
+				utils.log().info("--------------------------");
+				{
+					List<MobileElement> entity = (List<MobileElement>) super.getDriver()
 					.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
 
-				for (MobileElement e : entity) 
-				{
-					if (super.getDriver().findElementByXPath("//android.widget.ImageView[@resource-id='com.arris.sbcBeta:id/deviceTypeImage']").isDisplayed())
-						utils.log().info("Device Image is displayed");
+					for (MobileElement e : entity) 
+					{
+						if (super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.ImageView").isDisplayed())
+							utils.log().info("Device Image is displayed");
 				
-					if (super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/deviceName']").isDisplayed())
-						utils.log().info("Device Name: " + super.getDriver().findElementByXPath("//android.widget.TextView[@resource-id='com.arris.sbcBeta:id/deviceName']").getText());
+						if (super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView").isDisplayed())
+							utils.log().info("Device Name: " + super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView").getText());
 					
-					super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").click();
-
-//					if (super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").isDisplayed()) {	
-//					super.getDriver().findElementByXPath("//android.widget.RadioButton[@resource-id='com.arris.sbcBeta:id/rb_highest']").click();
-//						
-//					}		
+						try
+						{
+							if (super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[1]").isDisplayed()) {			
+								click(super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[1]"));
+								super.pause(5);
+								utils.log().info("Highest Priority Radion Button option is selected");
+							}
+						}catch(Exception exp) {
+							utils.log().info("Highest Priority Radion Button is not displayed");
+						}			
+					}		
 				}
 			}
 			return true;

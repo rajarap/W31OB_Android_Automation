@@ -305,32 +305,14 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 					super.getDriver().context(context);
 			}
 			utils.log().info("Switched to WEBVIEW");
-
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//			driver.navigate().to(alexaSkillsLink.getText());
-//			String webURL = driver.getCurrentUrl();
-//			try {
-//				if (webURL.equalsIgnoreCase(alexaSkillsLink.getText())) {
-//					driver.getPageSource();
-//					if (driver.findElement(By.xpath("//android.webkit.WebView[@text='Alexa Skills and Features | Amazon.com']")).isDisplayed())
-//						utils.log().info("On www.amazon.com/alexaskills web page");
-//					else
-//						utils.log().info("www.amazon.com/alexaskills web page is not displayed");
-//				}
-//			} catch (Exception e) {
-//				utils.log().info("Unable to fetch alexa skills Web Page objects");
-//			}
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
-			
-//			if (driver != null)
-//				driver.quit();
-			
+		
 			return true;
 		} catch (Exception e) {
-			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			//((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			super.getDriver().activateApp("com.arris.sbcBeta");
 			return true;
 		}
 	}
@@ -347,32 +329,14 @@ public class AmazonFeaturesPage extends ParentClass implements Page {
 					super.getDriver().context(context);
 			}
 			utils.log().info("Switched to WEBVIEW");
-
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//			String webURL = driver.getCurrentUrl(); 
-//			try {
-//				if (webURL.contains("amazon.com/gp/help/customer/")) {
-////					driver.getPageSource();
-//					if (driver
-//							.findElement(By.xpath("//android.view.View[@content-desc='Where's My Stuff?'])[1]/android.view.View/android.widget.TextView[2]")).isDisplayed())
-//						utils.log().info("On amazon.com/gp/help/customer web page");
-//					else
-//						utils.log().info("amazon.com/gp/help/customer web page is not displayed");
-//				}
-//			} catch (Exception e) {
-//				utils.log().info("Unable to fetch amazon.com/gp/help/customer web page objects");
-//			}
 			super.getDriver().context("NATIVE_APP");
 			utils.log().info("Switched to NATIVE_APP View");
 			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
 
-//			if (driver != null)
-//				driver.quit();
-
 			return true;
 		} catch (Exception e) {
-			((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			//((PressesKey) super.getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
+			super.getDriver().activateApp("com.arris.sbcBeta");
 			return true;
 		}
 	}
