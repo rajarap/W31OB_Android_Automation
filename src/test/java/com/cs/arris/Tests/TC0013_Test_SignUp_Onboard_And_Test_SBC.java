@@ -2013,6 +2013,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				utils.log().info("*********************");
 				SoftAssert softnet2 = new SoftAssert();
 				softnet2.assertTrue(new HomePage().getFooterIconsPageObject().clickNetworkButton());
+				softnet2.assertTrue(new NetworkPage().verifyUIOfMainWifi());
 				softnet2.assertAll();
 			}
 
@@ -2429,19 +2430,21 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_Device_Priority_Settings_Added_Device_Page() 
 			{
 				SoftAssert softnet34 = new SoftAssert();
-				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+				try 
 				{
-					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
-					
-					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
-					super.pause(5);
-					
-					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
-					
-					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());				
+					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+					{
+						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
+						if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+							softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
+						super.pause(5);
+						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
+						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());	
+					}
+				}catch(Exception e) {
+					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());	
 				}
-//				softnet34.assertAll();
+				softnet34.assertAll();
 			}
 			
 			@Test(priority = 136, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
@@ -2484,19 +2487,19 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			public void Verify_General_Settings_UPnP_Settings() 
 			{
 				SoftAssert softnet40 = new SoftAssert();
-				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().disableUPnP());
+				//softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().disableUPnP());
 				try{
 					if(new NetworkPage().getAppRatingPageObject().isAt())
 						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
 				}catch(Exception e) {
 					utils.log().info("App Rating Dialog did not appear");
 				}
-				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().enableUPnP());
-				super.pause(5);
-				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickUPNPInfoIcon());
-				super.pause(5);
-				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().isAt())
-					softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().clickCloseButton());
+//				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().enableUPnP());
+//				super.pause(5);
+//				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickUPNPInfoIcon());
+//				super.pause(5);
+//				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().isAt())
+//					softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().clickCloseButton());
 				softnet40.assertAll();
 			}
 			
@@ -3019,9 +3022,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("****************************");
 					
 					SoftAssert softsatellite1 = new SoftAssert();
-					
-					new HomePage().getFooterIconsPageObject().clickHomeButton();
-					
+							
 					performFactoryReset("Satellite1", "/dev/tty.usbserial-142310");
 					
 					try {
@@ -3040,6 +3041,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  					super.pause(35);
 				  					}
 					  		}catch(Exception e) {}
+
 				  			
 				  			try {
 				  				if(new AddSatelliteAddNewSatellitePage2().isAt()) 
@@ -3054,7 +3056,6 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  					utils.log().info("Waiting for 120 seconds to establish connection with mainAP network SSID");
 				  					super.pause(120);
 				  					new AddSatelliteAddNewSatellitePage2().clickNextButton();//To continue with satellite install, please connect to arrisW31- network}
-				  					super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 				  				}
 				  			}catch(Exception e) {
 								  new AddSatelliteAddNewSatellitePage2().clickCancelButton();
@@ -3076,6 +3077,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  			}
 				  			
 				  			try {
+				  				super.waitForVisibility(new AddSatelliteUnpackYourSatellitePage().nextButton);
 				  				if(new AddSatelliteUnpackYourSatellitePage().isAt()) {
 									new AddSatelliteUnpackYourSatellitePage().clickNextButton();
 					  				super.waitForVisibility(new AddSatellitePlaceYourSatellitePage().skipButton);
@@ -3185,13 +3187,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
 											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 											super.pause(120);
-                                            
-                                        	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+	                                      
+	                                  	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 												if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 												new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
-                                            	}
+	                                      	}
 											}
 									} catch (Exception e5) {
 									}
@@ -3201,14 +3203,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
 											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 											super.pause(120);
-                                            
-                                        	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+	                                      
+												super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 												if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 												new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
 												}
-                                        	}
+	                                  	}
 									} catch (Exception e7) {
 									}
 
@@ -3224,7 +3226,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
 												}
-                                          }
+	                                    }
 									} catch (Exception e8) {
 									}
 									
@@ -3343,6 +3345,16 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite1.assertAll();		  
 					
 			  }catch(Exception e14) {
+				  new TapSevenTimes().tapSeven();
+				  super.pause(5);
+				  new SevenTapLogs().clickYesButton();
+				  super.pause(5);
+				  new SevenTapGmail().clickGmailIcon();
+				  super.pause(5);
+				  new SevenTapEmail().enterEmailAddress();
+				  super.pause(5);
+				  new SevenTapEmail().clickSendButton();
+				  super.pause(5);
 				  Assert.fail("Satellite 1 Onboarding - failed");
 				  new KillAndRelaunchApp().killApp();
 				  new KillAndRelaunchApp().relaunchApp();
@@ -3413,6 +3425,12 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 								utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 								super.pause(120);
 							}
+							
+							try {
+								if(new MultipleDevicesFoundPage().isAt()) {
+									Assert.fail("Satellite 2 Onboarding - Multiple devices were found");
+								}
+							} catch (Exception e5) {}
 
 								try {
 									if (new BlueToothConnectionFailedPage().isAt()) {
@@ -3454,7 +3472,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							super.pause(5);
 							new SevenTapEmail().clickSendButton();
 							super.pause(5);
-							  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device due to blue tooth connection failure");
+							  Assert.fail("Satellite 2 Onboarding - Unable to connect Max Router to your Mobile Device either due to multiple devices found or due to blue tooth connection failure");
 							  new KillAndRelaunchApp().killApp();
 							  new KillAndRelaunchApp().relaunchApp();
 						}
@@ -3472,13 +3490,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
 											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 											super.pause(120);
-                                            
-                                        	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+	                                      
+	                                  	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 												if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 												new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
-                                            	}
+	                                      	}
 											}
 									} catch (Exception e5) {
 									}
@@ -3488,14 +3506,14 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 											new BlueToothConnectionFailedPage().clickTryAgainbutton();
 											utils.log().info("Waiting for 120 seconds to establish connection with bluetooth");
 											super.pause(120);
-                                            
-                                        	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
+	                                      
+	                                  	super.waitForVisibility(new AddSatelliteSuccessfullyConnectedPage().nextButton);
 												if(new AddSatelliteSuccessfullyConnectedPage().isAt()) {
 												new AddSatelliteSuccessfullyConnectedPage().clickNextButton();
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
 												}
-                                        	}
+	                                  	}
 									} catch (Exception e7) {
 									}
 
@@ -3511,14 +3529,13 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 												utils.log().info("Waiting for 120 seconds to establish wifi connection with internet");
 												super.pause(120);
 												}
-                                          }
+	                                    }
 									} catch (Exception e8) {
 									}
 							
 
 								
-						}catch (Exception e9) 
-						{
+						}catch (Exception e9) {
 								  new TapSevenTimes().tapSeven();
 								  super.pause(5);
 								  new SevenTapLogs().clickYesButton();
@@ -3625,7 +3642,18 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						softsatellite2.assertAll();
 						
 				  }catch(Exception e14) {
-					  Assert.fail("Satellite 2 Onboarding - failed");
+						 super.pause(120);
+						  new TapSevenTimes().tapSeven();
+						  super.pause(5);
+						  new SevenTapLogs().clickYesButton();
+						  super.pause(5);
+						  new SevenTapGmail().clickGmailIcon();
+						  super.pause(5);
+						  new SevenTapEmail().enterEmailAddress();
+						  super.pause(5);
+						  new SevenTapEmail().clickSendButton();
+						  super.pause(5);
+						  Assert.fail("Satellite 2 Onboarding - failed");
 					  new KillAndRelaunchApp().killApp();
 					  new KillAndRelaunchApp().relaunchApp();
 				  }

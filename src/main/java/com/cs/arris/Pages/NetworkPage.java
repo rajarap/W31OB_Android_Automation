@@ -664,6 +664,39 @@ public class NetworkPage extends ParentClass implements Page {
 			return false;
 		}
 	}
+	
+	public boolean verifyUIOfMainWifi() {
+		utils.log().info("                             ");
+		utils.log().info("*****************************");
+		utils.log().info("Verifying Main Wi-Fi Network ");
+		utils.log().info("*****************************");
+		try {
+			if (expandButton.isDisplayed()) {
+				utils.log().info("Main WiFi expand button is displayed");
+				click(expandButton);} 
+			else
+				utils.log().info("Main WiFi expand button is not displayed");
+
+			if (networkNameSSIDLabel.isDisplayed() && ssidName.isDisplayed())
+				utils.log().info(networkNameSSIDLabel.getText() + " : " + ssidName.getText());
+			else
+				utils.log().info("Network SSID Name is not displayed");
+
+			if (passwordLabel.isDisplayed() && showPassword.isDisplayed())
+				utils.log().info(passwordLabel.getText() + " : " + showPassword.getText());
+			else
+				utils.log().info("SSID Password is not displayed");
+
+			if (showPasswordIcon.isDisplayed()) {
+				utils.log().info("Show Password Icon is displayed ");
+				click(expandButton);}
+			else
+				utils.log().info("Show Password Icon is not displayed");
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
 	@Override
 	public boolean isAt() {
