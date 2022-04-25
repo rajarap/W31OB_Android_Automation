@@ -189,7 +189,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  new SelectYourDevicePage2().clickNextButton();
 				  new SiginPage().clickSignUpButton();
 				  email = new SignupPage().getEmailAddress(); 
-				  new SignupPage().enterValidEmailAddress(email+"@mailinator.com");
+				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
+//				  new SignupPage().enterValidEmailAddress(email+"@mailinator.com");
 				  new SignupPage().enterFirstName(firstName);
 				  new SignupPage().enterLastName(lastName);
 				  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
