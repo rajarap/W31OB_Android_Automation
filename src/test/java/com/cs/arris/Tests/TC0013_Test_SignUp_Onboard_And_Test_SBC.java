@@ -201,7 +201,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					for(int i=1; i<=17; i++) {
 						super.swipeUp();
 					}
-
+					try {
 						if(new TermsAndConditionsPage().understandAndAgreeButton.isEnabled()) {
 							new TermsAndConditionsPage().clickUnderstandAndAgreeButton();
 							super.pause(3);
@@ -217,7 +217,21 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 							new CodeVerifiedPage().getCodeVerifiedText();
 							new CodeVerifiedPage().clickNextButton();
 						}
+					}catch(Exception e) {
+						new TapSevenTimes().tapSeven();
+						super.pause(5);
+						new SevenTapLogs().clickYesButton();
+						super.pause(5);
+						new SevenTapGmail().clickGmailIcon();
+						super.pause(5);
+						new SevenTapEmail().enterEmailAddress();
+						super.pause(5);
+						new SevenTapEmail().clickSendButton();
+						super.pause(5);
+						Assert.fail("Main AP Onboarding -Failed to retrieve OTP.  This may be due to non-acceissiblity of 3rd party website or may be due to non-availability of internet connection");
+						new KillAndRelaunchApp().killApp();
 					}
+				  }
 				  new OptimizeYourNetworkPage().clickSkipOptimizeButton();
 				  new SetupHomeNetworkPage().clickNextButton();
 				  new UnPackYourBoxPage().clickNextButton();
@@ -354,20 +368,36 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 						super.pause(5);
 						new SevenTapEmail().clickSendButton();
 						super.pause(5);
-						Assert.fail("Main AP Onboarding - Unable to connect you Max Router to the Internet");
+						Assert.fail("Main AP Onboarding - Unable to connect you Max Router to the Internet.");
 						new KillAndRelaunchApp().killApp();
 					}
 
 				  super.waitForVisibility(new SystemFirmwareUpdatePage().nextButton);
 				  new SystemFirmwareUpdatePage().clickNextButton();
-				  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();	 
-				  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
-				  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
-				  new NameYourNetwokSSIDPage().clickNextButton();
-				  utils.log().info("Waiting for 35 seconds for device to connect with the router SSID");
-				  super.pause(35);
-				  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
-				  super.pause(15);
+				  new ErrorCode_0000_1506_Warranty_Support_Page().clickContinueButton();
+				  try {
+					  new NameYourNetwokSSIDPage().enterSSIDName(this.ssidName);
+					  new NameYourNetwokSSIDPage().enterSSIDPassword(this.ssidpass);
+					  new NameYourNetwokSSIDPage().clickNextButton();
+					  utils.log().info("Waiting for 35 seconds for device to connect with the router SSID");
+					  super.pause(35);
+					  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
+					  super.pause(15);
+				  }catch(Exception e) {
+						new TapSevenTimes().tapSeven();
+						super.pause(5);
+						new SevenTapLogs().clickYesButton();
+						super.pause(5);
+						new SevenTapGmail().clickGmailIcon();
+						super.pause(5);
+						new SevenTapEmail().enterEmailAddress();
+						super.pause(5);
+						new SevenTapEmail().clickSendButton();
+						super.pause(5);
+						Assert.fail("Main AP Onboarding - Unable to create your max network. This may be due to poor internet connection or issue in the app. 7 tap logs sent");
+						new KillAndRelaunchApp().killApp();
+				  }
+				  
 				  try {
 					  if(new ConnectionToWifiNeededPage().isAt()) {
 						  new ConnectionToWifiNeededPage().turnOnRouterWifi(this.ssidName, this.ssidpass, this.udid);
@@ -2462,9 +2492,9 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					utils.log().info("App Rating Dialog did not appear");
 				}
 				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().enableUPnP());
-				
+				super.pause(5);
 				softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickUPNPInfoIcon());
-				
+				super.pause(5);
 				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().isAt())
 					softnet40.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsUPnPInfoDialogObject().clickCloseButton());
 				softnet40.assertAll();
@@ -2475,6 +2505,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			{
 				SoftAssert softnet39 = new SoftAssert();
 				softnet39.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickIPv6InfoIcon());
+				super.pause(5);
 				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsIPv6EnableInfoDialogObject().isAt())
 					softnet39.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsIPv6EnableInfoDialogObject().clickCloseButton());
 				softnet39.assertAll();
@@ -2485,6 +2516,7 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 			{
 				SoftAssert softnet42 = new SoftAssert();
 				softnet42.assertTrue(new NetworkPage().getGeneralSettingsPageObject().clickBridgeModeInfoIcon());
+				super.pause(5);
 				if(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsBridgeModeInfoDialogObject().isAt()) 
 					softnet42.assertTrue(new NetworkPage().getGeneralSettingsPageObject().getNetworkGeneralSettingsBridgeModeInfoDialogObject().clickCloseButton());
 				softnet42.assertAll();
