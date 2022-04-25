@@ -271,6 +271,33 @@ public class NetworkDevicePrioritySettings extends ParentClass implements Page {
 			utils.log().info("No Device found to prioritize");
 			return false;}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public boolean selectDevicesWithMediumPriority() 
+	{
+		try {
+			for (int k = 2; k <= 2; k++) 
+			{
+					List<MobileElement> entity = (List<MobileElement>) super.getDriver()
+					.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup");
+
+					for (MobileElement e : entity) 
+					{
+						try
+						{
+							if (super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[2]").isDisplayed()) {			
+								click(super.getDriver().findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout["+k+"]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RadioGroup/android.widget.RadioButton[2]"));
+								super.pause(5);
+							}
+						}catch(Exception exp) {
+						}			
+					}		
+			}
+			return true;
+		}catch(Exception e){
+			utils.log().info("No Device found to prioritize");
+			return false;}
+	}
 
 	@Override
 	public boolean isAt() {

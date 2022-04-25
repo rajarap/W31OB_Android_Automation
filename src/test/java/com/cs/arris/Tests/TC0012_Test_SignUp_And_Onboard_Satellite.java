@@ -377,8 +377,8 @@ public class TC0012_Test_SignUp_And_Onboard_Satellite extends ParentClass
 					  if(new NetworkOptimizationDialog2().okButton.isDisplayed()) 
 						  new NetworkOptimizationDialog2().clickOkButton();
 					  }catch(Exception e) {}
-				  utils.log().info("Waiting for 60 seconds for the Wifi connection to stabilize on the homepage");
-				  super.pause(60);
+				  utils.log().info("Waiting for 120 seconds for the Wifi connection to stabilize on the homepage");
+				  super.pause(120);
 				  
 				  
 				  try {
