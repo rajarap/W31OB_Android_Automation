@@ -189,8 +189,8 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 				  new SelectYourDevicePage2().clickNextButton();
 				  new SiginPage().clickSignUpButton();
 				  email = new SignupPage().getEmailAddress(); 
-				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
-//				  new SignupPage().enterValidEmailAddress(email+"@mailinator.com");
+//				  new SignupPage().enterValidEmailAddress(email+"@mail7.io");
+				  new SignupPage().enterValidEmailAddress(email+"@mailinator.com");
 				  new SignupPage().enterFirstName(firstName);
 				  new SignupPage().enterLastName(lastName);
 				  new SignupPage().clickAgreeTermsAndConditionsCheckBox();
@@ -2373,74 +2373,74 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 					softnet30.assertAll();
 			}
 			
-			@Test(priority = 129, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-			public void Verify_Device_Priority_Settings_UI_Page() 
-			{
-				SoftAssert softnet31 = new SoftAssert();
-				super.swipeUp();
-				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
-				super.pause(3);
-				try{
-					if(new NetworkPage().getAppRatingPageObject().isAt())
-						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-				}catch(Exception e) {
-					utils.log().info("App Rating Dialog did not appear");
-				}
-				
-				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
-				{
-					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
-					super.pause(10);
-
-					try{
-						if(new NetworkPage().getAppRatingPageObject().isAt())
-							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
-					}catch(Exception e) {
-						utils.log().info("App Rating Dialog did not appear");
-					}
-					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-				}
-				softnet31.assertAll();
-			}
-		
-			@Test(priority = 131, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-			public void Verify_Device_Priority_Settings_Add_Device_Page() 
-			{
-				SoftAssert softnet33 = new SoftAssert();
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-				
-				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().isAt())
-					softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().clickOKButton());
-
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-				super.pause(3);
-				
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
-				super.pause(2);
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
-				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
-				super.pause(3);
-
-				softnet33.assertAll();
-			}
-			
-		
-			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
-			public void Verify_Device_Priority_Settings_Added_Device_Page() 
-			{
-				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
-				{
-					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority();
-					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-						new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton();
-					super.pause(5);
-					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighPriority();
-					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings();
-					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton();	
-				}
-
-			}
+//			@Test(priority = 129, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+//			public void Verify_Device_Priority_Settings_UI_Page() 
+//			{
+//				SoftAssert softnet31 = new SoftAssert();
+//				super.swipeUp();
+//				softnet31.assertTrue(new NetworkPage().clickDevicePrioritySettings());
+//				super.pause(3);
+//				try{
+//					if(new NetworkPage().getAppRatingPageObject().isAt())
+//						new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
+//				}catch(Exception e) {
+//					utils.log().info("App Rating Dialog did not appear");
+//				}
+//				
+//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+//				{
+//					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().enableDevicePrioritySettings());
+//					super.pause(10);
+//
+//					try{
+//						if(new NetworkPage().getAppRatingPageObject().isAt())
+//							new NetworkPage().getAppRatingPageObject().clickRemindMeLaterLink();
+//					}catch(Exception e) {
+//						utils.log().info("App Rating Dialog did not appear");
+//					}
+//					softnet31.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
+//				}
+//				softnet31.assertAll();
+//			}
+//		
+//			@Test(priority = 131, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+//			public void Verify_Device_Priority_Settings_Add_Device_Page() 
+//			{
+//				SoftAssert softnet33 = new SoftAssert();
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+//				
+//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().isAt())
+//					softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().getSelectDeviceAlertDialogObject().clickOKButton());
+//
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+//				super.pause(3);
+//				
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickAddDeviceButton());
+//				super.pause(2);
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().selectDeviceFromList());
+//				softnet33.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddDevicePriorityPageObject().clickAddDeviceButton());
+//				super.pause(3);
+//
+//				softnet33.assertAll();
+//			}
+//			
+//		
+//			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
+//			public void Verify_Device_Priority_Settings_Added_Device_Page() 
+//			{
+//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+//				{
+//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority();
+//					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+//						new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton();
+//					super.pause(5);
+//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighPriority();
+//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings();
+//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton();	
+//				}
+//
+//			}
 			
 			@Test(priority = 136, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
 			public void Verify_Time_Zone_Settings_UI_Page() 

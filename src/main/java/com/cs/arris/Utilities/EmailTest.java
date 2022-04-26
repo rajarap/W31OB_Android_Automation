@@ -22,35 +22,6 @@ public class EmailTest extends ParentClass{
 	
 	//mail7.io
 		
-		public String getValidOTP(String emailId) 
-		{
-			utils.log().info("Get Valid OTP for : " + emailId);
-			 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-				  
-			driver.manage().window().maximize();
-			super.pause(5);
-			driver.get("https://mail7.io");
-			super.pause(5);
-			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[1]")).sendKeys(emailId); 
-			super.pause(5);
-			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[2]")).click();  //Go to inbox
-			super.pause(5);
-			driver.findElement(By.xpath("/html/body/div[2]/div[5]/div/div/div/div/div/div/div/main/div/div/ul[2]/li/div[2]/div[1]/b")).click();
-			super.pause(5);
-			driver.switchTo().frame(0);
-			content = driver.findElement(By.xpath("/html/body")).getText(); 
-			driver.switchTo().defaultContent();
-			driver.findElement(By.xpath("//*[@id=\"message\"]/div[1]/a/div/span")).click();
-		    otpCode = getOTPCode(content);
-			super.pause(3);
-			utils.log().info("OTP CODE : " + otpCode);
-			driver.close();
-			return otpCode;
-		}
-		
-	//mailinator
 //		public String getValidOTP(String emailId) 
 //		{
 //			utils.log().info("Get Valid OTP for : " + emailId);
@@ -60,55 +31,53 @@ public class EmailTest extends ParentClass{
 //				  
 //			driver.manage().window().maximize();
 //			super.pause(5);
-//			driver.get("https://www.mailinator.com");
-//			super.pause(2);
-//			driver.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys(emailId);
-//			super.pause(2);
-//			driver.findElement(By.xpath("//*[@id=\"site-header\"]/div[1]/div/div/div[1]/div/button")).click(); //GO button
+//			driver.get("https://mail7.io");
 //			super.pause(5);
-//			driver.findElement(By.xpath("/html/body/div/main/div[2]/div[3]/div/div[4]/div/div/table/tbody/tr/td[2]")).click();
+//			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[1]")).sendKeys(emailId); 
 //			super.pause(5);
-//			driver.switchTo().frame("html_msg_body");
+//			driver.findElement(By.xpath("/html/body/main/section[2]/div/form/div[1]/input[2]")).click();  //Go to inbox
+//			super.pause(5);
+//			driver.findElement(By.xpath("/html/body/div[2]/div[5]/div/div/div/div/div/div/div/main/div/div/ul[2]/li/div[2]/div[1]/b")).click();
+//			super.pause(5);
+//			driver.switchTo().frame(0);
 //			content = driver.findElement(By.xpath("/html/body")).getText(); 
 //			driver.switchTo().defaultContent();
-//			driver.findElement(By.xpath("//*[@id=\"email_pane\"]/div/div[1]/div[2]/a")).click();
+//			driver.findElement(By.xpath("//*[@id=\"message\"]/div[1]/a/div/span")).click();
 //		    otpCode = getOTPCode(content);
 //			super.pause(3);
 //			utils.log().info("OTP CODE : " + otpCode);
 //			driver.close();
 //			return otpCode;
 //		}
-	
-	
-//	//mailsac
-//	public String getValidOTP(String emailId) 
-//	{
-//		utils.log().info("Get Valid OTP for : " + emailId);
-//		 
-//		WebDriverManager.chromedriver().setup();
-//		driver = new ChromeDriver();
-//			  
-//		driver.manage().window().maximize();
-//		super.pause(5);
-//		driver.get("https://www.mailsac.com");
-//		super.pause(2);
-//		driver.findElement(By.xpath("/html/body/div/div[3]/div[1]/div[2]/div/input[1]")).sendKeys(emailId);
-//		super.pause(2);
-//		driver.findElement(By.xpath("/html/body/div/div[3]/div[1]/div[2]/div/button")).click(); //GO button
-//		super.pause(5);
-//		driver.findElement(By.xpath("/html/body/div/main/div[2]/div[3]/div/div[4]/div/div/table/tbody/tr/td[2]")).click();
-//		super.pause(5);
-//		driver.switchTo().frame("html_msg_body");
-//		content = driver.findElement(By.xpath("/html/body")).getText(); 
-//		driver.switchTo().defaultContent();
-//		driver.findElement(By.xpath("//*[@id=\"email_pane\"]/div/div[1]/div[2]/a")).click();
-//	    otpCode = getOTPCode(content);
-//		super.pause(3);
-//		utils.log().info("OTP CODE : " + otpCode);
-//		driver.close();
-//		return otpCode;
-//	}
-	
+		
+	//mailinator
+		public String getValidOTP(String emailId) 
+		{
+			utils.log().info("Get Valid OTP for : " + emailId);
+			 
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+				  
+			driver.manage().window().maximize();
+			super.pause(5);
+			driver.get("https://www.mailinator.com");
+			super.pause(2);
+			driver.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys(emailId);
+			super.pause(2);
+			driver.findElement(By.xpath("//*[@id=\"site-header\"]/div[1]/div/div/div[1]/div/button")).click(); //GO button
+			super.pause(5);
+			driver.findElement(By.xpath("/html/body/div/main/div[2]/div[3]/div/div[4]/div/div/table/tbody/tr/td[2]")).click();
+			super.pause(5);
+			driver.switchTo().frame("html_msg_body");
+			content = driver.findElement(By.xpath("/html/body")).getText(); 
+			driver.switchTo().defaultContent();
+			driver.findElement(By.xpath("//*[@id=\"email_pane\"]/div/div[1]/div[2]/a")).click();
+		    otpCode = getOTPCode(content);
+			super.pause(3);
+			utils.log().info("OTP CODE : " + otpCode);
+			driver.close();
+			return otpCode;
+		}
 				  
 		private String getOTPCode(String content) 
 		{
