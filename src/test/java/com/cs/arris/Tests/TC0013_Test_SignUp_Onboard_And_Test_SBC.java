@@ -2429,17 +2429,23 @@ public class TC0013_Test_SignUp_Onboard_And_Test_SBC extends ParentClass
 //			@Test(priority = 133, dependsOnMethods = {"Verify_SignUp_And_Onboard"})
 //			public void Verify_Device_Priority_Settings_Added_Device_Page() 
 //			{
-//				if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+//				SoftAssert softnet34 = new SoftAssert();
+//				try 
 //				{
-//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority();
-//					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
-//						new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton();
-//					super.pause(5);
-//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighPriority();
-//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings();
-//					new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton();	
+//					if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().isAt())
+//					{
+//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighestPriority());
+//						if(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().isAt())
+//							softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().getAddedTwoHighestPriorityDevicesDialogObject().clickOkButton());
+//						super.pause(5);
+//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().selectDevicesWithHighPriority());
+//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().disableDevicePrioritySettings());
+//						softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());	
+//						softnet34.assertAll();
+//					}
+//				}catch(Exception e) {
+//					softnet34.assertTrue(new NetworkPage().getNetworkDevicePrioritySettingsPageObject().clickBackButton());	
 //				}
-//
 //			}
 			
 			@Test(priority = 136, dependsOnMethods = {"Verify_SignUp_And_Onboard", "Verify_Network_UI_Page"})
