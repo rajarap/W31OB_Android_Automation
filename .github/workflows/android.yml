@@ -1,0 +1,36 @@
+# name of the workflow or jenkins job
+name: Android-CICD
+
+#when this workflow should be triggered
+on:
+  # this worklow will start when ever code is committed into the main branch
+  push:
+    branches: [ "main" ]
+  
+  # workflow dispatch is used to manually start the workflow
+  workflow_dispatch:
+  
+
+jobs:
+  first-job:
+    #define the runner
+    runs-on: macos-11
+    steps:
+      - name: print greeting
+        run: echo "Hello first-job!!"
+      - name: print goodbye
+        run: echo "Done - goodbye first-job!!!"
+  second-job:
+    runs-on: macos-11
+    steps:
+      - name: print greeting
+        run: echo "Hello second-job!!"
+      - name: print goodbye
+        run: echo "Done - goodbye second-job!!!"
+  third-job:
+    runs-on: macos-11
+    steps:
+      - name: print greeting
+        run: echo "Hello third-job!!"
+      - name: print goodbye
+        run: echo "Done - goodbye third-job!!!"
